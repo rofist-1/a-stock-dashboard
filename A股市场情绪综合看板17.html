@@ -1957,11 +1957,55 @@
         w3Reason.addEventListener('change', () => updateWatchSignal('watch3Reason', 'watch3Signal'));
       }
 
+      function autoLoadJSON() {
+        fetch('data.json')
+          .then(r => r.json())
+          .then(data => {
+            if (Array.isArray(data) && data.length) {
+              const stored = localStorage.getItem(STORAGE_KEY);
+              if (!stored || JSON.stringify(data) !== stored) {
+                records = data.map(r => ({
+                  date: r.date || '',
+                  volume: parseFloat(r.volume) || 0,
+                  limitUp: parseInt(r.limitUp) || 0,
+                  limitDown: parseInt(r.limitDown) || 0,
+                  bomb: parseInt(r.bomb) || 0,
+                  chain: parseInt(r.chain) || 0,
+                  newHigh: parseInt(r.newHigh) || 0,
+                  newLow: parseInt(r.newLow) || 0,
+                  newHighDaily: parseInt(r.newHighDaily) || 0,
+                  s1Name: r.s1Name || '', s1Total: parseInt(r.s1Total) || 0, s1New: parseInt(r.s1New) || 0,
+                  s1b1Name: r.s1b1Name || '', s1b1New: parseInt(r.s1b1New) || 0,
+                  s1b2Name: r.s1b2Name || '', s1b2New: parseInt(r.s1b2New) || 0,
+                  s2Name: r.s2Name || '', s2Total: parseInt(r.s2Total) || 0, s2New: parseInt(r.s2New) || 0,
+                  s2b1Name: r.s2b1Name || '', s2b1New: parseInt(r.s2b1New) || 0,
+                  s2b2Name: r.s2b2Name || '', s2b2New: parseInt(r.s2b2New) || 0,
+                  s3Name: r.s3Name || '', s3Total: parseInt(r.s3Total) || 0, s3New: parseInt(r.s3New) || 0,
+                  s3b1Name: r.s3b1Name || '', s3b1New: parseInt(r.s3b1New) || 0,
+                  s3b2Name: r.s3b2Name || '', s3b2New: parseInt(r.s3b2New) || 0,
+                  w1Name: r.w1Name || '', w1Total: parseInt(r.w1Total) || 0, w1New: parseInt(r.w1New) || 0, w1Reason: r.w1Reason || '',
+                  w1b1Name: r.w1b1Name || '', w1b1New: parseInt(r.w1b1New) || 0,
+                  w1b2Name: r.w1b2Name || '', w1b2New: parseInt(r.w1b2New) || 0,
+                  w2Name: r.w2Name || '', w2Total: parseInt(r.w2Total) || 0, w2New: parseInt(r.w2New) || 0, w2Reason: r.w2Reason || '',
+                  w2b1Name: r.w2b1Name || '', w2b1New: parseInt(r.w2b1New) || 0,
+                  w2b2Name: r.w2b2Name || '', w2b2New: parseInt(r.w2b2New) || 0,
+                  w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Reason: r.w3Reason || '',
+                  w3b1Name: r.w3b1Name || '', w3b1New: parseInt(r.w3b1New) || 0,
+                  w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0
+                }));
+                saveRecords();
+                renderAll();
+              }
+            }
+          }).catch(() => {});
+      }
+
       function init() {
         setDefaultDate();
         loadRecords();
         renderAll();
         bindEvents();
+        autoLoadJSON();
       }
       window.addEventListener('DOMContentLoaded', init);
     })();
