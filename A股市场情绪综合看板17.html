@@ -1529,40 +1529,47 @@
       }
 
       function getMarketScore(rec) {
-        let s = 50;
+        let s = 0;
         if (rec.limitUp >= 100) s += 20;
         else if (rec.limitUp >= 80) s += 16;
         else if (rec.limitUp >= 60) s += 12;
         else if (rec.limitUp >= 40) s += 8;
         else if (rec.limitUp >= 20) s += 4;
-        if (rec.limitDown <= 3) s += 15;
-        else if (rec.limitDown <= 6) s += 8;
-        else if (rec.limitDown <= 10) s += 0;
+        if (rec.limitDown <= 3) s += 25;
+        else if (rec.limitDown <= 6) s += 10;
+        else if (rec.limitDown <= 9) s += 0;
         else if (rec.limitDown <= 15) s -= 10;
         else s -= 20;
         const br = rec.bomb / Math.max(rec.bomb + rec.limitUp, 1);
-        if (br < 0.15) s += 15;
-        else if (br < 0.25) s += 10;
-        else if (br < 0.35) s += 5;
-        else if (br < 0.5) s += 0;
-        else s -= 10;
+        if (br < 0.15) s += 20;
+        else if (br < 0.25) s += 15;
+        else if (br < 0.35) s += 10;
+        else if (br < 0.5) s += 5;
+        else s -= 5;
         const nh_nl = rec.newHigh / Math.max(rec.newLow, 1);
-        if (nh_nl >= 10) s += 15;
-        else if (nh_nl >= 5) s += 10;
-        else if (nh_nl >= 2) s += 5;
-        else if (nh_nl >= 1) s += 0;
+        if (nh_nl >= 15) s += 20;
+        else if (nh_nl >= 8) s += 16;
+        else if (nh_nl >= 4) s += 12;
+        else if (nh_nl >= 2) s += 8;
+        else if (nh_nl >= 1) s += 4;
         else s -= 10;
-        if (rec.volume >= 35000) s += 10;
-        else if (rec.volume >= 25000) s += 6;
-        else if (rec.volume >= 15000) s += 3;
+        if (rec.volume >= 35000) s += 15;
+        else if (rec.volume >= 30000) s += 12;
+        else if (rec.volume >= 25000) s += 8;
+        else if (rec.volume >= 20000) s += 5;
+        else if (rec.volume >= 15000) s += 2;
+        if (rec.chain >= 20) s += 15;
+        else if (rec.chain >= 12) s += 12;
+        else if (rec.chain >= 8) s += 8;
+        else if (rec.chain >= 5) s += 4;
         return Math.max(0, Math.min(100, s));
       }
 
       function getLevel(score) {
-        if (score >= 80) return { lv: 'S', label: '极强', cls: 'signal-healthy' };
-        if (score >= 65) return { lv: 'A', label: '偏强', cls: 'signal-healthy' };
-        if (score >= 50) return { lv: 'B', label: '震荡', cls: 'signal-normal' };
-        if (score >= 35) return { lv: 'C', label: '偏弱', cls: 'signal-warn' };
+        if (score >= 75) return { lv: 'S', label: '极强', cls: 'signal-healthy' };
+        if (score >= 60) return { lv: 'A', label: '偏强', cls: 'signal-healthy' };
+        if (score >= 45) return { lv: 'B', label: '震荡', cls: 'signal-normal' };
+        if (score >= 30) return { lv: 'C', label: '偏弱', cls: 'signal-warn' };
         return { lv: 'D', label: '弱势', cls: 'signal-high' };
       }
 
@@ -1854,23 +1861,23 @@
         const score = ms;
         const lu = latest.limitUp, ld = latest.limitDown;
 
-        if (score >= 80) {
+        if (score >= 75) {
           action = `<span class="signal-healthy">📌 S级信号：重仓出击</span><br>`;
           action += `市场极强，主线清晰，适合满仓持有核心标的。`;
           if (signal.type === 'high') {
             action += `<br><span style="color:#dc2626;">⚠ 但已触发高潮信号，需准备减仓预案。若明日涨停<80或封板率<75%，减至半仓。</span>`;
           }
-        } else if (score >= 65) {
+        } else if (score >= 60) {
           action = `<span class="signal-healthy">📌 A级信号：正常持仓</span><br>`;
           action += `市场环境良好，维持现有仓位，沿主线操作。`;
           action += `<br>止损参考：跌破10日线或涨停<50家时减仓。`;
-        } else if (score >= 50) {
+        } else if (score >= 45) {
           action = `<span class="signal-normal">📌 B级信号：震荡策略</span><br>`;
           action += `方向不明，控制仓位在5成以下，高抛低吸。`;
           if (ld > 6) {
             action += `<br><span style="color:#d97706;">⚠ 跌停${ld}家超警戒，不开新仓，只做持仓股的T。</span>`;
           }
-        } else if (score >= 35) {
+        } else if (score >= 30) {
           action = `<span class="signal-warn">📌 C级信号：防御为主</span><br>`;
           action += `市场偏弱，仓位降至3成以下，只做主线低吸。`;
           if (lu > 50 && diff < 0) {
@@ -1884,7 +1891,7 @@
           }
         }
 
-        const posSuggest = score >= 65 ? '7~10成' : score >= 50 ? '3~5成' : score >= 35 ? '1~3成' : '0~1成';
+        const posSuggest = score >= 60 ? '7~10成' : score >= 45 ? '3~5成' : score >= 30 ? '1~3成' : '0~1成';
         action += `<br><br><div style="display:flex;gap:12px;flex-wrap:wrap;">
           <span style="background:#f1f5f9;padding:4px 12px;border-radius:20px;font-size:0.8rem;">📊 建议仓位：<strong>${posSuggest}</strong></span>
           <span style="background:#f1f5f9;padding:4px 12px;border-radius:20px;font-size:0.8rem;">🎯 市场评分：<strong>${score}/100</strong></span>
