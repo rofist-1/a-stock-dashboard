@@ -247,8 +247,8 @@
     .signal-high { background: #fee2e2; color: #dc2626; font-weight: 700; border-radius: 4px; padding: 2px 6px; }
     .signal-warn { background: #fef3c7; color: #d97706; font-weight: 700; border-radius: 4px; padding: 2px 6px; }
     .signal-healthy { background: #d1fae5; color: #059669; font-weight: 700; border-radius: 4px; padding: 2px 6px; }
-    .signal-ice { background: #dbeafe; color: #2563eb; font-weight: 700; border-radius: 4px; padding: 2px 6px; }
     .signal-normal { background: #f3f4f6; color: #6b7280; font-weight: 700; border-radius: 4px; padding: 2px 6px; }
+    .signal-climax { background: #fff7ed; color: #c2410c; font-weight: 700; border-radius: 4px; padding: 2px 6px; }
     .legend-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
@@ -910,7 +910,10 @@
         if (rec.limitUp >= 100 && sealRate > 85 && flags.highDiffHigh) {
           return { type: 'high', label: '🔴 高潮' };
         }
-        if (rec.limitDown > 6 && sealRateDown) {
+        if (rec.limitUp > 100 && rec.limitUp <= 120) {
+          return { type: 'normal', label: '⚪ 正常' };
+        }
+        if (rec.limitDown > 6 && sealRateDown && rec.limitUp < 80) {
           return { type: 'warn', label: '🟡 预警' };
         }
         if (rec.limitUp >= 50 && rec.limitUp <= 100 && sealRate >= 70 && diffUp) {
@@ -1537,10 +1540,10 @@
         else if (rec.limitDown <= 10) s += 0;
         else if (rec.limitDown <= 15) s -= 10;
         else s -= 20;
-        const br = rec.bomb / Math.max(rec.limitUp, 1);
-        if (br < 0.2) s += 15;
-        else if (br < 0.3) s += 10;
-        else if (br < 0.4) s += 5;
+        const br = rec.bomb / Math.max(rec.bomb + rec.limitUp, 1);
+        if (br < 0.15) s += 15;
+        else if (br < 0.25) s += 10;
+        else if (br < 0.35) s += 5;
         else if (br < 0.5) s += 0;
         else s -= 10;
         const nh_nl = rec.newHigh / Math.max(rec.newLow, 1);
@@ -1599,7 +1602,7 @@
         // ── 2. 情绪周期判断 ──
         let mood = '';
         if (signal.type === 'high') {
-          mood = `<span class="signal-high">🔴 高潮期</span> — 涨停${latest.limitUp}家，封板率${sealRateStr}，一致性过强，短期面临分歧。`;
+          mood = `<span class="signal-climax">🔴 高潮期</span> — 涨停${latest.limitUp}家，封板率${sealRateStr}，一致性过强，短期面临分歧。`;
         } else if (signal.type === 'ice') {
           mood = `<span class="signal-ice">🔵 冰点期</span> — 跌停${latest.limitDown}家，恐慌释放，关注冰点后的修复方向。`;
         } else if (signal.type === 'warn') {
