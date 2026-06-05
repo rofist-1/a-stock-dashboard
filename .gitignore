@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Data cache
+kline_cache/
+cache/
+sector_map.pkl
+
+# Temp files
+*.bak
+*.tmp
+*.log
+_srv_*.txt
+_tmp*.txt
+_tmp*.bin
+
+# OS
+desktop.ini
+*.lnk
+*.jpg
+*.png
+*.tn6
+*.exe
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# QMT related
+qmt_*.py
+qmt_*.csv
+qmt_*.json
+
+# Backtest
+backtest_*.csv
+backtest_*.xlsx
+stats.json
