@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+env:
+  # 提前启用 Node.js 24 兼容，消除弃用警告
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  PYTHONIOENCODING: utf-8
+
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -19,19 +24,46 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
-        run: pip install akshare pandas requests openpyxl
+        run: |
+          python --version
+          pip install --upgrade pip
+          pip install akshare pandas requests openpyxl
+          echo "=== pip list ==="
+          pip list
 
       - name: Restore K-line cache
         uses: actions/cache@v4
         with:
           path: kline_cache
           key: kline-cache-${{ github.run_id }}
-          restore-keys: kline-cache-
+          restore-keys: |
+            kline-cache-
+
+      - name: Debug environment
+        run: |
+          echo "=== Working directory ==="
+          pwd
+          echo "=== Files ==="
+          ls -la
+          echo "=== Python ==="
+          which python
+          python --version
+          echo "=== Disk ==="
+          df -h .
 
       - name: Run scanner
         run: python scanner_akshare.py
+        continue-on-error: false
+
+      - name: List output files
+        if: success() || failure()
+        run: |
+          echo "=== Output files ==="
+          ls -la 百日新高_*.json 百日新高_*.csv 历史趋势 2>/dev/null || echo "(checking...)"
+          ls -la 2>/dev/null || true
 
       - name: Commit results
         run: |

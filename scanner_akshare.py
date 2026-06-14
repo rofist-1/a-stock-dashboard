@@ -245,13 +245,31 @@ def main():
 
     # 1. 股票列表
     print('  [1/4] 获取股票列表...')
-    df_list = ak.stock_info_a_code_name()
     all_stocks = []
-    for _, row in df_list.iterrows():
-        c = str(row.get('code', '')).strip().zfill(6)
-        n = str(row.get('name', '')).strip()
-        if c and n:
-            all_stocks.append({'code': c, 'name': n, 'sina': to_sina(c)})
+    try:
+        df_list = ak.stock_info_a_code_name()
+        if df_list is not None and len(df_list) > 0:
+            for _, row in df_list.iterrows():
+                c = str(row.get('code', '')).strip().zfill(6)
+                n = str(row.get('name', '')).strip()
+                if c and n:
+                    all_stocks.append({'code': c, 'name': n, 'sina': to_sina(c)})
+    except Exception as e:
+        print(f'  ⚠ EastMoney API失败: {e}')
+    if not all_stocks:
+        fallback = 'stock_list.json'
+        if os.path.exists(fallback):
+            print(f'  ↳ 改用本地列表: {fallback}')
+            with open(fallback, 'r', encoding='utf-8') as f:
+                raw = json.load(f)
+            for s in raw:
+                c = str(s['code']).strip().zfill(6)
+                n = str(s.get('name', '')).strip()
+                if c and n:
+                    all_stocks.append({'code': c, 'name': n, 'sina': to_sina(c)})
+        else:
+            print(f'  ✗ 无在线列表也无本地文件，无法继续')
+            return
     print(f'  ✓ {len(all_stocks)}只\n')
 
     # 2. 批量获取实时行情 (过滤候选)
