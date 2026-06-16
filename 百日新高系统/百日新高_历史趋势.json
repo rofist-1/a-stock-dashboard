@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-06-05",
+    "total": 125,
+    "first_count": 0
+  },
+  {
+    "date": "2026-06-14",
+    "total": 5,
+    "first_count": 4
+  },
+  {
+    "date": "2026-06-15",
+    "total": 126,
+    "first_count": 125
+  },
+  {
+    "date": "2026-06-16",
+    "total": 214,
+    "first_count": 115
+  }
+]

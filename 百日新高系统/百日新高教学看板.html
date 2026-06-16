@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百日新高 · 教学看板</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js">
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+    body { background: #0f172a; padding: 1.5rem; color: #e2e8f0; font-size: 0.9rem; min-height: 100vh; }
+    .dashboard { max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .header {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+      padding: 1.2rem 1.5rem; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid #334155; border-radius: 12px;
+    }
+    .header h1 { font-size: 1.4rem; font-weight: 700; background: linear-gradient(90deg, #f97316, #dc2626); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .header .subtitle { color: #94a3b8; font-size: 0.8rem; }
+    .header-right { display: flex; align-items: center; gap: 1rem; }
+    .header-right .status { font-size: 0.8rem; color: #64748b; }
+    .header-right .status .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .dot.green { background: #22c55e; }
+    .refresh-btn {
+      padding: 0.4rem 1rem; border: 1px solid #475569; border-radius: 6px; background: #1e293b;
+      color: #e2e8f0; cursor: pointer; font-size: 0.8rem; transition: all .2s;
+    }
+    .refresh-btn:hover { background: #334155; border-color: #f97316; }
+
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+    .summary-card {
+      padding: 1.2rem; border-radius: 12px; border: 1px solid #334155;
+      display: flex; flex-direction: column; gap: 0.3rem;
+    }
+    .summary-card .label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+    .summary-card .value { font-size: 1.8rem; font-weight: 700; }
+    .summary-card .note { font-size: 0.7rem; color: #64748b; margin-top: 0.2rem; }
+    .card-total { background: linear-gradient(135deg, #1e293b, #172554); border-color: #1e40af; }
+    .card-first { background: linear-gradient(135deg, #1e293b, #451a03); border-color: #9a3412; }
+    .card-continuous { background: linear-gradient(135deg, #1e293b, #1c1917); border-color: #713f12; }
+    .card-sectors { background: linear-gradient(135deg, #1e293b, #0f172a); border-color: #4c1d95; }
+    .card-total .value { color: #60a5fa; }
+    .card-first .value { color: #f97316; }
+    .card-continuous .value { color: #eab308; }
+    .card-sectors .value { color: #a78bfa; }
+    .data-date-badge {
+      background: #1e293b; border: 1px solid #334155; border-radius: 8px;
+      padding: 0.5rem 1rem; text-align: center; font-size: 0.9rem; color: #f1f5f9;
+    }
+    .data-date-badge .date-label { color: #64748b; font-size: 0.7rem; }
+    .data-date-badge .date-value { font-weight: 600; color: #f97316; }
+
+    .main-grid { display: grid; grid-template-columns: 1fr 380px; gap: 1.5rem; }
+    @media (max-width: 1000px) { .main-grid { grid-template-columns: 1fr; } }
+
+    .panel {
+      background: #1e293b; border: 1px solid #334155; border-radius: 12px; overflow: hidden;
+    }
+    .panel-title {
+      padding: 0.8rem 1.2rem; font-size: 0.85rem; font-weight: 600; color: #f1f5f9;
+      border-bottom: 1px solid #334155; display: flex; justify-content: space-between; align-items: center;
+    }
+    .panel-title .badge {
+      font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 10px; font-weight: 400;
+    }
+    .badge-first { background: #7c2d12; color: #fdba74; }
+    .badge-continuous { background: #422006; color: #fde68a; }
+
+    .stock-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .stock-table th {
+      text-align: left; padding: 0.6rem 0.8rem; font-weight: 500; color: #94a3b8;
+      border-bottom: 1px solid #334155; font-size: 0.75rem; text-transform: uppercase;
+      position: sticky; top: 0; background: #1e293b; z-index: 1; cursor: pointer; user-select: none;
+    }
+    .stock-table th:hover { color: #f97316; }
+    .stock-table th .sort-icon { margin-left: 3px; opacity: 0.4; }
+    .stock-table th.active .sort-icon { opacity: 1; color: #f97316; }
+    .stock-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #1a2332; }
+    .stock-table tr:hover td { background: #263348; }
+    .stock-table tr.first-high td:first-child { border-left: 3px solid #f97316; }
+    .stock-table tr.continuous-high td:first-child { border-left: 3px solid #713f12; }
+
+    .tag { display: inline-block; font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 500; }
+    .tag-first { background: #7c2d12; color: #fdba74; }
+    .tag-continuous { background: #422006; color: #fde68a; }
+    .tag-new { background: #dc2626; color: #fff; animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
+    .hot-badge { font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 4px; background: #7c2d12; color: #fdba74; margin-left: 0.4rem; }
+    .change-up { color: #ef4444; }
+    .change-down { color: #22c55e; }
+    .vol-high { color: #22c55e; font-weight: 600; }
+    .vol-mid { color: #eab308; }
+    .vol-low { color: #64748b; }
+
+    .sector-list { padding: 0.8rem 1.2rem; }
+    .sector-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.5rem 0; border-bottom: 1px solid #1a2332;
+    }
+    .sector-item:last-child { border-bottom: none; }
+    .sector-item .sector-name { font-weight: 500; }
+    .sector-item .sector-stats { display: flex; gap: 1rem; font-size: 0.8rem; }
+    .sector-item .sector-total { color: #94a3b8; }
+    .sector-item .sector-first { color: #f97316; }
+    .sector-bar { height: 3px; background: #334155; border-radius: 2px; margin-top: 4px; }
+    .sector-bar .fill { height: 100%; border-radius: 2px; transition: width .5s; }
+
+    .teaching-panel { padding: 1rem 1.2rem; }
+    .teaching-item {
+      padding: 0.8rem; margin-bottom: 0.5rem; border-radius: 8px;
+      border: 1px solid #334155; background: #0f172a; cursor: pointer;
+      transition: all .2s;
+    }
+    .teaching-item:hover { border-color: #f97316; }
+    .teaching-item .t-title { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.5rem; }
+    .teaching-item .t-title .t-icon { font-size: 1rem; }
+    .teaching-item .t-body { font-size: 0.78rem; color: #94a3b8; line-height: 1.6; display: none; }
+    .teaching-item.open .t-body { display: block; }
+    .teaching-item .t-action { margin-top: 0.4rem; padding: 0.3rem 0.6rem; background: #1e293b; border-radius: 4px; font-size: 0.75rem; color: #60a5fa; display: none; }
+    .teaching-item.open .t-action { display: inline-block; }
+
+    .chart-box { padding: 1rem; }
+    .chart-box canvas { max-height: 250px; }
+
+    .mark-controls { display: flex; gap: 0.5rem; align-items: center; padding: 0.5rem 0.8rem; }
+    .mark-btn {
+      padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px solid #475569; background: transparent;
+      color: #94a3b8; cursor: pointer; font-size: 0.7rem; transition: all .2s;
+    }
+    .mark-btn:hover { border-color: #f97316; color: #f97316; }
+    .mark-btn.active { background: #f97316; color: #fff; border-color: #f97316; }
+    .mark-star { color: #eab308; cursor: pointer; }
+    .mark-star:hover { color: #f97316; }
+
+    .legend { display: flex; gap: 1.5rem; padding: 0.5rem 1.2rem 0; font-size: 0.75rem; color: #94a3b8; }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+    .legend-color { width: 12px; height: 4px; border-radius: 2px; }
+
+    .filter-bar {
+      display: flex; gap: 0.8rem; padding: 0.6rem 1.2rem; border-bottom: 1px solid #334155;
+      align-items: center; flex-wrap: wrap;
+    }
+    .filter-bar input, .filter-bar select {
+      padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px solid #475569;
+      background: #0f172a; color: #e2e8f0; font-size: 0.78rem;
+    }
+    .filter-bar input::placeholder { color: #475569; }
+    .filter-bar label { font-size: 0.75rem; color: #64748b; }
+
+    .teach-mode-banner {
+      padding: 0.6rem 1.2rem; background: linear-gradient(90deg, #451a03, #1e293b);
+      border-bottom: 1px solid #9a3412; text-align: center; font-size: 0.8rem; color: #fdba74;
+    }
+    .teach-mode-banner strong { color: #f97316; }
+
+    .empty-state { padding: 3rem; text-align: center; color: #64748b; }
+    .empty-state .big-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+    .load-section {
+      display: flex; gap: 0.8rem; padding: 0.8rem 1.2rem; border-bottom: 1px solid #334155;
+      align-items: center; flex-wrap: wrap;
+    }
+    .load-section label { font-size: 0.75rem; color: #64748b; }
+    .load-section select {
+      padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px solid #475569;
+      background: #0f172a; color: #e2e8f0; font-size: 0.78rem; flex: 1; min-width: 120px;
+    }
+    .load-section .btn {
+      padding: 0.3rem 0.8rem; border-radius: 4px; border: 1px solid #f97316;
+      background: transparent; color: #f97316; cursor: pointer; font-size: 0.78rem;
+    }
+    .load-section .btn:hover { background: #f97316; color: #fff; }
+
+    .footer {
+      text-align: center; padding: 1rem; font-size: 0.7rem; color: #475569;
+    }
+    .footer a { color: #64748b; text-decoration: none; }
+    .footer a:hover { color: #f97316; }
+
+    code { background: #0f172a; padding: 0.1rem 0.4rem; border-radius: 3px; color: #f97316; font-size: 0.85em; }
+    #loadError .empty-state p { margin: 0.3rem 0; }
+    #loadError .empty-state a { color: #60a5fa; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+    /* ---- 量比着色 ---- */
+    .vol-row-high { background: rgba(34,197,94,0.06) !important; }
+    .vol-row-mid  { background: rgba(234,179,8,0.04) !important; }
+    .vol-row-low  { background: rgba(100,116,139,0.03) !important; }
+    tr:hover .vol-row-high { background: rgba(34,197,94,0.12) !important; }
+    tr:hover .vol-row-mid  { background: rgba(234,179,8,0.08) !important; }
+    tr:hover .vol-row-low  { background: rgba(100,116,139,0.06) !important; }
+
+    /* ---- 涨幅区间徽标 ---- */
+    .dist-badge { font-size:0.65rem; padding:0.05rem 0.4rem; border-radius:3px; margin-left:0.3rem; font-weight:500; }
+    .dist-zt { background:#7f1d1d; color:#fca5a5; }
+    .dist-big { background:#7c2d12; color:#fdba74; }
+    .dist-med { background:#422006; color:#fde68a; }
+    .dist-small { background:#0f172a; color:#94a3b8; }
+
+    /* ---- 回踩状态 ---- */
+    .status-breakout { color:#22c55e; font-weight:500; font-size:0.75rem; }
+    .status-pullback { color:#eab308; font-weight:500; font-size:0.75rem; }
+    .status-hold { color:#94a3b8; font-size:0.75rem; }
+
+    /* ---- 警戒价对比 ---- */
+    .vigilance-diff { font-size:0.75rem; padding:0.1rem 0.4rem; border-radius:3px; }
+    .vig-below { color:#22c55e; background:rgba(34,197,94,0.1); }
+    .vig-above { color:#ef4444; background:rgba(239,68,68,0.1); }
+    .vig-same { color:#94a3b8; }
+    .vig-summary { font-size:0.7rem; color:#94a3b8; padding:0.3rem 1.2rem 0.8rem; }
+
+    /* ---- 昨日对比 ---- */
+    .comparison-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; padding:0.8rem 1.2rem; }
+    .comp-item { font-size:0.82rem; }
+    .comp-item .comp-label { color:#94a3b8; font-size:0.7rem; }
+    .comp-item .comp-val { font-size:1.2rem; font-weight:600; }
+    .comp-item .comp-detail { font-size:0.72rem; color:#64748b; margin-top:0.2rem; }
+    .comp-up { color:#22c55e; }
+    .comp-down { color:#ef4444; }
+
+    /* ---- 板块集中度 ---- */
+    .conc-bar { display:flex; height:6px; border-radius:3px; overflow:hidden; margin-top:0.4rem; }
+    .conc-bar .seg { transition:width .5s; }
+
+    /* ---- 导出/预设按钮 ---- */
+    .toolbar-btn {
+      padding:0.25rem 0.6rem; border-radius:4px; border:1px solid #475569;
+      background:transparent; color:#94a3b8; cursor:pointer; font-size:0.7rem; transition:all .2s;
+    }
+    .toolbar-btn:hover { border-color:#f97316; color:#f97316; }
+
+    /* ---- 暗黑模式 (默认即为暗黑, 亮色模式通过 .light 覆盖) ---- */
+    body.light {
+      background: #f1f5f9; color: #1e293b;
+    }
+    body.light .panel { background:#fff; border-color:#e2e8f0; }
+    body.light .panel-title { color:#1e293b; border-bottom-color:#e2e8f0; }
+    body.light .header { background:linear-gradient(135deg,#fff,#f8fafc); border-color:#e2e8f0; }
+    body.light .summary-card { border-color:#e2e8f0; }
+    body.light .card-total { background:linear-gradient(135deg,#fff,#eff6ff); }
+    body.light .card-first { background:linear-gradient(135deg,#fff,#fff7ed); }
+    body.light .card-continuous { background:linear-gradient(135deg,#fff,#fefce8); }
+    body.light .card-sectors { background:linear-gradient(135deg,#fff,#f5f3ff); }
+    body.light .stock-table th { background:#fff; color:#64748b; border-bottom-color:#e2e8f0; }
+    body.light .stock-table td { border-bottom-color:#f1f5f9; }
+    body.light .stock-table tr:hover td { background:#f8fafc; }
+    body.light .filter-bar input, body.light .filter-bar select,
+    body.light .load-section select { background:#fff; color:#1e293b; border-color:#cbd5e1; }
+    body.light .sector-item { border-bottom-color:#f1f5f9; }
+    body.light .sector-bar { background:#e2e8f0; }
+    body.light .teaching-item { background:#f8fafc; border-color:#e2e8f0; }
+    body.light .teach-mode-banner { background:linear-gradient(90deg,#fff7ed,#fff); border-bottom-color:#fdba74; }
+    body.light .data-date-badge { background:#fff; border-color:#e2e8f0; }
+    body.light .chart-box canvas { background:#fff; }
+    body.light .load-section .btn { border-color:#f97316; color:#f97316; }
+    body.light ::-webkit-scrollbar-track { background:#e2e8f0; }
+    body.light ::-webkit-scrollbar-thumb { background:#94a3b8; }
+    body.light .code, body.light code { background:#f1f5f9; }
+    body.light .comp-item .comp-label { color:#94a3b8; }
+    body.light .dist-small { background:#f1f5f9; color:#64748b; }
+    body.light .vol-row-high { background:rgba(34,197,94,0.08) !important; }
+    body.light .vol-row-mid  { background:rgba(234,179,8,0.06) !important; }
+    body.light .vol-row-low  { background:rgba(100,116,139,0.03) !important; }
+
+    /* ---- 策略评分 ---- */
+    .score-cell { text-align:center; font-weight:600; font-size:0.85rem; }
+    .score-A { color:#22c55e; }
+    .score-B { color:#eab308; }
+    .score-C { color:#f97316; }
+    .score-D { color:#64748b; }
+    .score-bar { display:inline-block; width:40px; height:4px; border-radius:2px; margin-left:4px; vertical-align:middle; }
+
+    /* ---- 模拟买入 ---- */
+    .sim-panel { padding:0.8rem 1.2rem; max-height:300px; overflow-y:auto; }
+    .sim-item { display:flex; justify-content:space-between; align-items:center; padding:0.4rem 0; border-bottom:1px solid #1a2332; font-size:0.8rem; }
+    .sim-item:last-child { border-bottom:none; }
+    .sim-code { font-weight:500; color:#f1f5f9; }
+    .sim-pl { font-weight:600; }
+    .sim-pl-up { color:#22c55e; }
+    .sim-pl-down { color:#ef4444; }
+    .sim-btn {
+      padding:0.15rem 0.5rem; border-radius:3px; border:1px solid #475569;
+      background:transparent; color:#94a3b8; cursor:pointer; font-size:0.65rem; transition:all .2s;
+    }
+    .sim-btn:hover { border-color:#22c55e; color:#22c55e; }
+    .sim-buy-btn {
+      padding:0.2rem 0.6rem; border-radius:3px; border:1px solid #22c55e;
+      background:transparent; color:#22c55e; cursor:pointer; font-size:0.7rem; transition:all .2s;
+    }
+    .sim-buy-btn:hover { background:#22c55e; color:#fff; }
+    .sim-remove-btn { color:#ef4444; border-color:#ef4444; }
+    .sim-remove-btn:hover { background:#ef4444; color:#fff; }
+
+    /* ---- Top 5 推荐 ---- */
+    .top5-list { padding:0.5rem 1.2rem; }
+    .top5-item { display:flex; align-items:center; gap:0.6rem; padding:0.3rem 0; font-size:0.8rem; }
+    .top5-rank { width:18px; height:18px; border-radius:50%; background:#f97316; color:#fff; text-align:center; line-height:18px; font-size:0.65rem; font-weight:600; }
+    .top5-name { font-weight:500; flex:1; }
+    .top5-score { font-weight:600; color:#22c55e; }
+    .top5-reason { font-size:0.7rem; color:#94a3b8; }
+
+    body.light .sim-item { border-bottom-color:#f1f5f9; }
+    body.light .sim-code { color:#1e293b; }
+    /* 今日作战面板 */
+    .battle-card { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid #334155; margin-bottom: 1.2rem; padding: 1.2rem 1.5rem; border-radius: 1.2rem; }
+    body.light .battle-card { background: linear-gradient(135deg, #fff, #f8fafc); border-color: #e2e8f0; }
+    .battle-card .card-title { font-size: 1.1rem; font-weight: 700; color: #b3d4ff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    body.light .battle-card .card-title { color: #1e3a5f; }
+    .battle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 700px) { .battle-grid { grid-template-columns: 1fr; } }
+    .battle-env { display: flex; gap: 10px; flex-wrap: wrap; }
+    .battle-item { background: rgba(255,255,255,0.06); border-radius: 0.8rem; padding: 0.4rem 0.9rem; min-width: 76px; }
+    body.light .battle-item { background: #f1f5f9; }
+    .battle-item .lbl { font-size: 0.6rem; text-transform: uppercase; color: #64748b; letter-spacing: 0.5px; }
+    .battle-item .val { font-size: 1.3rem; font-weight: 700; }
+    .battle-pos { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
+    .battle-pos-detail { font-size: 0.75rem; color: #94a3b8; }
+    .battle-pool { font-size: 0.85rem; }
+    .battle-pool-item { background: rgba(255,255,255,0.04); border-radius: 0.5rem; padding: 0.25rem 0.6rem; margin-bottom: 0.3rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+    body.light .battle-pool-item { background: #f1f5f9; }
+    .battle-pool-item .name { font-weight: 600; }
+    .battle-pool-item .code { color: #94a3b8; font-size: 0.7rem; }
+    .battle-rules { margin-top: 0.6rem; padding: 0.35rem 0.8rem; background: rgba(255,255,255,0.04); border-radius: 0.8rem; font-size: 0.7rem; color: #94a3b8; text-align: center; }
+    body.light .battle-rules { background: #f1f5f9; }
+    .battle-update { font-size: 0.75rem; color: #64748b; margin-left: auto; }
+  </style>
+</head>
+<body>
+<div class="dashboard">
+
+  <!-- 头部 -->
+  <div class="header">
+    <div>
+      <h1>百日新高 · 教学看板</h1>
+      <div class="subtitle">全市场百日新高成分股观察 · 教学演示版</div>
+    </div>
+    <div class="header-right">
+      <span class="status" style="font-size:1rem;font-weight:600;color:#e2e8f0;">
+        <span class="dot green"></span><span id="scanTime">待加载</span>
+      </span>
+      <button class="toolbar-btn" onclick="exportCSV()" title="导出CSV">📥 导出CSV</button>
+      <button class="toolbar-btn" id="darkModeBtn" onclick="toggleDarkMode()" title="切换亮暗主题">🌙 亮色</button>
+      <button class="refresh-btn" onclick="reloadData()">🔄 刷新数据</button>
+    </div>
+  </div>
+
+  <!-- 教学提示 -->
+  <div class="teach-mode-banner">
+    <strong>📖 教学模式</strong> —
+    点击下方卡片可展开详细讲解 · 每只成分股都标注了操作要点
+  </div>
+
+  <!-- 数据加载 -->
+  <div class="panel">
+    <div class="load-section">
+      <label>📂 选择数据:</label>
+      <select id="dataSelector" onchange="loadSelectedFile()"></select>
+      <button class="btn" onclick="initDataLoader()">📥 加载最新</button>
+      <label style="margin-left:auto;color:#64748b;">
+        <input type="checkbox" id="teachMode" checked onchange="toggleTeachMode()"> 教学模式
+      </label>
+    </div>
+  </div>
+
+  <!-- 加载错误提示 -->
+  <div id="loadError" class="panel" style="display:none;border-color:#dc2626;">
+    <div class="empty-state" style="padding:2rem;"></div>
+  </div>
+
+  <!-- 加载提示 -->
+  <div class="loading-hint" style="text-align:center;padding:0.5rem;color:#64748b;font-size:0.8rem;">
+    正在加载数据... 如果长时间无反应，请运行 <code>python run_server.py</code>
+  </div>
+
+  <!-- 数据日期 -->
+  <div class="data-date-badge">
+    <span class="date-label">数据日期</span><br>
+    <span class="date-value" id="dataDate">-</span>
+  </div>
+
+  <!-- 汇总 -->
+  <div class="summary-grid">
+    <div class="summary-card card-total">
+      <div class="label">🎯 百日新高</div>
+      <div class="value" id="totalNewHigh">-</div>
+      <div class="note">全市场当前百日新高家数</div>
+    </div>
+    <div class="summary-card card-first">
+      <div class="label">⭐ 首次新高</div>
+      <div class="value" id="totalFirst">-</div>
+      <div class="note">近5日内首次出现 · 重点关注</div>
+    </div>
+    <div class="summary-card card-continuous">
+      <div class="label">🔄 持续新高</div>
+      <div class="value" id="totalContinuous">-</div>
+      <div class="note">趋势延续 · 不宜追高</div>
+    </div>
+    <div class="summary-card card-sectors">
+      <div class="label">📊 涉及板块</div>
+      <div class="value" id="totalSectors">-</div>
+      <div class="note" id="hotSectorsNote">活跃板块数量</div>
+    </div>
+    <div class="summary-card" style="border-left-color:#8b5cf6;">
+      <div class="label">🚦 大盘情绪</div>
+      <div class="value" id="sentimentBadge" style="font-size:1.2rem;font-weight:700;">-</div>
+      <div class="note" id="sentimentNote">新高家数趋势</div>
+    </div>
+    <div class="summary-card card-total">
+      <div class="label">📈 涨幅分布</div>
+      <div class="value" style="font-size:0.85rem;font-weight:400;line-height:1.6;" id="distSummary">
+        <span class="dist-badge dist-zt">涨停 0</span>
+        <span class="dist-badge dist-big">&gt;7% 0</span>
+        <span class="dist-badge dist-med">&gt;5% 0</span>
+        <span class="dist-badge dist-small">&gt;3% 0</span>
+      </div>
+      <div class="note" id="distNote">涨幅区间分布</div>
+    </div>
+    <div class="summary-card card-sectors">
+      <div class="label">🎯 板块集中度</div>
+      <div class="value" style="font-size:1.2rem;font-weight:600;" id="concPct">-</div>
+      <div class="conc-bar" id="concBar"></div>
+      <div class="note" id="concNote">前3板块占比</div>
+    </div>
+  </div>
+
+  <div class="battle-card" id="battlePlan">
+    <div class="card-title">
+      <span>⚔️ 今日作战面板</span>
+      <span class="battle-update" id="battleUpdateTime"></span>
+    </div>
+    <div class="battle-grid">
+      <div>
+        <div class="battle-env" id="battleEnv">
+          <div class="battle-item"><div class="lbl">差值</div><div class="val" id="bDiff">--</div></div>
+          <div class="battle-item"><div class="lbl">区间</div><div class="val" id="bZone">--</div></div>
+          <div class="battle-item"><div class="lbl">行情</div><div class="val" id="bScenario">--</div></div>
+        </div>
+        <div style="margin-top:0.6rem;">
+          <div class="battle-pos" id="battlePos">--</div>
+          <div class="battle-pos-detail" id="battlePosDetail"></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:0.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.3rem;">候选关注</div>
+        <div class="battle-pool" id="battlePool">
+          <span style="color:#64748b;font-size:0.8rem;">加载数据后自动填充...</span>
+        </div>
+      </div>
+    </div>
+    <div class="battle-rules">
+      🛑 止损 -5% &nbsp;|&nbsp; 🎯 止盈 +8% 或破5日线 &nbsp;|&nbsp; ⏳ 分歧低吸不追高 &nbsp;|&nbsp; 💰 仓位上限 <span id="battlePosLimit">--</span>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <!-- 左侧: 成分股列表 -->
+    <div class="panel" id="stockPanel">
+      <div class="panel-title">
+        <span>📋 成分股列表</span>
+        <span class="badge badge-first" id="stockCount">0 只</span>
+      </div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background:#f97316;"></div> 首次新高 (重点关注)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#713f12;"></div> 持续新高 (趋势延续)</div>
+      </div>
+      <div class="filter-bar">
+        <label>搜索:</label>
+        <input type="text" id="searchInput" placeholder="代码/名称..." oninput="filterTable()">
+        <label>状态:</label>
+        <select id="statusFilter" onchange="filterTable()">
+          <option value="all">全部</option>
+          <option value="first">首次新高</option>
+          <option value="continuous">持续新高</option>
+        </select>
+        <label>板块:</label>
+        <select id="sectorFilter" onchange="filterTable()">
+          <option value="all">全部板块</option>
+        </select>
+        <label>预设:</label>
+        <select id="presetFilter" onchange="applyPreset(this.value)">
+          <option value="">— 加载预设 —</option>
+        </select>
+        <button class="toolbar-btn" onclick="savePreset()" title="保存当前筛选">💾 保存</button>
+        <button class="toolbar-btn" onclick="clearPresets()" title="清除预设">🗑️ 清除</button>
+      </div>
+      <div style="max-height:600px;overflow-y:auto;">
+        <table class="stock-table">
+          <thead>
+            <tr>
+              <th onclick="sortTable('code')" class="active">代码 <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('name')">名称 <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('close')">收盘价 <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('change')">涨幅% <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('volume_ratio')">量比 <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('consecutive_days')">连涨天 <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('score')">评分 <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('is_first')">状态 <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('sector')">板块 <span class="sort-icon">↑</span></th>
+              <th onclick="sortTable('vigilance')">警戒 <span class="sort-icon">↑</span></th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="stockTableBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="big-icon">🔍</div>
+        <p>暂无匹配的股票</p>
+      </div>
+    </div>
+
+    <!-- 右侧: 板块 + 教学 + 图表 -->
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <!-- 板块分布 -->
+      <div class="panel">
+        <div class="panel-title">
+          <span>🏢 板块分布</span>
+          <span class="badge badge-first" id="sectorCount">0 板块</span>
+        </div>
+        <div id="sectorList" class="sector-list">
+          <div class="empty-state" style="padding:1rem;">暂无数据</div>
+        </div>
+      </div>
+
+      <!-- 昨日对比 -->
+      <div class="panel" id="comparisonPanel">
+        <div class="panel-title">
+          <span>🔄 昨日对比</span>
+          <span style="font-size:0.7rem;color:#64748b;" id="compDate">需前一天数据</span>
+        </div>
+        <div class="comparison-grid">
+          <div class="comp-item"><div class="comp-label">新增股票</div><div class="comp-val comp-up" id="compNew">-</div><div class="comp-detail" id="compNewDetail"></div></div>
+          <div class="comp-item"><div class="comp-label">消失股票</div><div class="comp-val comp-down" id="compGone">-</div><div class="comp-detail" id="compGoneDetail"></div></div>
+          <div class="comp-item"><div class="comp-label">新高家数变化</div><div class="comp-val" id="compTotal">-</div><div class="comp-detail" id="compTotalDetail"></div></div>
+          <div class="comp-item"><div class="comp-label">板块变化</div><div class="comp-val" id="compSectors">-</div><div class="comp-detail" id="compSectorsDetail"></div></div>
+        </div>
+        <div id="compExtra" style="padding:0 1.2rem 0.8rem;display:none;">
+          <div class="vig-summary" id="vigilanceSummary"></div>
+        </div>
+      </div>
+
+      <!-- 策略推荐 Top 5 -->
+      <div class="panel">
+        <div class="panel-title">
+          <span>🏆 策略推荐 Top 5</span>
+          <span style="font-size:0.7rem;color:#64748b;">评分排序</span>
+        </div>
+        <div class="top5-list" id="top5List">
+          <div class="empty-state" style="padding:0.5rem;">暂无数据</div>
+        </div>
+      </div>
+
+      <!-- 模拟买入 -->
+      <div class="panel">
+        <div class="panel-title">
+          <span>💰 模拟组合</span>
+          <span style="font-size:0.7rem;color:#64748b;" id="simSummary">-</span>
+        </div>
+        <div class="sim-panel" id="simPortfolio">
+          <div class="empty-state" style="padding:0.5rem;">点击表格中的「买入」添加模拟持仓</div>
+        </div>
+      </div>
+
+      <!-- 教学知识 -->
+      <div class="panel" id="teachingPanel">
+        <div class="panel-title">
+          <span>📖 教学知识</span>
+          <span style="font-size:0.7rem;color:#64748b;">点击展开</span>
+        </div>
+        <div class="teaching-panel">
+          <div class="teaching-item open">
+            <div class="t-title"><span class="t-icon">⭐</span> 首次新高为什么重要？</div>
+            <div class="t-body">股价刚刚突破100日高点，意味着突破了长期阻力位。此时买入的安全边际最高，因为上涨空间刚刚打开。历史上的大牛股，大多以"首次新高"作为起点。</div>
+            <div class="t-action">✅ 操作: 首次新高+放量+热点板块 = 重点关注</div>
+          </div>
+          <div class="teaching-item">
+            <div class="t-title"><span class="t-icon">📊</span> 量比怎么看？</div>
+            <div class="t-body">量比 = 今日成交量 / 近5日平均量。<br>
+              • &gt;1.5: 放量上涨，有资金介入<br>
+              • &gt;2.5: 异常放量，可能有机构抢筹或出货<br>
+              • &lt;1.0: 缩量新高，如果涨幅小则有问题</div>
+            <div class="t-action">✅ 1.5-2.5 配合新高 = 最健康的放量突破形态</div>
+          </div>
+          <div class="teaching-item">
+            <div class="t-title"><span class="t-icon">🏢</span> 板块效应怎么看？</div>
+            <div class="t-body">同一板块多只个股同时新高 = 板块整体走强。板块效应是持续性的关键保障。看板块比看个股更重要！当发现某板块出现多个新高时，说明大资金正在系统性买入。</div>
+            <div class="t-action">✅ 优先选板块新高家数最多的板块；板块内选最强(涨幅大+首次新高)</div>
+          </div>
+          <div class="teaching-item">
+            <div class="t-title"><span class="t-icon">📈</span> 新高家数怎么看大盘？</div>
+            <div class="t-body">全市场百日新高家数是判断市场环境的有效指标：<br>
+              • 200-500+家: 牛市/强势市场 ✓<br>
+              • 100-200家: 震荡市，结构性行情<br>
+              • &lt;50家: 弱势市场，谨慎操作 ⚠</div>
+            <div class="t-action">✅ 新高家数持续增加 = 做多窗口开启</div>
+          </div>
+          <div class="teaching-item">
+            <div class="t-title"><span class="t-icon">🔄</span> 持续新高 vs 首次新高</div>
+            <div class="t-body">• 首次新高: 突破初期，空间大，安全边际高 — <strong style="color:#f97316;">重点关注</strong><br>
+              • 持续新高: 趋势中继，短期可能加速也可能回调 — <strong style="color:#eab308;">持有为主<br></strong>
+              简单方法: 首次新高是"买点"，持续新高是"持有点"。</div>
+            <div class="t-action">✅ 首次新高找买点，持续新高找卖点</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 历史趋势图 -->
+      <div class="panel">
+        <div class="panel-title">
+          <span>📈 新高家数历史趋势</span>
+          <span style="font-size:0.7rem;color:#64748b;" id="trendDays">-</span>
+        </div>
+        <div class="chart-box">
+          <canvas id="trendChart"></canvas>
+        </div>
+      </div>
+
+      <!-- 新高-新低差值图 + 仓位导航 -->
+      <div class="panel">
+        <div class="panel-title">
+          <span>🧭 新高-新低差值 · 仓位导航</span>
+          <span style="font-size:0.7rem;color:#64748b;" id="diffDays">-</span>
+        </div>
+        <div id="diffSummary" style="display:flex;gap:1rem;margin-bottom:0.8rem;flex-wrap:wrap;">
+          <span style="background:#1e293b;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.85rem;">
+            当前差值: <strong id="curDiff" style="font-size:1.1rem;">-</strong>
+          </span>
+          <span style="background:#1e293b;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.85rem;">
+            市场阶段: <strong id="curPhase" style="font-size:1.1rem;">-</strong>
+          </span>
+          <span style="background:#1e293b;padding:0.3rem 0.8rem;border-radius:6px;font-size:0.85rem;">
+            建议仓位: <strong id="curPosition" style="font-size:1.1rem;">-</strong>
+          </span>
+        </div>
+        <div class="chart-box">
+          <canvas id="diffChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    百日新高教学看板 v1.0 · 数据文件: <span id="footerFile">等待加载...</span>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+//  全局状态
+// ═══════════════════════════════════════════
+let stockData = [];
+let historyData = [];
+let diffData = [];
+let sortColumn = 'code';
+let sortAsc = true;
+let teachMode = true;
+let trendChart = null;
+let diffChart = null;
+
+// ═══════════════════════════════════════════
+//  数据加载
+// ═══════════════════════════════════════════
+
+async function listJsonFiles() {
+  const files = [];
+  try {
+    const resp = await fetch('百日新高_历史趋势.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const text = await resp.text();
+    if (!text || text === '[]') throw new Error('Empty trend');
+    historyData = JSON.parse(text);
+    if (!Array.isArray(historyData) || historyData.length === 0) throw new Error('No entries');
+    for (const h of historyData) {
+      const d = h.date.replace(/-/g, '');
+      files.push({ file: '百日新高_' + d + '.json', date: h.date, total: h.total });
+    }
+    files.sort((a, b) => a.date.localeCompare(b.date));
+    updateTrendChart();
+    // 加载差值趋势数据
+    try {
+      const diffResp = await fetch('百日新高_差值趋势.json');
+      if (diffResp.ok) {
+        diffData = await diffResp.json();
+        if (!Array.isArray(diffData)) diffData = [];
+      }
+    } catch(e) { diffData = []; }
+    updateDiffChart();
+  } catch(e) {
+    console.warn('listJsonFiles:', e.message);
+  }
+  return files;
+}
+
+async function loadSelectedFile() {
+  const sel = document.getElementById('dataSelector');
+  if (!sel || sel.selectedIndex < 0) return;
+  const val = sel.value;
+  if (val === '__demo__') { useDemoData(); return; }
+  if (val) await loadFile(val);
+}
+
+async function loadFile(fileName) {
+  try {
+    const resp = await fetch(fileName);
+    if (!resp.ok) throw new Error('Not found');
+    const data = await resp.json();
+    stockData = data.stocks || [];
+    const dt = data.date || '未知';
+    document.getElementById('scanTime').textContent = dt;
+    document.getElementById('dataDate').textContent = dt;
+    document.title = '百日新高 ' + dt + ' · 教学看板';
+    document.getElementById('footerFile').textContent = fileName;
+    document.getElementById('loadError').style.display = 'none';
+    document.querySelector('.loading-hint').style.display = 'none';
+    computeConsecutiveDays();
+    initSimulation();
+    initVigilance();
+    saveVigilancePrices();
+    renderAll();
+    return;
+  } catch(e) {
+    console.warn('loadFile error:', fileName, e);
+  }
+  if (location.protocol === 'file:') {
+    showLoadError('detected');
+  } else {
+    useDemoData();
+  }
+}
+
+function showLoadError(type) {
+  if (type === 'detected') {
+    const err = document.getElementById('loadError');
+    err.innerHTML = '<div class="big-icon">⚠️</div><h3>浏览器安全限制</h3><p>用 <code>file://</code> 打开时，浏览器禁止加载本地 JSON 文件。</p><p style="margin-top:0.8rem;">解决方法（任选其一）：</p><p>1️⃣ 运行 <code>python run_server.py</code>，然后打开<br><a href="http://localhost:8080/百日新高教学看板.html" target="_blank">http://localhost:8080/百日新高教学看板.html</a></p><p>2️⃣ 或运行：<code>python -m http.server 8080</code> 后访问相同地址</p>';
+    err.style.display = 'block';
+  }
+  useDemoData();
+}
+
+function useDemoData() {
+  stockData = generateDemoStocks();
+  document.getElementById('scanTime').textContent = '教学演示数据 (无日期)';
+  document.getElementById('dataDate').textContent = '教学演示数据';
+  document.title = '百日新高 · 教学演示';
+  document.getElementById('footerFile').textContent = '内置教学数据 (模拟)';
+  document.getElementById('teachMode').checked = true;
+  document.getElementById('loadError').style.display = 'none';
+  document.querySelector('.loading-hint').style.display = 'none';
+  teachMode = true;
+  initSimulation();
+  initVigilance();
+  renderAll();
+  // 尝试加载差值数据
+  fetch('百日新高_差值趋势.json').then(r => {
+    if (r.ok) return r.json();
+    throw new Error();
+  }).then(d => {
+    diffData = d;
+    updateDiffChart();
+  }).catch(() => {});
+}
+
+function generateDemoStocks() {
+  const sectors = {
+    '芯片': ['002371.SZ', '603986.SH', '300661.SZ', '600171.SH', '688981.SH'],
+    '机器人': ['002747.SZ', '600580.SH', '300124.SZ', '002527.SZ'],
+    '通信': ['603236.SH', '300308.SZ', '000063.SZ'],
+    '算力': ['603019.SH', '000977.SZ', '688041.SH'],
+    '人工智能': ['002230.SZ', '600570.SZ', '688111.SH'],
+    '锂电池': ['300750.SZ', '002460.SZ', '002074.SZ'],
+  };
+  const basePrices = {
+    '002371.SZ': 630, '603986.SH': 508, '300661.SZ': 235,
+    '600171.SH': 32, '688981.SH': 85,
+    '002747.SZ': 29, '600580.SH': 23, '300124.SZ': 85, '002527.SZ': 18,
+    '603236.SH': 89, '300308.SZ': 1130, '000063.SZ': 35,
+    '603019.SH': 86, '000977.SZ': 62, '688041.SH': 95,
+    '002230.SZ': 68, '600570.SZ': 45, '688111.SH': 285,
+    '300750.SZ': 285, '002460.SZ': 78, '002074.SZ': 35,
+    '600884.SH': 22, '002709.SZ': 45, '600118.SZ': 52,
+    '600879.SH': 18, '688568.SH': 68, '600703.SH': 28,
+    '300782.SZ': 126, '002896.SZ': 35, '688160.SH': 46,
+    '300418.SZ': 42, '002415.SZ': 38, '600570.SZ': 45,
+  };
+  const names = {
+    '002371.SZ': '北方华创', '603986.SH': '兆易创新', '300661.SZ': '圣邦股份',
+    '600171.SH': '上海贝岭', '688981.SH': '中芯国际',
+    '002747.SZ': '埃斯顿', '600580.SH': '卧龙电驱', '300124.SZ': '汇川技术', '002527.SZ': '新时达',
+    '603236.SH': '移远通信', '300308.SZ': '中际旭创', '000063.SZ': '中兴通讯',
+    '603019.SH': '中科曙光', '000977.SZ': '浪潮信息', '688041.SH': '海光信息',
+    '002230.SZ': '科大讯飞', '600570.SZ': '恒生电子', '688111.SH': '金山办公',
+    '300750.SZ': '宁德时代', '002460.SZ': '赣锋锂业', '002074.SZ': '国轩高科',
+    '600884.SH': '杉杉股份', '002709.SZ': '天赐材料', '600118.SH': '中国卫星',
+    '600879.SH': '航天电子', '688568.SH': '中科星图', '600703.SH': '三安光电',
+    '300782.SZ': '卓胜微', '002896.SZ': '中大力德', '688160.SH': '步科股份',
+    '300418.SZ': '昆仑万维', '002415.SZ': '海康威视', '600570.SZ': '恒生电子',
+  };
+  const results = [];
+  const sectorsArr = Object.keys(sectors);
+  const hotCount = 3 + Math.floor(Math.random() * 3);
+  const hotSectors = sectorsArr.sort(() => Math.random() - 0.5).slice(0, hotCount);
+  for (const sec of hotSectors) {
+    const stocks = sectors[sec];
+    const n = 1 + Math.floor(Math.random() * Math.min(4, stocks.length));
+    const selected = stocks.sort(() => Math.random() - 0.5).slice(0, n);
+    for (const code of selected) {
+      const basePrice = basePrices[code] || 30 + Math.random() * 200;
+      const change = 1.5 + Math.random() * 8;
+      results.push({
+        code, name: names[code] || code.slice(0,6),
+        close: Math.round(basePrice * (1 + change / 100) * 100) / 100,
+        change: Math.round(change * 10) / 10,
+        volume_ratio: Math.round((0.8 + Math.random() * 2.7) * 10) / 10,
+        is_first: Math.random() > 0.4,
+        sector: sec,
+        _marked: false,
+      });
+    }
+  }
+  results.sort((a, b) => (a.is_first === b.is_first ? 0 : a.is_first ? -1 : 1));
+  return results;
+}
+
+async function reloadData() {
+  document.querySelector('.loading-hint').style.display = 'block';
+  await initDataLoader();
+}
+
+async function initDataLoader() {
+  const files = await listJsonFiles();
+  const sel = document.getElementById('dataSelector');
+  sel.innerHTML = '';
+  const demoOpt = document.createElement('option');
+  demoOpt.value = '__demo__';
+  demoOpt.textContent = '\uD83C\uDF93 教学模拟数据';
+  sel.appendChild(demoOpt);
+  if (files.length > 0) {
+    for (const f of files) {
+      const opt = document.createElement('option');
+      opt.value = f.file;
+      opt.textContent = f.date + ' (' + f.total + '只)';
+      sel.appendChild(opt);
+    }
+    sel.selectedIndex = sel.options.length - 1;
+    await loadFile(sel.value);
+  } else {
+    useDemoData();
+  }
+}
+
+// ═══════════════════════════════════════════
+//  连续上榜天数
+// ═══════════════════════════════════════════
+
+function computeConsecutiveDays() {
+  for (const s of stockData) s.consecutive_days = 1;
+  if (!stockData.length || !historyData || historyData.length < 2) return;
+  const currentCodes = new Set(stockData.map(x => x.code));
+  let prevIdx = historyData.length - 2;
+  const loadPrev = (idx) => {
+    if (idx < 0) return;
+    const prevDate = historyData[idx].date.replace(/-/g, '');
+    fetch('\u767e\u65e5\u65b0\u9ad8_' + prevDate + '.json')
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(prev => {
+        const prevCodes = new Set((prev.stocks || []).map(x => x.code));
+        for (const s of stockData) {
+          if (prevCodes.has(s.code) && currentCodes.has(s.code)) {
+            s.consecutive_days = (s.consecutive_days || 1) + 1;
+          }
+        }
+        loadPrev(idx - 1);
+      }).catch(() => {});
+  };
+  loadPrev(prevIdx);
+}
+
+// ═══════════════════════════════════════════
+//  ?????
+// ═══════════════════════════════════════════
+
+function renderAll() {
+  updateSummary();
+  renderTable();
+  renderSectors();
+  updateTrendChart();
+  updateDiffChart();
+  renderDistribution();
+  renderConcentration();
+  loadComparisonData();
+  renderTop5();
+  renderSimulation();
+  updateVigilanceSummary();
+  renderBattlePlan();
+}
+
+function updateSummary() {
+  const total = stockData.length;
+  const first = stockData.filter(s => s.is_first).length;
+  const cont = total - first;
+  const sectors = new Set(stockData.map(s => s.sector).filter(Boolean));
+  document.getElementById('totalNewHigh').textContent = total;
+  document.getElementById('totalFirst').textContent = first;
+  document.getElementById('totalContinuous').textContent = cont;
+  document.getElementById('totalSectors').textContent = sectors.size;
+  document.getElementById('stockCount').textContent = `${total} 只`;
+  document.getElementById('sectorCount').textContent = `${sectors.size} 板块`;
+  // 热门板块
+  const secCount = {};
+  for (const s of stockData) {
+    const sec = s.sector || '其他';
+    secCount[sec] = (secCount[sec] || 0) + 1;
+  }
+  const secArr = Object.entries(secCount).sort((a, b) => b[1] - a[1]);
+  const topVal = secArr.length > 0 ? secArr[0][1] : 0;
+  const hotSecs = secArr.filter(([_, v], i) => i < 3 || v >= topVal * 0.5).map(([s]) => s);
+  const hotNote = hotSecs.length > 0 ? `🔥 ${hotSecs.slice(0, 4).join(', ')}` : '';
+  document.getElementById('hotSectorsNote').textContent = hotNote || '暂无';
+
+  const badge = document.getElementById('sentimentBadge');
+  const nt = document.getElementById('sentimentNote');
+  let prevTotal = null;
+  if (historyData && historyData.length >= 2) {
+    prevTotal = historyData[historyData.length - 2].total;
+  }
+  const chgText = prevTotal !== null
+    ? '\u8f83\u4e0a\u65e5' + (total > prevTotal ? '\u2191' : total < prevTotal ? '\u2193' : '\u2192') + Math.abs(total - prevTotal) + '\u53ea'
+    : '\u4ec51\u5929\u6570\u636e';
+  if (total >= 120) {
+    badge.textContent = '\u79ef\u6781 \ud83d\ude0a';
+    badge.style.color = '#22c55e';
+    nt.textContent = '\u5e02\u573a\u5f3a\u52bf \u00b7 \u53ef\u64cd\u4f5c \u00b7 ' + chgText;
+  } else if (total >= 60) {
+    badge.textContent = '\u4e2d\u6027 \ud83d\ude10';
+    badge.style.color = '#eab308';
+    nt.textContent = '\u7ed3\u6784\u884c\u60c5 \u00b7 \u7b49\u56de\u8e29 \u00b7 ' + chgText;
+  } else {
+    badge.textContent = '\u8c28\u614e \ud83d\ude30';
+    badge.style.color = '#ef4444';
+    nt.textContent = '\u5e02\u573a\u504f\u5f31 \u00b7 \u8f7b\u4ed3/\u89c2\u671b \u00b7 ' + chgText;
+  }
+}
+
+function renderTable() {
+  const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+  const statusFilter = document.getElementById('statusFilter').value;
+  const sectorFilter = document.getElementById('sectorFilter').value;
+
+  // 更新板块下拉
+  const sectors = [...new Set(stockData.map(s => s.sector).filter(Boolean))].sort();
+  const sel = document.getElementById('sectorFilter');
+  const curVal = sel.value;
+  sel.innerHTML = '<option value="all">全部板块</option>';
+  for (const s of sectors) {
+    const opt = document.createElement('option');
+    opt.value = s;
+    opt.textContent = s;
+    sel.appendChild(opt);
+  }
+  sel.value = sectors.includes(curVal) ? curVal : 'all';
+
+  let filtered = stockData.filter(s => {
+    if (searchTerm && !s.code.toLowerCase().includes(searchTerm) && !(s.name || '').toLowerCase().includes(searchTerm)) return false;
+    if (statusFilter === 'first' && !s.is_first) return false;
+    if (statusFilter === 'continuous' && s.is_first) return false;
+    if (sectorFilter !== 'all' && s.sector !== sectorFilter) return false;
+    return true;
+  });
+
+  // 排序
+  filtered.sort((a, b) => {
+    let va, vb;
+    if (sortColumn === 'score') {
+      const sc = {};
+      for (const s of [...filtered, ...stockData]) {
+        const sec = s.sector || '\u5176\u4ed6';
+        sc[sec] = (sc[sec] || 0) + 1;
+      }
+      const maxC = Math.max(...Object.values(sc), 1);
+      const hotS = new Set(Object.entries(sc).filter(([_, c]) => c >= 3 || c >= maxC * 0.5).map(([s]) => s));
+      va = computeStockScore(a, hotS);
+      vb = computeStockScore(b, hotS);
+    } else if (sortColumn === 'vigilance') {
+      const pA = vigilancePrices[a.code];
+      const pB = vigilancePrices[b.code];
+      va = pA ? (a.close - pA) / pA : 0;
+      vb = pB ? (b.close - pB) / pB : 0;
+    } else {
+      va = a[sortColumn]; vb = b[sortColumn];
+      if (sortColumn === 'is_first') { va = va ? 1 : 0; vb = vb ? 1 : 0; }
+      if (sortColumn === 'change' || sortColumn === 'close' || sortColumn === 'volume_ratio') {
+        va = Number(va) || 0; vb = Number(vb) || 0;
+      }
+      if (typeof va === 'string') va = va.toLowerCase();
+      if (typeof vb === 'string') vb = vb.toLowerCase();
+    }
+    if (va < vb) return sortAsc ? -1 : 1;
+    if (va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  const tbody = document.getElementById('stockTableBody');
+  const empty = document.getElementById('emptyState');
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+      // 热门板块检测
+      const sectorCounts = {};
+      for (const s2 of stockData) {
+        const sec = s2.sector || '其他';
+        sectorCounts[sec] = (sectorCounts[sec] || 0) + 1;
+      }
+      const maxSectorCount = Math.max(...Object.values(sectorCounts), 1);
+      const hotSectors = new Set(
+        Object.entries(sectorCounts)
+          .filter(([_, c]) => c >= 3 || c >= maxSectorCount * 0.5)
+          .map(([s]) => s)
+      );
+
+      let html = '';
+      for (const s of filtered) {
+        const cls = s.is_first ? 'first-high' : 'continuous-high';
+        const volCls = s.volume_ratio >= 1.5 ? 'vol-high' : s.volume_ratio >= 1.0 ? 'vol-mid' : 'vol-low';
+        const volRowCls = s.volume_ratio >= 1.5 ? 'vol-row-high' : s.volume_ratio >= 1.0 ? 'vol-row-mid' : 'vol-row-low';
+        const tag = s.is_first
+          ? '<span class="tag tag-first">\u2605 \u9996\u6b21</span>'
+          : '<span class="tag tag-continuous">\u6301\u7eed</span>';
+        const isNew = s.is_first ? '<span class="tag tag-new" style="margin-left:3px;">\u65b0\u589e</span>' : '';
+        const chgCls = s.change >= 0 ? 'change-up' : 'change-down';
+        const volIcon = s.volume_ratio >= 1.5 ? '\ud83d\udd25' : s.volume_ratio >= 1.0 ? '\ud83d\udcca' : '\ud83d\udca7';
+        const marked = s._marked ? '\u2605' : '\u2606';
+        const hotMark = hotSectors.has(s.sector) ? '\ud83d\udd25' : '';
+        const days = s.consecutive_days || 1;
+
+        const score = computeStockScore(s, hotSectors);
+        const scoreCls = score >= 80 ? 'score-A' : score >= 60 ? 'score-B' : score >= 40 ? 'score-C' : 'score-D';
+        const scorePct = Math.round(score);
+        const barColor = score >= 80 ? '#22c55e' : score >= 60 ? '#eab308' : score >= 40 ? '#f97316' : '#64748b';
+
+        // 回踩状态
+        const pullbackStatus = s.change >= 5 && s.volume_ratio >= 1.5
+          ? '<span class="status-breakout">\u653e\u91cf\u7a81\u7834 \ud83d\ude80</span>'
+          : s.change < 2
+          ? '<span class="status-pullback">\u56de\u8e29\u6574\u7406 \ud83d\udd04</span>'
+          : '<span class="status-hold">\u8d8b\u52bf\u5ef6\u7eed \u2714\ufe0f</span>';
+
+        // 警戒价对比
+        const vigPrice = vigilancePrices[s.code];
+        let vigCell = '<span class="vig-same">-</span>';
+        if (vigPrice) {
+          const diffPct = (s.close - vigPrice) / vigPrice * 100;
+          if (diffPct < -1) {
+            vigCell = `<span class="vigilance-diff vig-below">\u25bc \u4f4e\u4e8e\u8b66\u6212\u4ef7 ${Math.abs(diffPct).toFixed(1)}%</span>`;
+          } else if (diffPct > 1) {
+            vigCell = `<span class="vigilance-diff vig-above">\u25b2 \u9ad8\u4e8e\u8b66\u6212\u4ef7 ${diffPct.toFixed(1)}%</span>`;
+          } else {
+            vigCell = '<span class="vig-same">\u2248 \u5e73\u4ef7</span>';
+          }
+        }
+
+        const simPos = simPortfolio.find(p => p.code === s.code);
+        const buyBtn = simPos
+          ? `<span style="color:#22c55e;font-size:0.7rem;">已持 ${simPos.shares}股</span>`
+          : `<button class="sim-buy-btn" onclick="simBuy('${s.code}')">买入</button>`;
+
+        html += `<tr class="${cls} ${volRowCls}">
+          <td>${s.code}</td>
+          <td>${s.name || '-'}</td>
+          <td>${s.close.toFixed(2)}</td>
+          <td class="${chgCls}">${s.change >= 0 ? '+' : ''}${s.change.toFixed(1)}</td>
+          <td class="${volCls}">${volIcon} ${s.volume_ratio.toFixed(1)}</td>
+          <td style="text-align:center;font-weight:${days >= 3 ? '700' : '400'};color:${days >= 5 ? '#22c55e' : days >= 3 ? '#eab308' : '#94a3b8'}">${days}天</td>
+          <td class="score-cell ${scoreCls}">${scorePct}<span class="score-bar" style="background:${barColor};width:${scorePct}px;max-width:50px;"></span></td>
+          <td>${tag}${isNew}</td>
+          <td>${hotMark} ${s.sector || '-'}</td>
+          <td>${pullbackStatus}</td>
+          <td>${vigCell}</td>
+          <td>${buyBtn} <span class="mark-star" onclick="toggleMark('${s.code}')" title="标记关注">${marked}</span></td>
+        </tr>`;
+  }
+  tbody.innerHTML = html;
+}
+
+function renderSectors() {
+  const map = {};
+  for (const s of stockData) {
+    const sec = s.sector || '其他';
+    if (!map[sec]) map[sec] = { total: 0, first: 0 };
+    map[sec].total++;
+    if (s.is_first) map[sec].first++;
+  }
+
+  const entries = Object.entries(map).sort((a, b) => b[1].total - a[1].total);
+  const maxTotal = entries.length > 0 ? entries[0][1].total : 1;
+  const container = document.getElementById('sectorList');
+
+  if (entries.length === 0) {
+    container.innerHTML = '<div class="empty-state" style="padding:1rem;">暂无数据</div>';
+    return;
+  }
+
+  // 热门板块: 前3名 或 占比>=30%
+  const topCount = entries.length > 0 ? entries[0][1].total : 1;
+  const hotSectors = new Set();
+  entries.forEach(([name, v], i) => {
+    if (i < 3 || v.total >= topCount * 0.5) hotSectors.add(name);
+  });
+
+  let html = '';
+  for (const [name, v] of entries) {
+    const pct = (v.total / maxTotal * 100).toFixed(0);
+    const hue = v.first > 0 ? '#f97316' : '#eab308';
+    const isHot = hotSectors.has(name);
+    const hotBadge = isHot ? '<span class="hot-badge">🔥 热门板块</span>' : '';
+    html += `<div class="sector-item">
+      <div class="sector-name">${name}${hotBadge}</div>
+      <div class="sector-stats">
+        <span class="sector-total">共 ${v.total} 只</span>
+        <span class="sector-first">★ ${v.first} 只首次</span>
+      </div>
+    </div>
+    <div class="sector-bar"><div class="fill" style="width:${pct}%;background:${hue};"></div></div>`;
+  }
+  container.innerHTML = html;
+}
+
+function updateTrendChart() {
+  if (!historyData || historyData.length < 1) return;
+
+  const canvas = document.getElementById('trendChart');
+  const ctx = canvas.getContext('2d');
+
+  if (trendChart) { trendChart.destroy(); trendChart = null; }
+
+  const labels = historyData.map(h => h.date.slice(5));
+  const totals = historyData.map(h => h.total);
+  const firsts = historyData.map(h => h.first_count);
+  const lastDate = historyData[historyData.length - 1].date;
+  document.getElementById('trendDays').textContent = `共 ${historyData.length} 天 · 最新: ${lastDate}`;
+
+  trendChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '百日新高',
+          data: totals,
+          borderColor: '#f97316',
+          backgroundColor: 'rgba(249,115,22,0.1)',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 3,
+          pointBackgroundColor: '#f97316',
+          borderWidth: 2,
+        },
+        {
+          label: '首次新高',
+          data: firsts,
+          borderColor: '#eab308',
+          backgroundColor: 'rgba(234,179,8,0.05)',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 2,
+          pointBackgroundColor: '#eab308',
+          borderWidth: 1.5,
+          borderDash: [5, 5],
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: {
+          labels: { color: '#94a3b8', font: { size: 10 }, usePointStyle: true, padding: 10 },
+        },
+        tooltip: {
+          backgroundColor: '#1e293b',
+          titleColor: '#f1f5f9',
+          bodyColor: '#94a3b8',
+          borderColor: '#334155',
+          borderWidth: 1,
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#64748b', font: { size: 9 }, maxTicksLimit: 15 },
+          grid: { color: '#1a2332' },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: { color: '#64748b', font: { size: 9 } },
+          grid: { color: '#1a2332' },
+        }
+      }
+    }
+  });
+}
+
+// ═══════════════════════════════════════════
+//  差值趋势图（带区域颜色）
+// ═══════════════════════════════════════════
+
+function getPhaseInfo(diff) {
+  if (diff >= 200) return { label: '🔥 狂热', color: '#ef4444', bg: 'rgba(239,68,68,0.15)', pos: '重仓 14%', maxP: 6 };
+  if (diff >= 50)  return { label: '☀️ 强势', color: '#f97316', bg: 'rgba(249,115,22,0.15)', pos: '正常 10%', maxP: 4 };
+  if (diff >= -50) return { label: '🌥️ 震荡', color: '#3b82f6', bg: 'rgba(59,130,246,0.15)', pos: '轻仓 5%',  maxP: 2 };
+  return               { label: '❄️ 冰点',  color: '#64748b', bg: 'rgba(100,116,139,0.15)', pos: '空仓 0%',  maxP: 0 };
+}
+
+function updateDiffChart() {
+  const canvas = document.getElementById('diffChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  if (diffChart) { diffChart.destroy(); diffChart = null; }
+
+  if (!diffData || diffData.length === 0) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#64748b';
+    ctx.font = '14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('暂无差值数据（请运行 compute_diff_trend.py）', canvas.width / 2, canvas.height / 2);
+    document.getElementById('curDiff').textContent = '无数据';
+    document.getElementById('curPhase').textContent = '—';
+    document.getElementById('curPosition').textContent = '—';
+    return;
+  }
+
+  const latest = diffData[diffData.length - 1];
+  const curDiff = latest.diff;
+  const phase = getPhaseInfo(curDiff);
+  document.getElementById('curDiff').textContent = curDiff >= 0 ? '+' + curDiff : curDiff;
+  document.getElementById('curDiff').style.color = phase.color;
+  document.getElementById('curPhase').textContent = phase.label;
+  document.getElementById('curPosition').textContent = phase.pos;
+  document.getElementById('curPosition').style.color = phase.color;
+  document.getElementById('diffDays').textContent = `共 ${diffData.length} 天 · 最新: ${latest.date}`;
+
+  const labels = diffData.map(d => d.date.slice(5));
+  const diffs = diffData.map(d => d.diff);
+
+  // 背景区域插件
+  const zonePlugin = {
+    id: 'zoneBackground',
+    beforeDraw(chart) {
+      const { ctx, chartArea, scales } = chart;
+      if (!chartArea) return;
+      const { left, right, top, bottom } = chartArea;
+      const yScale = scales.y;
+
+      const zones = [
+        { lo: 200,    hi: 99999, color: 'rgba(239,68,68,0.08)',  label: '🔥 狂热' },
+        { lo: 50,     hi: 200,   color: 'rgba(249,115,22,0.08)', label: '☀️ 强势' },
+        { lo: -50,    hi: 50,    color: 'rgba(59,130,246,0.08)', label: '🌥️ 震荡' },
+        { lo: -99999, hi: -50,   color: 'rgba(100,116,139,0.08)',label: '❄️ 冰点' },
+      ];
+
+      zones.forEach(z => {
+        const yTop = yScale.getPixelForValue(Math.min(z.hi, yScale.max));
+        const yBot = yScale.getPixelForValue(Math.max(z.lo, yScale.min));
+        ctx.fillStyle = z.color;
+        ctx.fillRect(left, yTop, right - left, yBot - yTop);
+      });
+
+      // 水平线
+      [200, 50, -50].forEach(val => {
+        const y = yScale.getPixelForValue(val);
+        if (y < top || y > bottom) return;
+        ctx.beginPath();
+        ctx.strokeStyle = val === 200 ? '#ef4444' : val === 50 ? '#f97316' : '#3b82f6';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([5, 4]);
+        ctx.moveTo(left, y);
+        ctx.lineTo(right, y);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        // 标签
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '9px sans-serif';
+        ctx.textAlign = 'right';
+        ctx.fillText(val, left - 3, y - 3);
+      });
+    }
+  };
+
+  diffChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: '新高-新低差值',
+        data: diffs,
+        borderColor: phase.color,
+        backgroundColor: phase.bg,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 3,
+        pointBackgroundColor: phase.color,
+        borderWidth: 2,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1e293b',
+          titleColor: '#f1f5f9',
+          bodyColor: '#94a3b8',
+          borderColor: '#334155',
+          borderWidth: 1,
+          callbacks: {
+            label: function(ctx) {
+              const v = ctx.parsed.y;
+              const info = getPhaseInfo(v);
+              return `差值: ${v >= 0 ? '+' : ''}${v}  [${info.label}]`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#64748b', font: { size: 9 }, maxTicksLimit: 15 },
+          grid: { color: '#1a2332' },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: { color: '#64748b', font: { size: 9 } },
+          grid: { color: '#1a2332' },
+        }
+      }
+    },
+    plugins: [zonePlugin]
+  });
+}
+
+function renderDistribution() {
+  const total = stockData.length;
+  if (!total) return;
+  const zt = stockData.filter(s => s.change >= 9.8).length;
+  const gt7 = stockData.filter(s => s.change >= 7 && s.change < 9.8).length;
+  const gt5 = stockData.filter(s => s.change >= 5 && s.change < 7).length;
+  const gt3 = stockData.filter(s => s.change >= 3 && s.change < 5).length;
+  const lt3 = stockData.filter(s => s.change < 3).length;
+  document.getElementById('distSummary').innerHTML =
+    '<span class="dist-badge dist-zt">??? ' + zt + '</span>' +
+    '<span class="dist-badge dist-big">>7% ' + gt7 + '</span>' +
+    '<span class="dist-badge dist-med">>5% ' + gt5 + '</span>' +
+    '<span class="dist-badge dist-small">>3% ' + gt3 + '</span>';
+  document.getElementById('distNote').textContent = '???: ' + total + ' ? | <3%: ' + lt3 + ' ?';
+}
+
+function renderConcentration() {
+  const secCount = {};
+  for (const s of stockData) {
+    const sec = s.sector || '??';
+    secCount[sec] = (secCount[sec] || 0) + 1;
+  }
+  const entries = Object.entries(secCount).sort((a, b) => b[1] - a[1]);
+  const total = stockData.length;
+  if (!total || !entries.length) return;
+  const top3 = entries.slice(0, 3);
+  const top3Sum = top3.reduce((a, [_, c]) => a + c, 0);
+  const pct = Math.round(top3Sum / total * 100);
+  document.getElementById('concPct').textContent = top3Sum + '/' + total + ' = ' + pct + '%';
+  document.getElementById('concNote').textContent = top3.map(([n]) => n).join(', ');
+  const colors = ['#f97316', '#eab308', '#60a5fa', '#334155'];
+  const bar = document.getElementById('concBar');
+  let barHtml = '';
+  for (let i = 0; i < Math.min(3, entries.length); i++) {
+    const w = Math.round(entries[i][1] / total * 100);
+    barHtml += '<div class="seg" style="width:' + w + '%;background:' + colors[i] + ';"></div>';
+  }
+  const rest = total - top3Sum;
+  if (rest > 0) {
+    const w = Math.round(rest / total * 100);
+    barHtml += '<div class="seg" style="width:' + w + '%;background:' + colors[3] + ';"></div>';
+  }
+  bar.innerHTML = barHtml;
+}
+
+// ═══════════════════════════════════════════
+//  ?????
+// ═══════════════════════════════════════════
+
+function loadComparisonData() {
+  const el = document.getElementById('comparisonPanel');
+  if (!el || !historyData || historyData.length < 2) {
+    document.getElementById('compDate').textContent = '? ??';
+    return;
+  }
+  const prevDate = historyData[historyData.length - 2].date.replace(/-/g, '');
+  document.getElementById('compDate').textContent = prevDate.slice(0,4) + '-' + prevDate.slice(4,6) + '-' + prevDate.slice(6,8);
+  fetch('\u767e\u65e5\u65b0\u9ad8_' + prevDate + '.json')
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(prev => {
+      const prevStocks = prev.stocks || [];
+      const prevCodes = new Set(prevStocks.map(x => x.code));
+      const currCodes = new Set(stockData.map(x => x.code));
+      const newStocks = stockData.filter(x => !prevCodes.has(x.code));
+      const goneStocks = prevStocks.filter(x => !currCodes.has(x.code));
+      document.getElementById('compNew').textContent = '+' + newStocks.length;
+      document.getElementById('compNewDetail').textContent = newStocks.slice(0, 5).map(x => x.name).join(', ') + (newStocks.length > 5 ? '...' : '');
+      document.getElementById('compGone').textContent = '-' + goneStocks.length;
+      document.getElementById('compGoneDetail').textContent = goneStocks.slice(0, 5).map(x => x.name).join(', ') + (goneStocks.length > 5 ? '...' : '');
+      const diff = stockData.length - prevStocks.length;
+      document.getElementById('compTotal').textContent = (diff >= 0 ? '+' : '') + diff;
+      document.getElementById('compTotal').className = 'comp-val ' + (diff >= 0 ? 'comp-up' : 'comp-down');
+      document.getElementById('compTotalDetail').textContent = prevStocks.length + ' ? ' + stockData.length + ' ?';
+      const prevSectors = new Set(prevStocks.map(x => x.sector).filter(Boolean));
+      const currSectors = new Set(stockData.map(x => x.sector).filter(Boolean));
+      const newSecs = [...currSectors].filter(x => !prevSectors.has(x));
+      const goneSecs = [...prevSectors].filter(x => !currSectors.has(x));
+      document.getElementById('compSectors').textContent = (newSecs.length ? '+' + newSecs.length : '0') + '/' + (goneSecs.length ? '-' + goneSecs.length : '0');
+      document.getElementById('compSectorsDetail').textContent = (newSecs.length ? '??: ' + newSecs.join(', ') : '') + (newSecs.length && goneSecs.length ? ' | ' : '') + (goneSecs.length ? '??: ' + goneSecs.join(', ') : '');
+      document.getElementById('compExtra').style.display = 'block';
+      updateVigilanceSummary();
+    })
+    .catch(() => {
+      document.getElementById('compDate').textContent = '? ??';
+    });
+}
+
+// ═══════════════════════════════════════════
+//  ??? CSV
+// ═══════════════════════════════════════════
+
+function exportCSV() {
+  if (!stockData.length) return;
+  let csv = '\uFEFF\u4ee3\u7801,\u540d\u79f0,\u6536\u76d8\u4ef7,\u6da8\u5e45%,\u91cf\u6bd4,\u8fde\u7eed\u5929\u6570,\u72b6\u6001,\u677f\u5757\n';
+  for (const s of stockData) {
+    const status = s.is_first ? '\u9996\u6b21\u65b0\u9ad8' : '\u6301\u7eed\u65b0\u9ad8';
+    csv += s.code + ',' + (s.name || '') + ',' + s.close + ',' + s.change + ',' + s.volume_ratio + ',' + (s.consecutive_days || 1) + ',' + status + ',' + (s.sector || '') + '\n';
+  }
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  const date = document.getElementById('scanTime').textContent.replace(/\s/g, '').replace(/\//g, '-');
+  a.download = '\u767e\u65e5\u65b0\u9ad8_' + date + '.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// ═══════════════════════════════════════════
+//  ????
+// ═══════════════════════════════════════════
+
+function toggleDarkMode() {
+  const body = document.body;
+  body.classList.toggle('light');
+  const btn = document.getElementById('darkModeBtn');
+  const isLight = body.classList.contains('light');
+  btn.textContent = isLight ? '\ud83c\udf19 \u6697\u8272' : '\ud83c\udf1b \u4eae\u8272';
+  localStorage.setItem('dashboardTheme', isLight ? 'light' : 'dark');
+}
+
+function initDarkMode() {
+  const saved = localStorage.getItem('dashboardTheme');
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    document.getElementById('darkModeBtn').textContent = '\ud83c\udf19 \u6697\u8272';
+  }
+}
+
+// ═══════════════════════════════════════════
+//  ??????
+// ═══════════════════════════════════════════
+
+function savePreset() {
+  const name = prompt('\u8bf7\u8f93\u5165\u7b5b\u9009\u9884\u8bbe\u540d\u79f0:');
+  if (!name) return;
+  const preset = {
+    search: document.getElementById('searchInput').value,
+    status: document.getElementById('statusFilter').value,
+    sector: document.getElementById('sectorFilter').value,
+  };
+  let presets = JSON.parse(localStorage.getItem('filterPresets') || '{}');
+  presets[name] = preset;
+  localStorage.setItem('filterPresets', JSON.stringify(presets));
+  loadPresetOptions();
+}
+
+function applyPreset(name) {
+  if (!name) return;
+  const presets = JSON.parse(localStorage.getItem('filterPresets') || '{}');
+  const p = presets[name];
+  if (!p) return;
+  document.getElementById('searchInput').value = p.search || '';
+  document.getElementById('statusFilter').value = p.status || 'all';
+  document.getElementById('sectorFilter').value = p.sector || 'all';
+  renderTable();
+  document.getElementById('presetFilter').value = '';
+}
+
+function clearPresets() {
+  if (!confirm('\u786e\u5b9a\u6e05\u9664\u6240\u6709\u7b5b\u9009\u9884\u8bbe?')) return;
+  localStorage.removeItem('filterPresets');
+  loadPresetOptions();
+}
+
+function loadPresetOptions() {
+  const sel = document.getElementById('presetFilter');
+  sel.innerHTML = '<option value="">\u2014 \u52a0\u8f7d\u9884\u8bbe \u2014</option>';
+  const presets = JSON.parse(localStorage.getItem('filterPresets') || '{}');
+  for (const [name, p] of Object.entries(presets)) {
+    const opt = document.createElement('option');
+    opt.value = name;
+    const parts = [];
+    if (p.status && p.status !== 'all') parts.push(p.status === 'first' ? '\u9996\u6b21' : '\u6301\u7eed');
+    if (p.sector && p.sector !== 'all') parts.push(p.sector);
+    if (p.search) parts.push('"' + p.search + '"');
+    opt.textContent = name + (parts.length ? ' (' + parts.join(', ') + ')' : '');
+    sel.appendChild(opt);
+  }
+}
+
+// ═══════════════════════════════════════════
+//  ??????????
+// ═══════════════════════════════════════════
+
+let simPortfolio = [];
+
+function initSimulation() {
+  try {
+    const saved = localStorage.getItem('simPortfolio');
+    if (saved) simPortfolio = JSON.parse(saved);
+  } catch(e) {}
+}
+
+function simBuy(code) {
+  const stock = stockData.find(s => s.code === code);
+  if (!stock) return;
+  const price = stock.close;
+  const sharesInput = prompt('\u8bf7\u8f93\u5165\u4e70\u5165\u80a1\u6570\n' + stock.name + ' (' + code + ') \u5f53\u524d\u4ef7: \u00a5' + price.toFixed(2), '100');
+  if (!sharesInput) return;
+  const shares = parseInt(sharesInput);
+  if (isNaN(shares) || shares <= 0) return;
+  const existing = simPortfolio.find(p => p.code === code);
+  if (existing) {
+    const oldShares = existing.shares;
+    existing.shares += shares;
+    existing.buyPrice = (existing.buyPrice * oldShares + price * shares) / existing.shares;
+  } else {
+    simPortfolio.push({ code, name: stock.name, buyPrice: price, shares, buyDate: new Date().toISOString().slice(0,10), sector: stock.sector });
+  }
+  saveSimulation();
+  renderAll();
+}
+
+function simSell(code) {
+  if (!confirm('\u786e\u5b9a\u6e05\u7a7a\u8be5\u6301\u4ed3?')) return;
+  simPortfolio = simPortfolio.filter(p => p.code !== code);
+  saveSimulation();
+  renderAll();
+}
+
+function simClearAll() {
+  if (!confirm('\u786e\u5b9a\u6e05\u7a7a\u6240\u6709\u6a21\u62df\u6301\u4ed3?')) return;
+  simPortfolio = [];
+  saveSimulation();
+  renderAll();
+}
+
+function saveSimulation() {
+  localStorage.setItem('simPortfolio', JSON.stringify(simPortfolio));
+}
+
+function renderSimulation() {
+  const container = document.getElementById('simPortfolio');
+  const summary = document.getElementById('simSummary');
+  if (!simPortfolio.length) {
+    container.innerHTML = '<div class="empty-state" style="padding:0.5rem;">\u70b9\u51fb\u8868\u683c\u4e2d\u7684\u300c\u4e70\u5165\u300d\u6dfb\u52a0\u6a21\u62df\u6301\u4ed3</div>';
+    summary.textContent = '\u6682\u65e0\u6301\u4ed3';
+    return;
+  }
+  let html = '';
+  let totalPL = 0;
+  let totalCost = 0;
+  let totalVal = 0;
+  for (const p of simPortfolio) {
+    const stock = stockData.find(s => s.code === p.code);
+    const curPrice = stock ? stock.close : p.buyPrice;
+    const pl = (curPrice - p.buyPrice) * p.shares;
+    const plPct = ((curPrice - p.buyPrice) / p.buyPrice * 100);
+    const plCls = pl >= 0 ? 'sim-pl-up' : 'sim-pl-down';
+    totalPL += pl;
+    totalCost += p.buyPrice * p.shares;
+    totalVal += curPrice * p.shares;
+    html += '<div class="sim-item">' +
+      '<div><div class="sim-code">' + p.name + ' (' + p.code + ')</div>' +
+      '<div style="font-size:0.65rem;color:#64748b;">' + (p.sector || '') + ' | \u6210\u672c: \u00a5' + p.buyPrice.toFixed(2) + '</div></div>' +
+      '<div style="text-align:right;"><div class="sim-pl ' + plCls + '">' + (pl >= 0 ? '+' : '') + pl.toFixed(0) + ' (' + (plPct >= 0 ? '+' : '') + plPct.toFixed(1) + '%)</div>' +
+      '<div style="font-size:0.65rem;color:#64748b;">' + p.shares + '\u80a1 \u00a5' + curPrice.toFixed(2) + '</div></div>' +
+      '<button class="sim-btn sim-remove-btn" onclick="simSell(\'' + p.code + '\')" style="margin-left:0.5rem;">\u8d2e</button>' +
+      '</div>';
+  }
+  container.innerHTML = html + '<div style="text-align:center;margin-top:0.5rem;"><button class="sim-btn" onclick="simClearAll()" style="color:#ef4444;border-color:#ef4444;">\u6e05\u7a7a\u6301\u4ed3</button></div>';
+  const plTotal = totalVal - totalCost;
+  const plPctTotal = totalCost > 0 ? (plTotal / totalCost * 100) : 0;
+  summary.textContent = (plTotal >= 0 ? '+' : '') + plTotal.toFixed(0) + ' (' + (plPctTotal >= 0 ? '+' : '') + plPctTotal.toFixed(1) + '%)';
+  summary.className = 'sim-pl ' + (plTotal >= 0 ? 'sim-pl-up' : 'sim-pl-down');
+}
+
+// ═══════════════════════════════════════════
+//  ??????????????
+// ═══════════════════════════════════════════
+
+let vigilancePrices = {};
+
+function initVigilance() {
+  try {
+    const saved = localStorage.getItem('vigilancePrices');
+    if (saved) vigilancePrices = JSON.parse(saved);
+  } catch(e) { vigilancePrices = {}; }
+}
+
+function saveVigilancePrices() {
+  if (!stockData || !stockData.length) return;
+  const saved = localStorage.getItem('vigilancePrices');
+  const existing = saved ? JSON.parse(saved) : {};
+  for (const s of stockData) {
+    // ?????, ????????????
+    if (!existing[s.code]) {
+      existing[s.code] = s.close;
+    }
+  }
+  vigilancePrices = existing;
+  localStorage.setItem('vigilancePrices', JSON.stringify(existing));
+}
+
+function updateVigilanceSummary() {
+  const el = document.getElementById('vigilanceSummary');
+  if (!el) return;
+  if (!stockData || !stockData.length) {
+    el.style.display = 'none';
+    return;
+  }
+  const saved = localStorage.getItem('vigilancePrices');
+  if (!saved) {
+    el.innerHTML = '<span style="color:#64748b;">\u4e0b\u5468\u6570\u636e\u5237\u65b0\u540e\u663e\u793a\u8b66\u6212\u4ef7\u5bf9\u6bd4</span>';
+    el.style.display = 'block';
+    return;
+  }
+  const oldPrices = JSON.parse(saved);
+  let belowCount = 0, aboveCount = 0, totalCheck = 0;
+  for (const s of stockData) {
+    if (oldPrices[s.code]) {
+      totalCheck++;
+      if (s.close < oldPrices[s.code]) belowCount++;
+      else if (s.close > oldPrices[s.code]) aboveCount++;
+    }
+  }
+  if (totalCheck === 0) {
+    el.innerHTML = '<span style="color:#64748b;">\u6682\u65e0\u53ef\u5bf9\u6bd4\u6570\u636e</span>';
+  } else {
+    el.innerHTML = '<span style="color:#94a3b8;">\u8b66\u6212\u4ef7\u5bf9\u6bd4: </span>' +
+      '<span class="' + (belowCount > 0 ? 'sim-pl-up' : 'sim-pl-down') + '">' + belowCount + '\u53ea\u4f4e\u4e8e\u8b66\u6212\u4ef7</span>' +
+      '<span style="color:#64748b;"> / </span>' +
+      '<span class="' + (aboveCount > 0 ? 'sim-pl-down' : 'sim-pl-up') + '">' + aboveCount + '\u53ea\u9ad8\u4e8e\u8b66\u6212\u4ef7</span>' +
+      '<span style="color:#64748b;"> / \u5171' + totalCheck + '\u53ea</span>';
+  }
+  el.style.display = 'block';
+}
+
+// ═══════════════════════════════════════════
+//  ??????????
+// ═══════════════════════════════════════════
+
+function computeStockScore(s, hotSectors) {
+  let score = 0;
+  // 1. ??? (0-25)
+  score += Math.min(s.volume_ratio * 10, 25);
+  // 2. ??? (0-30)
+  score += Math.min(s.change * 2, 30);
+  if (s.change >= 9.8) score += 10;
+  // 3. ????????? (0-20)
+  if (s.is_first) {
+    const days = s.consecutive_days || 1;
+    if (days <= 2) score += 20;
+    else if (days <= 5) score += 10;
+  }
+  // 4. ????? (0-15)
+  if (hotSectors && hotSectors.has(s.sector)) score += 15;
+  // 5. ????? (0-10)
+  const days = s.consecutive_days || 1;
+  if (days >= 3 && days <= 5) score += 5;
+  return Math.min(score, 100);
+}
+
+function renderTop5() {
+  const container = document.getElementById('top5List');
+  if (!stockData.length || stockData.length === 0) {
+    container.innerHTML = '<div class="empty-state" style="padding:0.5rem;">\u6682\u65e0\u6570\u636e</div>';
+    return;
+  }
+  const sectorCounts = {};
+  for (const s of stockData) {
+    const sec = s.sector || '\u5176\u4ed6';
+    sectorCounts[sec] = (sectorCounts[sec] || 0) + 1;
+  }
+  const maxSectorCount = Math.max(...Object.values(sectorCounts), 1);
+  const hotSectors = new Set(
+    Object.entries(sectorCounts)
+      .filter(([_, c]) => c >= 3 || c >= maxSectorCount * 0.5)
+      .map(([s]) => s)
+  );
+  const scored = stockData.map(s => ({
+    ...s,
+    score: computeStockScore(s, hotSectors)
+  })).sort((a, b) => b.score - a.score).slice(0, 5);
+  let html = '';
+  for (let i = 0; i < scored.length; i++) {
+    const s = scored[i];
+    const reasons = [];
+    if (s.is_first) reasons.push('\u9996\u6b21\u65b0\u9ad8');
+    if (s.volume_ratio >= 1.5) reasons.push('\u653e\u91cf');
+    if (hotSectors.has(s.sector)) reasons.push('\u70ed\u95e8\u677f\u5757');
+    if (s.change >= 9.8) reasons.push('\u6da8\u505c');
+    if (s.consecutive_days >= 3) reasons.push('\u8fde\u7eed' + s.consecutive_days + '\u5929');
+    const rankBadge = i < 3 ? '<span class="top5-rank" style="background:#dc2626;">' + (i+1) + '</span>' : '<span class="top5-rank" style="background:#64748b;">' + (i+1) + '</span>';
+    html += '<div class="top5-item">' +
+      rankBadge +
+      '<span class="top5-name">' + s.name + ' (' + s.code.slice(0,6) + ')</span>' +
+      '<span class="top5-score">' + Math.round(s.score) + '</span>' +
+      '<span class="top5-reason">' + reasons.join(' ') + '</span>' +
+      '</div>';
+  }
+  container.innerHTML = html;
+}
+
+// ═══════════════════════════════════════════
+//  ??
+// ═══════════════════════════════════════════
+
+function filterTable() { renderTable(); }
+
+function sortTable(col) {
+  if (sortColumn === col) { sortAsc = !sortAsc; }
+  else { sortColumn = col; sortAsc = true; }
+  document.querySelectorAll('.stock-table th').forEach(th => th.classList.remove('active'));
+  renderTable();
+}
+
+function toggleMark(code) {
+  const s = stockData.find(x => x.code === code);
+  if (s) { s._marked = !s._marked; renderTable(); }
+}
+
+function toggleTeachMode() {
+  teachMode = document.getElementById('teachMode').checked;
+  document.getElementById('teachingPanel').style.display = teachMode ? 'block' : 'none';
+  document.querySelector('.teach-mode-banner').style.display = teachMode ? 'block' : 'none';
+}
+
+// 教学卡片点击展开
+document.addEventListener('click', function(e) {
+  const item = e.target.closest('.teaching-item');
+  if (item) {
+    item.classList.toggle('open');
+  }
+});
+
+// ═══════════════════════════════════════════
+//  今日作战面板
+// ═══════════════════════════════════════════
+
+function renderBattlePlan() {
+  const el = document.getElementById('battlePlan');
+  if (!el) return;
+  if (!stockData || stockData.length === 0) {
+    document.getElementById('bDiff').textContent = '--';
+    document.getElementById('bZone').textContent = '等待数据';
+    document.getElementById('bScenario').textContent = '--';
+    document.getElementById('battlePos').textContent = '--';
+    document.getElementById('battlePosDetail').textContent = '';
+    document.getElementById('battlePosLimit').textContent = '--';
+    document.getElementById('battleUpdateTime').textContent = '';
+    return;
+  }
+
+  // 差值 from 差值趋势.json (latest entry)
+  let diff = 0;
+  if (diffData && diffData.length > 0) {
+    diff = diffData[diffData.length - 1].diff || 0;
+  } else {
+    // estimate from stock count
+    diff = stockData.length;
+  }
+
+  let zone, posPct, posLabel, detail;
+  if (diff >= 200) { zone = '狂热'; posPct = 84; posLabel = '狂热·重仓出击'; detail = '≤6只 每只≤14%'; }
+  else if (diff >= 50) { zone = '强势'; posPct = 40; posLabel = '强势·中等仓位'; detail = '≤4只 每只≤10%'; }
+  else if (diff >= -50) { zone = '震荡'; posPct = 10; posLabel = '震荡·谨慎轻仓'; detail = '≤2只 每只≤5%'; }
+  else { zone = '冰点'; posPct = 0; posLabel = '冰点·空仓观望'; detail = '不开新仓 休息'; }
+
+  document.getElementById('bDiff').textContent = diff;
+  const zoneEl = document.getElementById('bZone');
+  zoneEl.textContent = zone;
+  zoneEl.style.color = diff >= 200 ? '#f87171' : diff >= 50 ? '#fbbf24' : diff >= -50 ? '#60a5fa' : '#6b7280';
+
+  // 行情类型 based on 百日新高 count
+  const total = stockData.length;
+  const firstCount = stockData.filter(s => s.is_first).length;
+  let scenario;
+  if (total >= 120 && firstCount >= 30) scenario = '强共振·积极做多';
+  else if (total >= 60) scenario = '慢趋势·低吸为主';
+  else scenario = '分化混沌·精选个股';
+  document.getElementById('bScenario').textContent = scenario;
+
+  document.getElementById('battlePos').textContent = posLabel;
+  document.getElementById('battlePosDetail').textContent = detail + ' | 差值' + diff + ' → ' + zone + ' | 百日新高' + total + '只';
+  document.getElementById('battlePosLimit').textContent = posPct + '%';
+  document.getElementById('battleUpdateTime').textContent = '更新于 ' + new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+
+  // 候选池: top stocks sorted by change desc, prefer first-time
+  const pool = document.getElementById('battlePool');
+  const sorted = [...stockData].sort((a, b) => {
+    if (a.is_first !== b.is_first) return a.is_first ? -1 : 1;
+    return Math.abs(b.change || 0) - Math.abs(a.change || 0);
+  });
+  const top = sorted.slice(0, 3);
+  let html = '';
+  top.forEach(s => {
+    const tag = s.is_first ? '⭐首次' : '🔄持续';
+    html += '<div class="battle-pool-item"><span><span class="name">' + (s.name || '--') + '</span> <span class="code">' + (s.code || '') + '</span></span><span><span class="tag" style="font-size:0.65rem;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,0.15);color:#fbbf24;">' + tag + '</span> <span style="font-size:0.7rem;color:#94a3b8;">' + (s.change >= 0 ? '+' : '') + (s.change || 0) + '%</span></span></div>';
+  });
+  pool.innerHTML = html;
+}
+
+// ═══════════════════════════════════════════
+//  初始化
+// ═══════════════════════════════════════════
+
+initDarkMode();
+loadPresetOptions();
+initDataLoader();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-14",
+  "scenario": "慢趋势行情",
+  "detail": "百日新高数量较多（125只）且集中在少数板块，但涨停异动不明显（仅0只涨停），中期资金慢推趋势，适合趋势跟踪。",
+  "resonance_score": 0.0,
+  "overlap_sectors": [],
+  "overlap_ratio": 0.0,
+  "metrics": {
+    "total_limit_up": 0,
+    "total_new_high": 125,
+    "top3_chain_count": 0,
+    "unknown_limit_up": 0
+  },
+  "disclaimer": "本工具仅用于个人学习复盘，不构成任何投资建议"
+}

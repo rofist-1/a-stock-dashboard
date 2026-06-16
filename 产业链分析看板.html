@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>产业链分析看板</title>
+<style>
+  :root {
+    --bg: #0f172a; --card: #1e293b; --border: #334155;
+    --fg: #e2e8f0; --muted: #94a3b8; --accent: #3b82f6;
+    --green: #22c55e; --red: #ef4444; --yellow: #eab308;
+    --orange: #f97316; --purple: #a855f7; --cyan: #06b6d4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--fg); padding: 20px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+  h1 small { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+  .subtitle { color: var(--muted); font-size: 0.85rem; margin-bottom: 20px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px; margin-bottom: 16px;
+  }
+  .card-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 12px; }
+  .flex { display: flex; flex-wrap: wrap; gap: 12px; }
+  .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+
+  /* 指标卡 */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .stat-card {
+    background: #1a2332; border-radius: 8px; padding: 12px; text-align: center;
+  }
+  .stat-card .num { font-size: 1.5rem; font-weight: 700; }
+  .stat-card .label { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+  .num-green { color: var(--green); }
+  .num-red { color: var(--red); }
+  .num-yellow { color: var(--yellow); }
+  .num-cyan { color: var(--cyan); }
+
+  /* 情景判定 */
+  .scenario-badge {
+    display: inline-block; padding: 4px 14px; border-radius: 20px;
+    font-weight: 600; font-size: 0.9rem;
+  }
+  .scenario-强共振信号 { background: #14532d; color: #4ade80; }
+  .scenario-纯短线脉冲 { background: #713f12; color: #facc15; }
+  .scenario-慢趋势行情 { background: #1e3a5f; color: #60a5fa; }
+  .scenario-市场分化混沌 { background: #4a1942; color: #c084fc; }
+
+  .resonance-bar {
+    height: 8px; border-radius: 4px; background: #1e293b; margin-top: 6px; overflow: hidden;
+  }
+  .resonance-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+
+  /* 产业链表格 */
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; }
+  tr:hover td { background: #1e3a5f33; }
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 0.75rem; font-weight: 500;
+  }
+  .tag-upstream { background: #1e3a5f; color: #60a5fa; }
+  .tag-midstream { background: #14532d; color: #4ade80; }
+  .tag-downstream { background: #713f12; color: #facc15; }
+  .tag-unknown { background: #4a1942; color: #c084fc; }
+
+  .chain-header {
+    border-left: 4px solid var(--accent); padding-left: 12px; margin: 16px 0 8px; font-weight: 600;
+  }
+  .chain-1 { border-color: #facc15; }
+  .chain-2 { border-color: #94a3b8; }
+  .chain-3 { border-color: #92400e; }
+
+  /* 未知异动 */
+  .unknown-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .unknown-tag {
+    padding: 3px 10px; border-radius: 6px; background: #1e293b;
+    border: 1px solid var(--border); font-size: 0.8rem;
+  }
+
+  /* 加载/错误 */
+  .empty-state { text-align: center; padding: 40px; color: var(--muted); }
+  .empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+  .btn {
+    display: inline-block; padding: 8px 18px; border-radius: 8px;
+    border: none; cursor: pointer; font-size: 0.85rem; font-weight: 500;
+    background: var(--accent); color: #fff; transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--fg); }
+  .btn-sm { padding: 5px 12px; font-size: 0.8rem; }
+  .error-box { background: #450a0a; border: 1px solid var(--red); color: #fca5a5; padding: 12px; border-radius: 8px; margin: 10px 0; }
+  .hidden { display: none !important; }
+
+  /* 上下游拆解 */
+  .seg-box {
+    background: #0f172a; border-radius: 8px; padding: 10px 14px; margin: 6px 0;
+    border-left: 3px solid var(--border);
+  }
+  .seg-box .seg-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .seg-box .seg-name { font-weight: 500; font-size: 0.85rem; }
+  .seg-box .seg-count { font-size: 0.8rem; color: var(--muted); }
+  .seg-box .seg-stocks { font-size: 0.8rem; color: var(--muted); }
+
+  .loader { text-align: center; padding: 60px; }
+  .loader .spinner { display: inline-block; width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Tab 切换 */
+  .tabs { display: flex; gap: 4px; margin-bottom: 16px; background: #1a2332; padding: 4px; border-radius: 10px; }
+  .tab { padding: 8px 18px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 500; border: none; background: transparent; color: var(--muted); transition: all 0.2s; }
+  .tab.active { background: var(--accent); color: #fff; }
+  .tab:hover:not(.active) { color: var(--fg); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* 资源链匹配 */
+  .match-header { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; margin-bottom: 8px; }
+  .match-header .chain-icon { font-size: 1.2rem; }
+
+  /* 日期选择器 */
+  .date-bar { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .date-bar label { font-size: 0.85rem; color: var(--muted); }
+  .date-select {
+    padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border);
+    background: #1a2332; color: var(--fg); font-size: 0.9rem; cursor: pointer;
+    min-width: 130px; text-align: center;
+  }
+  .date-select:focus { outline: none; border-color: var(--accent); }
+  .date-select option { background: #1a2332; color: var(--fg); }
+  .no-date-msg { color: var(--muted); font-size: 0.85rem; padding: 4px 10px; }
+
+  @media (max-width: 640px) {
+    body { padding: 10px; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    h1 { font-size: 1.2rem; }
+  }
+  /* 今日作战面板 */
+  .battle-card { background: linear-gradient(135deg, #0a1628 0%, #132337 100%); border: 1px solid #2d4a6b; border-radius: 14px; padding: 18px 20px; margin-bottom: 16px; }
+  .battle-card .card-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; color: #b3d4ff; }
+  .battle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .battle-grid { grid-template-columns: 1fr; } }
+  .battle-env { display: flex; gap: 8px; flex-wrap: wrap; }
+  .battle-item { background: rgba(255,255,255,0.05); border-radius: 8px; padding: 6px 12px; min-width: 70px; }
+  .battle-item .lbl { font-size: 0.6rem; text-transform: uppercase; color: #64748b; }
+  .battle-item .val { font-size: 1.2rem; font-weight: 700; }
+  .battle-pos { font-size: 1.3rem; font-weight: 700; margin-top: 4px; }
+  .battle-pos-detail { font-size: 0.72rem; color: #94a3b8; }
+  .battle-pool-item { background: rgba(255,255,255,0.04); border-radius: 6px; padding: 4px 8px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; }
+  .battle-pool-item .name { font-weight: 600; }
+  .battle-pool-item .code { color: #94a3b8; font-size: 0.7rem; }
+  .battle-rules { margin-top: 8px; padding: 6px 12px; background: rgba(255,255,255,0.04); border-radius: 8px; font-size: 0.7rem; color: #94a3b8; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container" id="app">
+
+  <!-- 头部 -->
+  <div style="text-align:center; margin-bottom: 16px;">
+    <h1>产业链分析看板 <small id="dateLabel">—</small></h1>
+    <div class="date-bar">
+      <label for="dateSelect">查看日期：</label>
+      <select id="dateSelect" class="date-select" onchange="onDateChange()">
+        <option value="">加载中...</option>
+      </select>
+      <button class="btn btn-sm btn-outline" onclick="refreshData()">⟳ 刷新</button>
+    </div>
+    <div class="subtitle">
+      本工具仅用于个人学习复盘，不构成任何投资建议
+    </div>
+  </div>
+
+  <!-- 加载 -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p style="margin-top: 12px; color: var(--muted);">加载数据中...</p>
+  </div>
+
+  <!-- 错误 -->
+  <div class="error-box hidden" id="errorBox"></div>
+
+  <!-- 主内容 -->
+  <div id="mainContent" class="hidden">
+
+    <!-- 今日作战面板 -->
+    <div class="battle-card" id="battlePlan">
+      <div class="card-title">
+        <span>⚔️ 今日作战面板</span>
+        <span style="font-size:0.78rem;color:#64748b;margin-left:auto;" id="battleUpdateTime"></span>
+      </div>
+      <div class="battle-grid">
+        <div>
+          <div class="battle-env" id="battleEnv">
+            <div class="battle-item"><div class="lbl">行情类型</div><div class="val" id="bScenario">--</div></div>
+            <div class="battle-item"><div class="lbl">共振度</div><div class="val" id="bResonance">--</div></div>
+            <div class="battle-item"><div class="lbl">涨停</div><div class="val" id="bLimitUp">--</div></div>
+            <div class="battle-item"><div class="lbl">百日新高</div><div class="val" id="bNewHigh">--</div></div>
+          </div>
+          <div style="margin-top:8px;">
+            <div class="battle-pos" id="battlePos">--</div>
+            <div class="battle-pos-detail" id="battlePosDetail"></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.7rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">主线方向</div>
+          <div id="battleMainLine" style="font-size:0.85rem;color:#94a3b8;">加载数据后自动显示...</div>
+        </div>
+      </div>
+      <div class="battle-rules">
+        🛑 止损 -5% &nbsp;|&nbsp; 🎯 止盈 +8% 或破5日线 &nbsp;|&nbsp; ⏳ 分歧低吸不追高 &nbsp;|&nbsp; 💰 仓位上限 <span id="battlePosLimit">--</span>
+      </div>
+    </div>
+
+    <!-- Tab 切换 -->
+    <div class="tabs">
+      <button class="tab active" data-tab="tab-chain">涨停产业链异动</button>
+      <button class="tab" data-tab="tab-cross">交叉校验</button>
+    </div>
+
+    <!-- ========== Tab 1: 涨停产业链异动 ========== -->
+    <div class="tab-content active" id="tab-chain">
+      <!-- 统计卡片 -->
+      <div class="stat-grid" id="chainStats"></div>
+
+      <!-- TOP3 产业链 -->
+      <div id="chainTop3"></div>
+
+      <!-- 全部产业链 -->
+      <div class="card">
+        <div class="flex-between">
+          <div class="card-title">全部产业链明细</div>
+          <button class="btn btn-sm btn-outline" onclick="toggleAllChains()">展开全部</button>
+        </div>
+        <div id="allChainsTable"></div>
+      </div>
+
+      <!-- 未知异动 -->
+      <div class="card" id="unknownCard">
+        <div class="card-title">未知异动题材</div>
+        <div id="unknownList"></div>
+      </div>
+    </div>
+
+    <!-- ========== Tab 2: 交叉校验 ========== -->
+    <div class="tab-content" id="tab-cross">
+      <div class="card">
+        <div class="flex-between">
+          <div class="card-title">百日新高 × 涨停异动 · 交叉校验</div>
+          <span class="scenario-badge" id="scenarioBadge">—</span>
+        </div>
+        <p id="scenarioDetail" style="color: var(--muted); line-height: 1.7; margin: 12px 0;"></p>
+
+        <div style="margin-top: 16px;">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+            <span>主线共振度</span>
+            <span id="resonanceLabel">0%</span>
+          </div>
+          <div class="resonance-bar">
+            <div class="resonance-fill" id="resonanceFill" style="width:0%; background: var(--accent);"></div>
+          </div>
+        </div>
+
+        <div class="flex" style="margin-top: 16px; gap: 20px;">
+          <div>
+            <div style="font-size:0.75rem; color:var(--muted);">涨停总数</div>
+            <div style="font-size:1.2rem; font-weight:600;" id="cvLimitUp">—</div>
+          </div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--muted);">百日新高</div>
+            <div style="font-size:1.2rem; font-weight:600;" id="cvNewHigh">—</div>
+          </div>
+          <div>
+            <div style="font-size:0.75rem; color:var(--muted);">重合板块</div>
+            <div style="font-size:1.2rem; font-weight:600;" id="cvOverlap">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 百日新高板块 TOP5 -->
+      <div class="card">
+        <div class="card-title">百日新高集中板块 TOP5</div>
+        <div id="newHighSectors"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ==============================
+//  数据加载
+// ==============================
+const DATA_DIR = '百日新高系统';  // JSON 文件目录
+
+async function fetchJSON(path) {
+  const rsp = await fetch(`${DATA_DIR}/${path}`);
+  if (!rsp.ok) throw new Error(`HTTP ${rsp.status}: ${path}`);
+  return rsp.json();
+}
+
+function getTodayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+// ==============================
+//  日期选择器：扫描目录获取可用日期
+// ==============================
+async function scanAvailableDates() {
+  try {
+    // 通过请求目录获取文件列表（Python http.server 默认开启目录浏览）
+    const rsp = await fetch(`${DATA_DIR}/`);
+    const html = await rsp.text();
+    // 解析 HTML 提取 涨停产业链异动_YYYYMMDD.json 文件名
+    const regex = /涨停产业链异动_(\d{8})\.json/g;
+    const dates = [];
+    let match;
+    while ((match = regex.exec(html)) !== null) {
+      dates.push(match[1]);
+    }
+    // 去重并降序排序（最新在前）
+    const unique = [...new Set(dates)].sort().reverse();
+    return unique;
+  } catch {
+    return [];
+  }
+}
+
+async function populateDateSelector() {
+  const sel = document.getElementById('dateSelect');
+  const dates = await scanAvailableDates();
+
+  if (dates.length === 0) {
+    sel.innerHTML = '<option value="">暂无历史数据</option>';
+    return [];
+  }
+
+  const options = dates.map(d => {
+    const display = `${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`;
+    return `<option value="${d}">${display}</option>`;
+  }).join('');
+  sel.innerHTML = options;
+  return dates;
+}
+
+function getSelectedDate() {
+  return document.getElementById('dateSelect').value;
+}
+
+async function loadDataByDate(dateStr) {
+  // dateStr: YYYYMMDD
+  const chainPath = `涨停产业链异动_${dateStr}.json`;
+  const crossPath = `交叉校验_${dateStr}.json`;
+
+  let chainData = null, crossData = null;
+  try { chainData = await fetchJSON(chainPath); } catch {}
+  try { crossData = await fetchJSON(crossPath); } catch {}
+
+  return { chainData, crossData };
+}
+
+// ==============================
+//  核心：刷新 / 切换日期
+// ==============================
+let currentDate = '';  // 当前加载的日期 YYYYMMDD
+
+async function refreshData() {
+  const sel = document.getElementById('dateSelect');
+  const dateStr = sel.value;
+
+  if (!dateStr) {
+    document.getElementById('errorBox').classList.add('hidden');
+    document.getElementById('mainContent').classList.add('hidden');
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('errorBox').classList.remove('hidden');
+    document.getElementById('errorBox').innerHTML = '<strong>暂无数据</strong><br>该日期暂无可用分析数据，请先运行 chain_analysis.py 和 cross_validation.py';
+    document.getElementById('dateLabel').textContent = '—';
+    return;
+  }
+
+  // 如果已加载该日期且数据存在，不重复加载
+  if (dateStr === currentDate && !document.getElementById('mainContent').classList.contains('hidden')) {
+    return;
+  }
+
+  document.getElementById('loader').classList.remove('hidden');
+  document.getElementById('mainContent').classList.add('hidden');
+  document.getElementById('errorBox').classList.add('hidden');
+
+  try {
+    const { chainData, crossData } = await loadDataByDate(dateStr);
+
+    if (!chainData && !crossData) {
+      document.getElementById('loader').classList.add('hidden');
+      document.getElementById('errorBox').classList.remove('hidden');
+      document.getElementById('errorBox').innerHTML = `<strong>无可用数据</strong><br>日期 ${dateStr.slice(0,4)}-${dateStr.slice(4,6)}-${dateStr.slice(6,8)} 暂无分析数据，请确认已运行脚本生成。`;
+      document.getElementById('dateLabel').textContent = `${dateStr.slice(0,4)}-${dateStr.slice(4,6)}-${dateStr.slice(6,8)}`;
+      return;
+    }
+
+    document.getElementById('loader').classList.add('hidden');
+
+    const displayDate = chainData ? chainData.date : (crossData ? crossData.date : '');
+    document.getElementById('dateLabel').textContent = displayDate || `${dateStr.slice(0,4)}-${dateStr.slice(4,6)}-${dateStr.slice(6,8)}`;
+
+    if (chainData) renderChainAnalysis(chainData);
+    if (crossData) renderCrossValidation(crossData);
+    renderBattlePlan(chainData, crossData);
+
+    currentDate = dateStr;
+    document.getElementById('mainContent').classList.remove('hidden');
+
+  } catch (e) {
+    document.getElementById('loader').classList.add('hidden');
+    const errBox = document.getElementById('errorBox');
+    errBox.classList.remove('hidden');
+    errBox.innerHTML = `<strong>加载失败</strong><br>${e.message}<br><br>
+      <small>请确认服务器运行中，且 ${DATA_DIR}/ 目录存在对应 JSON 文件。</small>`;
+  }
+}
+
+async function onDateChange() {
+  currentDate = '';  // 强制刷新
+  await refreshData();
+}
+
+// ==============================
+//  今日作战面板
+// ==============================
+function renderBattlePlan(chainData, crossData) {
+  const el = document.getElementById('battlePlan');
+  if (!el) return;
+  if (!crossData) {
+    document.getElementById('bScenario').textContent = '无数据';
+    document.getElementById('bResonance').textContent = '--';
+    document.getElementById('bLimitUp').textContent = '--';
+    document.getElementById('bNewHigh').textContent = '--';
+    document.getElementById('battlePos').textContent = '--';
+    document.getElementById('battlePosDetail').textContent = '';
+    document.getElementById('battlePosLimit').textContent = '--';
+    document.getElementById('battleMainLine').textContent = '无交叉校验数据';
+    document.getElementById('battleUpdateTime').textContent = '';
+    return;
+  }
+
+  const scenario = crossData.scenario || '--';
+  const resonance = crossData.resonance_score ?? 0;
+  const m = crossData.metrics || {};
+
+  // Determine position sizing from scenario
+  let posLabel, pct, detail;
+  if (scenario.includes('强共振')) { posLabel = '强共振·积极做多'; pct = 60; detail = '共振信号确认，可加仓'; }
+  else if (scenario.includes('短线脉冲')) { posLabel = '脉冲·快进快出'; pct = 30; detail = '短线机会，不恋战'; }
+  else if (scenario.includes('慢趋势')) { posLabel = '慢趋势·低吸为主'; pct = 15; detail = '趋势型，分歧回踩介入'; }
+  else { posLabel = '混沌·轻仓观望'; pct = 5; detail = '方向不明，仅试探'; }
+
+  document.getElementById('bScenario').textContent = scenario;
+  document.getElementById('bScenario').style.color = resonance >= 60 ? '#4ade80' : resonance >= 30 ? '#facc15' : '#f87171';
+
+  const resEl = document.getElementById('bResonance');
+  resEl.textContent = resonance + '%';
+  resEl.style.color = resonance >= 60 ? '#4ade80' : resonance >= 30 ? '#facc15' : '#f87171';
+
+  document.getElementById('bLimitUp').textContent = m.total_limit_up ?? '--';
+  document.getElementById('bNewHigh').textContent = m.total_new_high ?? '--';
+  document.getElementById('battlePos').textContent = posLabel;
+  document.getElementById('battlePosDetail').textContent = detail + ' | 共振度' + resonance + '%';
+  document.getElementById('battlePosLimit').textContent = pct + '%';
+  document.getElementById('battleUpdateTime').textContent = '更新于 ' + new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+
+  // 主线方向 from chain data (top chain)
+  const mainLine = document.getElementById('battleMainLine');
+  if (chainData && chainData.chains && chainData.chains.length > 0) {
+    const top = chainData.chains.slice(0, 3);
+    let html = '';
+    top.forEach(c => {
+      const stocks = (c.upstream || []).concat(c.midstream || []).concat(c.downstream || []);
+      const count = stocks.length;
+      html += '<div class="battle-pool-item"><span class="name">' + (c.name || '--') + '</span><span style="font-size:0.7rem;color:#94a3b8;">' + count + '只异动</span></div>';
+    });
+    mainLine.innerHTML = html;
+  } else {
+    mainLine.textContent = chainData ? '暂无产业链异动数据' : '加载数据后自动显示...';
+  }
+}
+
+// ==============================
+//  页面初始化
+// ==============================
+async function initPage() {
+  const dates = await populateDateSelector();
+  if (dates.length > 0) {
+    // 默认选中最新日期
+    document.getElementById('dateSelect').value = dates[0];
+  }
+  await refreshData();
+}
+
+// ==============================
+//  Tab 切换
+// ==============================
+document.addEventListener('click', (e) => {
+  const tab = e.target.closest('.tab');
+  if (!tab) return;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  const target = document.getElementById(tab.dataset.tab);
+  if (target) target.classList.add('active');
+});
+
+// ==============================
+//  渲染：涨停产业链异动
+// ==============================
+function renderChainAnalysis(data) {
+  // 统计卡片
+  const statsHtml = `
+    <div class="stat-card"><div class="num num-yellow">${data.total_limit_up}</div><div class="label">涨停总数</div></div>
+    <div class="stat-card"><div class="num num-cyan">${data.total_chains_matched}</div><div class="label">匹配产业链数</div></div>
+    <div class="stat-card"><div class="num ${data.top3 && data.top3[0] ? 'num-green' : ''}">${data.top3 && data.top3[0] ? data.top3[0].chain : '—'}</div><div class="label">最强主线</div></div>
+    <div class="stat-card"><div class="num num-red">${data.unknown_count}</div><div class="label">未知异动</div></div>
+  `;
+  document.getElementById('chainStats').innerHTML = statsHtml;
+
+  // TOP3 产业链
+  const top3El = document.getElementById('chainTop3');
+  if (!data.top3 || data.top3.length === 0) {
+    top3El.innerHTML = `<div class="card"><div class="empty-state"><div class="icon">📭</div><p>暂无涨停数据</p></div></div>`;
+  } else {
+    top3El.innerHTML = data.top3.map((chain, i) => renderChainCard(chain, i + 1)).join('');
+  }
+
+  // 全部产业链
+  renderAllChainsTable(data.all_chains || []);
+
+  // 未知异动
+  const unknownEl = document.getElementById('unknownList');
+  if (data.unknown_stocks && data.unknown_stocks.length > 0) {
+    document.getElementById('unknownCard').classList.remove('hidden');
+    unknownEl.innerHTML = `<div class="unknown-grid">${
+      data.unknown_stocks.map(s =>
+        `<span class="unknown-tag">${s.name}(${s.code})${s.consecutive > 1 ? ' ' + s.consecutive + '连板' : ''}</span>`
+      ).join('')
+    }</div>`;
+  } else {
+    document.getElementById('unknownCard').classList.add('hidden');
+  }
+}
+
+function renderChainCard(chain, rank) {
+  const segBreakdown = Object.entries(chain.segment_breakdown || {}).map(([segName, segData]) => {
+    const tagClass = segName === '上游' ? 'tag-upstream' : segName === '中游' ? 'tag-midstream' : segName === '下游' ? 'tag-downstream' : 'tag-unknown';
+    return `<div class="seg-box">
+      <div class="seg-header">
+        <span class="seg-name"><span class="tag ${tagClass}">${segName}</span></span>
+        <span class="seg-count">${segData.count} 只</span>
+      </div>
+      <div class="seg-stocks">${segData.stocks.join('、')}</div>
+    </div>`;
+  }).join('');
+
+  return `<div class="card">
+    <div class="chain-header chain-${rank}">TOP${rank}: ${chain.chain}</div>
+    <div class="flex" style="gap:16px; margin-bottom:10px;">
+      <span style="font-size:1.2rem; font-weight:600;">${chain.total} 只</span>
+      <span style="color:var(--muted);">首板 ${chain.first_board}</span>
+      <span style="color:var(--muted);">连板 ${chain.consecutive_count}</span>
+    </div>
+    <div style="font-size:0.8rem; color:var(--muted); margin-bottom:8px;">
+      代表: ${(chain.representative || []).map(r => `${r.name}(${r.code})`).join('、')}
+    </div>
+    ${segBreakdown}
+  </div>`;
+}
+
+function renderAllChainsTable(chains) {
+  const el = document.getElementById('allChainsTable');
+  if (!chains || chains.length === 0) {
+    el.innerHTML = '<div class="empty-state" style="padding:20px;"><p>暂无数据</p></div>';
+    return;
+  }
+  let html = `<table><thead><tr>
+    <th>产业链</th><th>涨停数</th><th>首板</th><th>连板</th><th>代表个股</th>
+  </tr></thead><tbody>`;
+  chains.forEach(c => {
+    const reps = (c.representative || []).slice(0, 2).map(r => r.name).join(', ');
+    html += `<tr>
+      <td><strong>${c.chain}</strong></td>
+      <td>${c.total}</td>
+      <td>${c.first_board}</td>
+      <td>${c.consecutive_count}</td>
+      <td>${reps}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function toggleAllChains() {
+  const table = document.getElementById('allChainsTable');
+  const btn = event.target;
+  if (table.style.maxHeight) {
+    table.style.maxHeight = '';
+    btn.textContent = '展开全部';
+  } else {
+    table.style.maxHeight = '400px';
+    table.style.overflowY = 'auto';
+    btn.textContent = '收起';
+  }
+}
+
+// ==============================
+//  渲染：交叉校验
+// ==============================
+function renderCrossValidation(data) {
+  // 情景判定
+  const badge = document.getElementById('scenarioBadge');
+  badge.textContent = data.scenario || '—';
+  badge.className = `scenario-badge scenario-${data.scenario || 'none'}`;
+
+  document.getElementById('scenarioDetail').textContent = data.detail || '';
+  document.getElementById('resonanceLabel').textContent = `${data.resonance_score || 0}%`;
+  document.getElementById('resonanceFill').style.width = `${data.resonance_score || 0}%`;
+
+  if (data.resonance_score >= 60) {
+    document.getElementById('resonanceFill').style.background = 'var(--green)';
+  } else if (data.resonance_score >= 30) {
+    document.getElementById('resonanceFill').style.background = 'var(--yellow)';
+  } else {
+    document.getElementById('resonanceFill').style.background = 'var(--red)';
+  }
+
+  const m = data.metrics || {};
+  document.getElementById('cvLimitUp').textContent = m.total_limit_up ?? '—';
+  document.getElementById('cvNewHigh').textContent = m.total_new_high ?? '—';
+
+  const overlap = data.overlap_sectors || [];
+  document.getElementById('cvOverlap').textContent = overlap.length ? overlap.join(', ') : '无';
+}
+</script>
+
+<script>
+// 页面加载初始化：扫描日期 + 加载最新数据
+initPage();
+</script>
+</body>
+</html>
