@@ -380,6 +380,30 @@
     .battle-pool-item .tag { font-size: 0.65rem; padding: 1px 6px; border-radius: 4px; background: rgba(251,191,36,0.15); color: #fbbf24; }
     .battle-rules { margin-top: 0.6rem; padding: 0.4rem 0.8rem; background: rgba(255,255,255,0.04); border-radius: 0.8rem; font-size: 0.73rem; color: #94a3b8; text-align: center; }
     @media (max-width: 700px) { .battle-grid { grid-template-columns: 1fr; } }
+    .surge-card { background: linear-gradient(135deg, #0a1628 0%, #1a2332 100%); border: 1px solid #2d4a6b; }
+    body.light .surge-card { background: linear-gradient(135deg, #fff, #f8fafc); border-color: #e2e8f0; }
+    .surge-table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+    .surge-table th { text-align:left; padding:0.3rem 0.4rem; color:#64748b; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.3px; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .surge-table th.sortable { cursor:pointer; user-select:none; }
+    .surge-table th.sortable:hover { color:#e2e8f0; }
+    body.light .surge-table th { border-bottom-color:#e2e8f0; }
+    .surge-table td { padding:0.25rem 0.4rem; border-bottom:1px solid rgba(255,255,255,0.03); color:#cbd5e1; }
+    body.light .surge-table td { border-bottom-color:#f1f5f9; }
+    .surge-table tr:hover td { background:rgba(255,255,255,0.03); }
+    .surge-table .tl { text-align:left; }
+    .surge-table .stock-code { font-size:0.65rem; color:#94a3b8; }
+    .surge-table .stock-name { font-size:0.85rem; font-weight:600; color:#e2e8f0; }
+    body.light .surge-table .stock-name { color:#1e293b; }
+    .surge-table .sector-tag { display:inline-block; background:#1e3a5f; color:#60a5fa; padding:1px 6px; border-radius:8px; font-size:0.7rem; }
+    body.light .surge-table .sector-tag { background:#e0f2fe; color:#0369a1; }
+    .page-btn:hover { background:#3b5f84 !important; }
+    .page-btn:active { background:#1e3a5f !important; }
+    .s-positive { color:#22c55e; }
+    .s-negative { color:#ef4444; }
+    .s-ma60-below { color:#60a5fa; font-weight:600; }
+    .s-ma60-near { color:#fbbf24; font-weight:600; }
+    .s-ma60-above { color:#f87171; }
+    .s-vol-high { color:#22c55e; }
     .ai-rec-card .ai-summary { font-size: 0.85rem; color: #94a3b8; margin-bottom: 1rem; line-height: 1.6; }
     .ai-rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
     .ai-rec-item { background: rgba(255,255,255,0.06); border-radius: 1rem; padding: 1rem; border: 1px solid rgba(255,255,255,0.08); }
@@ -457,6 +481,52 @@
       <div class="battle-rules">
         🛑 止损 -5% &nbsp;|&nbsp; 🎯 止盈 +8% 或破5日线 &nbsp;|&nbsp; ⏳ 分歧低吸不追高 &nbsp;|&nbsp; 💰 仓位上限 <span id="battlePosLimit">--</span>
       </div>
+    </div>
+
+    <!-- 底部放量大阳线监测 -->
+    <div class="card surge-card" id="surgeMonitor">
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:0.3rem;">
+        <span style="font-weight:700;font-size:1.05rem;">🚀 容量核心监测</span>
+        <span style="color:#94a3b8;font-size:0.78rem;" id="surgeUpdateTime"></span>
+        <span style="display:flex;align-items:center;gap:4px;margin-left:auto;">
+          <button onclick="surgePrevDate()" style="background:#1e293b;color:#94a3b8;border:1px solid #334155;border-radius:4px;padding:1px 8px;font-size:0.7rem;cursor:pointer;">◀</button>
+          <input type="date" id="surgeDatePicker" style="background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:4px;padding:2px 6px;font-size:0.7rem;width:110px;" onchange="surgeGoDate(this.value)">
+          <button onclick="surgeNextDate()" style="background:#1e293b;color:#94a3b8;border:1px solid #334155;border-radius:4px;padding:1px 8px;font-size:0.7rem;cursor:pointer;">▶</button>
+        </span>
+        <span class="badge badge-first" id="surgeCount" style="">加载中...</span>
+        <span id="surgeRatingSummary" style="font-size:0.68rem;color:#94a3b8;white-space:nowrap;"></span>
+        <button id="exportSurgeBtn" style="background:#2d4a6b;color:#e2e8f0;border:none;border-radius:4px;padding:2px 8px;font-size:0.7rem;cursor:pointer;">📥 CSV</button>
+      </div>
+      <div style="font-size:0.72rem;color:#64748b;margin-bottom:0.4rem;">
+        📊 <b>评分权重</b> 成交额20 + MA60位置20 + 板块共振20 + 放量15 + 趋势10 + 基本面10 + 百日新高5 = <b>100分</b>
+      </div>
+      <div id="surgeList" style="font-size:0.85rem;color:#94a3b8;">
+        运行 <code>python bottom_surge_monitor.py</code> 生成数据...
+      </div>
+    </div>
+
+    <!-- 主线补涨监测 -->
+    <div class="card surge-card" id="buguMonitor">
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:0.3rem;">
+        <span style="font-weight:700;font-size:1.05rem;">📈 主线补涨监测</span>
+        <span style="color:#94a3b8;font-size:0.78rem;" id="buguUpdateTime"></span>
+        <span class="badge badge-first" id="buguCount" style="margin-left:auto;">加载中...</span>
+      </div>
+      <div style="font-size:0.78rem;color:#64748b;margin-bottom:0.5rem;">
+        芯片/机器人主线内，底部放量启动 <b>+</b> 趋势中继突破监测
+      </div>
+      <div id="buguList" style="font-size:0.85rem;color:#94a3b8;">
+        运行 <code>python bugu_monitor.py</code> 生成数据...
+      </div>
+    </div>
+
+    <!-- 板块共振检测 -->
+    <div class="card" id="resonanceCard" style="display:none;">
+      <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.3rem;">
+        <span style="font-weight:700;font-size:1.05rem;">📡 板块共振检测</span>
+        <span style="color:#94a3b8;font-size:0.75rem;">同一板块≥3只底部放量 = 板块底部共振日</span>
+      </div>
+      <div id="resonanceList"></div>
     </div>
 
     <div class="card">
@@ -1140,6 +1210,7 @@
                 records.splice(i, 1);
                 saveRecords();
                 renderAll();
+                syncSurgeResonance();
               }
             });
           });
@@ -1353,6 +1424,15 @@
 
       function renderAll() { renderTable(); updateCharts(); }
 
+      // 联动：情感板块数据更新时，底部放量共振标签同步刷新
+      function syncSurgeResonance() {
+        if (!surgeState._renderPage) return;
+        var el = document.getElementById('surgeMonitor');
+        if (!el || el.querySelector('.resonance-filter') === null) return;
+        syncPlateData();
+        surgeState._renderPage();
+      }
+
       function addRecord() {
         const date = inputDate.value.trim();
         const volume = parseFloat(inputVolume.value);
@@ -1397,6 +1477,7 @@
         records.sort((a, b) => a.date < b.date ? -1 : 1);
         saveRecords();
         renderAll();
+        syncSurgeResonance();
 
         inputVolume.value = ''; inputLimitUp.value = ''; inputLimitDown.value = '';
         inputBomb.value = ''; inputChain.value = '';
@@ -1418,7 +1499,7 @@
 
       function clearAll() {
         if (records.length && confirm('确定清空所有历史数据吗？')) {
-          records = []; saveRecords(); renderAll();
+          records = []; saveRecords(); renderAll(); syncSurgeResonance();
         }
       }
 
@@ -1428,6 +1509,7 @@
         records.sort((a, b) => a.date < b.date ? -1 : 1);
         saveRecords();
         renderAll();
+        syncSurgeResonance();
         inputDate.value = getTodayStr();
       }
 
@@ -1614,7 +1696,7 @@
           const matches = [...html.matchAll(/百日新高_(\d{8})\.json/g)];
           allFiles = matches.map(m => ({ date: m[1], file: '百日新高_' + m[1] + '.json' }));
           allFiles.sort((a, b) => b.date.localeCompare(a.date));
-        } catch {}
+        } catch(e) { console.warn('getRecommendations dir fetch failed:', e); }
 
         if (allFiles.length === 0) {
           contentEl.innerHTML = '<div class="ai-rec-empty">暂无百日新高历史数据</div>';
@@ -1878,6 +1960,7 @@
             records.sort((a, b) => a.date < b.date ? -1 : 1);
             saveRecords();
             renderAll();
+            syncSurgeResonance();
           } catch (err) { alert('文件格式不正确'); }
         };
         reader.readAsText(file);
@@ -2462,9 +2545,20 @@
           .then(r => r.json())
           .then(data => {
             if (Array.isArray(data) && data.length) {
-              const stored = localStorage.getItem(STORAGE_KEY);
-              if (!stored) {
-                records = data.map(r => ({
+              var stored = localStorage.getItem(STORAGE_KEY);
+              var localRecords = [];
+              if (stored) {
+                try { localRecords = JSON.parse(stored); } catch(e) {}
+              }
+              // 合并: data.json覆盖localStorage中相同日期的记录, data.json中独有的追加
+              var dateSet = {};
+              localRecords.forEach(function(r) { dateSet[r.date] = r; });
+              data.forEach(function(r) {
+                dateSet[r.date] = r; // data.json优先
+              });
+              records = Object.keys(dateSet).sort().map(function(d) {
+                var r = dateSet[d];
+                return {
                   date: r.date || '',
                   volume: parseFloat(r.volume) || 0,
                   limitUp: parseInt(r.limitUp) || 0,
@@ -2492,12 +2586,13 @@
                   w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Reason: r.w3Reason || '',
                   w3b1Name: r.w3b1Name || '', w3b1New: parseInt(r.w3b1New) || 0,
                   w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0
-                }));
-                saveRecords();
-                renderAll();
-              }
+                };
+              });
+              saveRecords();
+              renderAll();
+              syncSurgeResonance();
             }
-          }).catch(() => {});
+          }).catch(function(e) { console.warn('autoLoadJSON failed:', e); });
       }
 
       function renderBattlePlan() {
@@ -2567,14 +2662,568 @@
         pool.innerHTML = '<span style="font-size:0.8rem;color:#64748b;">加载推荐池后自动填充...</span>';
       }
 
+      // ── 板块共振数据 (从情绪模块同步) ──
+      var hot_main_plate = [];
+      var potential_move_plate = [];
+      function syncPlateData() {
+        var recs = records;
+        if (!recs || !recs.length) { hot_main_plate = []; potential_move_plate = []; return; }
+        var latest = recs[recs.length - 1];
+        hot_main_plate = [latest.s1Name, latest.s2Name, latest.s3Name].filter(Boolean);
+        potential_move_plate = [latest.w1Name, latest.w2Name, latest.w3Name].filter(Boolean);
+      }
+
+      // ── 底部放量大阳线 (分页 + 历史日期 + 排序) ──
+      var surgeState = { data: null, page: 0, pageSize: 15, dates: [], sort: { field: 'sector_in_hot', desc: true }, filter: 'all', riskFilter: 'all', ma60Filter: 'all', qualityFilter: 'all' };
+
+      function renderSurgeMonitor() {
+        var el = document.getElementById('surgeList');
+        if (!el) return;
+        var countEl = document.getElementById('surgeCount');
+        var timeEl = document.getElementById('surgeUpdateTime');
+
+        function sortStocks(stocks) {
+          var sf = surgeState.sort.field;
+          var desc = surgeState.sort.desc ? -1 : 1;
+          stocks.sort(function(a, b) {
+            var av, bv;
+            if (sf === 'name') { av = (a.name || ''); bv = (b.name || ''); return desc * av.localeCompare(bv); }
+            if (sf === 'sector') {
+              var ha = a.sector_in_hot ? 1 : 0, hb = b.sector_in_hot ? 1 : 0;
+              if (ha !== hb) return desc * (hb - ha);
+              av = (a.sector || ''); bv = (b.sector || '');
+              return desc * av.localeCompare(bv);
+            }
+            if (sf === 'sector_in_hot') {
+              var ha = a.sector_in_hot ? 1 : 0, hb = b.sector_in_hot ? 1 : 0;
+              if (ha !== hb) return desc * (hb - ha);
+              var ca = (a.sector_surge_count || 0), cb = (b.sector_surge_count || 0);
+              if (ca !== cb) return desc * (cb - ca);
+              return b.vol_ratio_vs_60 - a.vol_ratio_vs_60;
+            }
+            if (sf === 'quality') {
+              var qo = {A:0,B:1,C:2}, qa = qo[a.quality]||3, qb = qo[b.quality]||3;
+              if (qa !== qb) return desc * (qa - qb);
+              return b.vol_ratio_vs_60 - a.vol_ratio_vs_60;
+            }
+            if (sf === 'risk_level') {
+              var ro = {A:0,B:1,C:2}, ra = ro[a.risk_level]||3, rb = ro[b.risk_level]||3;
+              if (ra !== rb) return desc * (ra - rb);
+              return b.vol_ratio_vs_60 - a.vol_ratio_vs_60;
+            }
+            if (sf === 'score') {
+              av = (a.score||0); bv = (b.score||0);
+              if (av !== bv) return desc * (av - bv);
+              return b.vol_ratio_vs_60 - a.vol_ratio_vs_60;
+            }
+            av = a[sf]; bv = b[sf];
+            if (av == null) av = 0; if (bv == null) bv = 0;
+            if (av !== bv) return desc * (av < bv ? -1 : 1);
+            return b.vol_ratio_vs_60 - a.vol_ratio_vs_60;
+          });
+        }
+
+        function renderPage() {
+          if (!surgeState.data || !surgeState.data.stocks || !surgeState.data.stocks.length) {
+            el.innerHTML = '<span style="color:#64748b;font-size:0.8rem;">暂无数据</span>';
+            if (countEl) countEl.textContent = '0 只';
+            return;
+          }
+          var data = surgeState.data;
+          var stocks = data.stocks;
+          sortStocks(stocks);
+          var ps = surgeState.pageSize;
+          var total = stocks.length;
+          var maxPage = Math.ceil(total / ps) - 1;
+          if (surgeState.page > maxPage) surgeState.page = maxPage;
+          if (surgeState.page < 0) surgeState.page = 0;
+          var start = surgeState.page * ps;
+          var end = Math.min(start + ps, total);
+          var page = surgeState.page;
+          var sf = surgeState.sort.field;
+          
+          // 板块共振匹配
+          syncPlateData();
+          stocks.forEach(function(sk) {
+            var sec = (sk.sector || '').trim();
+            if (!sec) sk._resonance = '冷门无共振';
+            else if (hot_main_plate.indexOf(sec) >= 0) sk._resonance = '主线热门';
+            else if (potential_move_plate.indexOf(sec) >= 0) sk._resonance = '潜在异动';
+            else sk._resonance = '冷门无共振';
+          });
+          // Stat counts
+          var mainCount = stocks.filter(function(sk){return sk._resonance === '主线热门';}).length;
+          var moveCount = stocks.filter(function(sk){return sk._resonance === '潜在异动';}).length;
+          var unfilteredTotal = total;
+          // Apply filter
+          if (surgeState.filter !== 'all') {
+            stocks = stocks.filter(function(sk){return sk._resonance === surgeState.filter;});
+            total = stocks.length;
+            maxPage = Math.ceil(total / ps) - 1;
+            if (surgeState.page > maxPage) surgeState.page = maxPage;
+            if (surgeState.page < 0) surgeState.page = 0;
+            start = surgeState.page * ps;
+            end = Math.min(start + ps, total);
+          }
+          // 智能筛选: 风险 + MA60方向 + 基本面
+          var smartPreFilter = stocks;
+          if (surgeState.riskFilter !== 'all') smartPreFilter = smartPreFilter.filter(function(sk){return (sk.risk_level||'C') === surgeState.riskFilter;});
+          if (surgeState.ma60Filter !== 'all') smartPreFilter = smartPreFilter.filter(function(sk){return (sk.ma60_dir||'') === surgeState.ma60Filter;});
+          if (surgeState.qualityFilter !== 'all') smartPreFilter = smartPreFilter.filter(function(sk){return (sk.quality||'C') === surgeState.qualityFilter;});
+          var smartMatchCount = smartPreFilter.length;
+          // Apply smart filters to current page
+          if (surgeState.riskFilter !== 'all') stocks = stocks.filter(function(sk){return (sk.risk_level||'C') === surgeState.riskFilter;});
+          if (surgeState.ma60Filter !== 'all') stocks = stocks.filter(function(sk){return (sk.ma60_dir||'') === surgeState.ma60Filter;});
+          if (surgeState.qualityFilter !== 'all') stocks = stocks.filter(function(sk){return (sk.quality||'C') === surgeState.qualityFilter;});
+          if (surgeState.riskFilter !== 'all' || surgeState.ma60Filter !== 'all' || surgeState.qualityFilter !== 'all') {
+            total = stocks.length;
+            maxPage = Math.ceil(total / ps) - 1;
+            if (surgeState.page > maxPage) surgeState.page = maxPage;
+            if (surgeState.page < 0) surgeState.page = 0;
+            start = surgeState.page * ps;
+            end = Math.min(start + ps, total);
+          }
+
+          // Sector summary line
+          var nhSectors = data.nh_top_sectors || {};
+          var surgeSectors = data.surge_sectors || {};
+          var nhKeys = Object.keys(nhSectors).filter(function(k){return k;}).slice(0,6);
+          var sgKeys = Object.keys(surgeSectors).filter(function(k){return k && surgeSectors[k]>=2;});
+          var summaryHtml = '';
+          if (nhKeys.length) {
+            summaryHtml += '<div style="font-size:0.7rem;color:#94a3b8;margin-bottom:0.35rem;">';
+            summaryHtml += '<span style="color:#f59e0b;">🔥 热门板块</span> ';
+            for (var i=0;i<nhKeys.length;i++) {
+              summaryHtml += '<span style="display:inline-block;background:#1a2332;padding:1px 5px;border-radius:3px;margin:0 2px;">' + nhKeys[i] + ' <span style="color:#60a5fa;">' + nhSectors[nhKeys[i]] + '</span></span>';
+            }
+            summaryHtml += '</div>';
+          }
+          if (sgKeys.length) {
+            summaryHtml += '<div style="font-size:0.7rem;color:#94a3b8;margin-bottom:0.35rem;">';
+            summaryHtml += '<span style="color:#22c55e;">📊 今日异动</span> ';
+            for (var i=0;i<sgKeys.length;i++) {
+              summaryHtml += '<span style="display:inline-block;background:#1a2332;padding:1px 5px;border-radius:3px;margin:0 2px;">' + sgKeys[i] + ' <span style="color:#22c55e;">' + surgeSectors[sgKeys[i]] + '只</span></span>';
+            }
+            summaryHtml += '</div>';
+          }
+
+          // 热点共振 banner (热点板块 + MA60附近)
+          var hrStocks = data.hot_resonance_stocks || [];
+          if (hrStocks.length) {
+            summaryHtml += '<div style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);border-radius:4px;padding:0.4rem 0.5rem;margin-bottom:0.4rem;">';
+            summaryHtml += '<div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.3rem;">';
+            summaryHtml += '<span style="color:#f97316;font-weight:700;font-size:0.8rem;">🔥 热点共振</span>';
+            summaryHtml += '<span style="color:#94a3b8;font-size:0.7rem;">热点板块 + MA60附近大阳线 ' + hrStocks.length + ' 只</span>';
+            summaryHtml += '</div><div style="display:flex;flex-wrap:wrap;gap:0.3rem;">';
+            for (var hi = 0; hi < hrStocks.length; hi++) {
+              var h = hrStocks[hi];
+              var hchg = (h.change >= 0 ? '+' : '') + h.change;
+              var hpma = (h.pct_from_ma60 > 0 ? '+' : '') + h.pct_from_ma60;
+              summaryHtml += '<span style="background:rgba(249,115,22,0.12);padding:0.2rem 0.4rem;border-radius:3px;font-size:0.7rem;color:#e2e8f0;">';
+              summaryHtml += '<span style="font-weight:600;">' + h.name + '</span> ' + hchg + '% <span style="color:#94a3b8;">|</span> ' + (h.sector||'') + ' <span style="color:#94a3b8;">|</span> 距MA60' + hpma + '%';
+              if (h.ma60_dir) summaryHtml += ' ' + ({'上升':'↗','下降':'↘','走平':'→'}[h.ma60_dir]||'') + h.ma60_dir;
+              summaryHtml += '</span>';
+            }
+            summaryHtml += '</div></div>';
+          }
+
+          // Toolbar
+          var toolbar = '<div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">';
+          toolbar += '<select id="surgeDateSelect" style="background:#1a2332;color:#e2e8f0;border:1px solid #2d4a6b;border-radius:4px;padding:2px 6px;font-size:0.75rem;">';
+          toolbar += '<option value="">选择日期...</option>';
+          for (var i = 0; i < surgeState.dates.length; i++) {
+            var d = surgeState.dates[i];
+            var label = d.substring(0,4) + '-' + d.substring(4,6) + '-' + d.substring(6,8);
+            var sel = d === (surgeState._curDate || '') ? ' selected' : '';
+            toolbar += '<option value="' + d + '"' + sel + '>' + label + '</option>';
+          }
+          toolbar += '</select>';
+          // Filter buttons
+          var btnAllCls = surgeState.filter === 'all' ? 'background:#2563eb;color:#fff;' : 'background:#2d4a6b;color:#94a3b8;';
+          var btnMainCls = surgeState.filter === '主线热门' ? 'background:#dc2626;color:#fff;' : 'background:#2d4a6b;color:#94a3b8;';
+          var btnMoveCls = surgeState.filter === '潜在异动' ? 'background:#d97706;color:#fff;' : 'background:#2d4a6b;color:#94a3b8;';
+          toolbar += '<span style="color:#94a3b8;font-size:0.7rem;">｜</span>';
+          toolbar += '<button class="resonance-filter" data-f="all" style="' + btnAllCls + 'border:none;border-radius:3px;padding:1px 6px;font-size:0.7rem;cursor:pointer;">全部(' + unfilteredTotal + ')</button>';
+          toolbar += '<button class="resonance-filter" data-f="主线热门" style="' + btnMainCls + 'border:none;border-radius:3px;padding:1px 6px;font-size:0.7rem;cursor:pointer;">主线(' + mainCount + ')</button>';
+          toolbar += '<button class="resonance-filter" data-f="潜在异动" style="' + btnMoveCls + 'border:none;border-radius:3px;padding:1px 6px;font-size:0.7rem;cursor:pointer;">异动(' + moveCount + ')</button>';
+          toolbar += '<span style="color:#94a3b8;font-size:0.7rem;">｜</span>';
+          // 智能筛选下拉
+          var rlLabels = {A:'A-安全',B:'B-观察',C:'C-风险'};
+          toolbar += '<select class="smart-filter" data-target="riskFilter" style="background:#1a2332;color:#e2e8f0;border:1px solid #2d4a6b;border-radius:3px;padding:1px 4px;font-size:0.7rem;">';
+          toolbar += '<option value="all"' + (surgeState.riskFilter==='all'?' selected':'') + '>风险:全部</option>';
+          toolbar += '<option value="A"' + (surgeState.riskFilter==='A'?' selected':'') + '>A-安全</option>';
+          toolbar += '<option value="B"' + (surgeState.riskFilter==='B'?' selected':'') + '>B-观察</option>';
+          toolbar += '<option value="C"' + (surgeState.riskFilter==='C'?' selected':'') + '>C-风险</option>';
+          toolbar += '</select>';
+          toolbar += '<select class="smart-filter" data-target="ma60Filter" style="background:#1a2332;color:#e2e8f0;border:1px solid #2d4a6b;border-radius:3px;padding:1px 4px;font-size:0.7rem;">';
+          toolbar += '<option value="all"' + (surgeState.ma60Filter==='all'?' selected':'') + '>MA60:全部</option>';
+          toolbar += '<option value="上升"' + (surgeState.ma60Filter==='上升'?' selected':'') + '>↗上升</option>';
+          toolbar += '<option value="走平"' + (surgeState.ma60Filter==='走平'?' selected':'') + '>→走平</option>';
+          toolbar += '<option value="下降"' + (surgeState.ma60Filter==='下降'?' selected':'') + '>↘下降</option>';
+          toolbar += '</select>';
+          toolbar += '<select class="smart-filter" data-target="qualityFilter" style="background:#1a2332;color:#e2e8f0;border:1px solid #2d4a6b;border-radius:3px;padding:1px 4px;font-size:0.7rem;">';
+          toolbar += '<option value="all"' + (surgeState.qualityFilter==='all'?' selected':'') + '>基本面:全部</option>';
+          toolbar += '<option value="A"' + (surgeState.qualityFilter==='A'?' selected':'') + '>A-优秀</option>';
+          toolbar += '<option value="B"' + (surgeState.qualityFilter==='B'?' selected':'') + '>B-中等</option>';
+          toolbar += '<option value="C"' + (surgeState.qualityFilter==='C'?' selected':'') + '>C-较差</option>';
+          toolbar += '</select>';
+          toolbar += '<span style="color:#64748b;font-size:0.65rem;">匹配' + smartMatchCount + '/' + unfilteredTotal + '只</span>';
+          toolbar += '<span style="color:#94a3b8;font-size:0.75rem;margin-left:auto;">第' + (page+1) + '/' + (maxPage+1) + '页</span>';
+          if (page > 0) toolbar += '<button class="page-btn" data-page="prev" style="background:#2d4a6b;color:#e2e8f0;border:none;border-radius:3px;padding:2px 8px;font-size:0.75rem;cursor:pointer;">‹ 上一页</button>';
+          if (page < maxPage) toolbar += '<button class="page-btn" data-page="next" style="background:#2d4a6b;color:#e2e8f0;border:none;border-radius:3px;padding:2px 8px;font-size:0.75rem;cursor:pointer;">下一页 ›</button>';
+          toolbar += '</div>';
+
+          // Sort indicator helper
+          function sortIcon(f) { return f === sf ? (surgeState.sort.desc ? '▼' : '▲') : ''; }
+
+          var html = summaryHtml + toolbar;
+          html += '<table class="surge-table"><thead><tr>';
+          html += '<th class="tl sortable" data-sort="name">名称' + sortIcon('name') + '</th>';
+          html += '<th class="sortable" data-sort="score">评分' + sortIcon('score') + '<br><span style="font-size:0.5rem;font-weight:400;color:#64748b;">A+≥80 A≥65 B≥50 C≥35</span></th>';
+          html += '<th class="tl sortable" data-sort="sector">行业' + sortIcon('sector') + '</th>';
+          html += '<th class="sortable" data-sort="change">涨幅' + sortIcon('change') + '</th>';
+          html += '<th class="sortable" data-sort="vol_ratio_vs_60">放量' + sortIcon('vol_ratio_vs_60') + '<br><span style="font-size:0.5rem;font-weight:400;color:#64748b;">1.5~2.5温和 2.5~4明显 >4异常</span></th>';
+          html += '<th class="sortable" data-sort="pct_from_ma60">距MA60' + sortIcon('pct_from_ma60') + '<br><span style="font-size:0.5rem;font-weight:400;color:#64748b;">↗上升 →走平 ↘下降</span></th>';
+          html += '<th class="sortable" data-sort="quality">基本面' + sortIcon('quality') + '</th>';
+          html += '<th style="text-align:center;">板块共振</th>';
+          html += '<th class="tl" style="max-width:90px;">炒作逻辑</th>';
+          html += '</tr></thead><tbody>';
+          for (var i = start; i < end; i++) {
+            var s = stocks[i];
+            var chg = (s.change >= 0 ? '+' : '') + s.change;
+            var pctMA = s.pct_from_ma60;
+            var pma = (pctMA > 0 ? '+' : '') + pctMA;
+            var status, statusClass;
+            if (pctMA < -2) { status = '超跌·等确认'; statusClass = 's-ma60-below'; }
+            else if (pctMA < 3) { status = '回踩MA60✔'; statusClass = 's-ma60-near'; }
+            else if (pctMA < 8) { status = '刚突破·等分歧'; statusClass = 's-positive'; }
+            else { status = '已涨多·等回调'; statusClass = 's-ma60-above'; }
+            var nhBadge = s.in_new_high ? '<span class="tag-newhigh" style="font-size:0.65rem;background:#22c55e20;color:#22c55e;padding:1px 5px;border-radius:3px;margin-left:3px;">百日新高</span>' : '';
+            var sn = s.sector || '';
+            var hotBadge = s.sector_in_hot ? '<span style="font-size:0.6rem;color:#f59e0b;margin-left:3px;">🔥</span>' : '';
+            var surgeCnt = s.sector_surge_count > 1 ? '<span style="font-size:0.6rem;color:#22c55e;margin-left:2px;">' + s.sector_surge_count + '只</span>' : '';
+            var qBadge, qColor;
+            if (s.quality === 'A') { qBadge = 'A'; qColor = '#22c55e'; }
+            else if (s.quality === 'B') { qBadge = 'B'; qColor = '#eab308'; }
+            else if (s.quality === 'C') { qBadge = 'C'; qColor = '#ef4444'; }
+            else { qBadge = '-'; qColor = '#64748b'; }
+            var finText = '<span style="color:' + qColor + ';font-weight:600;">' + qBadge + '级</span>';
+            if (s.roe) finText += '<br><span style="font-size:0.6rem;color:#94a3b8;">ROE' + s.roe + '%</span>';
+            if (s.pe) finText += '<br><span style="font-size:0.6rem;color:#94a3b8;">PE' + s.pe + '</span>';
+
+            var resLabel = s._resonance || '冷门无共振';
+            var resColor, resBg;
+            if (resLabel === '主线热门') { resColor = '#dc2626'; resBg = 'rgba(220,38,38,0.06)'; }
+            else if (resLabel === '潜在异动') { resColor = '#d97706'; resBg = 'rgba(217,119,6,0.06)'; }
+            else { resColor = '#64748b'; resBg = ''; }
+            var rowBg = resBg ? ' style="background:' + resBg + '"' : '';
+
+            var sc = s.score || 0;
+            var rt = s.rating || '?';
+            var rtColor = rt === 'A+' ? '#8b5cf6' : rt === 'A' ? '#22c55e' : rt === 'B' ? '#eab308' : rt === 'C' ? '#f97316' : '#ef4444';
+            var sd = s.score_detail || {};
+            var scoreTooltip = '成交额' + (sd['成交额']||0) + ' MA60' + (sd['MA60位置']||0) + ' 板块' + (sd['板块共振']||0)
+              + ' 放量' + (sd['放量倍数']||0) + ' 趋势' + (sd['趋势']||0) + ' 基本面' + (sd['基本面']||0) + ' 百日新高' + (sd['百日新高']||0);
+
+            html += '<tr' + rowBg + '>'
+              + '<td class="tl"><span class="stock-code">' + s.code.split('.')[0] + '</span><br><span class="stock-name">' + (s.name || s.code) + nhBadge + '</span></td>'
+              + '<td style="text-align:center;"><span style="font-weight:700;color:' + rtColor + ';font-size:1rem;cursor:help;" title="' + scoreTooltip + '">' + rt + '</span><br><span style="font-size:0.6rem;color:' + rtColor + ';">' + sc + '分</span></td>'
+              + '<td class="tl">' + (sn ? '<span class="sector-tag">' + sn + '</span>' + hotBadge + surgeCnt : '<span style="color:#64748b;font-size:0.7rem;">-</span>') + '</td>'
+              + '<td class="s-positive">' + chg + '%</td>'
+              + '<td class="s-vol-high">' + s.vol_ratio_vs_60 + 'x<br><span style="font-size:0.55rem;color:#94a3b8;">' + (s.vol_ratio_vs_60 > 4 ? '异常放量' : s.vol_ratio_vs_60 > 2.5 ? '明显放量' : s.vol_ratio_vs_60 > 1.5 ? '温和放量' : '缩量') + '</span></td>'
+              + '<td class="' + (pctMA < 0 ? 's-ma60-below' : pctMA < 3 ? 's-ma60-near' : 's-ma60-above') + '">' + pma + '%<br><span style="font-size:0.6rem;color:#94a3b8;">' + status + ' ' + (s.ma60_dir ? ({'上升':'↗','下降':'↘','走平':'→'}[s.ma60_dir]||'') + s.ma60_dir : '') + '</span></td>'
+              + '<td style="text-align:center;">' + finText + '</td>'
+              + '<td style="text-align:center;color:' + resColor + ';font-size:0.7rem;font-weight:500;">' + resLabel + '</td>'
+              + '<td class="tl" style="font-size:0.7rem;color:#94a3b8;max-width:90px;line-height:1.3;">' + (s.narrative||'') + '</td></tr>';
+          }
+          html += '</tbody></table>';
+          el.innerHTML = html;
+
+          // Rating summary
+          var rsEl = document.getElementById('surgeRatingSummary');
+          if (rsEl && data.stocks) {
+            var rc = {}; data.stocks.forEach(function(x){ var r=x.rating||'?'; rc[r]=(rc[r]||0)+1; });
+            var order = ['A+','A','B','C','D'];
+            var rsHtml = '';
+            order.forEach(function(rk){ if(rc[rk]) rsHtml += '<span style="display:inline-block;margin:0 2px;font-weight:600;color:' + ({'A+':'#8b5cf6','A':'#22c55e','B':'#eab308','C':'#f97316','D':'#ef4444'}[rk]||'#64748b') + ';">' + rk + ' ' + rc[rk] + '</span> '; });
+            rsEl.innerHTML = rsHtml;
+          }
+
+          // Bind resonance filter buttons
+          var rBtns = el.querySelectorAll('.resonance-filter');
+          for (var j = 0; j < rBtns.length; j++) {
+            rBtns[j].onclick = function() {
+              surgeState.filter = this.getAttribute('data-f');
+              surgeState.page = 0;
+              renderPage();
+            };
+          }
+          // Bind smart filter dropdowns
+          var sFilters = el.querySelectorAll('.smart-filter');
+          for (var j = 0; j < sFilters.length; j++) {
+            sFilters[j].onchange = function() {
+              surgeState[this.getAttribute('data-target')] = this.value;
+              surgeState.page = 0;
+              renderPage();
+            };
+          }
+          // Bind sort clicks
+          var headers = el.querySelectorAll('th.sortable');
+          for (var j = 0; j < headers.length; j++) {
+            headers[j].onclick = function() {
+              var f = this.getAttribute('data-sort');
+              if (surgeState.sort.field === f) surgeState.sort.desc = !surgeState.sort.desc;
+              else { surgeState.sort.field = f; surgeState.sort.desc = true; }
+              surgeState.page = 0;
+              renderPage();
+            };
+          }
+          // Bind date selector
+          var sel = document.getElementById('surgeDateSelect');
+          if (sel) {
+            sel.onchange = function() { window.surgeLoadDate(this.value); };
+          }
+          // Bind page buttons
+          var btns = el.querySelectorAll('.page-btn');
+          for (var j = 0; j < btns.length; j++) {
+            btns[j].onclick = function() {
+              if (this.getAttribute('data-page') === 'prev') surgeState.page--;
+              else surgeState.page++;
+              renderPage();
+            };
+          }
+          }
+          // Expose for cross-module sync
+          surgeState._renderPage = renderPage;
+
+        function renderResonance() {
+          var card = document.getElementById('resonanceCard');
+          var list = document.getElementById('resonanceList');
+          if (!card || !list) return;
+          var groups = (surgeState.data && surgeState.data.resonance_groups) || [];
+          if (!groups.length) { card.style.display = 'none'; return; }
+          card.style.display = '';
+          var html = '';
+          for (var i = 0; i < groups.length; i++) {
+            var g = groups[i];
+            html += '<div style="margin-bottom:0.5rem;border:1px solid #2d4a6b;border-radius:6px;padding:0.4rem 0.6rem;background:rgba(34,197,94,0.04);">';
+            html += '<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.3rem;">';
+            html += '<span style="font-weight:600;font-size:0.9rem;color:#22c55e;">' + g.sector + '</span>';
+            html += '<span class="badge badge-first" style="font-size:0.7rem;">' + g.count + '只共振</span>';
+            html += '<span style="font-size:0.7rem;color:#f59e0b;">⚡ 板块共振日</span>';
+            html += '</div>';
+            html += '<div style="display:flex;flex-wrap:wrap;gap:0.3rem;">';
+            for (var j = 0; j < g.stocks.length; j++) {
+              var s = g.stocks[j];
+              var chg = (s.change >= 0 ? '+' : '') + s.change;
+              var pm = s.pct_from_ma60;
+              var pmStr = (pm > 0 ? '+' : '') + pm;
+              var pmCls = pm < 0 ? '#60a5fa' : pm < 3 ? '#eab308' : '#ef4444';
+              html += '<span style="display:inline-flex;align-items:center;gap:0.3rem;background:#1a2332;padding:2px 6px;border-radius:4px;font-size:0.75rem;border:1px solid #2d4a6b;">';
+              html += '<span style="color:#e2e8f0;">' + (s.name || s.code.split('.')[0]) + '</span>';
+              html += '<span style="color:#22c55e;">' + chg + '%</span>';
+              html += '<span style="color:' + pmCls + ';">MA60' + pmStr + '%</span>';
+              html += '</span>';
+            }
+            html += '</div></div>';
+          }
+          list.innerHTML = html;
+        }
+
+        window.surgeLoadDate = function(dateStr) {
+          el.innerHTML = '<span style="color:#64748b;font-size:0.8rem;">加载 ' + dateStr + '...</span>';
+          surgeState._curDate = dateStr;
+          var dp = document.getElementById('surgeDatePicker');
+          if (dp) dp.value = dateStr.substring(0,4)+'-'+dateStr.substring(4,6)+'-'+dateStr.substring(6,8);
+          fetch('百日新高系统/底部放量_' + dateStr + '.json')
+            .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+            .then(function(data) {
+              surgeState.data = data;
+              surgeState.page = 0;
+              sortStocks(data.stocks || []);
+              if (countEl) countEl.textContent = (data.stocks ? data.stocks.length : 0) + ' 只';
+              if (timeEl) timeEl.textContent = data.date || '';
+              renderPage();
+              renderResonance();
+            })
+            .catch(function() {
+              el.innerHTML = '<span style="color:#ef4444;font-size:0.8rem;">加载失败</span>';
+            });
+        }
+
+        // 1. Fetch available dates
+        fetch('/api/list-bottom-surge')
+          .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+          .then(function(resp) {
+            surgeState.dates = resp.dates || [];
+            if (surgeState.dates.length === 0) {
+              el.innerHTML = '<span style="color:#64748b;font-size:0.8rem;">暂无数据文件</span>';
+              if (countEl) countEl.textContent = '0 只';
+              return;
+            }
+            window.surgeLoadDate(surgeState.dates[0]);
+          })
+          .catch(function() {
+            var now = new Date();
+            var ld = now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0');
+            var yd = new Date(now - 86400000);
+            var ly = yd.getFullYear() + String(yd.getMonth()+1).padStart(2,'0') + String(yd.getDate()).padStart(2,'0');
+            fetch('百日新高系统/底部放量_' + ld + '.json').then(function(r) {
+              if (r.ok) { surgeState.dates = [ld]; window.surgeLoadDate(ld); }
+              else { fetch('百日新高系统/底部放量_' + ly + '.json').then(function(r2) {
+                if (r2.ok) { surgeState.dates = [ly]; window.surgeLoadDate(ly); }
+                else { el.innerHTML = '<span style="color:#64748b;font-size:0.8rem;">暂无数据，运行 bottom_surge_monitor.py 生成</span>'; }
+              }); }
+            });
+          });
+      }
+
+      // ── 日期导航 ──
+      window.surgePrevDate = function() {
+        var dates = surgeState.dates;
+        var cur = surgeState._curDate;
+        if (!dates || !dates.length || !cur) return;
+        var i = dates.indexOf(cur);
+        if (i < dates.length - 1) window.surgeLoadDate(dates[i + 1]);
+      };
+      window.surgeNextDate = function() {
+        var dates = surgeState.dates;
+        var cur = surgeState._curDate;
+        if (!dates || !dates.length || !cur) return;
+        var i = dates.indexOf(cur);
+        if (i > 0) window.surgeLoadDate(dates[i - 1]);
+      };
+      window.surgeGoDate = function(val) {
+        if (!val) return;
+        var ds = val.replace(/-/g, '');
+        var dates = surgeState.dates;
+        if (dates && dates.indexOf(ds) >= 0) { window.surgeLoadDate(ds); return; }
+        window.surgeLoadDate(ds);
+      };
+
+      // ── 导出底部放量表CSV（含板块共振标签） ──
+      function exportSurgeCSV() {
+        var d = surgeState.data;
+        if (!d || !d.stocks || !d.stocks.length) { alert('无数据可导出'); return; }
+        syncPlateData();
+        var rows = d.stocks;
+        // Match resonance labels
+        rows.forEach(function(sk) {
+          var sec = (sk.sector || '').trim();
+          if (!sec) sk._resonance = '冷门无共振';
+          else if (hot_main_plate.indexOf(sec) >= 0) sk._resonance = '主线热门';
+          else if (potential_move_plate.indexOf(sec) >= 0) sk._resonance = '潜在异动';
+          else sk._resonance = '冷门无共振';
+        });
+        var csv = '\uFEFF代码,名称,行业,涨幅%,放量x,距MA60%,距底部%,MA60方向,基本面,板块共振,评分,评级,炒作逻辑\n';
+        rows.forEach(function(sk) {
+          var line = [
+            sk.code, sk.name || '', sk.sector || '',
+            (sk.change || 0).toFixed(2), (sk.vol_ratio_vs_60 || 0).toFixed(1),
+            (sk.pct_from_ma60 || 0).toFixed(1), (sk.surge_from_low || 0).toFixed(1),
+            sk.ma60_dir || '-', sk.quality || '-', sk._resonance || '冷门无共振', (sk.score||0), (sk.rating||'-'), (sk.narrative||'')
+          ].join(',');
+          csv += line + '\n';
+        });
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = '底部放量_' + (surgeState._curDate || '') + '.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      // ── 主线补涨监测渲染 ──
+      function renderBuguMonitor() {
+        var el = document.getElementById('buguList');
+        var countEl = document.getElementById('buguCount');
+        var timeEl = document.getElementById('buguUpdateTime');
+        if (!el) return;
+
+        // 取最新日期
+        var now = new Date();
+        var ds = now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0');
+
+        fetch('百日新高系统/bugu_' + ds + '.json')
+          .then(function(r) { if (!r.ok) throw new Error(); return r.json(); })
+          .then(function(data) {
+            var stocks = data.stocks || [];
+            if (countEl) countEl.textContent = stocks.length + ' 只';
+            if (timeEl) timeEl.textContent = data.date || '';
+
+            if (!stocks.length) {
+              el.innerHTML = '<span style="color:#64748b;font-size:0.8rem;">暂无符合条件的补涨标的</span>';
+              return;
+            }
+
+            var hot = data.hot_mainlines || [];
+            var hotHtml = hot.length ? '<span style="color:#f59e0b;font-size:0.7rem;">🔥 ' + hot.join(' / ') + '</span> ' : '';
+
+            var html = '<div style="margin-bottom:0.3rem;font-size:0.7rem;color:#94a3b8;">' + hotHtml + '模型一底部补涨' + data.total_m1 + '只 / 模型二趋势中继' + data.total_m2 + '只</div>';
+            html += '<table class="surge-table"><thead><tr>';
+            html += '<th class="tl">名称</th>';
+            html += '<th>涨幅</th>';
+            html += '<th>模型</th>';
+            html += '<th>量比</th>';
+            html += '<th>10日涨幅</th>';
+            html += '<th>主线</th>';
+            html += '<th>基本面</th>';
+            html += '<th class="tl">备注</th>';
+            html += '</tr></thead><tbody>';
+
+            for (var i = 0; i < stocks.length; i++) {
+              var s = stocks[i];
+              var chg = (s.change >= 0 ? '+' : '') + s.change;
+              var chg10 = (s.chg10 >= 0 ? '+' : '') + s.chg10;
+              var ml = s.mainline || '-';
+              var mlColor = ml.indexOf('芯片') >= 0 ? '#60a5fa' : '#22c55e';
+              var vr = s.vol_ratio || 0;
+              var q = s.quality || 'C';
+              var qColor = q === 'A' ? '#22c55e' : q === 'B' ? '#eab308' : '#64748b';
+              var roe = s.roe ? 'ROE' + s.roe + '%' : '';
+              var pe = s.pe ? 'PE' + s.pe : '';
+              var fin = '<span style="color:' + qColor + ';font-weight:600;">' + q + '级</span>';
+              if (roe) fin += '<br><span style="font-size:0.6rem;color:#94a3b8;">' + roe + '</span>';
+              if (pe) fin += '<br><span style="font-size:0.6rem;color:#94a3b8;">' + pe + '</span>';
+
+              var modelLabel = s.model_label || '-';
+              var modelColor = s.model === 1 ? '#22c55e' : '#f59e0b';
+              var note = s.note || '';
+
+              html += '<tr>'
+                + '<td class="tl"><span class="stock-code">' + s.code_short + '</span><br><span class="stock-name">' + s.name + '</span></td>'
+                + '<td class="s-positive">' + chg + '%</td>'
+                + '<td><span style="color:' + modelColor + ';font-weight:600;font-size:0.7rem;">' + modelLabel + '</span></td>'
+                + '<td>' + vr + 'x</td>'
+                + '<td>' + chg10 + '%</td>'
+                + '<td><span style="color:' + mlColor + ';font-size:0.7rem;">' + ml + '</span></td>'
+                + '<td style="text-align:center;">' + fin + '</td>'
+                + '<td class="tl" style="font-size:0.7rem;color:#94a3b8;">' + note + '</td></tr>';
+            }
+            html += '</tbody></table>';
+            el.innerHTML = html;
+          })
+          .catch(function() {
+            el.innerHTML = '<span style="color:#64748b;font-size:0.8rem;">暂无数据，运行 python bugu_monitor.py 生成</span>';
+          });
+      }
+
       function init() {
         setDefaultDate();
         loadRecords();
+        syncPlateData();
         renderAll();
         bindEvents();
         autoLoadJSON();
         renderBattlePlan();
+        renderSurgeMonitor();
+        renderBuguMonitor();
         setTimeout(() => { getRecommendations(); renderRecHistory(); }, 500);
+        // Bind export button (re-bind on every click since elements are recreated)
+        document.getElementById('exportSurgeBtn').addEventListener('click', exportSurgeCSV);
       }
       window.addEventListener('DOMContentLoaded', init);
     })();

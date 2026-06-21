@@ -42,3 +42,11 @@ qmt_*.json
 backtest_*.csv
 backtest_*.xlsx
 stats.json
+
+# Monitor auto-generated data files (keep code, not daily output)
+百日新高系统/底部放量_*.json
+百日新高系统/百日新高_*.json
+百日新高系统/resonance_groups_*.json
+百日新高系统/bugu_*.json
+百日新高系统/sector_map.pkl
+百日新高系统/kline_cache/

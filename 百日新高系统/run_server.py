@@ -4,6 +4,7 @@
 import http.server
 import sys
 import os
+import json
 import socket
 import subprocess
 from datetime import datetime
@@ -39,6 +40,28 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_response(404)
             self.end_headers()
 
+    def do_GET(self):
+        if self.path == '/api/list-bottom-surge':
+            try:
+                import glob
+                pattern = os.path.join(DIR, '百日新高系统', '底部放量_*.json')
+                files = glob.glob(pattern)
+                dates = [os.path.basename(f).replace('底部放量_', '').replace('.json', '') for f in files]
+                dates.sort(reverse=True)
+                body = json.dumps({'dates': dates}).encode('utf-8')
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json; charset=utf-8')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(body)
+            except Exception as e:
+                self.send_response(500)
+                self.send_header('Content-Type', 'text/plain')
+                self.end_headers()
+                self.wfile.write(f'Error: {e}'.encode())
+            return
+        return super().do_GET()
+
     def do_POST(self):
         self.do_PUT()
 
@@ -73,7 +96,8 @@ def main():
   服务目录: {DIR}
   综合看板: http://localhost:{PORT}/{DASHBOARDS[0]}
   教学看板: http://localhost:{PORT}/{DASHBOARDS[1]}
-  API:      PUT /api/save-data → data.json
+   API:      PUT /api/save-data → data.json
+   API:      GET /api/list-bottom-surge → 底部放量日期列表
 
   请复制上面的地址到浏览器打开
   按 Ctrl+C 停止服务器

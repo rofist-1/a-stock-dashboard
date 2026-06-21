@@ -14,6 +14,24 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIR, **kwargs)
 
+    def do_GET(self):
+        if self.path == '/api/list-bottom-surge':
+            import glob as _g, re as _r, json as _j
+            data_dir = os.path.join(DIR, '百日新高系统')
+            files = _g.glob(os.path.join(data_dir, '底部放量_*.json'))
+            dates = []
+            for f in files:
+                m = _r.search(r'底部放量_(\d{8})\.json', f)
+                if m: dates.append(m.group(1))
+            dates.sort(reverse=True)
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(_j.dumps({'dates': dates}).encode('utf-8'))
+            return
+        return http.server.SimpleHTTPRequestHandler.do_GET(self)
+
     def log_message(self, fmt, *args):
         # Suppress favicon 404 noise
         if len(args) >= 1 and isinstance(args[0], str) and 'favicon' in args[0]:
