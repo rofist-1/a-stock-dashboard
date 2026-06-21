@@ -15,6 +15,7 @@
     "first_count": 70
   },
   {
+<<<<<<< Updated upstream
     "date": "2026-06-16",
     "total": 214,
     "first_count": 115
@@ -33,5 +34,10 @@
     "date": "2026-06-19",
     "total": 267,
     "first_count": 0
+=======
+    "date": "2026-06-17",
+    "total": 255,
+    "first_count": 183
+>>>>>>> Stashed changes
   }
 ]
