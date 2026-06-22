@@ -2887,6 +2887,7 @@
           html += '<th class="sortable" data-sort="quality">基本面' + sortIcon('quality') + '</th>';
           html += '<th style="text-align:center;">板块共振</th>';
           html += '<th class="tl" style="max-width:90px;">炒作逻辑</th>';
+          html += '<th style="text-align:center;">百日新高</th>';
           html += '<th>选股日期</th>';
           html += '<th>行情日期</th>';
           html += '</tr></thead><tbody>';
@@ -2937,6 +2938,7 @@
               + '<td style="text-align:center;">' + finText + '</td>'
               + '<td style="text-align:center;color:' + resColor + ';font-size:0.7rem;font-weight:500;">' + resLabel + '</td>'
               + '<td class="tl" style="font-size:0.7rem;color:#94a3b8;max-width:90px;line-height:1.3;">' + (s.narrative||'') + '</td>'
+              + '<td style="text-align:center;font-size:0.7rem;' + (s.in_new_high ? 'color:#22c55e;font-weight:600;" title="今日创百日新高">是' : 'color:#64748b;">否') + '</td>'
               + '<td style="font-size:0.65rem;color:#64748b;text-align:center;">' + (s.select_date || '-') + '</td>'
               + '<td style="font-size:0.65rem;color:#64748b;text-align:center;">' + (s.trade_day || s.date || '-') + '</td></tr>';
           }
@@ -3123,14 +3125,14 @@
           else if (potential_move_plate.indexOf(sec) >= 0) sk._resonance = '潜在异动';
           else sk._resonance = '冷门无共振';
         });
-        var csv = '\uFEFF代码,名称,行业,涨幅%,放量x,距MA60%,距底部%,MA60方向,基本面,板块共振,评分,评级,炒作逻辑,选股日期,行情日期\n';
+        var csv = '\uFEFF代码,名称,行业,涨幅%,放量x,距MA60%,距底部%,MA60方向,基本面,板块共振,评分,评级,炒作逻辑,百日新高,选股日期,行情日期\n';
         rows.forEach(function(sk) {
           var line = [
             sk.code, sk.name || '', sk.sector || '',
             (sk.change || 0).toFixed(2), (sk.vol_ratio_vs_60 || 0).toFixed(1),
             (sk.pct_from_ma60 || 0).toFixed(1), (sk.surge_from_low || 0).toFixed(1),
             sk.ma60_dir || '-', sk.quality || '-', sk._resonance || '冷门无共振', (sk.score||0), (sk.rating||'-'), (sk.narrative||''),
-            sk.select_date || '-', sk.trade_day || '-'
+            sk.in_new_high ? '是' : '否', sk.select_date || '-', sk.trade_day || '-'
           ].join(',');
           csv += line + '\n';
         });
