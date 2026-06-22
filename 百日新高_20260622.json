@@ -1,15 +1,2499 @@
 {
   "date": "2026-06-22",
-  "total": 11,
-  "first_count": 11,
+  "total": 287,
+  "first_count": 276,
   "stocks": [
+    {
+      "code": "301356.SZ",
+      "name": "天振股份",
+      "close": 28.73,
+      "change": 20.01,
+      "volume_ratio": 6.92,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300243.SZ",
+      "name": "瑞丰高材",
+      "close": 23.46,
+      "change": 20.0,
+      "volume_ratio": 1.92,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "300179.SZ",
+      "name": "四方达",
+      "close": 57.48,
+      "change": 20.0,
+      "volume_ratio": 1.51,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301071.SZ",
+      "name": "力量钻石",
+      "close": 91.92,
+      "change": 20.0,
+      "volume_ratio": 1.47,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688662.SH",
+      "name": "富信科技",
+      "close": 171.49,
+      "change": 20.0,
+      "volume_ratio": 0.69,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300522.SZ",
+      "name": "世名科技",
+      "close": 23.05,
+      "change": 19.99,
+      "volume_ratio": 2.13,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688367.SH",
+      "name": "工大高科",
+      "close": 44.6,
+      "change": 19.99,
+      "volume_ratio": 2.05,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300401.SZ",
+      "name": "花园生物",
+      "close": 19.87,
+      "change": 19.99,
+      "volume_ratio": 1.34,
+      "is_first": true,
+      "sector": "食品行业"
+    },
+    {
+      "code": "301580.SZ",
+      "name": "爱迪特",
+      "close": 75.8,
+      "change": 19.99,
+      "volume_ratio": 0.58,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688530.SH",
+      "name": "欧莱新材",
+      "close": 78.58,
+      "change": 19.22,
+      "volume_ratio": 1.02,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300951.SZ",
+      "name": "博硕科技",
+      "close": 58.28,
+      "change": 17.74,
+      "volume_ratio": 2.61,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301160.SZ",
+      "name": "翔楼新材",
+      "close": 55.24,
+      "change": 17.56,
+      "volume_ratio": 3.7,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688286.SH",
+      "name": "敏芯股份",
+      "close": 93.84,
+      "change": 17.45,
+      "volume_ratio": 2.75,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688757.SH",
+      "name": "胜科纳米",
+      "close": 73.7,
+      "change": 15.34,
+      "volume_ratio": 1.39,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688478.SH",
+      "name": "晶升股份",
+      "close": 92.68,
+      "change": 15.22,
+      "volume_ratio": 1.98,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688143.SH",
+      "name": "长盈通",
+      "close": 218.0,
+      "change": 15.22,
+      "volume_ratio": 1.2,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301591.SZ",
+      "name": "肯特股份",
+      "close": 56.36,
+      "change": 15.11,
+      "volume_ratio": 1.34,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688548.SH",
+      "name": "广钢气体",
+      "close": 38.38,
+      "change": 14.88,
+      "volume_ratio": 1.35,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300283.SZ",
+      "name": "温州宏丰",
+      "close": 25.53,
+      "change": 14.74,
+      "volume_ratio": 1.02,
+      "is_first": true,
+      "sector": "电器行业"
+    },
+    {
+      "code": "300857.SZ",
+      "name": "协创数据",
+      "close": 316.81,
+      "change": 14.06,
+      "volume_ratio": 1.33,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300319.SZ",
+      "name": "麦捷科技",
+      "close": 31.63,
+      "change": 13.94,
+      "volume_ratio": 1.6,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "688515.SH",
+      "name": "裕太微",
+      "close": 271.6,
+      "change": 13.74,
+      "volume_ratio": 2.1,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688766.SH",
+      "name": "普冉股份",
+      "close": 670.31,
+      "change": 13.61,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300475.SZ",
+      "name": "香农芯创",
+      "close": 287.8,
+      "change": 12.92,
+      "volume_ratio": 1.0,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688498.SH",
+      "name": "源杰科技",
+      "close": 1873.5,
+      "change": 11.96,
+      "volume_ratio": 0.76,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301618.SZ",
+      "name": "长联科技",
+      "close": 43.42,
+      "change": 11.33,
+      "volume_ratio": 2.83,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300382.SZ",
+      "name": "斯莱克",
+      "close": 17.88,
+      "change": 10.85,
+      "volume_ratio": 2.59,
+      "is_first": true,
+      "sector": "机械行业"
+    },
+    {
+      "code": "300671.SZ",
+      "name": "富满微",
+      "close": 66.88,
+      "change": 10.6,
+      "volume_ratio": 1.65,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688056.SH",
+      "name": "莱伯泰科",
+      "close": 77.79,
+      "change": 10.56,
+      "volume_ratio": 0.74,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300285.SZ",
+      "name": "国瓷材料",
+      "close": 98.9,
+      "change": 10.47,
+      "volume_ratio": 0.92,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "300943.SZ",
+      "name": "春晖智控",
+      "close": 45.69,
+      "change": 10.36,
+      "volume_ratio": 2.17,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600162.SH",
+      "name": "香江控股",
+      "close": 3.94,
+      "change": 10.06,
+      "volume_ratio": 0.71,
+      "is_first": true,
+      "sector": "房地产"
+    },
+    {
+      "code": "002068.SZ",
+      "name": "黑猫股份",
+      "close": 11.5,
+      "change": 10.05,
+      "volume_ratio": 2.76,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "603976.SH",
+      "name": "正川股份",
+      "close": 28.12,
+      "change": 10.02,
+      "volume_ratio": 0.58,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603002.SH",
+      "name": "XD宏昌电",
+      "close": 25.94,
+      "change": 10.01,
+      "volume_ratio": 1.62,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "605020.SH",
+      "name": "永和股份",
+      "close": 37.59,
+      "change": 10.01,
+      "volume_ratio": 1.59,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002805.SZ",
+      "name": "丰元股份",
+      "close": 29.57,
+      "change": 10.01,
+      "volume_ratio": 1.18,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600869.SH",
+      "name": "远东股份",
+      "close": 36.15,
+      "change": 10.01,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "电力行业"
+    },
+    {
+      "code": "001359.SZ",
+      "name": "平安电工",
+      "close": 111.56,
+      "change": 10.01,
+      "volume_ratio": 0.75,
+      "is_first": true,
+      "sector": "金融"
+    },
+    {
+      "code": "600367.SH",
+      "name": "红星发展",
+      "close": 62.22,
+      "change": 10.01,
+      "volume_ratio": 0.54,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "002297.SZ",
+      "name": "博云新材",
+      "close": 31.2,
+      "change": 10.01,
+      "volume_ratio": 0.29,
+      "is_first": true,
+      "sector": "其它行业"
+    },
+    {
+      "code": "603989.SH",
+      "name": "艾华集团",
+      "close": 45.65,
+      "change": 10.0,
+      "volume_ratio": 1.92,
+      "is_first": true,
+      "sector": "其它行业"
+    },
+    {
+      "code": "601066.SH",
+      "name": "中信建投",
+      "close": 27.39,
+      "change": 10.0,
+      "volume_ratio": 1.91,
+      "is_first": true,
+      "sector": "金融"
+    },
+    {
+      "code": "603083.SH",
+      "name": "剑桥科技",
+      "close": 235.99,
+      "change": 10.0,
+      "volume_ratio": 1.22,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "601958.SH",
+      "name": "金钼股份",
+      "close": 30.47,
+      "change": 10.0,
+      "volume_ratio": 1.2,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "603663.SH",
+      "name": "三祥新材",
+      "close": 96.24,
+      "change": 10.0,
+      "volume_ratio": 1.15,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600160.SH",
+      "name": "巨化股份",
+      "close": 48.53,
+      "change": 10.0,
+      "volume_ratio": 0.94,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "002655.SZ",
+      "name": "共达电声",
+      "close": 46.87,
+      "change": 10.0,
+      "volume_ratio": 0.93,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "000962.SZ",
+      "name": "东方钽业",
+      "close": 69.2,
+      "change": 10.0,
+      "volume_ratio": 0.9,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "600345.SH",
+      "name": "长江通信",
+      "close": 71.26,
+      "change": 10.0,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "002409.SZ",
+      "name": "雅克科技",
+      "close": 165.18,
+      "change": 10.0,
+      "volume_ratio": 0.82,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "002842.SZ",
+      "name": "翔鹭钨业",
+      "close": 52.49,
+      "change": 10.0,
+      "volume_ratio": 0.82,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600549.SH",
+      "name": "厦门钨业",
+      "close": 94.5,
+      "change": 10.0,
+      "volume_ratio": 0.82,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "601869.SH",
+      "name": "长飞光纤",
+      "close": 518.71,
+      "change": 10.0,
+      "volume_ratio": 0.57,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603823.SH",
+      "name": "百合花",
+      "close": 51.38,
+      "change": 10.0,
+      "volume_ratio": 0.57,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600206.SH",
+      "name": "有研新材",
+      "close": 46.76,
+      "change": 10.0,
+      "volume_ratio": 0.55,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "003031.SZ",
+      "name": "中瓷电子",
+      "close": 193.92,
+      "change": 10.0,
+      "volume_ratio": 0.54,
+      "is_first": true,
+      "sector": "电子"
+    },
+    {
+      "code": "002428.SZ",
+      "name": "云南锗业",
+      "close": 110.48,
+      "change": 10.0,
+      "volume_ratio": 0.31,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "600353.SH",
+      "name": "旭光电子",
+      "close": 46.21,
+      "change": 10.0,
+      "volume_ratio": 0.17,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "002674.SZ",
+      "name": "兴业科技",
+      "close": 19.69,
+      "change": 10.0,
+      "volume_ratio": 0.08,
+      "is_first": true,
+      "sector": "服装鞋类"
+    },
+    {
+      "code": "603380.SH",
+      "name": "易德龙",
+      "close": 45.13,
+      "change": 9.99,
+      "volume_ratio": 4.51,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600228.SH",
+      "name": "返利科技",
+      "close": 8.92,
+      "change": 9.99,
+      "volume_ratio": 1.0,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "600552.SH",
+      "name": "凯盛科技",
+      "close": 25.65,
+      "change": 9.99,
+      "volume_ratio": 0.7,
+      "is_first": true,
+      "sector": "玻璃行业"
+    },
+    {
+      "code": "603065.SH",
+      "name": "宿迁联盛",
+      "close": 17.18,
+      "change": 9.99,
+      "volume_ratio": 0.53,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002057.SZ",
+      "name": "中钢天源",
+      "close": 13.34,
+      "change": 9.98,
+      "volume_ratio": 1.13,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "600703.SH",
+      "name": "三安光电",
+      "close": 19.29,
+      "change": 9.98,
+      "volume_ratio": 1.0,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "002167.SZ",
+      "name": "东方锆业",
+      "close": 17.74,
+      "change": 9.98,
+      "volume_ratio": 0.07,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "301377.SZ",
+      "name": "鼎泰高科",
+      "close": 659.6,
+      "change": 9.93,
+      "volume_ratio": 0.85,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300321.SZ",
+      "name": "同大股份",
+      "close": 54.3,
+      "change": 9.65,
+      "volume_ratio": 1.61,
+      "is_first": true,
+      "sector": "塑料制品"
+    },
+    {
+      "code": "603986.SH",
+      "name": "兆易创新",
+      "close": 689.7,
+      "change": 9.65,
+      "volume_ratio": 1.06,
+      "is_first": true,
+      "sector": "芯片"
+    },
+    {
+      "code": "300868.SZ",
+      "name": "杰美特",
+      "close": 159.79,
+      "change": 9.63,
+      "volume_ratio": 1.03,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600498.SH",
+      "name": "烽火通信",
+      "close": 82.56,
+      "change": 9.63,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "300560.SZ",
+      "name": "中富通",
+      "close": 20.55,
+      "change": 9.6,
+      "volume_ratio": 2.06,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600459.SH",
+      "name": "贵研铂业",
+      "close": 28.59,
+      "change": 9.58,
+      "volume_ratio": 1.05,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "688052.SH",
+      "name": "纳芯微",
+      "close": 291.68,
+      "change": 9.41,
+      "volume_ratio": 1.63,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002636.SZ",
+      "name": "金安国纪",
+      "close": 114.22,
+      "change": 9.4,
+      "volume_ratio": 0.49,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "688729.SH",
+      "name": "屹唐股份",
+      "close": 36.15,
+      "change": 9.31,
+      "volume_ratio": 2.0,
+      "is_first": true,
+      "sector": "次新股"
+    },
+    {
+      "code": "688689.SH",
+      "name": "银河微电",
+      "close": 46.82,
+      "change": 9.26,
+      "volume_ratio": 2.27,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301319.SZ",
+      "name": "唯特偶",
+      "close": 186.0,
+      "change": 9.21,
+      "volume_ratio": 0.78,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300586.SZ",
+      "name": "美联新材",
+      "close": 16.59,
+      "change": 9.14,
+      "volume_ratio": 1.11,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600176.SH",
+      "name": "中国巨石",
+      "close": 58.38,
+      "change": 9.12,
+      "volume_ratio": 1.04,
+      "is_first": true,
+      "sector": "玻璃行业"
+    },
+    {
+      "code": "300491.SZ",
+      "name": "通合科技",
+      "close": 42.42,
+      "change": 9.1,
+      "volume_ratio": 1.24,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300209.SZ",
+      "name": "行云科技",
+      "close": 31.29,
+      "change": 9.1,
+      "volume_ratio": 1.11,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "300346.SZ",
+      "name": "南大光电",
+      "close": 70.8,
+      "change": 9.09,
+      "volume_ratio": 1.19,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "600392.SH",
+      "name": "盛和资源",
+      "close": 34.48,
+      "change": 8.91,
+      "volume_ratio": 1.39,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688200.SH",
+      "name": "华峰测控",
+      "close": 407.9,
+      "change": 8.77,
+      "volume_ratio": 0.99,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600888.SH",
+      "name": "XD新疆众",
+      "close": 14.29,
+      "change": 8.75,
+      "volume_ratio": 1.19,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "688813.SH",
+      "name": "泰金新能",
+      "close": 207.0,
+      "change": 8.68,
+      "volume_ratio": 0.98,
+      "is_first": true,
+      "sector": "次新股"
+    },
+    {
+      "code": "300820.SZ",
+      "name": "英杰电气",
+      "close": 79.4,
+      "change": 8.63,
+      "volume_ratio": 1.45,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600226.SH",
+      "name": "亨通股份",
+      "close": 10.58,
+      "change": 8.4,
+      "volume_ratio": 1.59,
+      "is_first": true,
+      "sector": "农药化肥"
+    },
+    {
+      "code": "003013.SZ",
+      "name": "地铁设计",
+      "close": 16.98,
+      "change": 8.36,
+      "volume_ratio": 5.38,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300576.SZ",
+      "name": "容大感光",
+      "close": 53.92,
+      "change": 8.34,
+      "volume_ratio": 1.11,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300903.SZ",
+      "name": "科翔股份",
+      "close": 110.0,
+      "change": 8.29,
+      "volume_ratio": 0.98,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600487.SH",
+      "name": "亨通光电",
+      "close": 120.13,
+      "change": 8.22,
+      "volume_ratio": 0.84,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "300489.SZ",
+      "name": "光智科技",
+      "close": 244.0,
+      "change": 8.2,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600906.SH",
+      "name": "财达证券",
+      "close": 7.86,
+      "change": 8.12,
+      "volume_ratio": 1.4,
+      "is_first": true,
+      "sector": "金融"
+    },
+    {
+      "code": "300037.SZ",
+      "name": "新宙邦",
+      "close": 89.99,
+      "change": 8.04,
+      "volume_ratio": 0.92,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "002971.SZ",
+      "name": "和远气体",
+      "close": 72.78,
+      "change": 8.01,
+      "volume_ratio": 0.68,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603203.SH",
+      "name": "快克智能",
+      "close": 65.8,
+      "change": 7.9,
+      "volume_ratio": 1.04,
+      "is_first": true,
+      "sector": "人工智能"
+    },
+    {
+      "code": "600667.SH",
+      "name": "太极实业",
+      "close": 22.57,
+      "change": 7.89,
+      "volume_ratio": 1.17,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "600030.SH",
+      "name": "中信证券",
+      "close": 28.64,
+      "change": 7.83,
+      "volume_ratio": 2.25,
+      "is_first": true,
+      "sector": "金融行业"
+    },
+    {
+      "code": "300214.SZ",
+      "name": "日科化学",
+      "close": 10.21,
+      "change": 7.81,
+      "volume_ratio": 1.73,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "002046.SZ",
+      "name": "国机精工",
+      "close": 68.65,
+      "change": 7.79,
+      "volume_ratio": 1.4,
+      "is_first": true,
+      "sector": "机械行业"
+    },
+    {
+      "code": "600378.SH",
+      "name": "XD昊华科",
+      "close": 70.22,
+      "change": 7.77,
+      "volume_ratio": 0.89,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "002106.SZ",
+      "name": "莱宝高科",
+      "close": 15.15,
+      "change": 7.68,
+      "volume_ratio": 1.85,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "002491.SZ",
+      "name": "通鼎互联",
+      "close": 34.0,
+      "change": 7.66,
+      "volume_ratio": 1.64,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "600641.SH",
+      "name": "先导基电",
+      "close": 36.01,
+      "change": 7.65,
+      "volume_ratio": 1.23,
+      "is_first": true,
+      "sector": "房地产"
+    },
+    {
+      "code": "600596.SH",
+      "name": "新安股份",
+      "close": 16.55,
+      "change": 7.61,
+      "volume_ratio": 1.01,
+      "is_first": true,
+      "sector": "农药化肥"
+    },
+    {
+      "code": "688020.SH",
+      "name": "方邦股份",
+      "close": 253.8,
+      "change": 7.54,
+      "volume_ratio": 0.76,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603995.SH",
+      "name": "甬金股份",
+      "close": 24.25,
+      "change": 7.44,
+      "volume_ratio": 1.34,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688146.SH",
+      "name": "中船特气",
+      "close": 389.99,
+      "change": 7.14,
+      "volume_ratio": 0.82,
+      "is_first": true,
+      "sector": "军工"
+    },
+    {
+      "code": "600460.SH",
+      "name": "士兰微",
+      "close": 44.8,
+      "change": 7.1,
+      "volume_ratio": 1.32,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "603001.SH",
+      "name": "奥康国际",
+      "close": 12.72,
+      "change": 6.98,
+      "volume_ratio": 1.96,
+      "is_first": true,
+      "sector": "服装鞋类"
+    },
+    {
+      "code": "603688.SH",
+      "name": "石英股份",
+      "close": 86.1,
+      "change": 6.89,
+      "volume_ratio": 0.93,
+      "is_first": true,
+      "sector": "其它行业"
+    },
+    {
+      "code": "002171.SZ",
+      "name": "楚江新材",
+      "close": 16.43,
+      "change": 6.83,
+      "volume_ratio": 1.18,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "603262.SH",
+      "name": "技源集团",
+      "close": 30.44,
+      "change": 6.77,
+      "volume_ratio": 3.53,
+      "is_first": true,
+      "sector": "次新股"
+    },
+    {
+      "code": "301021.SZ",
+      "name": "英诺激光",
+      "close": 132.68,
+      "change": 6.71,
+      "volume_ratio": 1.25,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "601208.SH",
+      "name": "东材科技",
+      "close": 79.83,
+      "change": 6.68,
+      "volume_ratio": 0.89,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "301196.SZ",
+      "name": "唯科科技",
+      "close": 209.28,
+      "change": 6.56,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603020.SH",
+      "name": "爱普股份",
+      "close": 14.87,
+      "change": 6.52,
+      "volume_ratio": 0.84,
+      "is_first": true,
+      "sector": "食品行业"
+    },
+    {
+      "code": "300558.SZ",
+      "name": "贝达药业",
+      "close": 58.55,
+      "change": 6.49,
+      "volume_ratio": 1.37,
+      "is_first": true,
+      "sector": "医药"
+    },
+    {
+      "code": "688361.SH",
+      "name": "中科飞测",
+      "close": 268.57,
+      "change": 6.49,
+      "volume_ratio": 0.95,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688181.SH",
+      "name": "八亿时空",
+      "close": 48.5,
+      "change": 6.48,
+      "volume_ratio": 1.34,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603618.SH",
+      "name": "杭电股份",
+      "close": 55.11,
+      "change": 6.45,
+      "volume_ratio": 1.31,
+      "is_first": true,
+      "sector": "发电设备"
+    },
+    {
+      "code": "688308.SH",
+      "name": "欧科亿",
+      "close": 200.73,
+      "change": 6.45,
+      "volume_ratio": 1.15,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688485.SH",
+      "name": "九州一轨",
+      "close": 72.27,
+      "change": 6.44,
+      "volume_ratio": 1.5,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "605376.SH",
+      "name": "博迁新材",
+      "close": 245.89,
+      "change": 6.3,
+      "volume_ratio": 1.25,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688396.SH",
+      "name": "华润微",
+      "close": 78.2,
+      "change": 6.26,
+      "volume_ratio": 1.19,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "000922.SZ",
+      "name": "佳电股份",
+      "close": 14.66,
+      "change": 6.23,
+      "volume_ratio": 1.11,
+      "is_first": true,
+      "sector": "电器行业"
+    },
+    {
+      "code": "002515.SZ",
+      "name": "金字火腿",
+      "close": 10.22,
+      "change": 6.13,
+      "volume_ratio": 1.12,
+      "is_first": true,
+      "sector": "食品行业"
+    },
+    {
+      "code": "600909.SH",
+      "name": "华安证券",
+      "close": 9.52,
+      "change": 6.13,
+      "volume_ratio": 1.07,
+      "is_first": true,
+      "sector": "金融"
+    },
+    {
+      "code": "601995.SH",
+      "name": "中金公司",
+      "close": 35.44,
+      "change": 6.11,
+      "volume_ratio": 2.44,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300786.SZ",
+      "name": "国林科技",
+      "close": 22.49,
+      "change": 6.08,
+      "volume_ratio": 1.44,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300497.SZ",
+      "name": "富祥股份",
+      "close": 20.66,
+      "change": 6.06,
+      "volume_ratio": 2.59,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300398.SZ",
+      "name": "飞凯材料",
+      "close": 48.88,
+      "change": 6.03,
+      "volume_ratio": 1.14,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "688332.SH",
+      "name": "中科蓝讯",
+      "close": 135.63,
+      "change": 5.96,
+      "volume_ratio": 0.82,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002552.SZ",
+      "name": "宝鼎科技",
+      "close": 76.68,
+      "change": 5.93,
+      "volume_ratio": 1.43,
+      "is_first": true,
+      "sector": "机械行业"
+    },
+    {
+      "code": "300096.SZ",
+      "name": "ST易联众",
+      "close": 10.38,
+      "change": 5.92,
+      "volume_ratio": 1.35,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "603201.SH",
+      "name": "常润股份",
+      "close": 20.39,
+      "change": 5.76,
+      "volume_ratio": 3.18,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600999.SH",
+      "name": "招商证券",
+      "close": 19.65,
+      "change": 5.76,
+      "volume_ratio": 1.5,
+      "is_first": true,
+      "sector": "金融行业"
+    },
+    {
+      "code": "002353.SZ",
+      "name": "杰瑞股份",
+      "close": 173.66,
+      "change": 5.75,
+      "volume_ratio": 0.82,
+      "is_first": true,
+      "sector": "机械行业"
+    },
+    {
+      "code": "300548.SZ",
+      "name": "长芯博创",
+      "close": 298.09,
+      "change": 5.71,
+      "volume_ratio": 1.15,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603991.SH",
+      "name": "领先股份",
+      "close": 137.06,
+      "change": 5.68,
+      "volume_ratio": 1.89,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688249.SH",
+      "name": "晶合集成",
+      "close": 52.8,
+      "change": 5.68,
+      "volume_ratio": 0.97,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300843.SZ",
+      "name": "胜蓝股份",
+      "close": 133.89,
+      "change": 5.59,
+      "volume_ratio": 0.95,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600522.SH",
+      "name": "中天科技",
+      "close": 59.63,
+      "change": 5.45,
+      "volume_ratio": 0.96,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "605589.SH",
+      "name": "XD圣泉集",
+      "close": 73.52,
+      "change": 5.3,
+      "volume_ratio": 0.98,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688525.SH",
+      "name": "佰维存储",
+      "close": 406.31,
+      "change": 5.21,
+      "volume_ratio": 0.95,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688168.SH",
+      "name": "安博通",
+      "close": 69.3,
+      "change": 5.19,
+      "volume_ratio": 1.3,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002851.SZ",
+      "name": "麦格米特",
+      "close": 188.79,
+      "change": 5.18,
+      "volume_ratio": 1.07,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300776.SZ",
+      "name": "帝尔激光",
+      "close": 177.89,
+      "change": 5.01,
+      "volume_ratio": 1.17,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603595.SH",
+      "name": "ST东尼",
+      "close": 30.42,
+      "change": 5.01,
+      "volume_ratio": 0.08,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300590.SZ",
+      "name": "移为通信",
+      "close": 16.38,
+      "change": 4.93,
+      "volume_ratio": 1.43,
+      "is_first": true,
+      "sector": "通信"
+    },
+    {
+      "code": "603650.SH",
+      "name": "彤程新材",
+      "close": 69.16,
+      "change": 4.82,
+      "volume_ratio": 0.99,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002179.SZ",
+      "name": "中航光电",
+      "close": 42.73,
+      "change": 4.78,
+      "volume_ratio": 1.5,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "002824.SZ",
+      "name": "和胜股份",
+      "close": 39.7,
+      "change": 4.69,
+      "volume_ratio": 1.11,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002080.SZ",
+      "name": "中材科技",
+      "close": 84.32,
+      "change": 4.68,
+      "volume_ratio": 1.13,
+      "is_first": true,
+      "sector": "化纤行业"
+    },
+    {
+      "code": "300570.SZ",
+      "name": "太辰光",
+      "close": 281.18,
+      "change": 4.68,
+      "volume_ratio": 0.98,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688808.SH",
+      "name": "联讯仪器",
+      "close": 2484.0,
+      "change": 4.68,
+      "volume_ratio": 0.66,
+      "is_first": true,
+      "sector": "次新股"
+    },
+    {
+      "code": "301092.SZ",
+      "name": "争光股份",
+      "close": 54.72,
+      "change": 4.67,
+      "volume_ratio": 1.37,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603738.SH",
+      "name": "泰晶科技",
+      "close": 61.7,
+      "change": 4.66,
+      "volume_ratio": 0.9,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603186.SH",
+      "name": "华正新材",
+      "close": 249.19,
+      "change": 4.65,
+      "volume_ratio": 1.46,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300252.SZ",
+      "name": "金信诺",
+      "close": 18.69,
+      "change": 4.47,
+      "volume_ratio": 1.22,
+      "is_first": true,
+      "sector": "电器行业"
+    },
+    {
+      "code": "300861.SZ",
+      "name": "美畅股份",
+      "close": 25.4,
+      "change": 4.44,
+      "volume_ratio": 3.48,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603773.SH",
+      "name": "沃格光电",
+      "close": 172.02,
+      "change": 4.44,
+      "volume_ratio": 0.93,
+      "is_first": true,
+      "sector": "电子"
+    },
+    {
+      "code": "301252.SZ",
+      "name": "同星科技",
+      "close": 46.03,
+      "change": 4.42,
+      "volume_ratio": 0.93,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "605566.SH",
+      "name": "福莱蒽特",
+      "close": 52.4,
+      "change": 4.32,
+      "volume_ratio": 0.97,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603261.SH",
+      "name": "*ST立航",
+      "close": 46.69,
+      "change": 4.29,
+      "volume_ratio": 2.75,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688416.SH",
+      "name": "恒烁股份",
+      "close": 151.04,
+      "change": 4.24,
+      "volume_ratio": 1.36,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002579.SZ",
+      "name": "中京电子",
+      "close": 21.14,
+      "change": 4.04,
+      "volume_ratio": 2.09,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "300373.SZ",
+      "name": "扬杰科技",
+      "close": 128.11,
+      "change": 4.04,
+      "volume_ratio": 1.26,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "002831.SZ",
+      "name": "裕同科技",
+      "close": 33.57,
+      "change": 3.84,
+      "volume_ratio": 1.46,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688598.SH",
+      "name": "金博股份",
+      "close": 62.04,
+      "change": 3.83,
+      "volume_ratio": 1.83,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603283.SH",
+      "name": "赛腾股份",
+      "close": 65.0,
+      "change": 3.83,
+      "volume_ratio": 0.87,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002281.SZ",
+      "name": "光迅科技",
+      "close": 276.08,
+      "change": 3.71,
+      "volume_ratio": 1.37,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "300709.SZ",
+      "name": "精研科技",
+      "close": 65.36,
+      "change": 3.65,
+      "volume_ratio": 0.64,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688120.SH",
+      "name": "华海清科",
+      "close": 235.1,
+      "change": 3.63,
+      "volume_ratio": 0.95,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300223.SZ",
+      "name": "北京君正",
+      "close": 192.75,
+      "change": 3.6,
+      "volume_ratio": 1.2,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "688012.SH",
+      "name": "中微公司",
+      "close": 372.74,
+      "change": 3.54,
+      "volume_ratio": 0.99,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002989.SZ",
+      "name": "中天精装",
+      "close": 38.67,
+      "change": 3.48,
+      "volume_ratio": 1.88,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603125.SH",
+      "name": "常青科技",
+      "close": 29.72,
+      "change": 3.48,
+      "volume_ratio": 1.02,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688469.SH",
+      "name": "芯联集成",
+      "close": 9.01,
+      "change": 3.44,
+      "volume_ratio": 1.18,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002972.SZ",
+      "name": "科安达",
+      "close": 17.29,
+      "change": 3.41,
+      "volume_ratio": 0.68,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688479.SH",
+      "name": "友车科技",
+      "close": 38.78,
+      "change": 3.39,
+      "volume_ratio": 1.49,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "001339.SZ",
+      "name": "智微智能",
+      "close": 131.19,
+      "change": 3.36,
+      "volume_ratio": 2.33,
+      "is_first": true,
+      "sector": "人工智能"
+    },
+    {
+      "code": "688233.SH",
+      "name": "神工股份",
+      "close": 128.54,
+      "change": 3.35,
+      "volume_ratio": 0.81,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002371.SZ",
+      "name": "北方华创",
+      "close": 745.0,
+      "change": 3.32,
+      "volume_ratio": 0.92,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "688628.SH",
+      "name": "优利德",
+      "close": 109.59,
+      "change": 3.31,
+      "volume_ratio": 1.03,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688507.SH",
+      "name": "索辰科技",
+      "close": 262.88,
+      "change": 3.29,
+      "volume_ratio": 0.92,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600237.SH",
+      "name": "铜峰电子",
+      "close": 12.6,
+      "change": 3.28,
+      "volume_ratio": 1.26,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "301086.SZ",
+      "name": "鸿富瀚",
+      "close": 219.99,
+      "change": 3.28,
+      "volume_ratio": 0.75,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301132.SZ",
+      "name": "满坤科技",
+      "close": 48.49,
+      "change": 3.24,
+      "volume_ratio": 1.09,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688419.SH",
+      "name": "耐科装备",
+      "close": 71.49,
+      "change": 3.23,
+      "volume_ratio": 0.86,
+      "is_first": true,
+      "sector": "机械"
+    },
+    {
+      "code": "002138.SZ",
+      "name": "顺络电子",
+      "close": 73.44,
+      "change": 3.2,
+      "volume_ratio": 0.93,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "002203.SZ",
+      "name": "海亮股份",
+      "close": 26.3,
+      "change": 3.06,
+      "volume_ratio": 1.2,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "300661.SZ",
+      "name": "圣邦股份",
+      "close": 136.81,
+      "change": 3.04,
+      "volume_ratio": 0.87,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688257.SH",
+      "name": "新锐股份",
+      "close": 111.8,
+      "change": 3.03,
+      "volume_ratio": 1.02,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300814.SZ",
+      "name": "中富电路",
+      "close": 197.0,
+      "change": 2.98,
+      "volume_ratio": 0.85,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301557.SZ",
+      "name": "常友科技",
+      "close": 94.09,
+      "change": 2.94,
+      "volume_ratio": 0.97,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002745.SZ",
+      "name": "木林森",
+      "close": 11.66,
+      "change": 2.91,
+      "volume_ratio": 1.05,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "688733.SH",
+      "name": "壹石通",
+      "close": 46.2,
+      "change": 2.9,
+      "volume_ratio": 1.26,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300720.SZ",
+      "name": "海川智能",
+      "close": 83.94,
+      "change": 2.87,
+      "volume_ratio": 0.83,
+      "is_first": true,
+      "sector": "人工智能"
+    },
+    {
+      "code": "300031.SZ",
+      "name": "宝通科技",
+      "close": 31.49,
+      "change": 2.84,
+      "volume_ratio": 1.18,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "688059.SH",
+      "name": "华锐精密",
+      "close": 211.7,
+      "change": 2.81,
+      "volume_ratio": 1.18,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002859.SZ",
+      "name": "洁美科技",
+      "close": 102.5,
+      "change": 2.78,
+      "volume_ratio": 1.3,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301458.SZ",
+      "name": "钧崴电子",
+      "close": 62.25,
+      "change": 2.76,
+      "volume_ratio": 1.12,
+      "is_first": true,
+      "sector": "电子"
+    },
+    {
+      "code": "600105.SH",
+      "name": "永鼎股份",
+      "close": 63.7,
+      "change": 2.54,
+      "volume_ratio": 1.05,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "300623.SZ",
+      "name": "捷捷微电",
+      "close": 38.41,
+      "change": 2.45,
+      "volume_ratio": 1.37,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688600.SH",
+      "name": "皖仪科技",
+      "close": 31.14,
+      "change": 2.43,
+      "volume_ratio": 1.21,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301630.SZ",
+      "name": "同宇新材",
+      "close": 412.0,
+      "change": 2.41,
+      "volume_ratio": 0.96,
+      "is_first": true,
+      "sector": "次新股"
+    },
+    {
+      "code": "002436.SZ",
+      "name": "兴森科技",
+      "close": 53.3,
+      "change": 2.38,
+      "volume_ratio": 1.02,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "688511.SH",
+      "name": "天微电子",
+      "close": 31.6,
+      "change": 2.33,
+      "volume_ratio": 0.96,
+      "is_first": true,
+      "sector": "电子"
+    },
+    {
+      "code": "688646.SH",
+      "name": "ST逸飞",
+      "close": 72.55,
+      "change": 2.23,
+      "volume_ratio": 2.36,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300545.SZ",
+      "name": "联得装备",
+      "close": 38.38,
+      "change": 2.18,
+      "volume_ratio": 1.39,
+      "is_first": true,
+      "sector": "机械"
+    },
+    {
+      "code": "688450.SH",
+      "name": "光格科技",
+      "close": 52.94,
+      "change": 2.18,
+      "volume_ratio": 1.34,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300553.SZ",
+      "name": "集智股份",
+      "close": 79.26,
+      "change": 2.14,
+      "volume_ratio": 1.34,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600259.SH",
+      "name": "中稀有色",
+      "close": 118.66,
+      "change": 2.05,
+      "volume_ratio": 1.46,
+      "is_first": true,
+      "sector": "有色金属"
+    },
+    {
+      "code": "300304.SZ",
+      "name": "云意电气",
+      "close": 18.62,
+      "change": 1.86,
+      "volume_ratio": 0.81,
+      "is_first": true,
+      "sector": "汽车制造"
+    },
+    {
+      "code": "003022.SZ",
+      "name": "联泓新科",
+      "close": 28.7,
+      "change": 1.81,
+      "volume_ratio": 0.82,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002079.SZ",
+      "name": "苏州固锝",
+      "close": 13.98,
+      "change": 1.75,
+      "volume_ratio": 1.17,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "603519.SH",
+      "name": "立霸股份",
+      "close": 15.05,
+      "change": 1.69,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "家电行业"
+    },
+    {
+      "code": "300508.SZ",
+      "name": "维宏股份",
+      "close": 59.64,
+      "change": 1.62,
+      "volume_ratio": 1.11,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688090.SH",
+      "name": "瑞松科技",
+      "close": 131.39,
+      "change": 1.58,
+      "volume_ratio": 0.79,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301041.SZ",
+      "name": "金百泽",
+      "close": 37.61,
+      "change": 1.35,
+      "volume_ratio": 1.94,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603211.SH",
+      "name": "晋拓股份",
+      "close": 36.93,
+      "change": 1.34,
+      "volume_ratio": 1.41,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "605289.SH",
+      "name": "罗曼股份",
+      "close": 140.25,
+      "change": 1.26,
+      "volume_ratio": 0.69,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688378.SH",
+      "name": "奥来德",
+      "close": 57.65,
+      "change": 1.18,
+      "volume_ratio": 1.03,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300308.SZ",
+      "name": "中际旭创",
+      "close": 1382.33,
+      "change": 1.06,
+      "volume_ratio": 0.98,
+      "is_first": true,
+      "sector": "机械行业"
+    },
+    {
+      "code": "301321.SZ",
+      "name": "翰博高新",
+      "close": 39.77,
+      "change": 0.96,
+      "volume_ratio": 0.86,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688536.SH",
+      "name": "XD思瑞浦",
+      "close": 344.0,
+      "change": 0.88,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600186.SH",
+      "name": "莲花控股",
+      "close": 14.4,
+      "change": 0.84,
+      "volume_ratio": 1.0,
+      "is_first": true,
+      "sector": "食品行业"
+    },
+    {
+      "code": "002916.SZ",
+      "name": "深南电路",
+      "close": 457.34,
+      "change": 0.78,
+      "volume_ratio": 1.23,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301536.SZ",
+      "name": "星宸科技",
+      "close": 113.52,
+      "change": 0.78,
+      "volume_ratio": 0.7,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688300.SH",
+      "name": "联瑞新材",
+      "close": 272.54,
+      "change": 0.77,
+      "volume_ratio": 1.42,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300568.SZ",
+      "name": "星源材质",
+      "close": 20.33,
+      "change": 0.74,
+      "volume_ratio": 0.93,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301280.SZ",
+      "name": "珠城科技",
+      "close": 51.19,
+      "change": 0.73,
+      "volume_ratio": 1.31,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002741.SZ",
+      "name": "光华科技",
+      "close": 41.56,
+      "change": 0.63,
+      "volume_ratio": 1.77,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "301200.SZ",
+      "name": "大族数控",
+      "close": 338.96,
+      "change": 0.58,
+      "volume_ratio": 0.83,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002534.SZ",
+      "name": "西子洁能",
+      "close": 21.82,
+      "change": 0.51,
+      "volume_ratio": 0.87,
+      "is_first": true,
+      "sector": "机械行业"
+    },
+    {
+      "code": "688549.SH",
+      "name": "中巨芯",
+      "close": 34.94,
+      "change": 0.49,
+      "volume_ratio": 0.94,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688535.SH",
+      "name": "华海诚科",
+      "close": 153.52,
+      "change": 0.41,
+      "volume_ratio": 1.33,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "605111.SH",
+      "name": "新洁能",
+      "close": 74.57,
+      "change": 0.36,
+      "volume_ratio": 1.17,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "600183.SH",
+      "name": "生益科技",
+      "close": 184.5,
+      "change": 0.34,
+      "volume_ratio": 1.08,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "688409.SH",
+      "name": "富创精密",
+      "close": 204.0,
+      "change": 0.34,
+      "volume_ratio": 0.67,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301588.SZ",
+      "name": "美新科技",
+      "close": 41.27,
+      "change": 0.32,
+      "volume_ratio": 0.85,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002072.SZ",
+      "name": "凯瑞德",
+      "close": 9.35,
+      "change": 0.21,
+      "volume_ratio": 0.76,
+      "is_first": true,
+      "sector": "纺织行业"
+    },
+    {
+      "code": "300088.SZ",
+      "name": "长信科技",
+      "close": 10.39,
+      "change": 0.19,
+      "volume_ratio": 0.99,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "300613.SZ",
+      "name": "富瀚微",
+      "close": 68.62,
+      "change": 0.01,
+      "volume_ratio": 0.99,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300870.SZ",
+      "name": "欧陆通",
+      "close": 380.0,
+      "change": -0.02,
+      "volume_ratio": 0.88,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002158.SZ",
+      "name": "汉钟精机",
+      "close": 34.34,
+      "change": -0.03,
+      "volume_ratio": 1.96,
+      "is_first": true,
+      "sector": "机械行业"
+    },
+    {
+      "code": "300502.SZ",
+      "name": "新易盛",
+      "close": 579.97,
+      "change": -0.26,
+      "volume_ratio": 0.91,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301045.SZ",
+      "name": "天禄科技",
+      "close": 64.06,
+      "change": -0.47,
+      "volume_ratio": 0.93,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002577.SZ",
+      "name": "雷柏科技",
+      "close": 19.39,
+      "change": -0.67,
+      "volume_ratio": 1.84,
+      "is_first": true,
+      "sector": "电子信息"
+    },
+    {
+      "code": "688082.SH",
+      "name": "盛美上海",
+      "close": 376.14,
+      "change": -0.69,
+      "volume_ratio": 0.7,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "603936.SH",
+      "name": "博敏电子",
+      "close": 28.42,
+      "change": -0.8,
+      "volume_ratio": 1.12,
+      "is_first": true,
+      "sector": "电子"
+    },
+    {
+      "code": "300054.SZ",
+      "name": "鼎龙股份",
+      "close": 91.4,
+      "change": -0.85,
+      "volume_ratio": 0.91,
+      "is_first": true,
+      "sector": "化工行业"
+    },
+    {
+      "code": "300554.SZ",
+      "name": "三超新材",
+      "close": 31.48,
+      "change": -0.88,
+      "volume_ratio": 1.56,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300602.SZ",
+      "name": "飞荣达",
+      "close": 49.08,
+      "change": -0.89,
+      "volume_ratio": 0.86,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300260.SZ",
+      "name": "新莱应材",
+      "close": 82.21,
+      "change": -0.92,
+      "volume_ratio": 1.03,
+      "is_first": true,
+      "sector": "机械行业"
+    },
+    {
+      "code": "002965.SZ",
+      "name": "祥鑫科技",
+      "close": 43.47,
+      "change": -1.02,
+      "volume_ratio": 0.71,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301528.SZ",
+      "name": "多浦乐",
+      "close": 93.99,
+      "change": -1.05,
+      "volume_ratio": 1.23,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688786.SH",
+      "name": "悦安新材",
+      "close": 48.77,
+      "change": -1.18,
+      "volume_ratio": 1.05,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688559.SH",
+      "name": "海目星",
+      "close": 76.64,
+      "change": -1.62,
+      "volume_ratio": 1.08,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002585.SZ",
+      "name": "双星新材",
+      "close": 14.6,
+      "change": -1.68,
+      "volume_ratio": 0.99,
+      "is_first": true,
+      "sector": "塑料制品"
+    },
+    {
+      "code": "002463.SZ",
+      "name": "沪电股份",
+      "close": 145.26,
+      "change": -1.78,
+      "volume_ratio": 0.97,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "301072.SZ",
+      "name": "中捷精工",
+      "close": 39.85,
+      "change": -1.87,
+      "volume_ratio": 0.73,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "300873.SZ",
+      "name": "海晨股份",
+      "close": 26.17,
+      "change": -1.91,
+      "volume_ratio": 2.35,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688720.SH",
+      "name": "艾森股份",
+      "close": 84.15,
+      "change": -1.98,
+      "volume_ratio": 1.03,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002937.SZ",
+      "name": "兴瑞科技",
+      "close": 41.6,
+      "change": -2.35,
+      "volume_ratio": 0.74,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "301070.SZ",
+      "name": "开勒股份",
+      "close": 84.87,
+      "change": -2.63,
+      "volume_ratio": 0.99,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002803.SZ",
+      "name": "吉宏股份",
+      "close": 23.27,
+      "change": -2.64,
+      "volume_ratio": 1.25,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688035.SH",
+      "name": "德邦科技",
+      "close": 100.61,
+      "change": -2.66,
+      "volume_ratio": 0.98,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "688665.SH",
+      "name": "四方光电",
+      "close": 59.84,
+      "change": -2.67,
+      "volume_ratio": 1.04,
+      "is_first": true,
+      "sector": "电子"
+    },
+    {
+      "code": "002897.SZ",
+      "name": "意华股份",
+      "close": 94.1,
+      "change": -2.79,
+      "volume_ratio": 1.61,
+      "is_first": true,
+      "sector": "其他"
+    },
+    {
+      "code": "002484.SZ",
+      "name": "江海股份",
+      "close": 105.0,
+      "change": -2.83,
+      "volume_ratio": 1.24,
+      "is_first": true,
+      "sector": "电子器件"
+    },
+    {
+      "code": "300964.SZ",
+      "name": "本川智能",
+      "close": 111.91,
+      "change": -2.9,
+      "volume_ratio": 0.8,
+      "is_first": true,
+      "sector": "人工智能"
+    },
     {
       "code": "000811.SZ",
       "name": "冰轮环境",
       "close": 44.19,
       "change": 10.01,
       "volume_ratio": 2.57,
-      "is_first": true,
+      "is_first": false,
       "sector": "机械行业"
     },
     {
@@ -18,7 +2502,7 @@
       "close": 23.76,
       "change": 10.0,
       "volume_ratio": 1.19,
-      "is_first": true,
+      "is_first": false,
       "sector": "电子器件"
     },
     {
@@ -27,7 +2511,7 @@
       "close": 108.33,
       "change": 10.0,
       "volume_ratio": 0.69,
-      "is_first": true,
+      "is_first": false,
       "sector": "有色金属"
     },
     {
@@ -36,7 +2520,7 @@
       "close": 24.31,
       "change": 10.0,
       "volume_ratio": 0.38,
-      "is_first": true,
+      "is_first": false,
       "sector": "化工行业"
     },
     {
@@ -45,7 +2529,7 @@
       "close": 22.8,
       "change": 9.99,
       "volume_ratio": 0.34,
-      "is_first": true,
+      "is_first": false,
       "sector": "电子信息"
     },
     {
@@ -54,7 +2538,7 @@
       "close": 22.37,
       "change": 9.98,
       "volume_ratio": 2.14,
-      "is_first": true,
+      "is_first": false,
       "sector": "机械行业"
     },
     {
@@ -63,7 +2547,7 @@
       "close": 66.3,
       "change": 7.11,
       "volume_ratio": 1.19,
-      "is_first": true,
+      "is_first": false,
       "sector": "有色金属"
     },
     {
@@ -72,7 +2556,7 @@
       "close": 46.68,
       "change": 5.99,
       "volume_ratio": 1.22,
-      "is_first": true,
+      "is_first": false,
       "sector": "电子信息"
     },
     {
@@ -81,7 +2565,7 @@
       "close": 6.93,
       "change": 5.8,
       "volume_ratio": 1.28,
-      "is_first": true,
+      "is_first": false,
       "sector": "电子器件"
     },
     {
@@ -90,7 +2574,7 @@
       "close": 23.43,
       "change": 5.26,
       "volume_ratio": 1.46,
-      "is_first": true,
+      "is_first": false,
       "sector": "房地产"
     },
     {
@@ -99,7 +2583,7 @@
       "close": 7.64,
       "change": 0.66,
       "volume_ratio": 1.13,
-      "is_first": true,
+      "is_first": false,
       "sector": "房地产"
     }
   ]
