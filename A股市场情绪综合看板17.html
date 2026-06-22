@@ -2887,6 +2887,8 @@
           html += '<th class="sortable" data-sort="quality">基本面' + sortIcon('quality') + '</th>';
           html += '<th style="text-align:center;">板块共振</th>';
           html += '<th class="tl" style="max-width:90px;">炒作逻辑</th>';
+          html += '<th>选股日期</th>';
+          html += '<th>行情日期</th>';
           html += '</tr></thead><tbody>';
           for (var i = start; i < end; i++) {
             var s = stocks[i];
@@ -2934,7 +2936,9 @@
               + '<td class="' + (pctMA < 0 ? 's-ma60-below' : pctMA < 3 ? 's-ma60-near' : 's-ma60-above') + '">' + pma + '%<br><span style="font-size:0.6rem;color:#94a3b8;">' + status + ' ' + (s.ma60_dir ? ({'上升':'↗','下降':'↘','走平':'→'}[s.ma60_dir]||'') + s.ma60_dir : '') + '</span></td>'
               + '<td style="text-align:center;">' + finText + '</td>'
               + '<td style="text-align:center;color:' + resColor + ';font-size:0.7rem;font-weight:500;">' + resLabel + '</td>'
-              + '<td class="tl" style="font-size:0.7rem;color:#94a3b8;max-width:90px;line-height:1.3;">' + (s.narrative||'') + '</td></tr>';
+              + '<td class="tl" style="font-size:0.7rem;color:#94a3b8;max-width:90px;line-height:1.3;">' + (s.narrative||'') + '</td>'
+              + '<td style="font-size:0.65rem;color:#64748b;text-align:center;">' + (s.select_date || '-') + '</td>'
+              + '<td style="font-size:0.65rem;color:#64748b;text-align:center;">' + (s.trade_day || s.date || '-') + '</td></tr>';
           }
           html += '</tbody></table>';
           el.innerHTML = html;
@@ -3042,7 +3046,11 @@
               surgeState.page = 0;
               sortStocks(data.stocks || []);
               if (countEl) countEl.textContent = (data.stocks ? data.stocks.length : 0) + ' 只';
-              if (timeEl) timeEl.textContent = data.date || '';
+              var td = data.trade_day || data.date || '';
+              var sd = data.select_date || '';
+              var info = td;
+              if (sd && sd !== td) info += ' (选股' + sd + ')';
+              if (timeEl) timeEl.textContent = info;
               renderPage();
               renderResonance();
             })
@@ -3115,13 +3123,14 @@
           else if (potential_move_plate.indexOf(sec) >= 0) sk._resonance = '潜在异动';
           else sk._resonance = '冷门无共振';
         });
-        var csv = '\uFEFF代码,名称,行业,涨幅%,放量x,距MA60%,距底部%,MA60方向,基本面,板块共振,评分,评级,炒作逻辑\n';
+        var csv = '\uFEFF代码,名称,行业,涨幅%,放量x,距MA60%,距底部%,MA60方向,基本面,板块共振,评分,评级,炒作逻辑,选股日期,行情日期\n';
         rows.forEach(function(sk) {
           var line = [
             sk.code, sk.name || '', sk.sector || '',
             (sk.change || 0).toFixed(2), (sk.vol_ratio_vs_60 || 0).toFixed(1),
             (sk.pct_from_ma60 || 0).toFixed(1), (sk.surge_from_low || 0).toFixed(1),
-            sk.ma60_dir || '-', sk.quality || '-', sk._resonance || '冷门无共振', (sk.score||0), (sk.rating||'-'), (sk.narrative||'')
+            sk.ma60_dir || '-', sk.quality || '-', sk._resonance || '冷门无共振', (sk.score||0), (sk.rating||'-'), (sk.narrative||''),
+            sk.select_date || '-', sk.trade_day || '-'
           ].join(',');
           csv += line + '\n';
         });
@@ -3152,7 +3161,11 @@
           .then(function(data) {
             var stocks = data.stocks || [];
             if (countEl) countEl.textContent = stocks.length + ' 只';
-            if (timeEl) timeEl.textContent = data.date || '';
+            if (timeEl) {
+              var td = data.trade_day || data.date || '';
+              var sd = data.select_date || '';
+              timeEl.textContent = td + (sd && sd !== td ? ' (选股' + sd + ')' : '');
+            }
 
             if (!stocks.length) {
               el.innerHTML = '<span style="color:#64748b;font-size:0.8rem;">暂无符合条件的补涨标的</span>';

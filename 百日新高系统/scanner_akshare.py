@@ -26,7 +26,7 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 HDR = {'User-Agent': 'Mozilla/5.0', 'Referer': 'https://finance.sina.com.cn'}
-CACHE = 'kline_cache'
+CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'kline_cache')
 os.makedirs(CACHE, exist_ok=True)
 
 # ═══════════════════════════════
@@ -360,9 +360,10 @@ def save(new_highs):
     now = datetime.now()
     d = now.strftime('%Y%m%d')
     ds = now.strftime('%Y-%m-%d')
+    _data_dir = os.path.dirname(os.path.abspath(__file__))
 
     # CSV
-    p = f'百日新高_{d}.csv'
+    p = os.path.join(_data_dir, f'百日新高_{d}.csv')
     with open(p, 'w', newline='', encoding='utf-8-sig') as f:
         w = csv.writer(f)
         w.writerow(['代码','名称','收盘价','涨幅%','量比','标签','板块'])
@@ -372,7 +373,7 @@ def save(new_highs):
     print(f'  >> CSV: {p}')
 
     # JSON
-    jp = f'百日新高_{d}.json'
+    jp = os.path.join(_data_dir, f'百日新高_{d}.json')
     with open(jp, 'w', encoding='utf-8') as f:
         json.dump({
             'date': ds, 'total': len(new_highs),
@@ -382,7 +383,7 @@ def save(new_highs):
     print(f'  >> JSON: {jp}')
 
     # 历史趋势
-    hp = '百日新高_历史趋势.json'
+    hp = os.path.join(_data_dir, '百日新高_历史趋势.json')
     h = []
     if os.path.exists(hp):
         try:

@@ -21,6 +21,39 @@ try:
 except ImportError:
     _HAS_AK = False
 
+def fetch_hot_concept_stocks():
+    """用akshare获取今日热点概念成分股，返回 {stock_code: [concept_names]}"""
+    hot_stock_codes = {}
+    seen_names = set()
+    if not _HAS_AK:
+        return hot_stock_codes, seen_names
+    try:
+        boards = ak.stock_board_concept_name_em()
+        if boards is None or boards.empty:
+            return hot_stock_codes, seen_names
+        if "涨停数" in boards.columns:
+            hot = boards.sort_values("涨停数", ascending=False).head(8)
+        else:
+            hot = boards.head(8)
+        print('  概念板块API: {}只候选, 取top8'.format(len(boards)))
+        for _, br in hot.iterrows():
+            bname = str(br.get("板块名称", ""))
+            bcode = str(br.get("板块代码", ""))
+            if not bcode: continue
+            seen_names.add(bname)
+            try:
+                cons = ak.stock_board_concept_cons_em(symbol=bcode)
+                if cons is not None and not cons.empty:
+                    for _, cr2 in cons.iterrows():
+                        ccode = str(cr2.get("股票代码", "")).zfill(6)
+                        if ccode and len(ccode) == 6:
+                            hot_stock_codes.setdefault(ccode, []).append(bname)
+            except:
+                pass
+    except Exception:
+        pass
+    return hot_stock_codes, seen_names
+
 def safe_float(v, default=0):
     try: return float(v)
     except: return default
@@ -126,12 +159,49 @@ def fetch_fundamentals(stocks, with_fundamentals=False):
     return stocks
 
 def analyze():
+    script_date_str = datetime.now().strftime('%Y-%m-%d %H:%M')
+    select_date = datetime.now().strftime('%Y-%m-%d')
     today_str = str(date.today())
     date_str = today_str.replace('-', '')
     
     # Load reference maps
     name_map = load_json_map('stock_list.json')  # code → name
     sector_map = load_json_map('sector_map.json')  # code → sector
+    
+    # 扫描缓存，找出所有kline的最后交易日
+    cache_files = [f for f in os.listdir(CACHE) if f.endswith('.pkl')]
+    print(f'K线缓存: {len(cache_files)} 只')
+    actual_trade_date = None
+    # 抽检足够多（200只）找出最新交易日
+    import random as _rr
+    _rr.seed(0)
+    sampled = _rr.sample(cache_files, min(200, len(cache_files)))
+    for fname in sampled:
+        try:
+            with open(os.path.join(CACHE, fname), 'rb') as f:
+                kd = pickle.load(f)
+            df = kd.get('df')
+            if df is None or len(df) < 5: continue
+            last = df['date'].iloc[-1]
+            if isinstance(last, date):
+                if actual_trade_date is None or last > actual_trade_date:
+                    actual_trade_date = last
+        except: pass
+
+    # 确定 trade_day (K线实际交易日) — 后续全局用此值
+    if actual_trade_date:
+        trade_day = str(actual_trade_date)
+        trade_day_str = trade_day.replace('-', '')
+    else:
+        trade_day = today_str
+        trade_day_str = date_str
+        actual_trade_date = date.today()
+    if trade_day != today_str:
+        print(f'  数据实际交易日: {trade_day} (系统日期{today_str}可能非交易日)')
+    else:
+        print(f'  数据实际交易日: {trade_day}')
+    date_str = trade_day_str  # 统一 trade_day 作为文件名日期
+    
     # Load latest 百日新高 for cross-reference (自动找最近)
     nh_path = os.path.join(DATA_DIR, f'百日新高_{date_str}.json')
     if not os.path.exists(nh_path):
@@ -152,9 +222,6 @@ def analyze():
                 if sc:
                     nh_sector_counts[sc] = nh_sector_counts.get(sc, 0) + 1
         except: pass
-    
-    cache_files = [f for f in os.listdir(CACHE) if f.endswith('.pkl')]
-    print(f'K线缓存: {len(cache_files)} 只')
     
     results = []
     checked = 0
@@ -178,17 +245,19 @@ def analyze():
         highs = df['high'].tolist()
         lows = df['low'].tolist()
         
-        # 最新日期必须是今天或最近一个交易日
+        # 匹配实际交易日
         last_date = dates_list[-1]
         if isinstance(last_date, date):
             last_date_str = str(last_date)
         else:
             continue
         
-        # 跳过非当日数据
-        days_off = (date.today() - last_date).days if isinstance(last_date, date) else 99
-        if days_off > 5:
+        # 跳过：数据日期 ≠ 检测到的实际交易日
+        if actual_trade_date and last_date != actual_trade_date:
             continue
+        
+        # 以全局 trade_day 为准（所有stock共享同一交易日）
+        stock_trade_day = trade_day
         
         checked += 1
         
@@ -275,21 +344,46 @@ def analyze():
             'pct_from_ma60': round(pct_from_ma60, 1),
             'ma60_dir': ma60_dir,
             'date': last_date_str,
+            'trade_day': stock_trade_day,
+            'select_date': select_date,
         })
     
-    # 板块分析：热门板块（百日新高） + 本日异动板块（底部放量）
+    # 板块分析：热门概念（悟道MCP）+ 本日异动板块（底部放量）
+    print('  获取今日热点概念成分...')
+    hot_concept_map, hot_concept_names = fetch_hot_concept_stocks()
+    print('  热点概念股票集: {} 只, 概念数: {}'.format(len(hot_concept_map), len(hot_concept_names)))
     surge_sector_counts = {}
     for r in results:
         sc = r.get('sector', '') or ''
         if sc:
             surge_sector_counts[sc] = surge_sector_counts.get(sc, 0) + 1
-    # Top hot sectors from 百日新高
+    # Top hot sectors from 百日新高 (fallback) + hot concept names from API
     nh_top_sorted = sorted(nh_sector_counts.items(), key=lambda x: -x[1])
-    hot_sectors = {s for s, _ in nh_top_sorted[:7]}  # top 7
+    fallback_sectors = {s for s, _ in nh_top_sorted[:7]}
+    # Build hot concept name set for sector-name fuzzy matching
+    hot_concept_names = set()
+    for concepts in hot_concept_map.values():
+        for c in concepts:
+            hot_concept_names.add(c)
+    # 用悟道概念匹配
     for r in results:
-        sc = r.get('sector', '') or ''
-        r['sector_in_hot'] = sc in hot_sectors and bool(sc)
-        r['sector_surge_count'] = surge_sector_counts.get(sc, 0)
+        code = r.get('code', '').split('.')[0].zfill(6)
+        matched_concepts = hot_concept_map.get(code, [])
+        r['hot_concepts'] = matched_concepts
+        if matched_concepts:
+            r['sector_in_hot'] = True
+        else:
+            # fallback 1: 百日新高top7 sector
+            sc = r.get('sector', '') or ''
+            r['sector_in_hot'] = sc in fallback_sectors and bool(sc)
+            # fallback 2: sector name matches any hot concept keyword
+            if not r['sector_in_hot'] and sc:
+                for hcn in hot_concept_names:
+                    if sc in hcn or hcn in sc:
+                        r['sector_in_hot'] = True
+                        r['hot_concepts'] = r.get('hot_concepts', []) + [hcn]
+                        break
+        r['sector_surge_count'] = surge_sector_counts.get(r.get('sector', ''), 0)
     
     surge_sectors_sorted = sorted(surge_sector_counts.items(), key=lambda x: -x[1])
     
@@ -489,14 +583,14 @@ def analyze():
     results.sort(key=lambda x: -(x.get('score', 0) or 0))
     hot_near_ma60.sort(key=lambda x: -(x.get('score', 0) or 0))
     
-    date_str = today_str.replace('-', '')
     # 评分统计
     rating_counts = Counter()
     for r in results:
         rating_counts[r.get('rating','?')] += 1
     
     output = {
-        'date': today_str,
+        'trade_day': trade_day,
+        'select_date': select_date,
         'mode': '容量核心',
         'total_checked': checked,
         'total_bottom_surge': len(results),
@@ -510,14 +604,15 @@ def analyze():
         'hot_resonance_stocks': hot_near_ma60,
     }
     
-    out_path = os.path.join(DATA_DIR, f'底部放量_{date_str}.json')
+    out_path = os.path.join(DATA_DIR, f'底部放量_{trade_day_str}.json')
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
-    print(f'\n检查 {checked} 只, 容量核心候选: {len(results)} 只')
+    print(f'\n行情交易日: {trade_day}  |  选股执行日: {select_date}')
+    print(f'检查 {checked} 只, 容量核心候选: {len(results)} 只')
     print(f'其中热点板块+MA60附近: {len(hot_near_ma60)} 只')
     print(f'评分分布: {dict(rating_counts.most_common())}')
-    out_path = os.path.join(DATA_DIR, f'底部放量_{date_str}.json')
+    out_path = os.path.join(DATA_DIR, f'底部放量_{trade_day_str}.json')
     print(f'输出: {out_path}')
     for r in results:
         nh = '★' if r['in_new_high'] else ' '
@@ -534,7 +629,9 @@ def analyze():
         pma_val = r.get('pct_from_ma60', 0)
         narr = r.get('narrative', '')
         narr_tag = f' [{narr}]' if narr else ''
-        print(f'  {nh}{r["code"]} {n}{narr_tag} [{s}] +{r["change"]}%  {amt}亿 量{vr_val:.1f}x 距MA60{pma_val:.1f}% {dir_mark}  {rating}({score}分) {rn}')
+        hc = r.get('hot_concepts', [])
+        hc_tag = '🔥' + ','.join(hc[:3]) if hc else ''
+        print(f'  {nh}{r["code"]} {n}{narr_tag} [{s}] +{r["change"]}%  {amt}亿 量{vr_val:.1f}x 距MA60{pma_val:.1f}% {dir_mark}  {rating}({score}分) {rn} {hc_tag}')
         print(f'    └ 成交额{sd.get("成交额",0)} MA60{sd.get("MA60位置",0)} 板块{sd.get("板块共振",0)} 放量{sd.get("放量倍数",0)} 趋势{sd.get("趋势",0)} 基本面{sd.get("基本面",0)} 百日新高{sd.get("百日新高",0)}')
 
 if __name__ == '__main__':

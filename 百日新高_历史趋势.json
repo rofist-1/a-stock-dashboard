@@ -1,43 +1,7 @@
 [
   {
-    "date": "2026-06-05",
-    "total": 125,
-    "first_count": 0
-  },
-  {
-    "date": "2026-06-14",
-    "total": 109,
-    "first_count": 0
-  },
-  {
-    "date": "2026-06-15",
-    "total": 126,
-    "first_count": 70
-  },
-  {
-<<<<<<< Updated upstream
-    "date": "2026-06-16",
-    "total": 214,
-    "first_count": 115
-  },
-  {
-    "date": "2026-06-17",
-    "total": 255,
-    "first_count": 117
-  },
-  {
-    "date": "2026-06-18",
-    "total": 267,
-    "first_count": 102
-  },
-  {
-    "date": "2026-06-19",
-    "total": 267,
-    "first_count": 0
-=======
-    "date": "2026-06-17",
-    "total": 255,
-    "first_count": 183
->>>>>>> Stashed changes
+    "date": "2026-06-22",
+    "total": 11,
+    "first_count": 11
   }
 ]
