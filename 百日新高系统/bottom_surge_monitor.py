@@ -58,6 +58,33 @@ def safe_float(v, default=0):
     try: return float(v)
     except: return default
 
+def detect_market_state():
+    """检测大盘状态：沪深300的MA20/MA60位置 → uptrend/oscillating/defensive"""
+    if not _HAS_AK:
+        return 'oscillating', {}
+    try:
+        hs300 = ak.stock_zh_index_daily(symbol="sh000300")
+        if hs300 is None or len(hs300) < 60:
+            return 'oscillating', {}
+        closes = hs300['close'].tolist()
+        ma20 = sum(closes[-20:]) / 20
+        ma60 = sum(closes[-60:]) / 60
+        now = closes[-1]
+        # 趋势力量：MA20斜率
+        ma20_ago = sum(closes[-40:-20]) / 20
+        slope = (ma20 - ma20_ago) / ma20_ago * 100
+        if now > ma20 and ma20 > ma60 and slope > 0:
+            state = 'uptrend'
+        elif now < ma60:
+            state = 'defensive'
+        else:
+            state = 'oscillating'
+        info = {'hs300_close': round(now, 1), 'ma20': round(ma20, 1), 'ma60': round(ma60, 1), 'slope': round(slope, 2)}
+        return state, info
+    except Exception as e:
+        print(f'  [WARN] 大盘状态检测失败: {e}')
+        return 'oscillating', {}
+
 def load_json_map(fname, key_field='code', val_field=None):
     """Load a JSON file into a dict mapping code→name or code→sector"""
     fpath = os.path.join(DATA_DIR, fname)
@@ -300,6 +327,32 @@ def analyze():
         ma60 = sum(closes[-60:]) / 60
         pct_from_ma60 = (today_close - ma60) / ma60 * 100
         
+        # EMA13（指数移动平均，比SMA反应更快）
+        def calc_ema(vals, n):
+            k = 2 / (n + 1)
+            ema = sum(vals[-n:]) / n
+            for v in vals[-(n-1):]:
+                ema = v * k + ema * (1 - k)
+            return ema
+        ema5 = calc_ema(closes, 5)
+        ema13 = calc_ema(closes, 13)
+        pct_from_ema5 = (today_close - ema5) / ema5 * 100
+        pct_from_ema13 = (today_close - ema13) / ema13 * 100
+        
+        # ATR14（波动率过滤：高波股票放宽均线触发距离）
+        def calc_atr(h, l, c, n=14):
+            tr = []
+            for i in range(1, len(c)):
+                tr.append(max(h[i]-l[i], abs(h[i]-c[i-1]), abs(l[i]-c[i-1])))
+            return sum(tr[-n:]) / n if len(tr) >= n else sum(tr) / len(tr)
+        atr14 = calc_atr(highs, lows, closes, 14)
+        
+        # SMA5/MA13（持仓管理用）
+        ma5 = sum(closes[-5:]) / 5
+        pct_from_ma5 = (today_close - ma5) / ma5 * 100
+        ma13 = sum(closes[-13:]) / 13
+        pct_from_ma13 = (today_close - ma13) / ma13 * 100
+        
         # 条件4: 距MA60 -5% ~ +15% (不追高, 不偏离太远)
         if pct_from_ma60 < -5 or pct_from_ma60 > 15:
             continue
@@ -312,6 +365,24 @@ def analyze():
             elif ma60_change < -0.5: ma60_dir = '下降'
             else: ma60_dir = '走平'
         else: ma60_dir = '--'
+        
+        # MA13方向
+        if len(closes) >= 23:
+            ma13_ago = sum(closes[-23:-10]) / 13
+            ma13_change = (ma13 - ma13_ago) / ma13_ago * 100
+            if ma13_change > 0.5: ma13_dir = '上升'
+            elif ma13_change < -0.5: ma13_dir = '下降'
+            else: ma13_dir = '走平'
+        else: ma13_dir = '--'
+        
+        # MA5方向
+        if len(closes) >= 15:
+            ma5_ago = sum(closes[-15:-10]) / 5
+            ma5_change = (ma5 - ma5_ago) / ma5_ago * 100
+            if ma5_change > 0.5: ma5_dir = '上升'
+            elif ma5_change < -0.5: ma5_dir = '下降'
+            else: ma5_dir = '走平'
+        else: ma5_dir = '--'
         
         # 股票名称
         code = fname.replace('.pkl', '')
@@ -343,6 +414,17 @@ def analyze():
             'ma60': round(ma60, 2),
             'pct_from_ma60': round(pct_from_ma60, 1),
             'ma60_dir': ma60_dir,
+            'ma13': round(ma13, 2),
+            'pct_from_ma13': round(pct_from_ma13, 1),
+            'ma13_dir': ma13_dir,
+            'ma5': round(ma5, 2),
+            'pct_from_ma5': round(pct_from_ma5, 1),
+            'ma5_dir': ma5_dir,
+            'ema5': round(ema5, 2),
+            'pct_from_ema5': round(pct_from_ema5, 1),
+            'ema13': round(ema13, 2),
+            'pct_from_ema13': round(pct_from_ema13, 1),
+            'atr14': round(atr14, 2),
             'date': last_date_str,
             'trade_day': stock_trade_day,
             'select_date': select_date,
@@ -481,7 +563,18 @@ def analyze():
     for r in results:
         r['narrative'] = make_narrative(r)
     
-    # ── 综合评分系统 (权重100分) ──
+    # ── 市场状态检测 → 自适应评分权重 ──
+    market_state, market_info = detect_market_state()
+    print(f'  大盘状态: {market_state} 沪深300={market_info.get("hs300_close","?")} MA20={market_info.get("ma20","?")} MA60={market_info.get("ma60","?")}')
+    # 权重映射: {状态: [成交额, MA60位置, 板块共振, 放量, 趋势, 基本面, 百日新高]}
+    WEIGHT_MAP = {
+        'uptrend':     [18, 12, 28, 15, 14, 8,  5],  # 趋势市：板块共振+趋势权重↑，MA60位置↓
+        'oscillating': [18, 28, 17, 15, 5,  12, 5],  # 震荡市：MA60位置↑，趋势↓
+        'defensive':   [18, 15, 10, 15, 8,  22, 2],  # 防御市：基本面↑，板块共振↓
+    }
+    w = WEIGHT_MAP.get(market_state, WEIGHT_MAP['oscillating'])
+    w_amt, w_ma, w_sector, w_vol, w_trend, w_fin, w_nh = w
+
     for r in results:
         pma = r.get('pct_from_ma60', 0) or 0
         vr = r.get('vol_ratio_vs_60', 0) or 0
@@ -494,53 +587,53 @@ def analyze():
         roe_val = r.get('roe')
         pe_val = r.get('pe')
         
-        # ① 成交额 (20分)
-        if amt >= 50: s_amt = 20
-        elif amt >= 30: s_amt = 16
-        elif amt >= 20: s_amt = 12
-        elif amt >= 15: s_amt = 8
-        else: s_amt = 5
+        # ① 成交额 (权重 w_amt)
+        if amt >= 50: s_amt = w_amt
+        elif amt >= 30: s_amt = int(w_amt * 0.8)
+        elif amt >= 20: s_amt = int(w_amt * 0.6)
+        elif amt >= 15: s_amt = int(w_amt * 0.4)
+        else: s_amt = int(w_amt * 0.25)
         
-        # ② MA60位置 (20分) - 贴线最佳
-        if -3 <= pma <= 3: s_ma = 20
-        elif -5 <= pma < -3: s_ma = 15
-        elif 3 < pma <= 8: s_ma = 12
-        elif 8 < pma <= 12: s_ma = 6
-        elif 12 < pma <= 15: s_ma = 3
+        # ② MA60位置 (权重 w_ma) - 贴线最佳
+        if -3 <= pma <= 3: s_ma = w_ma
+        elif -5 <= pma < -3: s_ma = int(w_ma * 0.75)
+        elif 3 < pma <= 8: s_ma = int(w_ma * 0.6)
+        elif 8 < pma <= 12: s_ma = int(w_ma * 0.3)
+        elif 12 < pma <= 15: s_ma = int(w_ma * 0.15)
         else: s_ma = 0
         
-        # ③ 板块共振 (20分)
-        if hot: s_sector = 20
-        elif surge_cnt >= 3: s_sector = 12
-        elif surge_cnt >= 2: s_sector = 6
+        # ③ 板块共振 (权重 w_sector)
+        if hot: s_sector = w_sector
+        elif surge_cnt >= 3: s_sector = int(w_sector * 0.6)
+        elif surge_cnt >= 2: s_sector = int(w_sector * 0.3)
         else: s_sector = 0
         
-        # ④ 放量倍数 (15分)
-        if 2.0 <= vr <= 3.0: s_vol = 15
-        elif 3.0 < vr <= 5.0: s_vol = 12
-        elif 1.5 <= vr < 2.0: s_vol = 8
-        elif 5.0 < vr <= 7.0: s_vol = 5
-        else: s_vol = 2
+        # ④ 放量倍数 (权重 w_vol)
+        if 2.0 <= vr <= 3.0: s_vol = w_vol
+        elif 3.0 < vr <= 5.0: s_vol = int(w_vol * 0.8)
+        elif 1.5 <= vr < 2.0: s_vol = int(w_vol * 0.55)
+        elif 5.0 < vr <= 7.0: s_vol = int(w_vol * 0.35)
+        else: s_vol = int(w_vol * 0.15)
         
-        # ⑤ MA60趋势 (10分)
-        if md == '上升': s_trend = 10
-        elif md == '走平': s_trend = 5
+        # ⑤ MA60趋势 (权重 w_trend)
+        if md == '上升': s_trend = w_trend
+        elif md == '走平': s_trend = int(w_trend * 0.5)
         else: s_trend = 0
         
-        # ⑥ 基本面 (10分)
+        # ⑥ 基本面 (权重 w_fin)
         s_fin = 0
         if roe_val:
-            if roe_val > 10: s_fin += 5
-            elif roe_val > 5: s_fin += 3
-            else: s_fin += 1
+            if roe_val > 10: s_fin += int(w_fin * 0.5)
+            elif roe_val > 5: s_fin += int(w_fin * 0.3)
+            else: s_fin += int(w_fin * 0.1)
         if pe_val:
-            if 10 <= pe_val <= 50: s_fin += 3
-            elif 50 < pe_val <= 100: s_fin += 1
+            if 10 <= pe_val <= 50: s_fin += int(w_fin * 0.3)
+            elif 50 < pe_val <= 100: s_fin += int(w_fin * 0.1)
         debt = r.get('debt_ratio')
-        if debt is not None and debt < 50: s_fin += 2
+        if debt is not None and debt < 50: s_fin += int(w_fin * 0.2)
         
-        # ⑦ 百日新高加分 (5分)
-        s_nh = 5 if nh else 0
+        # ⑦ 百日新高 (权重 w_nh)
+        s_nh = w_nh if nh else 0
         
         total = s_amt + s_ma + s_sector + s_vol + s_trend + s_fin + s_nh
         
@@ -588,9 +681,17 @@ def analyze():
     for r in results:
         rating_counts[r.get('rating','?')] += 1
     
+    weight_labels = {
+        'uptrend':     '成交额18 + MA60位置12 + 板块共振28 + 放量15 + 趋势14 + 基本面8 + 百日新高5',
+        'oscillating': '成交额18 + MA60位置28 + 板块共振17 + 放量15 + 趋势5 + 基本面12 + 百日新高5',
+        'defensive':   '成交额18 + MA60位置15 + 板块共振10 + 放量15 + 趋势8 + 基本面22 + 百日新高2',
+    }
     output = {
         'trade_day': trade_day,
         'select_date': select_date,
+        'market_state': market_state,
+        'market_info': market_info,
+        'score_weights': weight_labels.get(market_state, weight_labels['oscillating']),
         'mode': '容量核心',
         'total_checked': checked,
         'total_bottom_surge': len(results),
@@ -631,7 +732,10 @@ def analyze():
         narr_tag = f' [{narr}]' if narr else ''
         hc = r.get('hot_concepts', [])
         hc_tag = '🔥' + ','.join(hc[:3]) if hc else ''
-        print(f'  {nh}{r["code"]} {n}{narr_tag} [{s}] +{r["change"]}%  {amt}亿 量{vr_val:.1f}x 距MA60{pma_val:.1f}% {dir_mark}  {rating}({score}分) {rn} {hc_tag}')
+        ma13_val = r.get('pct_from_ma13', 0)
+        ma13_dir = r.get('ma13_dir', '')
+        ma13_tag = f' MA13{ma13_val:.1f}%' + ({'上升':'↗','下降':'↘','走平':'→','--':''}.get(ma13_dir, ''))
+        print(f'  {nh}{r["code"]} {n}{narr_tag} [{s}] +{r["change"]}%  {amt}亿 量{vr_val:.1f}x 距MA60{pma_val:.1f}%{ma13_tag} {dir_mark}  {rating}({score}分) {rn} {hc_tag}')
         print(f'    └ 成交额{sd.get("成交额",0)} MA60{sd.get("MA60位置",0)} 板块{sd.get("板块共振",0)} 放量{sd.get("放量倍数",0)} 趋势{sd.get("趋势",0)} 基本面{sd.get("基本面",0)} 百日新高{sd.get("百日新高",0)}')
 
 if __name__ == '__main__':
