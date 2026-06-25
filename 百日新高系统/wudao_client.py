@@ -244,6 +244,32 @@ def get_valuation_snapshot(code: str) -> dict:
     return {}
 
 
+def get_kline(code: str, days: int = 60, endDate: str = None) -> list:
+    """
+    获取个股 K 线数据（含 OHLC、涨跌幅、成交额 amount(元)、换手率等）。
+
+    Parameters
+    ----------
+    code : str, 如 600519 或 贵州茅台
+    days : int, 天数，默认 60
+    endDate : str, 可选，历史截止日期 YYYYMMDD
+
+    Returns
+    -------
+    list[dict] : [{date, close, pct_chg, amount, high, low, open, volume, ...}]
+    """
+    params = {"code": code, "days": days}
+    if endDate:
+        params["endDate"] = endDate
+    resp = _get("kline", params)
+    if not resp.get("success"):
+        return []
+    data = resp.get("data", [])
+    if isinstance(data, list):
+        return data
+    return []
+
+
 if __name__ == "__main__":
     today = datetime.now().strftime("%Y%m%d")
     print(f"[TEST] 测试悟道 API 客户端 ({today})...")
