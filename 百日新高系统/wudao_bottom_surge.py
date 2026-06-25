@@ -69,20 +69,35 @@ def score_stock(s, rows, hot_sectors_set=None):
         else: detail['MA60位置'] = 0
 
     ind = s.get('industry','')
-    # 先用热点板块名称匹配行业
-    hot_kw = ['半导体','芯片','电子','软件','通信','元器件']
-    concept_to_ind = {'芯片概念':'半导体','5G':'通信设备','新能源汽车':'汽车配件','华为概念':'通信设备',
-                      '机器人概念':'通用机械','储能':'电气设备','人工智能':'软件服务','信创':'软件服务',
-                      '光伏':'电气设备','军工':'航空','创新药':'化学制药','医药':'生物制药',
-                      '数据中心':'软件服务','算力':'软件服务','东数西算':'软件服务','消费电子':'元器件'}
-    matched = False
+    detail['板块共振'] = 0
+    matched_concepts = []
+    concept_to_inds = {
+        '芯片概念':['半导体','电子器件','集成电路','分立器件'],
+        '5G':['通信设备'],
+        '新能源汽车':['汽车配件','汽车整车'],
+        '华为概念':['通信设备','软件服务'],
+        '机器人概念':['通用机械','自动化设备','机器人'],
+        '储能':['电气设备','电源设备'],
+        '人工智能':['软件服务'],
+        '信创':['软件服务','计算机','IT设备'],
+        '光伏':['电气设备','太阳能'],
+        '军工':['航空','船舶','航天装备','兵器兵装'],
+        '创新药':['化学制药'],
+        '医药':['生物制药','医疗器械'],
+        '低空经济':['航空','航天装备'],
+        '算力':['软件服务','IT设备'],
+        '消费电子':['电子器件'],
+        '互联网金融':['证券','互联网'],
+    }
     for hs in hot_sectors_set:
-        if ind and (ind in hs or hs in ind):
-            matched = True; break
-        mapped = concept_to_ind.get(hs, '')
-        if mapped and mapped == ind:
-            matched = True; break
-    detail['板块共振'] = 28 if matched else (14 if any(k in ind for k in hot_kw) else 0)
+        if ind and (hs in ind or (ind in hs and len(ind) > 2)):
+            matched_concepts.append(hs)
+        else:
+            matched_inds = concept_to_inds.get(hs, [])
+            if ind in matched_inds:
+                matched_concepts.append(hs)
+    if matched_concepts:
+        detail['板块共振'] = 28
 
     vr = s.get('volumeRatio', 0)
     if vr >= 5: detail['放量倍数'] = 15
@@ -209,14 +224,12 @@ def main():
             'pct_from_ema13': round((today['close'] - e13) / e13 * 100, 1),
             'ma60_dir': '下降', 'ma13_dir': '下降', 'ma5_dir': '下降',
             'ema5_dir': '下降', 'ema13_dir': '下降',
-            'sector_in_hot': any(k in s.get('industry','') for k in ['半导体','芯片','电子','软件','通信','元器件']),
             'score': total, 'rating': rating,
             'score_detail': sdetail, 'risk_note': note,
             'hot_concepts': [],
         }
-        ind = s.get('industry', '')
-        _cm = {'半导体':'芯片概念','化学制药':'医药/创新药','生物制药':'医药/创新药','电子器件':'芯片概念','元器件':'芯片概念','软件服务':'信创/AI','化工原料':'化工','医药商业':'医药','通信设备':'5G/通信'}
-        entry['hot_concepts'] = [_cm.get(ind, ind)] if _cm.get(ind) else []
+        entry['hot_concepts'] = matched_concepts[:3] if matched_concepts else []
+        entry['sector_in_hot'] = bool(matched_concepts)
         if ma60 and len(closes) >= 60:
             entry['low_60'] = min(r['low'] for r in rows[-60:])
             entry['surge_from_low'] = round((today['close'] - entry['low_60']) / entry['low_60'] * 100, 1)
