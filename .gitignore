@@ -43,6 +43,9 @@ backtest_*.csv
 backtest_*.xlsx
 stats.json
 
+# API key file (DO NOT COMMIT)
+.wudao_api_key
+
 # Monitor auto-generated data files (keep code, not daily output)
 百日新高系统/底部放量_*.json
 百日新高系统/百日新高_*.json

@@ -15,7 +15,17 @@ from datetime import datetime
 import requests
 
 BASE_URL = "https://stock.quicktiny.cn/api/openclaw"
-API_KEY = "lb_ace63359b2c36bf7f71a070f89f9717f8434a287fe8a914e69b4b4d780424e97"
+
+# 安全加载 API Key：优先读环境变量，其次读本地配置文件（不提交到git）
+_API_KEY_FILE = os.path.join(os.path.dirname(__file__), ".wudao_api_key")
+API_KEY = os.environ.get("WUDAO_API_KEY")
+if not API_KEY:
+    try:
+        with open(_API_KEY_FILE) as f:
+            API_KEY = f.read().strip()
+    except (FileNotFoundError, IOError):
+        pass
+API_KEY = API_KEY or ""
 HEADERS = {"Authorization": f"Bearer {API_KEY}"}
 
 _REQUEST_INTERVAL = 0.35  # 限流间隔(秒)
