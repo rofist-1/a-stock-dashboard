@@ -1,0 +1,22 @@
+{
+  "scan_time": "20260629_2220",
+  "date": "20260623",
+  "total_checked": 4764,
+  "all_pass": 1,
+  "candidates": [
+    {
+      "code": "000623",
+      "name": "",
+      "sector": "生物制药",
+      "close": 18.3,
+      "pct_chg": -0.49,
+      "amount_yi": 4.9,
+      "volume_ratio": 1.61,
+      "ma60": 17.81,
+      "ema13": 17.57,
+      "gap_pct": 1.34,
+      "industry_rank": 2,
+      "date": "20260623"
+    }
+  ]
+}

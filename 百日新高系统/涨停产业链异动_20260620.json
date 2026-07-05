@@ -1,0 +1,1071 @@
+{
+  "date": "2026-06-20",
+  "total_limit_up": 91,
+  "total_chains_matched": 23,
+  "top3": [
+    {
+      "chain": "其他",
+      "total": 43
+    },
+    {
+      "chain": "芯片",
+      "total": 6
+    },
+    {
+      "chain": "有色金属",
+      "total": 5
+    }
+  ],
+  "all_chains": [
+    {
+      "chain": "其他",
+      "count": 43,
+      "stocks": [
+        {
+          "code": "001216",
+          "name": "华瓷股份",
+          "change": 9.99,
+          "seal": 4421.34,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "001296",
+          "name": "长江材料",
+          "change": 10.01,
+          "seal": 1861.91,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "001339",
+          "name": "智微智能",
+          "change": 10.0,
+          "seal": 15406.76,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 2,
+          "reason_type": ""
+        },
+        {
+          "code": "002805",
+          "name": "丰元股份",
+          "change": 9.98,
+          "seal": 2922.93,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002842",
+          "name": "翔鹭钨业",
+          "change": 10.0,
+          "seal": 258.17,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002859",
+          "name": "洁美科技",
+          "change": 10.0,
+          "seal": 1353.34,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002897",
+          "name": "意华股份",
+          "change": 10.0,
+          "seal": 10138.83,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002907",
+          "name": "华森制药",
+          "change": 10.01,
+          "seal": 2744.19,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002950",
+          "name": "奥美医疗",
+          "change": 9.97,
+          "seal": 9270.37,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002971",
+          "name": "和远气体",
+          "change": 10.01,
+          "seal": 3314.42,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002989",
+          "name": "中天精装",
+          "change": 10.01,
+          "seal": 4633.88,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 3,
+          "reason_type": ""
+        },
+        {
+          "code": "003031",
+          "name": "中瓷电子",
+          "change": 10.0,
+          "seal": 3612.18,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "300522",
+          "name": "世名科技",
+          "change": 19.99,
+          "seal": 3185.79,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "300861",
+          "name": "美畅股份",
+          "change": 19.98,
+          "seal": 3781.76,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "301310",
+          "name": "鑫宏业",
+          "change": 19.99,
+          "seal": 68.72,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "301580",
+          "name": "爱迪特",
+          "change": 20.0,
+          "seal": 23412.7,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "600392",
+          "name": "盛和资源",
+          "change": 10.01,
+          "seal": 5782.07,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603082",
+          "name": "北自科技",
+          "change": 10.0,
+          "seal": 889.12,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603124",
+          "name": "江南新材",
+          "change": 10.0,
+          "seal": 4152.24,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603127",
+          "name": "昭衍新药",
+          "change": 9.99,
+          "seal": 8716.73,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603177",
+          "name": "德创环保",
+          "change": 10.01,
+          "seal": 725.04,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603201",
+          "name": "常润股份",
+          "change": 9.98,
+          "seal": 2157.24,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603211",
+          "name": "晋拓股份",
+          "change": 9.99,
+          "seal": 10905.76,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603223",
+          "name": "恒通股份",
+          "change": 9.96,
+          "seal": 4995.98,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603261",
+          "name": "立航科技",
+          "change": 10.0,
+          "seal": 1619.78,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 2,
+          "reason_type": ""
+        },
+        {
+          "code": "603313",
+          "name": "梦百合",
+          "change": 10.1,
+          "seal": 2445.4,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603324",
+          "name": "盛剑科技",
+          "change": 10.01,
+          "seal": 1606.77,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 2,
+          "reason_type": ""
+        },
+        {
+          "code": "603358",
+          "name": "华达科技",
+          "change": 9.99,
+          "seal": 1286.41,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603380",
+          "name": "易德龙",
+          "change": 10.0,
+          "seal": 4183.42,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603496",
+          "name": "XD恒为科",
+          "change": 10.0,
+          "seal": 3319.5,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603616",
+          "name": "韩建河山",
+          "change": 10.05,
+          "seal": 2680.71,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603663",
+          "name": "三祥新材",
+          "change": 9.99,
+          "seal": 3651.83,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603679",
+          "name": "华体科技",
+          "change": 10.01,
+          "seal": 3270.22,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603956",
+          "name": "威派格",
+          "change": 9.93,
+          "seal": 3264.09,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603991",
+          "name": "领先股份",
+          "change": 10.0,
+          "seal": 3531.46,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "605086",
+          "name": "龙高股份",
+          "change": 9.99,
+          "seal": 7850.84,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "605376",
+          "name": "博迁新材",
+          "change": 10.0,
+          "seal": 5299.31,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "688227",
+          "name": "品高股份",
+          "change": 20.0,
+          "seal": 10162.48,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "688478",
+          "name": "晶升股份",
+          "change": 20.01,
+          "seal": 18865.59,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "688485",
+          "name": "九州一轨",
+          "change": 20.01,
+          "seal": 1177.39,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "688515",
+          "name": "裕太微-U",
+          "change": 20.0,
+          "seal": 9642.74,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "688598",
+          "name": "金博股份",
+          "change": 20.0,
+          "seal": 5030.35,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 2,
+          "reason_type": ""
+        },
+        {
+          "code": "688671",
+          "name": "碧兴物联",
+          "change": 20.0,
+          "seal": 6129.84,
+          "sector": "其他",
+          "industry": "其他",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "芯片",
+      "count": 6,
+      "stocks": [
+        {
+          "code": "002141",
+          "name": "贤丰控股",
+          "change": 10.05,
+          "seal": 11378.23,
+          "sector": "电子器件",
+          "industry": "电子器件",
+          "continue_num": 3,
+          "reason_type": ""
+        },
+        {
+          "code": "002579",
+          "name": "中京电子",
+          "change": 10.02,
+          "seal": 16649.6,
+          "sector": "电子器件",
+          "industry": "电子器件",
+          "continue_num": 2,
+          "reason_type": ""
+        },
+        {
+          "code": "002655",
+          "name": "共达电声",
+          "change": 9.99,
+          "seal": 2897.05,
+          "sector": "电子器件",
+          "industry": "电子器件",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "300319",
+          "name": "麦捷科技",
+          "change": 20.02,
+          "seal": 15133.36,
+          "sector": "电子器件",
+          "industry": "电子器件",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "600353",
+          "name": "旭光电子",
+          "change": 10.0,
+          "seal": 34690.18,
+          "sector": "电子器件",
+          "industry": "电子器件",
+          "continue_num": 4,
+          "reason_type": ""
+        },
+        {
+          "code": "600667",
+          "name": "太极实业",
+          "change": 9.99,
+          "seal": 4248.85,
+          "sector": "电子器件",
+          "industry": "电子器件",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "有色金属",
+      "count": 5,
+      "stocks": [
+        {
+          "code": "000657",
+          "name": "中钨高新",
+          "change": 10.0,
+          "seal": 27781.21,
+          "sector": "有色金属",
+          "industry": "有色金属",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002167",
+          "name": "东方锆业",
+          "change": 10.03,
+          "seal": 41790.41,
+          "sector": "有色金属",
+          "industry": "有色金属",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002203",
+          "name": "海亮股份",
+          "change": 10.0,
+          "seal": 5576.89,
+          "sector": "有色金属",
+          "industry": "有色金属",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "600259",
+          "name": "中稀有色",
+          "change": 10.0,
+          "seal": 6004.7,
+          "sector": "有色金属",
+          "industry": "有色金属",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "600362",
+          "name": "江西铜业",
+          "change": 10.01,
+          "seal": 25447.53,
+          "sector": "有色金属",
+          "industry": "有色金属",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "电子信息",
+      "count": 5,
+      "stocks": [
+        {
+          "code": "002281",
+          "name": "光迅科技",
+          "change": 10.0,
+          "seal": 40872.35,
+          "sector": "电子信息",
+          "industry": "电子信息",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002354",
+          "name": "天娱数科",
+          "change": 9.96,
+          "seal": 8774.48,
+          "sector": "电子信息",
+          "industry": "电子信息",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002491",
+          "name": "通鼎互联",
+          "change": 10.0,
+          "seal": 23235.3,
+          "sector": "电子信息",
+          "industry": "电子信息",
+          "continue_num": 2,
+          "reason_type": ""
+        },
+        {
+          "code": "300166",
+          "name": "东方国信",
+          "change": 20.03,
+          "seal": 11662.07,
+          "sector": "电子信息",
+          "industry": "电子信息",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "600076",
+          "name": "康欣新材",
+          "change": 9.88,
+          "seal": 5022.65,
+          "sector": "电子信息",
+          "industry": "电子信息",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "机器人",
+      "count": 4,
+      "stocks": [
+        {
+          "code": "000811",
+          "name": "冰轮环境",
+          "change": 9.99,
+          "seal": 34123.21,
+          "sector": "机械行业",
+          "industry": "机械行业",
+          "continue_num": 2,
+          "reason_type": ""
+        },
+        {
+          "code": "002158",
+          "name": "汉钟精机",
+          "change": 9.99,
+          "seal": 10465.07,
+          "sector": "机械行业",
+          "industry": "机械行业",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002747",
+          "name": "埃斯顿",
+          "change": 10.01,
+          "seal": 11318.28,
+          "sector": "机械行业",
+          "industry": "机械行业",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603011",
+          "name": "合锻智能",
+          "change": 10.01,
+          "seal": 6351.73,
+          "sector": "机械行业",
+          "industry": "机械行业",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "次新股",
+      "count": 4,
+      "stocks": [
+        {
+          "code": "001365",
+          "name": "天海电子",
+          "change": 10.0,
+          "seal": 3202.85,
+          "sector": "次新股",
+          "industry": "次新股",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "301687",
+          "name": "新广益",
+          "change": 20.0,
+          "seal": 3055.23,
+          "sector": "次新股",
+          "industry": "次新股",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603407",
+          "name": "长裕集团",
+          "change": 10.01,
+          "seal": 16815.41,
+          "sector": "次新股",
+          "industry": "次新股",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "688729",
+          "name": "屹唐股份",
+          "change": 19.99,
+          "seal": 5917.88,
+          "sector": "次新股",
+          "industry": "次新股",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "房地产",
+      "count": 3,
+      "stocks": [
+        {
+          "code": "000534",
+          "name": "万泽股份",
+          "change": 9.99,
+          "seal": 6341.59,
+          "sector": "房地产",
+          "industry": "房地产",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "000608",
+          "name": "阳光股份",
+          "change": 10.0,
+          "seal": 7885.93,
+          "sector": "房地产",
+          "industry": "房地产",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "600162",
+          "name": "香江控股",
+          "change": 10.15,
+          "seal": 4611.0,
+          "sector": "房地产",
+          "industry": "房地产",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "化工行业",
+      "count": 2,
+      "stocks": [
+        {
+          "code": "002068",
+          "name": "黑猫股份",
+          "change": 10.0,
+          "seal": 11468.67,
+          "sector": "化工行业",
+          "industry": "化工行业",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "002442",
+          "name": "龙星科技",
+          "change": 10.04,
+          "seal": 5341.85,
+          "sector": "化工行业",
+          "industry": "化工行业",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "其它行业",
+      "count": 2,
+      "stocks": [
+        {
+          "code": "002297",
+          "name": "博云新材",
+          "change": 10.01,
+          "seal": 4504.99,
+          "sector": "其它行业",
+          "industry": "其它行业",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603989",
+          "name": "艾华集团",
+          "change": 9.99,
+          "seal": 12783.66,
+          "sector": "其它行业",
+          "industry": "其它行业",
+          "continue_num": 3,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "生物制药",
+      "count": 2,
+      "stocks": [
+        {
+          "code": "002317",
+          "name": "众生药业",
+          "change": 9.99,
+          "seal": 2456.03,
+          "sector": "生物制药",
+          "industry": "生物制药",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "600671",
+          "name": "天目药业",
+          "change": 9.98,
+          "seal": 571.67,
+          "sector": "生物制药",
+          "industry": "生物制药",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "建筑建材",
+      "count": 2,
+      "stocks": [
+        {
+          "code": "002392",
+          "name": "北京利尔",
+          "change": 9.99,
+          "seal": 6819.29,
+          "sector": "建筑建材",
+          "industry": "建筑建材",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "600545",
+          "name": "卓郎智能",
+          "change": 10.02,
+          "seal": 9461.32,
+          "sector": "建筑建材",
+          "industry": "建筑建材",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "服装鞋类",
+      "count": 2,
+      "stocks": [
+        {
+          "code": "002674",
+          "name": "兴业科技",
+          "change": 10.02,
+          "seal": 3808.76,
+          "sector": "服装鞋类",
+          "industry": "服装鞋类",
+          "continue_num": 1,
+          "reason_type": ""
+        },
+        {
+          "code": "603001",
+          "name": "奥康国际",
+          "change": 9.99,
+          "seal": 398.32,
+          "sector": "服装鞋类",
+          "industry": "服装鞋类",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "综合行业",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "000839",
+          "name": "国安股份",
+          "change": 10.04,
+          "seal": 3460.44,
+          "sector": "综合行业",
+          "industry": "综合行业",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "商业百货",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "000889",
+          "name": "中嘉博创",
+          "change": 10.14,
+          "seal": 5568.3,
+          "sector": "商业百货",
+          "industry": "商业百货",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "酒店旅游",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "002159",
+          "name": "三特索道",
+          "change": 10.03,
+          "seal": 4662.92,
+          "sector": "酒店旅游",
+          "industry": "酒店旅游",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "汽车制造",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "002283",
+          "name": "天润工业",
+          "change": 10.04,
+          "seal": 6847.9,
+          "sector": "汽车制造",
+          "industry": "汽车制造",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "医疗器械",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "002432",
+          "name": "九安医疗",
+          "change": 10.0,
+          "seal": 23488.65,
+          "sector": "医疗器械",
+          "industry": "医疗器械",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "农药化肥",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "600226",
+          "name": "亨通股份",
+          "change": 10.03,
+          "seal": 8865.89,
+          "sector": "农药化肥",
+          "industry": "农药化肥",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "煤炭行业",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "600397",
+          "name": "江钨装备",
+          "change": 10.02,
+          "seal": 3331.79,
+          "sector": "煤炭行业",
+          "industry": "煤炭行业",
+          "continue_num": 3,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "钢铁行业",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "600399",
+          "name": "抚顺特钢",
+          "change": 10.09,
+          "seal": 5031.15,
+          "sector": "钢铁行业",
+          "industry": "钢铁行业",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "电力行业",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "600769",
+          "name": "祥龙电业",
+          "change": 9.99,
+          "seal": 14758.56,
+          "sector": "电力行业",
+          "industry": "电力行业",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "交通运输",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "600835",
+          "name": "上海机电",
+          "change": 10.02,
+          "seal": 2549.79,
+          "sector": "交通运输",
+          "industry": "交通运输",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    },
+    {
+      "chain": "纺织行业",
+      "count": 1,
+      "stocks": [
+        {
+          "code": "600851",
+          "name": "海欣股份",
+          "change": 9.99,
+          "seal": 7270.89,
+          "sector": "纺织行业",
+          "industry": "纺织行业",
+          "continue_num": 1,
+          "reason_type": ""
+        }
+      ]
+    }
+  ],
+  "unknown_count": 0,
+  "unknown_stocks": []
+}

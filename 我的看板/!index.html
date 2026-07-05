@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A股市场情绪看板</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; padding: 20px; color: #333; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .header h1 { font-size: 24px; }
+        
+        /* 统计卡片 */
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; }
+        .card .label { font-size: 12px; color: #888; }
+        .card .value { font-size: 20px; font-weight: bold; }
+        .card .value.up { color: #e74c3c; }
+        .card .value.down { color: #27ae60; }
+        
+        /* 趋势图 */
+        .chart-box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .chart-box h3 { margin-bottom: 10px; font-size: 16px; }
+        .chart-container { width: 100%; height: 200px; position: relative; }
+        #trendChart { width: 100%; height: 100%; }
+        
+        /* 数据表格 */
+        .table-section { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .table-section h3 { margin-bottom: 15px; font-size: 16px; }
+        .table-wrap { overflow-x: auto; max-height: 500px; overflow-y: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { background: #f8f9fa; position: sticky; top: 0; padding: 8px; text-align: left; border-bottom: 2px solid #eee; }
+        td { padding: 6px 8px; border-bottom: 1px solid #f0f0f0; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📊 A股市场情绪综合看板</h1>
+        <div style="color:#666; font-size:14px;">数据更新至: <span id="lastDate">加载中...</span></div>
+    </div>
+
+    <!-- 概览卡片 -->
+    <div class="summary" id="summaryCards">
+        <div class="card"><div class="label">📈 涨停</div><div class="value up" id="limitUp">--</div></div>
+        <div class="card"><div class="label">📉 跌停</div><div class="value down" id="limitDown">--</div></div>
+        <div class="card"><div class="label">🔺 百日新高</div><div class="value up" id="newHigh">--</div></div>
+        <div class="card"><div class="label">🔻 百日新低</div><div class="value down" id="newLow">--</div></div>
+        <div class="card"><div class="label">💰 成交额</div><div class="value" id="volume">--</div></div>
+    </div>
+
+    <!-- 趋势图 -->
+    <div class="chart-box">
+        <h3>📈 新高-新低差值趋势</h3>
+        <div class="chart-container">
+            <canvas id="trendChart"></canvas>
+        </div>
+    </div>
+
+    <!-- 数据表格 -->
+    <div class="table-section">
+        <h3>📋 每日详细数据</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>成交额</th>
+                        <th>涨停</th>
+                        <th>跌停</th>
+                        <th>炸板</th>
+                        <th>连板</th>
+                        <th>百日新高</th>
+                        <th>百日新低</th>
+                        <th>领涨板块</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 核心逻辑：读取本地的 data.json 文件
+    fetch('./data.json')
+        .then(response => response.json())
+        .then(data => {
+            if (!data || data.length === 0) {
+                document.getElementById('tableBody').innerHTML = '<tr><td colspan="9" style="text-align:center; color:red;">暂无数据</td></tr>';
+                return;
+            }
+
+            // 更新概览卡片
+            const last = data[data.length - 1];
+            document.getElementById('lastDate').textContent = last.date;
+            document.getElementById('limitUp').textContent = last.limitUp;
+            document.getElementById('limitDown').textContent = last.limitDown;
+            document.getElementById('newHigh').textContent = last.newHigh;
+            document.getElementById('newLow').textContent = last.newLow;
+            document.getElementById('volume').textContent = (last.volume / 10000).toFixed(2) + '亿';
+
+            // 渲染表格
+            const tbody = document.getElementById('tableBody');
+            data.slice().reverse().forEach(item => {
+                const row = `<tr>
+                    <td>${item.date}</td>
+                    <td>${(item.volume/10000).toFixed(2)}亿</td>
+                    <td>${item.limitUp}</td>
+                    <td>${item.limitDown}</td>
+                    <td>${item.bomb}</td>
+                    <td>${item.chain}</td>
+                    <td>${item.newHigh}</td>
+                    <td>${item.newLow}</td>
+                    <td>${item.s1Name || item.s2Name || item.s3Name || '-'}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+
+            // 渲染趋势图
+            renderChart(data);
+        })
+        .catch(error => {
+            console.error('加载数据失败:', error);
+            document.getElementById('tableBody').innerHTML = `<tr><td colspan="9" style="text-align:center; color:red;">加载失败，请确认 data.json 文件与 index.html 在同一个文件夹内。</td></tr>`;
+        });
+
+    function renderChart(data) {
+        const canvas = document.getElementById('trendChart');
+        const ctx = canvas.getContext('2d');
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+
+        const values = data.map(d => d.newHigh - d.newLow);
+        const labels = data.map(d => d.date.slice(5));
+        const len = values.length;
+        const pad = { top: 20, bottom: 30, left: 40, right: 20 };
+        const w = rect.width - pad.left - pad.right;
+        const h = rect.height - pad.top - pad.bottom;
+        const min = Math.min(...values);
+        const max = Math.max(...values);
+        const range = max - min || 1;
+
+        ctx.clearRect(0, 0, rect.width, rect.height);
+        ctx.beginPath();
+        ctx.strokeStyle = '#e74c3c';
+        ctx.lineWidth = 2;
+        values.forEach((v, i) => {
+            const x = pad.left + (i / (len - 1)) * w;
+            const y = pad.top + h - ((v - min) / range) * h;
+            i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // 参考线
+        [200, 50, -50].forEach(level => {
+            if (level > max || level < min) return;
+            const y = pad.top + h - ((level - min) / range) * h;
+            ctx.beginPath();
+            ctx.strokeStyle = '#aaa';
+            ctx.setLineDash([4, 4]);
+            ctx.lineWidth = 1;
+            ctx.moveTo(pad.left, y);
+            ctx.lineTo(pad.left + w, y);
+            ctx.stroke();
+            ctx.setLineDash([]);
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿python : ==========================================
+所在位置 行:1 字符: 159
++ ... ess -Force; Start-Sleep -Seconds 2; python run_server.py 2>&1 | Out-F ...
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (===============...===============:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    百日新高 · 本地服务器
+  ==========================================
+
+  服务目录: C:\Users\Rofis\Desktop
+  仪表盘地址:
+  http://localhost:8080/百日新高教学看板.html
+
+  请复制上面的地址到浏览器打开
+  按 Ctrl+C 停止服务器
+  ==========================================
+  
+python : ==========================================
+所在位置 行:1 字符: 106
++ ... ess -Force; Start-Sleep -Seconds 2; python run_server.py 2>&1 | Out-F ...
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (===============...===============:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    百日新高 · 本地服务器
+  ==========================================
+
+  服务目录: C:\Users\Rofis\Desktop
+  仪表盘地址:
+  http://localhost:8080/百日新高教学看板.html
+
+  请复制上面的地址到浏览器打开
+  按 Ctrl+C 停止服务器
+  ==========================================
+  

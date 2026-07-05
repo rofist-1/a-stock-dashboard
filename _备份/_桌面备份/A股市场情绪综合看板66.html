@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A股市场情绪综合看板</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; padding: 20px; color: #333; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        /* 顶部标题 */
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .header h1 { font-size: 24px; }
+        .header .date { font-size: 14px; color: #666; }
+        
+        /* 顶部概览卡片 */
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: center; }
+        .card .label { font-size: 12px; color: #888; margin-bottom: 5px; }
+        .card .value { font-size: 20px; font-weight: bold; }
+        .card .value.up { color: #e74c3c; }
+        .card .value.down { color: #27ae60; }
+        
+        /* 主内容区域 */
+        .main { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        @media (max-width: 768px) { .main { grid-template-columns: 1fr; } }
+        
+        /* 板块排行榜 */
+        .sector-rank { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .sector-rank h3 { margin-bottom: 15px; font-size: 16px; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; }
+        .rank-item { margin-bottom: 15px; }
+        .rank-item .name { font-weight: bold; font-size: 14px; }
+        .rank-item .stats { font-size: 12px; color: #666; margin-top: 3px; }
+        .rank-item .sub { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+        .rank-item .sub span { background: #e8f0fe; color: #1a73e8; padding: 2px 8px; border-radius: 12px; font-size: 11px; }
+        
+        /* 趋势图 */
+        .chart-box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .chart-box h3 { margin-bottom: 10px; font-size: 16px; }
+        .chart-container { width: 100%; height: 200px; position: relative; }
+        #trendChart { width: 100%; height: 100%; }
+        
+        /* 数据表格 */
+        .table-section { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .table-section .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .table-section .top h3 { font-size: 16px; }
+        .table-section .top input { padding: 5px 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .table-wrap { overflow-x: auto; max-height: 400px; overflow-y: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { background: #f8f9fa; position: sticky; top: 0; z-index: 10; padding: 8px; text-align: left; border-bottom: 2px solid #eee; }
+        td { padding: 6px 8px; border-bottom: 1px solid #f0f0f0; }
+        tr:hover { background: #f5f7fa; }
+        .sector-tag { background: #e3f2fd; color: #0d47a1; padding: 1px 6px; border-radius: 10px; font-size: 11px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📊 A股市场情绪综合看板</h1>
+        <div class="date">数据更新至: <span id="lastDate">加载中...</span></div>
+    </div>
+
+    <!-- 概览卡片 -->
+    <div class="summary" id="summaryCards">
+        <div class="card"><div class="label">📈 涨停</div><div class="value up" id="limitUp">--</div></div>
+        <div class="card"><div class="label">📉 跌停</div><div class="value down" id="limitDown">--</div></div>
+        <div class="card"><div class="label">🔺 百日新高</div><div class="value up" id="newHigh">--</div></div>
+        <div class="card"><div class="label">🔻 百日新低</div><div class="value down" id="newLow">--</div></div>
+        <div class="card"><div class="label">💰 成交额</div><div class="value" id="volume">--</div></div>
+        <div class="card"><div class="label">📊 新高-新低差</div><div class="value" id="diff">--</div></div>
+    </div>
+
+    <!-- 主区 -->
+    <div class="main">
+        <!-- 板块排行 -->
+        <div class="sector-rank">
+            <h3>🏆 热门板块排行</h3>
+            <div id="sectorRankList"></div>
+        </div>
+        <!-- 趋势图 -->
+        <div class="chart-box">
+            <h3>📈 新高-新低差值趋势</h3>
+            <div class="chart-container">
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- 数据表格 -->
+    <div class="table-section">
+        <div class="top">
+            <h3>📋 每日详细数据</h3>
+            <input type="text" id="filterDate" placeholder="筛选日期 (如 2026-01-05)">
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>成交额</th>
+                        <th>涨停</th>
+                        <th>跌停</th>
+                        <th>炸板</th>
+                        <th>连板</th>
+                        <th>百日新高</th>
+                        <th>百日新低</th>
+                        <th>差值</th>
+                        <th>领涨板块</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ---------- 完整数据 ----------
+    const data = [
+        {"date":"2026-01-05","volume":28000,"limitUp":120,"limitDown":3,"bomb":30,"chain":20,"newHigh":344,"newLow":55,"s1Name":"商业航天","s1Total":66,"s1New":19,"s1b1Name":"","s1b1New":0,"s2Name":"机器人","s2Total":30,"s2New":4,"s3Name":"芯片","s3Total":24,"s3New":15},
+        {"date":"2026-01-06","volume":29500,"limitUp":120,"limitDown":1,"bomb":28,"chain":43,"newHigh":427,"newLow":7,"s1Name":"商业航天","s1Total":78,"s1New":22,"s1b1Name":"","s2Name":"机器人","s2Total":30,"s2New":8,"s3Name":"芯片","s3Total":32,"s3New":11},
+        {"date":"2026-01-07","volume":31000,"limitUp":100,"limitDown":2,"bomb":22,"chain":35,"newHigh":479,"newLow":6,"s1Name":"商业航天","s1Total":75,"s1New":15,"s2Name":"芯片","s2Total":59,"s2New":26,"s3Name":"化工","s3Total":35,"s3New":9},
+        {"date":"2026-01-08","volume":28322,"limitUp":92,"limitDown":4,"bomb":29,"chain":26,"newHigh":537,"newLow":14,"s1Name":"商业航天","s1Total":115,"s1New":41,"s2Name":"芯片","s2Total":57,"s2New":11,"s3Name":"化工","s3Total":32,"s3New":1},
+        {"date":"2026-01-09","volume":32000,"limitUp":95,"limitDown":3,"bomb":24,"chain":22,"newHigh":614,"newLow":9,"s1Name":"商业航天","s1Total":112,"s1New":15,"s2Name":"芯片","s2Total":53,"s2New":5,"s3Name":"机器人","s3Total":37,"s3New":14},
+        {"date":"2026-01-12","volume":36400,"limitUp":197,"limitDown":2,"bomb":40,"chain":45,"newHigh":767,"newLow":6,"s1Name":"商业航天","s1Total":150,"s1New":36,"s2Name":"人工智能","s2Total":89,"s2New":53,"s3Name":"芯片","s3Total":59,"s3New":11},
+        {"date":"2026-01-13","volume":36900,"limitUp":110,"limitDown":3,"bomb":35,"chain":30,"newHigh":573,"newLow":9,"s1Name":"人工智能","s1Total":79,"s1New":32,"s2Name":"商业航天","s2Total":40,"s2New":1,"s3Name":"机器人概念","s3Total":39,"s3New":14},
+        {"date":"2026-01-14","volume":39800,"limitUp":90,"limitDown":5,"bomb":38,"chain":18,"newHigh":0,"newLow":21,"s1Name":"人工智能","s1Total":114,"s1New":46,"s2Name":"商业航天","s2Total":38,"s2New":14,"s3Name":"芯片","s3Total":36,"s3New":16},
+        {"date":"2026-01-15","volume":35000,"limitUp":55,"limitDown":41,"bomb":20,"chain":16,"newHigh":496,"newLow":34,"s1Name":"人工智能","s1Total":53,"s1New":8,"s2Name":"芯片","s2Total":46,"s2New":13,"s3Name":"有色金属","s3Total":36,"s3New":6},
+        {"date":"2026-01-16","volume":31000,"limitUp":80,"limitDown":8,"bomb":18,"chain":14,"newHigh":478,"newLow":59,"s1Name":"芯片","s1Total":76,"s1New":31,"s2Name":"机器人","s2Total":38,"s2New":15,"s3Name":"智能电网","s3Total":33,"s3New":17},
+        {"date":"2026-01-19","volume":26000,"limitUp":103,"limitDown":5,"bomb":25,"chain":11,"newHigh":557,"newLow":69,"s1Name":"芯片","s1Total":67,"s1New":13,"s2Name":"机器人","s2Total":51,"s2New":16,"s3Name":"智能电网","s3Total":50,"s3New":20},
+        {"date":"2026-01-20","volume":25000,"limitUp":63,"limitDown":16,"bomb":15,"chain":10,"newHigh":542,"newLow":31,"s1Name":"芯片","s1Total":77,"s1New":26,"s2Name":"智能电网","s2Total":51,"s2New":6,"s3Name":"化工","s3Total":45,"s3New":13},
+        {"date":"2026-01-21","volume":24000,"limitUp":79,"limitDown":3,"bomb":18,"chain":8,"newHigh":637,"newLow":55,"s1Name":"芯片","s1Total":98,"s1New":26,"s2Name":"化工","s2Total":58,"s2New":14,"s3Name":"机器人","s3Total":47,"s3New":8},
+        {"date":"2026-01-22","volume":23500,"limitUp":70,"limitDown":7,"bomb":16,"chain":7,"newHigh":654,"newLow":43,"s1Name":"芯片","s1Total":75,"s1New":12,"s2Name":"化工","s2Total":63,"s2New":11,"s3Name":"机器人","s3Total":49,"s3New":9},
+        {"date":"2026-01-23","volume":23000,"limitUp":75,"limitDown":5,"bomb":17,"chain":8,"newHigh":761,"newLow":40,"s1Name":"芯片","s1Total":71,"s1New":18,"s2Name":"化工","s2Total":65,"s2New":7,"s3Name":"机器人","s3Total":50,"s3New":11},
+        {"date":"2026-01-26","volume":22000,"limitUp":80,"limitDown":4,"bomb":14,"chain":9,"newHigh":725,"newLow":76,"s1Name":"化工","s1Total":76,"s1New":13,"s2Name":"机器人","s2Total":47,"s2New":10,"s3Name":"芯片","s3Total":47,"s3New":7},
+        {"date":"2026-01-27","volume":21500,"limitUp":60,"limitDown":8,"bomb":12,"chain":6,"newHigh":746,"newLow":139,"s1Name":"芯片","s1Total":73,"s1New":31,"s2Name":"化工","s2Total":67,"s2New":2,"s3Name":"机器人","s3Total":52,"s3New":9},
+        {"date":"2026-01-28","volume":21000,"limitUp":55,"limitDown":10,"bomb":12,"chain":5,"newHigh":706,"newLow":113,"s1Name":"化工","s1Total":77,"s1New":15,"s2Name":"芯片","s2Total":67,"s2New":14,"s3Name":"有色金属","s3Total":51,"s3New":13},
+        {"date":"2026-01-29","volume":20000,"limitUp":50,"limitDown":12,"bomb":10,"chain":4,"newHigh":527,"newLow":161,"s1Name":"化工","s1Total":75,"s1New":11,"s2Name":"有色金属","s2Total":35,"s2New":5,"s3Name":"芯片","s3Total":31,"s3New":4},
+        {"date":"2026-01-30","volume":18500,"limitUp":33,"limitDown":98,"bomb":10,"chain":9,"newHigh":482,"newLow":112,"s1Name":"化工","s1Total":63,"s1New":4,"s2Name":"芯片","s2Total":52,"s2New":26,"s3Name":"农业","s3Total":27,"s3New":9},
+        {"date":"2026-02-02","volume":18500,"limitUp":33,"limitDown":98,"bomb":10,"chain":9,"newHigh":221,"newLow":227,"s1Name":"机器人","s1Total":15,"s1New":4,"s2Name":"通信","s2Total":14,"s2New":5,"s3Name":"地产链","s3Total":13,"s3New":2},
+        {"date":"2026-02-03","volume":22000,"limitUp":70,"limitDown":16,"bomb":18,"chain":12,"newHigh":353,"newLow":181,"s1Name":"通信","s1Total":28,"s1New":5,"s2Name":"化工","s2Total":23,"s2New":1,"s3Name":"机器人","s3Total":22,"s3New":9},
+        {"date":"2026-02-04","volume":23000,"limitUp":68,"limitDown":13,"bomb":20,"chain":10,"newHigh":396,"newLow":43,"s1Name":"光伏","s1Total":29,"s1New":12,"s2Name":"化工","s2Total":27,"s2New":7,"s3Name":"通信","s3Total":26,"s3New":2},
+        {"date":"2026-02-05","volume":21000,"limitUp":44,"limitDown":3,"bomb":10,"chain":10,"newHigh":323,"newLow":54,"s1Name":"基础建设","s1Total":20,"s1New":2,"s2Name":"地产链","s2Total":19,"s2New":3,"s3Name":"化工","s3Total":19,"s3New":2},
+        {"date":"2026-02-06","volume":22000,"limitUp":55,"limitDown":3,"bomb":18,"chain":8,"newHigh":321,"newLow":91,"s1Name":"化工","s1Total":22,"s1New":10,"s2Name":"机器人概念","s2Total":22,"s2New":9,"s3Name":"地产链","s3Total":20,"s3New":2},
+        {"date":"2026-02-09","volume":8900,"limitUp":0,"limitDown":0,"bomb":0,"chain":0,"newHigh":424,"newLow":13,"s1Name":"化工","s1Total":36,"s1New":15,"s2Name":"光伏","s2Total":34,"s2New":18,"s3Name":"通信","s3Total":27,"s3New":13},
+        {"date":"2026-02-10","volume":22500,"limitUp":60,"limitDown":1,"bomb":7,"chain":8,"newHigh":455,"newLow":14,"s1Name":"化工","s1Total":38,"s1New":9,"s2Name":"光伏","s2Total":30,"s2New":5,"s3Name":"通信","s3Total":29,"s3New":8},
+        {"date":"2026-02-11","volume":19842,"limitUp":65,"limitDown":5,"bomb":15,"chain":9,"newHigh":427,"newLow":32,"s1Name":"化工","s1Total":43,"s1New":8,"s2Name":"光伏","s2Total":25,"s2New":4,"s3Name":"AI应用","s3Total":24,"s3New":7},
+        {"date":"2026-02-12","volume":13400,"limitUp":50,"limitDown":12,"bomb":10,"chain":6,"newHigh":448,"newLow":65,"s1Name":"化工","s1Total":40,"s1New":1,"s2Name":"算力","s2Total":31,"s2New":10,"s3Name":"通信","s3Total":28,"s3New":9},
+        {"date":"2026-02-13","volume":18000,"limitUp":70,"limitDown":5,"bomb":14,"chain":10,"newHigh":382,"newLow":0,"s1Name":"化工","s1Total":30,"s1New":3,"s2Name":"算力","s2Total":25,"s2New":4,"s3Name":"机器人","s3Total":23,"s3New":7},
+        {"date":"2026-02-24","volume":26000,"limitUp":109,"limitDown":14,"bomb":42,"chain":7,"newHigh":474,"newLow":0,"s1Name":"化工","s1Total":49,"s1New":20,"s2Name":"通信","s2Total":36,"s2New":14,"s3Name":"芯片","s3Total":25,"s3New":8},
+        {"date":"2026-02-25","volume":20000,"limitUp":100,"limitDown":7,"bomb":25,"chain":8,"newHigh":572,"newLow":0,"s1Name":"化工","s1Total":76,"s1New":30,"s2Name":"芯片","s2Total":33,"s2New":10,"s3Name":"机器人","s3Total":27,"s3New":7},
+        {"date":"2026-02-26","volume":26000,"limitUp":61,"limitDown":3,"bomb":23,"chain":9,"newHigh":657,"newLow":0,"s1Name":"化工","s1Total":70,"s1New":7,"s2Name":"通信","s2Total":51,"s2New":25,"s3Name":"芯片","s3Total":46,"s3New":15},
+        {"date":"2026-02-27","volume":25000,"limitUp":70,"limitDown":5,"bomb":16,"chain":10,"newHigh":739,"newLow":0,"s1Name":"化工","s1Total":73,"s1New":11,"s2Name":"通信","s2Total":50,"s2New":5,"s3Name":"芯片","s3Total":50,"s3New":9},
+        {"date":"2026-03-02","volume":24000,"limitUp":75,"limitDown":7,"bomb":18,"chain":12,"newHigh":712,"newLow":0,"s1Name":"化工","s1Total":78,"s1New":14,"s2Name":"通信","s2Total":51,"s2New":10,"s3Name":"芯片","s3Total":40,"s3New":5},
+        {"date":"2026-03-03","volume":23500,"limitUp":70,"limitDown":8,"bomb":16,"chain":10,"newHigh":410,"newLow":0,"s1Name":"化工","s1Total":46,"s1New":5,"s2Name":"石油石化","s2Total":34,"s2New":9,"s3Name":"电力","s3Total":32,"s3New":1},
+        {"date":"2026-03-04","volume":25000,"limitUp":72,"limitDown":7,"bomb":17,"chain":11,"newHigh":363,"newLow":0,"s1Name":"电力","s1Total":34,"s1New":3,"s2Name":"化工","s2Total":33,"s2New":6,"s3Name":"智能电网","s3Total":28,"s3New":14},
+        {"date":"2026-03-05","volume":24500,"limitUp":68,"limitDown":10,"bomb":15,"chain":9,"newHigh":382,"newLow":0,"s1Name":"智能电网","s1Total":38,"s1New":15,"s2Name":"电力","s2Total":38,"s2New":5,"s3Name":"化工","s3Total":27,"s3New":6},
+        {"date":"2026-03-06","volume":25000,"limitUp":74,"limitDown":2,"bomb":26,"chain":8,"newHigh":436,"newLow":0,"s1Name":"化工","s1Total":46,"s1New":20,"s2Name":"电力","s2Total":43,"s2New":7,"s3Name":"智能电网","s3Total":42,"s3New":10},
+        {"date":"2026-03-09","volume":24000,"limitUp":65,"limitDown":12,"bomb":14,"chain":7,"newHigh":387,"newLow":0,"s1Name":"智能电网","s1Total":51,"s1New":10,"s2Name":"电力","s2Total":44,"s2New":6,"s3Name":"化工","s3Total":33,"s3New":7},
+        {"date":"2026-03-10","volume":23500,"limitUp":68,"limitDown":8,"bomb":15,"chain":8,"newHigh":435,"newLow":0,"s1Name":"智能电网","s1Total":29,"s1New":10,"s2Name":"电力","s2Total":46,"s2New":4,"s3Name":"算力","s3Total":42,"s3New":16},
+        {"date":"2026-03-11","volume":24000,"limitUp":67,"limitDown":1,"bomb":16,"chain":8,"newHigh":539,"newLow":0,"s1Name":"电力","s1Total":56,"s1New":10,"s2Name":"化工","s2Total":50,"s2New":33,"s3Name":"智能电网","s3Total":50,"s3New":4},
+        {"date":"2026-03-12","volume":23500,"limitUp":52,"limitDown":5,"bomb":21,"chain":8,"newHigh":511,"newLow":0,"s1Name":"化工","s1Total":58,"s1New":16,"s2Name":"电力","s2Total":57,"s2New":7,"s3Name":"智能电网","s3Total":37,"s3New":5},
+        {"date":"2026-03-13","volume":23000,"limitUp":80,"limitDown":4,"bomb":18,"chain":10,"newHigh":419,"newLow":0,"s1Name":"化工","s1Total":55,"s1New":11,"s2Name":"电力","s2Total":44,"s2New":4,"s3Name":"医药","s3Total":25,"s3New":7},
+        {"date":"2026-03-16","volume":0,"limitUp":0,"limitDown":0,"bomb":0,"chain":0,"newHigh":349,"newLow":0,"s1Name":"化工","s1Total":33,"s1New":5,"s2Name":"电力","s2Total":26,"s2New":1,"s3Name":"ST板块","s3Total":22,"s3New":3},
+        {"date":"2026-03-17","volume":22000,"limitUp":60,"limitDown":12,"bomb":14,"chain":6,"newHigh":253,"newLow":0,"s1Name":"电力","s1Total":27,"s1New":4,"s2Name":"化工","s2Total":24,"s2New":5,"s3Name":"st板块","s3Total":17,"s3New":4},
+        {"date":"2026-03-18","volume":20500,"limitUp":55,"limitDown":16,"bomb":12,"chain":5,"newHigh":263,"newLow":0,"s1Name":"电力","s1Total":32,"s1New":6,"s2Name":"算力","s2Total":21,"s2New":13,"s3Name":"化工","s3Total":18,"s3New":3},
+        {"date":"2026-03-19","volume":21000,"limitUp":58,"limitDown":13,"bomb":13,"chain":6,"newHigh":206,"newLow":748,"s1Name":"电力","s1Total":25,"s1New":3,"s2Name":"算力","s2Total":17,"s2New":4,"s3Name":"芯片","s3Total":14,"s3New":5},
+        {"date":"2026-03-20","volume":22000,"limitUp":65,"limitDown":10,"bomb":15,"chain":7,"newHigh":134,"newLow":1244,"s1Name":"电力","s1Total":15,"s1New":7,"s2Name":"芯片","s2Total":13,"s2New":3,"s3Name":"st板块","s3Total":11,"s3New":2},
+        {"date":"2026-03-23","volume":21500,"limitUp":70,"limitDown":8,"bomb":16,"chain":8,"newHigh":71,"newLow":2466,"s1Name":"电力","s1Total":11,"s1New":2,"s2Name":"煤炭","s2Total":6,"s2New":3,"s3Name":"st板块","s3Total":5,"s3New":0},
+        {"date":"2026-03-24","volume":22500,"limitUp":68,"limitDown":7,"bomb":14,"chain":7,"newHigh":123,"newLow":490,"s1Name":"电力","s1Total":26,"s1New":14,"s2Name":"算力","s2Total":11,"s2New":8,"s3Name":"芯片","s3Total":7,"s3New":5},
+        {"date":"2026-03-25","volume":23000,"limitUp":72,"limitDown":5,"bomb":15,"chain":9,"newHigh":164,"newLow":9,"s1Name":"电力","s1Total":37,"s1New":12,"s2Name":"算力","s2Total":15,"s2New":4,"s3Name":"通信","s3Total":14,"s3New":7},
+        {"date":"2026-03-26","volume":19600,"limitUp":50,"limitDown":14,"bomb":10,"chain":5,"newHigh":156,"newLow":141,"s1Name":"电力","s1Total":31,"s1New":5,"s2Name":"锂电池","s2Total":13,"s2New":9,"s3Name":"算力","s3Total":11,"s3New":0},
+        {"date":"2026-03-27","volume":20000,"limitUp":60,"limitDown":10,"bomb":13,"chain":6,"newHigh":161,"newLow":331,"s1Name":"电力","s1Total":24,"s1New":3,"s2Name":"锂电池","s2Total":16,"s2New":6,"s3Name":"通信","s3Total":13,"s3New":4},
+        {"date":"2026-03-30","volume":19300,"limitUp":58,"limitDown":6,"bomb":44,"chain":12,"newHigh":156,"newLow":266,"s1Name":"锂电池","s1Total":21,"s1New":4,"s2Name":"医药","s2Total":17,"s2New":10,"s3Name":"通信","s3Total":14,"s3New":3},
+        {"date":"2026-03-31","volume":18500,"limitUp":45,"limitDown":20,"bomb":8,"chain":4,"newHigh":134,"newLow":145,"s1Name":"医药","s1Total":15,"s1New":2,"s2Name":"电力","s2Total":11,"s2New":7,"s3Name":"算力","s3Total":8,"s3New":3},
+        {"date":"2026-04-01","volume":20300,"limitUp":65,"limitDown":9,"bomb":18,"chain":12,"newHigh":151,"newLow":36,"s1Name":"医药","s1Total":22,"s1New":7,"s2Name":"通信","s2Total":15,"s2New":8,"s3Name":"算力","s3Total":11,"s3New":3},
+        {"date":"2026-04-02","volume":18600,"limitUp":32,"limitDown":10,"bomb":15,"chain":8,"newHigh":134,"newLow":295,"s1Name":"医药","s1Total":25,"s1New":6,"s2Name":"通信","s2Total":13,"s2New":4,"s3Name":"锂电池","s3Total":6,"s3New":3},
+        {"date":"2026-04-03","volume":16700,"limitUp":38,"limitDown":30,"bomb":12,"chain":6,"newHigh":123,"newLow":771,"s1Name":"医药","s1Total":23,"s1New":5,"s2Name":"通信","s2Total":18,"s2New":7,"s3Name":"芯片","s3Total":6,"s3New":6},
+        {"date":"2026-04-07","volume":16100,"limitUp":101,"limitDown":12,"bomb":22,"chain":15,"newHigh":137,"newLow":592,"s1Name":"通信","s1Total":23,"s1New":9,"s2Name":"医药","s2Total":22,"s2New":4,"s3Name":"芯片","s3Total":8,"s3New":2},
+        {"date":"2026-04-08","volume":24500,"limitUp":123,"limitDown":12,"bomb":35,"chain":28,"newHigh":179,"newLow":7,"s1Name":"通信","s1Total":36,"s1New":13,"s2Name":"医药","s2Total":17,"s2New":2,"s3Name":"芯片","s3Total":13,"s3New":7},
+        {"date":"2026-04-09","volume":24500,"limitUp":135,"limitDown":8,"bomb":30,"chain":30,"newHigh":212,"newLow":16,"s1Name":"通信","s1Total":42,"s1New":14,"s2Name":"芯片","s2Total":18,"s2New":6,"s3Name":"算力","s3Total":18,"s3New":11},
+        {"date":"2026-04-10","volume":23400,"limitUp":77,"limitDown":7,"bomb":25,"chain":20,"newHigh":224,"newLow":11,"s1Name":"通信","s1Total":39,"s1New":9,"s2Name":"芯片","s2Total":23,"s2New":4,"s3Name":"算力","s3Total":18,"s3New":3},
+        {"date":"2026-04-13","volume":22200,"limitUp":75,"limitDown":5,"bomb":18,"chain":15,"newHigh":252,"newLow":47,"s1Name":"通信","s1Total":49,"s1New":14,"s2Name":"芯片","s2Total":24,"s2New":6,"s3Name":"算力","s3Total":23,"s3New":9},
+        {"date":"2026-04-14","volume":24000,"limitUp":71,"limitDown":7,"bomb":20,"chain":16,"newHigh":285,"newLow":30,"s1Name":"通信","s1Total":49,"s1New":10,"s2Name":"芯片","s2Total":37,"s2New":14,"s3Name":"算力","s3Total":32,"s3New":9},
+        {"date":"2026-04-15","volume":24200,"limitUp":60,"limitDown":8,"bomb":15,"chain":14,"newHigh":289,"newLow":10,"s1Name":"通信","s1Total":41,"s1New":6,"s2Name":"芯片","s2Total":37,"s2New":8,"s3Name":"算力","s3Total":32,"s3New":8},
+        {"date":"2026-04-16","volume":23500,"limitUp":80,"limitDown":5,"bomb":22,"chain":18,"newHigh":356,"newLow":26,"s1Name":"通信","s1Total":50,"s1New":15,"s2Name":"芯片","s2Total":46,"s2New":9,"s3Name":"算力","s3Total":44,"s3New":13},
+        {"date":"2026-04-17","volume":24300,"limitUp":70,"limitDown":5,"bomb":18,"chain":16,"newHigh":390,"newLow":36,"s1Name":"通信","s1Total":62,"s1New":14,"s2Name":"芯片","s2Total":49,"s2New":7,"s3Name":"算力","s3Total":48,"s3New":14},
+        {"date":"2026-04-20","volume":26000,"limitUp":72,"limitDown":4,"bomb":20,"chain":17,"newHigh":416,"newLow":49,"s1Name":"通信","s1Total":62,"s1New":9,"s2Name":"算力","s2Total":51,"s2New":14,"s3Name":"芯片","s3Total":46,"s3New":3},
+        {"date":"2026-04-21","volume":24085,"limitUp":65,"limitDown":12,"bomb":18,"chain":10,"newHigh":405,"newLow":68,"s1Name":"通信","s1Total":63,"s1New":9,"s2Name":"芯片","s2Total":43,"s2New":8,"s3Name":"锂电池","s3Total":40,"s3New":4},
+        {"date":"2026-04-22","volume":25600,"limitUp":63,"limitDown":10,"bomb":16,"chain":9,"newHigh":479,"newLow":108,"s1Name":"通信","s1Total":73,"s1New":14,"s2Name":"芯片","s2Total":62,"s2New":20,"s3Name":"锂电池","s3Total":51,"s3New":16},
+        {"date":"2026-04-23","volume":28045,"limitUp":59,"limitDown":20,"bomb":22,"chain":9,"newHigh":409,"newLow":192,"s1Name":"芯片","s1Total":51,"s1New":6,"s2Name":"通信","s2Total":45,"s2New":8,"s3Name":"算力","s3Total":42,"s3New":8},
+        {"date":"2026-04-24","volume":26419,"limitUp":59,"limitDown":13,"bomb":20,"chain":8,"newHigh":372,"newLow":334,"s1Name":"芯片","s1Total":49,"s1New":14,"s2Name":"锂电池","s2Total":44,"s2New":16,"s3Name":"通信","s3Total":33,"s3New":6},
+        {"date":"2026-04-27","volume":26048,"limitUp":72,"limitDown":22,"bomb":18,"chain":9,"newHigh":388,"newLow":352,"s1Name":"芯片","s1Total":59,"s1New":16,"s2Name":"锂电池","s2Total":48,"s2New":9,"s3Name":"通信","s3Total":42,"s3New":13},
+        {"date":"2026-04-28","volume":25505,"limitUp":54,"limitDown":27,"bomb":13,"chain":11,"newHigh":362,"newLow":348,"s1Name":"芯片","s1Total":57,"s1New":13,"s2Name":"锂电池","s2Total":42,"s2New":2,"s3Name":"算力","s3Total":31,"s3New":10},
+        {"date":"2026-04-29","volume":26089,"limitUp":119,"limitDown":5,"bomb":23,"chain":11,"newHigh":399,"newLow":275,"s1Name":"芯片","s1Total":55,"s1New":13,"s2Name":"锂电池","s2Total":54,"s2New":13,"s3Name":"通信","s3Total":35,"s3New":11},
+        {"date":"2026-04-30","volume":27400,"limitUp":79,"limitDown":34,"bomb":13,"chain":15,"newHigh":362,"newLow":155,"s1Name":"芯片","s1Total":60,"s1New":21,"s2Name":"锂电池","s2Total":59,"s2New":10,"s3Name":"一季报增长","s3Total":34,"s3New":12},
+        {"date":"2026-05-06","volume":32268,"limitUp":125,"limitDown":41,"bomb":30,"chain":17,"newHigh":543,"newLow":141,"s1Name":"芯片","s1Total":91,"s1New":38,"s2Name":"锂电池","s2Total":71,"s2New":21,"s3Name":"算力","s3Total":47,"s3New":24},
+        {"date":"2026-05-07","volume":31683,"limitUp":127,"limitDown":35,"bomb":31,"chain":19,"newHigh":643,"newLow":116,"s1Name":"芯片","s1Total":111,"s1New":26,"s2Name":"锂电池","s2Total":68,"s2New":5,"s3Name":"通信","s3Total":63,"s3New":21},
+        {"date":"2026-05-08","volume":30757,"limitUp":126,"limitDown":1,"bomb":38,"chain":18,"newHigh":661,"newLow":91,"s1Name":"芯片","s1Total":105,"s1New":19,"s2Name":"通信","s2Total":68,"s2New":11,"s3Name":"算力","s3Total":66,"s3New":12},
+        {"date":"2026-05-11","volume":35640,"limitUp":92,"limitDown":3,"bomb":34,"chain":19,"newHigh":788,"newLow":62,"s1Name":"芯片","s1Total":150,"s1New":50,"s2Name":"通信","s2Total":89,"s2New":26,"s3Name":"算力","s3Total":74,"s3New":14},
+        {"date":"2026-05-12","volume":32697,"limitUp":57,"limitDown":7,"bomb":23,"chain":17,"newHigh":736,"newLow":125,"s1Name":"芯片","s1Total":150,"s1New":17,"s2Name":"通信","s2Total":92,"s2New":10,"s3Name":"算力","s3Total":59,"s3New":5},
+        {"date":"2026-05-13","volume":32654,"limitUp":112,"limitDown":2,"bomb":24,"chain":17,"newHigh":777,"newLow":173,"s1Name":"芯片","s1Total":167,"s1New":28,"s2Name":"通信","s2Total":99,"s2New":16,"s3Name":"算力","s3Total":81,"s3New":25},
+        {"date":"2026-05-14","volume":33881,"limitUp":52,"limitDown":17,"bomb":31,"chain":16,"newHigh":650,"newLow":307,"s1Name":"芯片","s1Total":158,"s1New":24,"s2Name":"通信","s2Total":68,"s2New":7,"s3Name":"算力","s3Total":58,"s3New":5},
+        {"date":"2026-05-15","volume":33702,"limitUp":54,"limitDown":15,"bomb":38,"chain":6,"newHigh":507,"newLow":514,"s1Name":"芯片","s1Total":121,"s1New":19,"s2Name":"机器人","s2Total":45,"s2New":12,"s3Name":"算力","s3Total":42,"s3New":8},
+        {"date":"2026-05-18","volume":29171,"limitUp":81,"limitDown":18,"bomb":34,"chain":9,"newHigh":481,"newLow":731,"s1Name":"芯片","s1Total":111,"s1New":25,"s2Name":"机器人","s2Total":55,"s2New":14,"s3Name":"算力","s3Total":43,"s3New":12},
+        {"date":"2026-05-19","volume":29090,"limitUp":90,"limitDown":8,"bomb":12,"chain":19,"newHigh":535,"newLow":236,"s1Name":"芯片","s1Total":139,"s1New":42,"s2Name":"机器人","s2Total":59,"s2New":14,"s3Name":"算力","s3Total":58,"s3New":20},
+        {"date":"2026-05-20","volume":29764,"limitUp":61,"limitDown":22,"bomb":19,"chain":10,"newHigh":540,"newLow":531,"s1Name":"芯片","s1Total":173,"s1New":45,"s2Name":"机器人","s2Total":55,"s2New":10,"s3Name":"算力","s3Total":49,"s3New":8},
+        {"date":"2026-05-21","volume":34816,"limitUp":34,"limitDown":25,"bomb":66,"chain":6,"newHigh":224,"newLow":784,"s1Name":"机器人","s1Total":44,"s1New":10,"s2Name":"芯片","s2Total":28,"s2New":6,"s3Name":"算力","s3Total":15,"s3New":1},
+        {"date":"2026-05-22","volume":29247,"limitUp":115,"limitDown":5,"bomb":21,"chain":11,"newHigh":414,"newLow":1098,"s1Name":"芯片","s1Total":97,"s1New":73,"s2Name":"机器人","s2Total":54,"s2New":18,"s3Name":"通信","s3Total":39,"s3New":32},
+        {"date":"2026-05-25","volume":32269,"limitUp":103,"limitDown":15,"bomb":33,"chain":23,"newHigh":477,"newLow":785,"s1Name":"芯片","s1Total":130,"s1New":55,"s2Name":"机器人","s2Total":55,"s2New":10,"s3Name":"通信","s3Total":52,"s3New":19},
+        {"date":"2026-05-27","volume":32599,"limitUp":47,"limitDown":22,"bomb":22,"chain":8,"newHigh":274,"newLow":1490,"s1Name":"芯片","s1Total":55,"s1New":8,"s2Name":"通信","s2Total":38,"s2New":8,"s3Name":"机器人","s3Total":24,"s3New":3},
+        {"date":"2026-05-28","volume":29682,"limitUp":101,"limitDown":8,"bomb":21,"chain":9,"newHigh":336,"newLow":1403,"s1Name":"芯片","s1Total":75,"s1New":30,"s2Name":"通信","s2Total":53,"s2New":14,"s3Name":"机器人","s3Total":25,"s3New":9},
+        {"date":"2026-05-29","volume":33190,"limitUp":49,"limitDown":50,"bomb":38,"chain":8,"newHigh":171,"newLow":889,"s1Name":"通信","s1Total":32,"s1New":7,"s2Name":"芯片","s2Total":20,"s2New":4,"s3Name":"电力","s3Total":19,"s3New":10},
+        {"date":"2026-06-01","volume":28965,"limitUp":118,"limitDown":21,"bomb":41,"chain":11,"newHigh":143,"newLow":767,"s1Name":"电力","s1Total":16,"s1New":1,"s2Name":"通信","s2Total":15,"s2New":3,"s3Name":"机器人","s3Total":12,"s3New":7},
+        {"date":"2026-06-02","volume":28128,"limitUp":64,"limitDown":13,"bomb":21,"chain":16,"newHigh":187,"newLow":698,"s1Name":"通信","s1Total":31,"s1New":19,"s2Name":"元器件","s2Total":26,"s2New":16,"s3Name":"芯片","s3Total":22,"s3New":16},
+        {"date":"2026-06-03","volume":31531,"limitUp":66,"limitDown":10,"bomb":50,"chain":11,"newHigh":217,"newLow":878,"s1Name":"通信","s1Total":37,"s1New":12,"s2Name":"机器人","s2Total":27,"s2New":15,"s3Name":"芯片","s3Total":24,"s3New":9},
+        {"date":"2026-06-04","volume":27791,"limitUp":78,"limitDown":7,"bomb":19,"chain":10,"newHigh":213,"newLow":1668,"s1Name":"通信","s1Total":43,"s1New":12,"s1b1Name":"5G","s1b1New":23,"s1b2Name":"印制电路板","s1b2New":22,"s2Name":"芯片","s2Total":35,"s2New":15,"s2b1Name":"先进封装","s2b1New":14,"s2b2Name":"存储","s2b2New":13,"s3Name":"元器件","s3Total":26,"s3New":7}
+    ];
+
+    // ---------- 渲染函数 ----------
+    const last = data[data.length-1];
+    document.getElementById('lastDate').textContent = last.date;
+
+    // 概览卡片
+    document.getElementById('limitUp').textContent = last.limitUp;
+    document.getElementById('limitDown').textContent = last.limitDown;
+    document.getElementById('newHigh').textContent = last.newHigh;
+    document.getElementById('newLow').textContent = last.newLow;
+    document.getElementById('volume').textContent = (last.volume/10000).toFixed(2) + '亿';
+    const diff = last.newHigh - last.newLow;
+    document.getElementById('diff').textContent = diff;
+
+    // 板块排行
+    function renderSector(data) {
+        const container = document.getElementById('sectorRankList');
+        const days = data.slice(-5);
+        const rank = {};
+        days.forEach(d => {
+            if (d.s1Name) { rank[d.s1Name] = (rank[d.s1Name]||0) + d.s1New; }
+            if (d.s2Name) { rank[d.s2Name] = (rank[d.s2Name]||0) + d.s2New; }
+            if (d.s3Name) { rank[d.s3Name] = (rank[d.s3Name]||0) + d.s3New; }
+        });
+        const sorted = Object.entries(rank).sort((a,b)=>b[1]-a[1]).slice(0,5);
+        container.innerHTML = sorted.map(([name, count], idx) => {
+            const day = data[data.length-1];
+            let subs = '';
+            if (day.s1Name === name && day.s1b1Name) {
+                subs = `<div class="sub"><span>${day.s1b1Name} ${day.s1b1New||''}</span>${day.s1b2Name ? `<span>${day.s1b2Name} ${day.s1b2New||''}</span>` : ''}</div>`;
+            } else if (day.s2Name === name && day.s2b1Name) {
+                subs = `<div class="sub"><span>${day.s2b1Name} ${day.s2b1New||''}</span>${day.s2b2Name ? `<span>${day.s2b2Name} ${day.s2b2New||''}</span>` : ''}</div>`;
+            } else if (day.s3Name === name && day.s3b1Name) {
+                subs = `<div class="sub"><span>${day.s3b1Name} ${day.s3b1New||''}</span>${day.s3b2Name ? `<span>${day.s3b2Name} ${day.s3b2New||''}</span>` : ''}</div>`;
+            }
+            return `<div class="rank-item"><div class="name">${idx+1}. ${name} (${count})</div><div class="stats">近5日新高总数</div>${subs}</div>`;
+        }).join('');
+    }
+    renderSector(data);
+
+    // 趋势图
+    function renderChart(data) {
+        const canvas = document.getElementById('trendChart');
+        const ctx = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = rect.height + 'px';
+        ctx.scale(dpr, dpr);
+
+        const values = data.map(d => d.newHigh - d.newLow);
+        const len = values.length;
+        const pad = { top: 20, bottom: 30, left: 40, right: 20 };
+        const w = rect.width - pad.left - pad.right;
+        const h = rect.height - pad.top - pad.bottom;
+        const min = Math.min(...values);
+        const max = Math.max(...values);
+        const range = max - min || 1;
+
+        ctx.clearRect(0, 0, rect.width, rect.height);
+        ctx.beginPath();
+        ctx.strokeStyle = '#e74c3c';
+        ctx.lineWidth = 2;
+        values.forEach((v, i) => {
+            const x = pad.left + (i/(len-1)) * w;
+            const y = pad.top + h - ((v - min)/range) * h;
+            i===0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // 参考线
+        [200, 50, -50].forEach(level => {
+            if (level > max || level < min) return;
+            const y = pad.top + h - ((level - min)/range) * h;
+            ctx.beginPath();
+            ctx.strokeStyle = '#aaa';
+            ctx.setLineDash([4,4]);
+            ctx.lineWidth = 1;
+            ctx.moveTo(pad.left, y);
+            ctx.lineTo(pad.left + w, y);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#888';
+            ctx.font = '10px sans-serif';
+            ctx.fillText(level, pad.left - 25, y+4);
+        });
+    }
+
+    // 表格
+    function renderTable(data, filter='') {
+        const tbody = document.getElementById('tableBody');
+        const filtered = filter ? data.filter(d => d.date.includes(filter)) : data;
+        tbody.innerHTML = filtered.slice().reverse().map(d => {
+            const diff = d.newHigh - d.newLow;
+            return `<tr>
+                <td>${d.date}</td>
+                <td>${(d.volume/10000).toFixed(2)}亿</td>
+                <td>${d.limitUp}</td>
+                <td>${d.limitDown}</td>
+                <td>${d.bomb}</td>
+                <td>${d.chain}</td>
+                <td>${d.newHigh}</td>
+                <td>${d.newLow}</td>
+                <td style="font-weight:bold;color:${diff>0?'#e74c3c':'#27ae60'}">${diff}</td>
+                <td>${d.s1Name || ''} ${d.s2Name ? ', '+d.s2Name : ''}</td>
+            </tr>`;
+        }).join('');
+    }
+    renderTable(data);
+
+    // 筛选
+    document.getElementById('filterDate').addEventListener('input', function() {
+        renderTable(data, this.value);
+    });
+
+    // 窗口变化重绘图表
+    window.addEventListener('resize', () => renderChart(data));
+    setTimeout(() => renderChart(data), 100);
+</script>
+</body>
+</html>

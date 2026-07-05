@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>A股波段情绪·综合看板 Pro 最终版</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; padding: 20px; color: #333; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: white; padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .header h1 { font-size: 22px; color: #1a237e; }
+        .header .date { font-size: 14px; color: #666; background: #e3f2fd; padding: 4px 12px; border-radius: 15px; }
+
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .card h3 { font-size: 16px; margin-bottom: 15px; border-left: 4px solid #1a237e; padding-left: 10px; }
+
+        .legend-section { font-size: 12px; color: #555; margin-bottom: 15px; }
+        .legend-section .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; }
+        .legend-section .dot.red { background: #e74c3c; }
+        .legend-section .dot.yellow { background: #f1c40f; }
+        .legend-section .dot.green { background: #2ecc71; }
+        .legend-section .dot.blue { background: #3498db; }
+        .legend-section .dot.gray { background: #95a5a6; }
+
+        .form-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-bottom: 15px; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { font-size: 12px; color: #666; margin-bottom: 3px; }
+        .form-group input, .form-group select { padding: 6px; border: 1px solid #ddd; border-radius: 5px; font-size: 13px; }
+
+        .btn { border: none; padding: 6px 15px; border-radius: 5px; cursor: pointer; font-size: 13px; margin-right: 5px; }
+        .btn-primary { background: #1a237e; color: white; }
+        .btn-danger { background: #dc3545; color: white; }
+        .btn-success { background: #28a745; color: white; }
+
+        .table-wrap { overflow-x: auto; max-height: 400px; overflow-y: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 12px; }
+        th { background: #f8f9fa; position: sticky; top: 0; z-index: 10; padding: 6px; text-align: center; border-bottom: 2px solid #eee; }
+        td { padding: 4px 6px; border-bottom: 1px solid #f0f0f0; text-align: center; }
+
+        .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        @media (max-width: 768px) { .charts { grid-template-columns: 1fr; } }
+        .chart-container { height: 180px; position: relative; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📈 A股波段情绪·综合看板 Pro 最终版</h1>
+        <div class="date">📅 今日: <span id="todayDate">2026-06-14</span></div>
+    </div>
+
+    <!-- 图例 -->
+    <div class="card">
+        <div class="legend-section">
+            <div><span class="dot red"></span> 高潮: 涨停>100 + 封板率>85% + 差值创20日新高 → 考虑减仓</div>
+            <div><span class="dot yellow"></span> 预警: 跌停>6家 + 封板率下降 → 不开新仓</div>
+            <div><span class="dot green"></span> 健康: 涨停50-100 + 封板率>70% + 差值上升 → 正常操作</div>
+            <div><span class="dot blue"></span> 冰点: 跌停>30家 + 涨停<50家 → 选股时机</div>
+            <div><span class="dot gray"></span> 正常: 无明显信号 → 观望/持股</div>
+        </div>
+    </div>
+
+    <!-- 图表 -->
+    <div class="charts">
+        <div class="card">
+            <h3>📊 成交量(亿) & 5日均线</h3>
+            <div class="chart-container"><canvas id="volumeChart"></canvas></div>
+        </div>
+        <div class="card">
+            <h3>📈 涨停 & 跌停家数</h3>
+            <div class="chart-container"><canvas id="limitChart"></canvas></div>
+        </div>
+        <div class="card">
+            <h3>🔺 百日新高-新低 & 差值</h3>
+            <div class="chart-container"><canvas id="newHighChart"></canvas></div>
+        </div>
+        <div class="card">
+            <h3>🔥 强势板块新增热度 (全部历史)</h3>
+            <div class="chart-container"><canvas id="sectorChart"></canvas></div>
+        </div>
+    </div>
+
+    <!-- 录入区 -->
+    <div class="card">
+        <h3>📝 每日数据录入</h3>
+        <div class="form-row">
+            <div class="form-group"><label>日期</label><input type="text" id="inpDate" value="2026-06-14"></div>
+            <div class="form-group"><label>成交额(亿)</label><input type="text" id="inpVolume" value="28000"></div>
+            <div class="form-group"><label>涨停</label><input type="text" id="inpLimitUp" value="120"></div>
+            <div class="form-group"><label>跌停</label><input type="text" id="inpLimitDown" value="3"></div>
+            <div class="form-group"><label>炸板</label><input type="text" id="inpBomb" value="30"></div>
+            <div class="form-group"><label>连板</label><input type="text" id="inpChain" value="20"></div>
+            <div class="form-group"><label>百日新高</label><input type="text" id="inpNewHigh" value="344"></div>
+            <div class="form-group"><label>百日新低</label><input type="text" id="inpNewLow" value="55"></div>
+            <div class="form-group"><label>强势板块1</label><input type="text" id="inpSector1" value="商业航天"></div>
+            <div class="form-group"><label>板块1新高</label><input type="text" id="inpS1New" value="19"></div>
+            <div class="form-group"><label>强势板块2</label><input type="text" id="inpSector2" value="机器人"></div>
+            <div class="form-group"><label>板块2新高</label><input type="text" id="inpS2New" value="4"></div>
+        </div>
+        <button class="btn btn-primary" onclick="addRecord()">✅ 添加记录</button>
+        <button class="btn btn-danger" onclick="clearAll()">🗑️ 清空全部</button>
+        <button class="btn btn-success" onclick="exportData()">📤 导出数据</button>
+    </div>
+
+    <!-- 历史记录 -->
+    <div class="card">
+        <h3>📋 历史记录</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>日期</th><th>成交额</th><th>涨停</th><th>跌停</th><th>炸板</th><th>连板</th>
+                        <th>新高</th><th>新低</th><th>差值</th><th>板块1</th><th>板块2</th><th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTable"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 数据存储
+    let data = JSON.parse(localStorage.getItem('proBoardData')) || [];
+
+    // 默认示例数据（如果你希望打开就看到数据，可以保留这些）
+    if (data.length === 0) {
+        data = [
+            { date: '2026-01-05', volume: 28000, limitUp: 120, limitDown: 3, bomb: 30, chain: 20, newHigh: 344, newLow: 55, sector1: '商业航天', sector2: '机器人' },
+            { date: '2026-01-06', volume: 29500, limitUp: 120, limitDown: 1, bomb: 28, chain: 43, newHigh: 427, newLow: 7, sector1: '商业航天', sector2: '机器人' },
+            { date: '2026-01-07', volume: 31000, limitUp: 100, limitDown: 2, bomb: 22, chain: 35, newHigh: 479, newLow: 6, sector1: '商业航天', sector2: '芯片' }
+        ];
+        localStorage.setItem('proBoardData', JSON.stringify(data));
+    }
+
+    // 渲染所有
+    function renderAll() {
+        renderTable();
+        renderCharts();
+        document.getElementById('todayDate').textContent = new Date().toISOString().slice(0,10);
+    }
+
+    // 渲染表格
+    function renderTable() {
+        const tbody = document.getElementById('historyTable');
+        tbody.innerHTML = '';
+        data.slice().reverse().forEach((r, i) => {
+            const idx = data.length - 1 - i;
+            const diff = r.newHigh - r.newLow;
+            tbody.innerHTML += `<tr>
+                <td>${r.date}</td>
+                <td>${r.volume}</td>
+                <td style="color:${r.limitUp>100?'#e74c3c':'#333'}">${r.limitUp}</td>
+                <td style="color:${r.limitDown>30?'#e74c3c':'#333'}">${r.limitDown}</td>
+                <td>${r.bomb}</td>
+                <td>${r.chain}</td>
+                <td style="color:#e74c3c">${r.newHigh}</td>
+                <td style="color:#27ae60">${r.newLow}</td>
+                <td style="font-weight:bold;color:${diff>0?'#e74c3c':'#27ae60'}">${diff}</td>
+                <td>${r.sector1}</td>
+                <td>${r.sector2}</td>
+                <td><button class="btn btn-danger" style="padding:2px 6px;font-size:11px;" onclick="deleteRecord(${idx})">删</button></td>
+            </tr>`;
+        });
+    }
+
+    // 添加记录
+    function addRecord() {
+        const r = {
+            date: document.getElementById('inpDate').value,
+            volume: document.getElementById('inpVolume').value || '0',
+            limitUp: document.getElementById('inpLimitUp').value || '0',
+            limitDown: document.getElementById('inpLimitDown').value || '0',
+            bomb: document.getElementById('inpBomb').value || '0',
+            chain: document.getElementById('inpChain').value || '0',
+            newHigh: document.getElementById('inpNewHigh').value || '0',
+            newLow: document.getElementById('inpNewLow').value || '0',
+            sector1: document.getElementById('inpSector1').value || '',
+            sector2: document.getElementById('inpSector2').value || ''
+        };
+        if (!r.date) { alert('请填写日期'); return; }
+        data.push(r);
+        localStorage.setItem('proBoardData', JSON.stringify(data));
+        renderAll();
+        // 清空输入框
+        document.querySelectorAll('#inpDate, #inpVolume, #inpLimitUp, #inpLimitDown, #inpBomb, #inpChain, #inpNewHigh, #inpNewLow, #inpSector1, #inpSector2')
+            .forEach(el => el.value = '');
+    }
+
+    function deleteRecord(idx) {
+        if (confirm('确定删除吗？')) {
+            data.splice(idx, 1);
+            localStorage.setItem('proBoardData', JSON.stringify(data));
+            renderAll();
+        }
+    }
+
+    function clearAll() {
+        if (confirm('确定清空所有数据吗？')) {
+            data = [];
+            localStorage.setItem('proBoardData', JSON.stringify(data));
+            renderAll();
+        }
+    }
+
+    function exportData() {
+        const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `数据备份_${new Date().toISOString().slice(0,10)}.json`;
+        a.click();
+    }
+
+    // 图表
+    function renderCharts() {
+        if (!data.length) return;
+        const labels = data.map(d => d.date.slice(5));
+        const volumes = data.map(d => d.volume);
+        const limitUps = data.map(d => d.limitUp);
+        const limitDowns = data.map(d => d.limitDown);
+        const newHighs = data.map(d => d.newHigh);
+        const newLows = data.map(d => d.newLow);
+        const diffs = data.map(d => d.newHigh - d.newLow);
+
+        new Chart(document.getElementById('volumeChart'), {
+            type: 'bar',
+            data: { labels, datasets: [{ label: '成交量(亿)', data: volumes, backgroundColor: '#1a237e' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+        new Chart(document.getElementById('limitChart'), {
+            type: 'line',
+            data: { labels, datasets: [
+                { label: '涨停', data: limitUps, borderColor: '#e74c3c', tension: 0.3 },
+                { label: '跌停', data: limitDowns, borderColor: '#27ae60', tension: 0.3 }
+            ] },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+        new Chart(document.getElementById('newHighChart'), {
+            type: 'line',
+            data: { labels, datasets: [
+                { label: '百日新高', data: newHighs, borderColor: '#e74c3c', tension: 0.3 },
+                { label: '百日新低', data: newLows, borderColor: '#27ae60', tension: 0.3 },
+                { label: '差值', data: diffs, borderColor: '#f39c12', tension: 0.3 }
+            ] },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+        new Chart(document.getElementById('sectorChart'), {
+            type: 'line',
+            data: { labels, datasets: [
+                { label: '板块1热度', data: data.map(d => d.sector1 ? 1 : 0), borderColor: '#9b59b6', tension: 0.3 },
+                { label: '板块2热度', data: data.map(d => d.sector2 ? 1 : 0), borderColor: '#2ecc71', tension: 0.3 }
+            ] },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+    }
+
+    // 初始化
+    renderAll();
+</script>
+</body>
+</html>

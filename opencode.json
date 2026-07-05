@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "wudao": {
+      "type": "remote",
+      "url": "https://stock.quicktiny.cn/api/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer lb_ace63359b2c36bf7f71a070f89f9717f8434a287fe8a914e69b4b4d780424e97"
+      }
+    }
+  }
+}

@@ -1,0 +1,1312 @@
+{
+  "date": "2026-06-18",
+  "total_limit_up": 91,
+  "total_chains_matched": 25,
+  "top3": [
+    {
+      "chain": "芯片",
+      "total": 26,
+      "first_board": 20,
+      "consecutive_count": 6,
+      "high_board": "4连板",
+      "max_continue": 4,
+      "top_reasons": [
+        {
+          "keyword": "PCB",
+          "count": 2
+        },
+        {
+          "keyword": "PCB概念",
+          "count": 2
+        },
+        {
+          "keyword": "半导体设备",
+          "count": 2
+        },
+        {
+          "keyword": "无锡国资",
+          "count": 2
+        },
+        {
+          "keyword": "AI芯片",
+          "count": 2
+        }
+      ],
+      "representative": [
+        {
+          "name": "旭光电子",
+          "code": "600353",
+          "continue_num": 4,
+          "reason_type": "氮化铝+可控核聚变+定增受理",
+          "order_amount": 346903040.0
+        },
+        {
+          "name": "贤丰控股",
+          "code": "002141",
+          "continue_num": 3,
+          "reason_type": "覆铜板+PCB上游+扭亏为盈",
+          "order_amount": 113782296.0
+        },
+        {
+          "name": "中天精装",
+          "code": "002989",
+          "continue_num": 3,
+          "reason_type": "FCBGA封装基板+HBM+半导体转型+浙江国资",
+          "order_amount": 46338053.0
+        }
+      ],
+      "sector_change": 0.9632,
+      "sector_limit_up": 21,
+      "sector_high_board": "3天3板",
+      "sector_days": 13
+    },
+    {
+      "chain": "机器人",
+      "total": 15,
+      "first_board": 12,
+      "consecutive_count": 3,
+      "high_board": "3连板",
+      "max_continue": 3,
+      "top_reasons": [
+        {
+          "keyword": "人形机器人",
+          "count": 7
+        },
+        {
+          "keyword": "机器人",
+          "count": 3
+        },
+        {
+          "keyword": "一季报增长",
+          "count": 2
+        },
+        {
+          "keyword": "钨钽铌并购",
+          "count": 1
+        },
+        {
+          "keyword": "磁选装备",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "江钨装备",
+          "code": "600397",
+          "continue_num": 3,
+          "reason_type": "钨钽铌并购+磁选装备+江西国资",
+          "order_amount": 33317880.0
+        },
+        {
+          "name": "智微智能",
+          "code": "001339",
+          "continue_num": 2,
+          "reason_type": "算力+人形机器人+定增募资+一季报增长",
+          "order_amount": 154063190.0
+        },
+        {
+          "name": "金博股份",
+          "code": "688598",
+          "continue_num": 2,
+          "reason_type": "氮化铝+碳陶制动盘+人形机器人",
+          "order_amount": 50302689.0
+        }
+      ],
+      "sector_change": 0.4202,
+      "sector_limit_up": 18,
+      "sector_high_board": "4天3板",
+      "sector_days": 14
+    },
+    {
+      "chain": "人工智能",
+      "total": 13,
+      "first_board": 11,
+      "consecutive_count": 2,
+      "high_board": "3连板",
+      "max_continue": 3,
+      "top_reasons": [
+        {
+          "keyword": "央企",
+          "count": 2
+        },
+        {
+          "keyword": "CPO",
+          "count": 2
+        },
+        {
+          "keyword": "算力租赁",
+          "count": 2
+        },
+        {
+          "keyword": "MLPC",
+          "count": 1
+        },
+        {
+          "keyword": "AI服务器",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "艾华集团",
+          "code": "603989",
+          "continue_num": 3,
+          "reason_type": "MLPC+AI服务器+铝电解电容+薄膜电容",
+          "order_amount": 127836351.0
+        },
+        {
+          "name": "通鼎互联",
+          "code": "002491",
+          "continue_num": 2,
+          "reason_type": "光纤光缆+产能扩张+数据中心",
+          "order_amount": 232353450.0
+        },
+        {
+          "name": "中嘉博创",
+          "code": "000889",
+          "continue_num": 1,
+          "reason_type": "算力销售+通信服务+追索7.25亿款项",
+          "order_amount": 55683030.0
+        }
+      ],
+      "sector_change": 0.1868,
+      "sector_limit_up": 13,
+      "sector_high_board": "7天3板",
+      "sector_days": 1
+    }
+  ],
+  "all_chains": [
+    {
+      "chain": "芯片",
+      "total": 26,
+      "first_board": 20,
+      "consecutive_count": 6,
+      "high_board": "4连板",
+      "max_continue": 4,
+      "top_reasons": [
+        {
+          "keyword": "PCB",
+          "count": 2
+        },
+        {
+          "keyword": "PCB概念",
+          "count": 2
+        },
+        {
+          "keyword": "半导体设备",
+          "count": 2
+        },
+        {
+          "keyword": "无锡国资",
+          "count": 2
+        },
+        {
+          "keyword": "AI芯片",
+          "count": 2
+        }
+      ],
+      "representative": [
+        {
+          "name": "旭光电子",
+          "code": "600353",
+          "continue_num": 4,
+          "reason_type": "氮化铝+可控核聚变+定增受理",
+          "order_amount": 346903040.0
+        },
+        {
+          "name": "贤丰控股",
+          "code": "002141",
+          "continue_num": 3,
+          "reason_type": "覆铜板+PCB上游+扭亏为盈",
+          "order_amount": 113782296.0
+        },
+        {
+          "name": "中天精装",
+          "code": "002989",
+          "continue_num": 3,
+          "reason_type": "FCBGA封装基板+HBM+半导体转型+浙江国资",
+          "order_amount": 46338053.0
+        }
+      ],
+      "sector_change": 0.9632,
+      "sector_limit_up": 21,
+      "sector_high_board": "3天3板",
+      "sector_days": 13
+    },
+    {
+      "chain": "机器人",
+      "total": 15,
+      "first_board": 12,
+      "consecutive_count": 3,
+      "high_board": "3连板",
+      "max_continue": 3,
+      "top_reasons": [
+        {
+          "keyword": "人形机器人",
+          "count": 7
+        },
+        {
+          "keyword": "机器人",
+          "count": 3
+        },
+        {
+          "keyword": "一季报增长",
+          "count": 2
+        },
+        {
+          "keyword": "钨钽铌并购",
+          "count": 1
+        },
+        {
+          "keyword": "磁选装备",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "江钨装备",
+          "code": "600397",
+          "continue_num": 3,
+          "reason_type": "钨钽铌并购+磁选装备+江西国资",
+          "order_amount": 33317880.0
+        },
+        {
+          "name": "智微智能",
+          "code": "001339",
+          "continue_num": 2,
+          "reason_type": "算力+人形机器人+定增募资+一季报增长",
+          "order_amount": 154063190.0
+        },
+        {
+          "name": "金博股份",
+          "code": "688598",
+          "continue_num": 2,
+          "reason_type": "氮化铝+碳陶制动盘+人形机器人",
+          "order_amount": 50302689.0
+        }
+      ],
+      "sector_change": 0.4202,
+      "sector_limit_up": 18,
+      "sector_high_board": "4天3板",
+      "sector_days": 14
+    },
+    {
+      "chain": "人工智能",
+      "total": 13,
+      "first_board": 11,
+      "consecutive_count": 2,
+      "high_board": "3连板",
+      "max_continue": 3,
+      "top_reasons": [
+        {
+          "keyword": "央企",
+          "count": 2
+        },
+        {
+          "keyword": "CPO",
+          "count": 2
+        },
+        {
+          "keyword": "算力租赁",
+          "count": 2
+        },
+        {
+          "keyword": "MLPC",
+          "count": 1
+        },
+        {
+          "keyword": "AI服务器",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "艾华集团",
+          "code": "603989",
+          "continue_num": 3,
+          "reason_type": "MLPC+AI服务器+铝电解电容+薄膜电容",
+          "order_amount": 127836351.0
+        },
+        {
+          "name": "通鼎互联",
+          "code": "002491",
+          "continue_num": 2,
+          "reason_type": "光纤光缆+产能扩张+数据中心",
+          "order_amount": 232353450.0
+        },
+        {
+          "name": "中嘉博创",
+          "code": "000889",
+          "continue_num": 1,
+          "reason_type": "算力销售+通信服务+追索7.25亿款项",
+          "order_amount": 55683030.0
+        }
+      ],
+      "sector_change": 0.1868,
+      "sector_limit_up": 13,
+      "sector_high_board": "7天3板",
+      "sector_days": 1
+    },
+    {
+      "chain": "化工原料",
+      "total": 4,
+      "first_board": 4,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "炭黑龙头",
+          "count": 2
+        },
+        {
+          "keyword": "氧氯化锆",
+          "count": 1
+        },
+        {
+          "keyword": "陶瓷载板",
+          "count": 1
+        },
+        {
+          "keyword": "光通讯",
+          "count": 1
+        },
+        {
+          "keyword": "业绩增长",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "长裕集团",
+          "code": "603407",
+          "continue_num": 1,
+          "reason_type": "氧氯化锆+陶瓷载板+光通讯+业绩增长",
+          "order_amount": 168155620.0
+        },
+        {
+          "name": "黑猫股份",
+          "code": "002068",
+          "continue_num": 1,
+          "reason_type": "超级电容+炭黑龙头+超导电炭黑",
+          "order_amount": 114686451.0
+        },
+        {
+          "name": "龙星科技",
+          "code": "002442",
+          "continue_num": 1,
+          "reason_type": "炭黑龙头+绿色低碳",
+          "order_amount": 53418267.0
+        }
+      ]
+    },
+    {
+      "chain": "小金属",
+      "total": 3,
+      "first_board": 3,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "央企",
+          "count": 2
+        },
+        {
+          "keyword": "一季报增长",
+          "count": 2
+        },
+        {
+          "keyword": "锆材料",
+          "count": 1
+        },
+        {
+          "keyword": "固态电池",
+          "count": 1
+        },
+        {
+          "keyword": "定增",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "东方锆业",
+          "code": "002167",
+          "continue_num": 1,
+          "reason_type": "锆材料+固态电池+定增",
+          "order_amount": 417903300.0
+        },
+        {
+          "name": "中稀有色",
+          "code": "600259",
+          "continue_num": 1,
+          "reason_type": "稀土涨价+广东稀土矿+央企+一季报增长",
+          "order_amount": 60044783.0
+        },
+        {
+          "name": "盛和资源",
+          "code": "600392",
+          "continue_num": 1,
+          "reason_type": "稀土+江阴加华投产+央企+一季报增长",
+          "order_amount": 57822114.0
+        }
+      ],
+      "sector_change": 0.2475,
+      "sector_limit_up": 11,
+      "sector_high_board": "4天3板",
+      "sector_days": 1
+    },
+    {
+      "chain": "医疗保健",
+      "total": 3,
+      "first_board": 3,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "氧化锆替代",
+          "count": 1
+        },
+        {
+          "keyword": "口腔种植医保",
+          "count": 1
+        },
+        {
+          "keyword": "外销龙头",
+          "count": 1
+        },
+        {
+          "keyword": "创新药CRO",
+          "count": 1
+        },
+        {
+          "keyword": "实验猴涨价",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "爱迪特",
+          "code": "301580",
+          "continue_num": 1,
+          "reason_type": "氧化锆替代+口腔种植医保+外销龙头",
+          "order_amount": 234128870.0
+        },
+        {
+          "name": "昭衍新药",
+          "code": "603127",
+          "continue_num": 1,
+          "reason_type": "创新药CRO+实验猴涨价+股权激励",
+          "order_amount": 87167304.0
+        },
+        {
+          "name": "奥美医疗",
+          "code": "002950",
+          "continue_num": 1,
+          "reason_type": "医用敷料出口第一+员工持股计划+拟实施分红",
+          "order_amount": 92703746.0
+        }
+      ]
+    },
+    {
+      "chain": "新能源",
+      "total": 3,
+      "first_board": 3,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "磷酸铁锂",
+          "count": 1
+        },
+        {
+          "keyword": "固态电池",
+          "count": 1
+        },
+        {
+          "keyword": "一季报扭亏",
+          "count": 1
+        },
+        {
+          "keyword": "千斤顶龙头",
+          "count": 1
+        },
+        {
+          "keyword": "跨境电商",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "丰元股份",
+          "code": "002805",
+          "continue_num": 1,
+          "reason_type": "磷酸铁锂+固态电池+一季报扭亏",
+          "order_amount": 29230360.0
+        },
+        {
+          "name": "常润股份",
+          "code": "603201",
+          "continue_num": 1,
+          "reason_type": "千斤顶龙头+跨境电商+泰国产能",
+          "order_amount": 21573067.0
+        },
+        {
+          "name": "翔鹭钨业",
+          "code": "002842",
+          "continue_num": 1,
+          "reason_type": "定增通过+钨全产业链+光伏钨丝+业绩增长",
+          "order_amount": 2582224.6
+        }
+      ],
+      "sector_change": 0.337,
+      "sector_limit_up": 18,
+      "sector_high_board": "7天3板",
+      "sector_days": 8
+    },
+    {
+      "chain": "中成药",
+      "total": 3,
+      "first_board": 3,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "创新药",
+          "count": 2
+        },
+        {
+          "keyword": "中成药国际化",
+          "count": 1
+        },
+        {
+          "keyword": "仿创结合",
+          "count": 1
+        },
+        {
+          "keyword": "减肥药",
+          "count": 1
+        },
+        {
+          "keyword": "流感",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "华森制药",
+          "code": "002907",
+          "continue_num": 1,
+          "reason_type": "创新药+中成药国际化+仿创结合",
+          "order_amount": 27442369.0
+        },
+        {
+          "name": "众生药业",
+          "code": "002317",
+          "continue_num": 1,
+          "reason_type": "减肥药+创新药+流感",
+          "order_amount": 24560250.0
+        },
+        {
+          "name": "天目药业",
+          "code": "600671",
+          "continue_num": 1,
+          "reason_type": "青岛国资+眼科医疗+中药+年报增长",
+          "order_amount": 5716668.0
+        }
+      ]
+    },
+    {
+      "chain": "低空经济",
+      "total": 2,
+      "first_board": 1,
+      "consecutive_count": 1,
+      "high_board": "2连板",
+      "max_continue": 2,
+      "top_reasons": [
+        {
+          "keyword": "摘帽",
+          "count": 1
+        },
+        {
+          "keyword": "航空装备",
+          "count": 1
+        },
+        {
+          "keyword": "无人机",
+          "count": 1
+        },
+        {
+          "keyword": "股份转让",
+          "count": 1
+        },
+        {
+          "keyword": "华为超充",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "立航科技",
+          "code": "603261",
+          "continue_num": 2,
+          "reason_type": "摘帽+航空装备+无人机",
+          "order_amount": 16197786.0
+        },
+        {
+          "name": "华体科技",
+          "code": "603679",
+          "continue_num": 1,
+          "reason_type": "股份转让+华为超充+低空经济",
+          "order_amount": 32702930.0
+        }
+      ]
+    },
+    {
+      "chain": "家居用品",
+      "total": 2,
+      "first_board": 2,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "氧化锆粉体",
+          "count": 1
+        },
+        {
+          "keyword": "齿科材料",
+          "count": 1
+        },
+        {
+          "keyword": "高分红",
+          "count": 1
+        },
+        {
+          "keyword": "定增完成",
+          "count": 1
+        },
+        {
+          "keyword": "智能床",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "华瓷股份",
+          "code": "001216",
+          "continue_num": 1,
+          "reason_type": "氧化锆粉体+齿科材料+高分红+定增完成",
+          "order_amount": 44213400.0
+        },
+        {
+          "name": "梦百合",
+          "code": "603313",
+          "continue_num": 1,
+          "reason_type": "智能床+美国产能+实控人代偿应收款",
+          "order_amount": 24453747.0
+        }
+      ]
+    },
+    {
+      "chain": "军工",
+      "total": 2,
+      "first_board": 2,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "商业航天",
+          "count": 2
+        },
+        {
+          "keyword": "军工特钢",
+          "count": 1
+        },
+        {
+          "keyword": "不锈钢",
+          "count": 1
+        },
+        {
+          "keyword": "硬质合金",
+          "count": 1
+        },
+        {
+          "keyword": "培育钻石",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "抚顺特钢",
+          "code": "600399",
+          "continue_num": 1,
+          "reason_type": "商业航天+军工特钢+不锈钢",
+          "order_amount": 50311675.0
+        },
+        {
+          "name": "博云新材",
+          "code": "002297",
+          "continue_num": 1,
+          "reason_type": "硬质合金+商业航天+培育钻石+湖南国资",
+          "order_amount": 45049860.0
+        }
+      ],
+      "sector_change": 0.3098,
+      "sector_limit_up": 16,
+      "sector_high_board": "6天5板",
+      "sector_days": 6
+    },
+    {
+      "chain": "矿物制品",
+      "total": 2,
+      "first_board": 2,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "提锂量产",
+          "count": 1
+        },
+        {
+          "keyword": "高岭土",
+          "count": 1
+        },
+        {
+          "keyword": "紫金矿业入股",
+          "count": 1
+        },
+        {
+          "keyword": "福建国资",
+          "count": 1
+        },
+        {
+          "keyword": "碳化硅切割",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "龙高股份",
+          "code": "605086",
+          "continue_num": 1,
+          "reason_type": "提锂量产+高岭土+紫金矿业入股+福建国资",
+          "order_amount": 78508374.0
+        },
+        {
+          "name": "美畅股份",
+          "code": "300861",
+          "continue_num": 1,
+          "reason_type": "碳化硅切割+钨丝金刚线+一季报增长",
+          "order_amount": 37817697.0
+        }
+      ]
+    },
+    {
+      "chain": "工程机械",
+      "total": 1,
+      "first_board": 0,
+      "consecutive_count": 1,
+      "high_board": "2连板",
+      "max_continue": 2,
+      "top_reasons": [
+        {
+          "keyword": "数据中心液冷",
+          "count": 1
+        },
+        {
+          "keyword": "拟收购整合",
+          "count": 1
+        },
+        {
+          "keyword": "权益分派",
+          "count": 1
+        },
+        {
+          "keyword": "烟台国资",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "冰轮环境",
+          "code": "000811",
+          "continue_num": 2,
+          "reason_type": "数据中心液冷+拟收购整合+权益分派+烟台国资",
+          "order_amount": 341234070.0
+        }
+      ]
+    },
+    {
+      "chain": "水务",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "存算基地",
+          "count": 1
+        },
+        {
+          "keyword": "供水",
+          "count": 1
+        },
+        {
+          "keyword": "武汉国资",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "祥龙电业",
+          "code": "600769",
+          "continue_num": 1,
+          "reason_type": "存算基地+供水+武汉国资",
+          "order_amount": 147585650.0
+        }
+      ]
+    },
+    {
+      "chain": "公路",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "港口物流",
+          "count": 1
+        },
+        {
+          "keyword": "LNG",
+          "count": 1
+        },
+        {
+          "keyword": "一季报增长",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "恒通股份",
+          "code": "603223",
+          "continue_num": 1,
+          "reason_type": "港口物流+LNG+一季报增长",
+          "order_amount": 49959423.0
+        }
+      ]
+    },
+    {
+      "chain": "化学制药",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "创新药",
+          "count": 1
+        },
+        {
+          "keyword": "APDC三期",
+          "count": 1
+        },
+        {
+          "keyword": "医药制造",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "海欣股份",
+          "code": "600851",
+          "continue_num": 1,
+          "reason_type": "创新药+APDC三期+医药制造",
+          "order_amount": 72708936.0
+        }
+      ]
+    },
+    {
+      "chain": "生物制药",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "燃气轮机叶片",
+          "count": 1
+        },
+        {
+          "keyword": "高温合金",
+          "count": 1
+        },
+        {
+          "keyword": "微生态活菌",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "万泽股份",
+          "code": "000534",
+          "continue_num": 1,
+          "reason_type": "燃气轮机叶片+高温合金+微生态活菌",
+          "order_amount": 63414889.0
+        }
+      ]
+    },
+    {
+      "chain": "水泥",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "拟收购PEEK材料",
+          "count": 1
+        },
+        {
+          "keyword": "中标水利大单",
+          "count": 1
+        },
+        {
+          "keyword": "PCCP管材",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "韩建河山",
+          "code": "603616",
+          "continue_num": 1,
+          "reason_type": "拟收购PEEK材料+中标水利大单+PCCP管材",
+          "order_amount": 26807062.0
+        }
+      ]
+    },
+    {
+      "chain": "全国地产",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "豪宅项目获奖",
+          "count": 1
+        },
+        {
+          "keyword": "家居商贸",
+          "count": 1
+        },
+        {
+          "keyword": "广州地产",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "香江控股",
+          "code": "600162",
+          "continue_num": 1,
+          "reason_type": "豪宅项目获奖+家居商贸+广州地产",
+          "order_amount": 46110053.0
+        }
+      ]
+    },
+    {
+      "chain": "区域地产",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "商业运营",
+          "count": 1
+        },
+        {
+          "keyword": "数字科技",
+          "count": 1
+        },
+        {
+          "keyword": "摘帽",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "阳光股份",
+          "code": "000608",
+          "continue_num": 1,
+          "reason_type": "商业运营+数字科技+摘帽",
+          "order_amount": 78859318.0
+        }
+      ]
+    },
+    {
+      "chain": "铜",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "阴极铜龙头",
+          "count": 1
+        },
+        {
+          "keyword": "新材料",
+          "count": 1
+        },
+        {
+          "keyword": "中期票据",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "江西铜业",
+          "code": "600362",
+          "continue_num": 1,
+          "reason_type": "阴极铜龙头+新材料+中期票据",
+          "order_amount": 254477580.0
+        }
+      ]
+    },
+    {
+      "chain": "旅游服务",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "自然景点",
+          "count": 1
+        },
+        {
+          "keyword": "索道",
+          "count": 1
+        },
+        {
+          "keyword": "国企改革",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "三特索道",
+          "code": "002159",
+          "continue_num": 1,
+          "reason_type": "自然景点+索道+国企改革",
+          "order_amount": 46628495.0
+        }
+      ]
+    },
+    {
+      "chain": "服饰",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "质押解除",
+          "count": 1
+        },
+        {
+          "keyword": "皮鞋",
+          "count": 1
+        },
+        {
+          "keyword": "C2M",
+          "count": 1
+        },
+        {
+          "keyword": "扭亏",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "奥康国际",
+          "code": "603001",
+          "continue_num": 1,
+          "reason_type": "质押解除+皮鞋+C2M+扭亏",
+          "order_amount": 3983150.0
+        }
+      ]
+    },
+    {
+      "chain": "其他建材",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "非金属材料",
+          "count": 1
+        },
+        {
+          "keyword": "覆膜砂龙头",
+          "count": 1
+        },
+        {
+          "keyword": "3D打印",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "长江材料",
+          "code": "001296",
+          "continue_num": 1,
+          "reason_type": "非金属材料+覆膜砂龙头+3D打印",
+          "order_amount": 18619917.0
+        }
+      ]
+    },
+    {
+      "chain": "环境保护",
+      "total": 1,
+      "first_board": 1,
+      "consecutive_count": 0,
+      "high_board": "首板",
+      "max_continue": 1,
+      "top_reasons": [
+        {
+          "keyword": "大气治理出海",
+          "count": 1
+        },
+        {
+          "keyword": "钠离子电池",
+          "count": 1
+        },
+        {
+          "keyword": "注册资本减少",
+          "count": 1
+        }
+      ],
+      "representative": [
+        {
+          "name": "德创环保",
+          "code": "603177",
+          "continue_num": 1,
+          "reason_type": "大气治理出海+钠离子电池+注册资本减少",
+          "order_amount": 7250432.0
+        }
+      ]
+    }
+  ],
+  "board_distribution": [
+    {
+      "level": 4,
+      "count": 1
+    },
+    {
+      "level": 3,
+      "count": 4
+    },
+    {
+      "level": 2,
+      "count": 8
+    },
+    {
+      "level": 1,
+      "count": 78
+    }
+  ],
+  "hot_sectors_top": [
+    {
+      "name": "专精特新",
+      "limitUpNum": 24,
+      "continuousPlateNum": 8,
+      "highBoard": "4天2板"
+    },
+    {
+      "name": "芯片概念",
+      "limitUpNum": 21,
+      "continuousPlateNum": 6,
+      "highBoard": "3天3板"
+    },
+    {
+      "name": "比亚迪概念",
+      "limitUpNum": 19,
+      "continuousPlateNum": 8,
+      "highBoard": "7天3板"
+    },
+    {
+      "name": "机器人概念",
+      "limitUpNum": 18,
+      "continuousPlateNum": 5,
+      "highBoard": "4天3板"
+    },
+    {
+      "name": "新能源汽车",
+      "limitUpNum": 18,
+      "continuousPlateNum": 6,
+      "highBoard": "7天3板"
+    },
+    {
+      "name": "华为概念",
+      "limitUpNum": 18,
+      "continuousPlateNum": 5,
+      "highBoard": "4天3板"
+    },
+    {
+      "name": "军工",
+      "limitUpNum": 16,
+      "continuousPlateNum": 7,
+      "highBoard": "6天5板"
+    },
+    {
+      "name": "5G",
+      "limitUpNum": 15,
+      "continuousPlateNum": 8,
+      "highBoard": "6天5板"
+    },
+    {
+      "name": "人形机器人",
+      "limitUpNum": 14,
+      "continuousPlateNum": 4,
+      "highBoard": "6天5板"
+    },
+    {
+      "name": "锂电池概念",
+      "limitUpNum": 14,
+      "continuousPlateNum": 7,
+      "highBoard": "3天3板"
+    }
+  ],
+  "stats": {
+    "sealed_limit_up": 91,
+    "touched_limit_up": 132,
+    "broken_limit_up": 41,
+    "seal_rate": 0.6893939393939394,
+    "sealed_limit_down": 12
+  },
+  "unknown_count": 0,
+  "unknown_stocks": []
+}
