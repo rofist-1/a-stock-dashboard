@@ -1,0 +1,20 @@
+================================ Human Message =================================
+
+AAPL
+================================== Ai Message ==================================
+
+Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.
+================================== Ai Message ==================================
+
+Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.
+================================== Ai Message ==================================
+
+Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.
+================================== Ai Message ==================================
+
+Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.
+================================== Ai Message ==================================
+
+Stub trader plan. Will follow the manager's BUY plan with 0.5 sizing.
+
+FINAL TRANSACTION PROPOSAL: **BUY**

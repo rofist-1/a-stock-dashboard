@@ -1,0 +1,83 @@
+[
+  {
+    "type": "human",
+    "data": {
+      "content": "AAPL",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "human",
+      "name": null,
+      "id": "2d989bcb-8f80-4540-b68a-6f4cb8cd8c76"
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--019f382f-4fe7-70a2-8b79-069411cee5b8-0",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--019f382f-4fea-73b0-87fb-0e9f3119e789-0",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--019f382f-4fec-7de0-a58c-d18acc99196d-0",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--019f382f-4fee-74c1-b0ae-e8d8d48f65a5-0",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  },
+  {
+    "type": "ai",
+    "data": {
+      "content": "Stub trader plan. Will follow the manager's BUY plan with 0.5 sizing.\n\nFINAL TRANSACTION PROPOSAL: **BUY**",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": null,
+      "id": "lc_run--019f382f-4ff7-7730-b817-55f77ee0c779-0",
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    }
+  }
+]

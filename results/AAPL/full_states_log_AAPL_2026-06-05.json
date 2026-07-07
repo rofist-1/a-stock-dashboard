@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "runs": {
+    "2026-06-05": {
+      "company_of_interest": "AAPL",
+      "trade_date": "2026-06-05",
+      "market_report": "[TOOL_ERROR] Market Analyst produced a final report before any tool result was observed for AAPL as of 2026-06-05. This analyst section is intentionally marked unavailable because the report was not grounded in reproducible tool evidence.",
+      "sentiment_report": "[TOOL_ERROR] News Sentiment Analyst produced a final report before any tool result was observed for AAPL as of 2026-06-05. This analyst section is intentionally marked unavailable because the report was not grounded in reproducible tool evidence.",
+      "news_report": "[TOOL_ERROR] News Analyst produced a final report before any tool result was observed for AAPL as of 2026-06-05. This analyst section is intentionally marked unavailable because the report was not grounded in reproducible tool evidence.",
+      "fundamentals_report": "[TOOL_ERROR] Fundamentals Analyst produced a final report before any tool result was observed for AAPL as of 2026-06-05. This analyst section is intentionally marked unavailable because the report was not grounded in reproducible tool evidence.",
+      "situation_summary": "### Ticker profile\n- stub ticker, mid-cap, USD.\n### Price action and regime\n- trend: up; volatility: normal.\n### Indicator polarity\n- bullish (stub RSI 55, MACD positive).\n### Catalysts and news\n- stub catalyst.\n### Sentiment polarity\n- neutral, no divergence.\n### Fundamental health\n- mixed.\n### Key risks\n- stub risk.\n",
+      "investment_debate_state": {
+        "bull_history": "\nBull Analyst: ### Ticker profile\n- stub ticker, mid-cap, USD.\n### Price action and regime\n- trend: up; volatility: normal.\n### Indicator polarity\n- bullish (stub RSI 55, MACD positive).\n### Catalysts and news\n- stub catalyst.\n### Sentiment polarity\n- neutral, no divergence.\n### Fundamental health\n- mixed.\n### Key risks\n- stub risk.\n",
+        "bear_history": "\nBear Analyst: ### Ticker profile\n- stub ticker, mid-cap, USD.\n### Price action and regime\n- trend: up; volatility: normal.\n### Indicator polarity\n- bullish (stub RSI 55, MACD positive).\n### Catalysts and news\n- stub catalyst.\n### Sentiment polarity\n- neutral, no divergence.\n### Fundamental health\n- mixed.\n### Key risks\n- stub risk.\n",
+        "history": "\nBull Analyst: ### Ticker profile\n- stub ticker, mid-cap, USD.\n### Price action and regime\n- trend: up; volatility: normal.\n### Indicator polarity\n- bullish (stub RSI 55, MACD positive).\n### Catalysts and news\n- stub catalyst.\n### Sentiment polarity\n- neutral, no divergence.\n### Fundamental health\n- mixed.\n### Key risks\n- stub risk.\n\nBear Analyst: ### Ticker profile\n- stub ticker, mid-cap, USD.\n### Price action and regime\n- trend: up; volatility: normal.\n### Indicator polarity\n- bullish (stub RSI 55, MACD positive).\n### Catalysts and news\n- stub catalyst.\n### Sentiment polarity\n- neutral, no divergence.\n### Fundamental health\n- mixed.\n### Key risks\n- stub risk.\n",
+        "current_response": "### Recommendation: BUY\nRationale: stub manager rationale.\nStrategic Actions: stub action list.",
+        "judge_decision": "### Recommendation: BUY\nRationale: stub manager rationale.\nStrategic Actions: stub action list."
+      },
+      "trader_investment_decision": "Stub trader plan. Will follow the manager's BUY plan with 0.5 sizing.\n\nFINAL TRANSACTION PROPOSAL: **BUY**",
+      "risk_debate_state": {
+        "aggressive_history": "\nAggressive Analyst: Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.",
+        "conservative_history": "\nConservative Analyst: Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.",
+        "neutral_history": "\nNeutral Analyst: Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.",
+        "history": "\nAggressive Analyst: Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.\nConservative Analyst: Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.\nNeutral Analyst: Stub analyst / debater output (dry_run). Tools are skipped in dry_run mode.",
+        "judge_decision": "Stub risk-judge response (dry_run).\n\n```json\n{\n  \"signal\": \"BUY\",\n  \"size_fraction\": 0.5,\n  \"target_price\": null,\n  \"stop_loss\": null,\n  \"time_horizon_days\": 5,\n  \"confidence\": 0.6,\n  \"rationale\": \"Stub rationale for backtest harness validation.\",\n  \"warning_message\": null\n}\n```\n\nFINAL TRANSACTION PROPOSAL: **BUY**\n"
+      },
+      "investment_plan": "### Recommendation: BUY\nRationale: stub manager rationale.\nStrategic Actions: stub action list.",
+      "final_trade_decision": "Stub risk-judge response (dry_run).\n\n```json\n{\n  \"signal\": \"BUY\",\n  \"size_fraction\": 0.5,\n  \"target_price\": null,\n  \"stop_loss\": null,\n  \"time_horizon_days\": 5,\n  \"confidence\": 0.6,\n  \"rationale\": \"Stub rationale for backtest harness validation.\",\n  \"warning_message\": null\n}\n```\n\nFINAL TRANSACTION PROPOSAL: **BUY**\n",
+      "final_trade_recommendation": {
+        "signal": "BUY",
+        "size_fraction": 0.5,
+        "entry_reference_price": null,
+        "target_price": null,
+        "stop_loss": null,
+        "time_horizon_days": 5,
+        "confidence": 0.6,
+        "currency": null,
+        "rationale": "Stub rationale for backtest harness validation.",
+        "warning_message": null
+      }
+    }
+  }
+}
