@@ -460,6 +460,32 @@
   </style>
 </head>
 <body>
+
+<script>
+(function(){
+  var k="astock_dashboard_v3";
+  var existing=JSON.parse(localStorage.getItem(k)||"[]");
+  var backup=[{"date": "2026-07-03", "volume": 32053, "limitUp": 104, "limitDown": 19, "bomb": 52, "chain": 16, "newHigh": 143, "newLow": 56, "newHighDaily": 58, "s1Name": "机器人", "s1Total": 28, "s1New": 15, "s1b1Name": "灵巧手", "s1b1New": 4, "s1b2Name": "宇树机器人", "s1b2New": 3, "s2Name": "芯片", "s2Total": 24, "s2New": 12, "s2b1Name": "存储", "s2b1New": 10, "s2b2Name": "先进封装", "s2b2New": 6, "s3Name": "医药", "s3Total": 20, "s3New": 6, "s3b1Name": "创新药", "s3b1New": 16, "s3b2Name": "CRO", "s3b2New": 7, "w1Name": "通信", "w1Total": 10, "w1New": 5, "w1Reason": "", "w1b1Name": "光模块", "w1b1New": 5, "w1b2Name": "CPO", "w1b2New": 4, "w2Name": "算力", "w2Total": 10, "w2New": 4, "w2Reason": "", "w2b1Name": "液冷", "w2b1New": 7, "w2b2Name": "数据中心", "w2b2New": 3, "w3Name": "证券", "w3Total": 6, "w3New": 1, "w3Reason": "", "w3b1Name": "参控股基金", "w3b1New": 5, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-07-02", "volume": 34505, "limitUp": 91, "limitDown": 40, "bomb": 40, "chain": 19, "newHigh": 156, "newLow": 58, "newHighDaily": 35, "s1Name": "芯片", "s1Total": 42, "s1New": 9, "s1b1Name": "存储", "s1b1New": 16, "s1b2Name": "光刻胶", "s1b2New": 14, "s2Name": "机器人", "s2Total": 17, "s2New": 3, "s2b1Name": "传感器", "s2b1New": 1, "s2b2Name": "灵巧手", "s2b2New": 1, "s3Name": "医药", "s3Total": 15, "s3New": 2, "s3b1Name": "创新药", "s3b1New": 12, "s3b2Name": "仿制药", "s3b2New": 4, "w1Name": "化工", "w1Total": 9, "w1New": 1, "w1Reason": "", "w1b1Name": "制冷剂", "w1b1New": 5, "w1b2Name": "氟化工", "w1b2New": 5, "w2Name": "光通信", "w2Total": 8, "w2New": 4, "w2Reason": "", "w2b1Name": "光模块", "w2b1New": 4, "w2b2Name": "CPO", "w2b2New": 4, "w3Name": "算力", "w3Total": 6, "w3New": 0, "w3Reason": "", "w3b1Name": "液冷", "w3b1New": 3, "w3b2Name": "数据中心", "w3b2New": 2}, {"date": "2026-07-01", "volume": 34500, "limitUp": 149, "limitDown": 6, "bomb": 73, "chain": 42, "newHigh": 349, "newLow": 11, "newHighDaily": 120, "s1Name": "芯片", "s1Total": 120, "s1New": 20, "s1b1Name": "存储", "s1b1New": 47, "s1b2Name": "第三代半导体", "s1b2New": 38, "s2Name": "机器人", "s2Total": 24, "s2New": 8, "s2b1Name": "外骨骼", "s2b1New": 2, "s2b2Name": "AGV", "s2b2New": 1, "s3Name": "医药", "s3Total": 19, "s3New": 5, "s3b1Name": "创新药", "s3b1New": 14, "s3b2Name": "CRO", "s3b2New": 8, "w1Name": "算力", "w1Total": 18, "w1New": 2, "w1Reason": "", "w1b1Name": "液冷", "w1b1New": 14, "w1b2Name": "数据中心", "w1b2New": 5, "w2Name": "通信", "w2Total": 17, "w2New": 3, "w2Reason": "", "w2b1Name": "CPO", "w2b1New": 7, "w2b2Name": "5G", "w2b2New": 6, "w3Name": "化工", "w3Total": 14, "w3New": 7, "w3Reason": "", "w3b1Name": "氢氟酸", "w3b1New": 4, "w3b2Name": "制冷剂", "w3b2New": 4}, {"date": "2026-06-30", "volume": 0, "limitUp": 138, "limitDown": 5, "bomb": 25, "chain": 0, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w1Signal": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w2Signal": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3Signal": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-29", "volume": 0, "limitUp": 105, "limitDown": 37, "bomb": 38, "chain": 0, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w1Signal": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w2Signal": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3Signal": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-26", "volume": 0, "limitUp": 60, "limitDown": 30, "bomb": 34, "chain": 0, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w1Signal": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w2Signal": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3Signal": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-25", "volume": 0, "limitUp": 85, "limitDown": 17, "bomb": 31, "chain": 0, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w1Signal": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w2Signal": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3Signal": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-24", "volume": 0, "limitUp": 98, "limitDown": 10, "bomb": 23, "chain": 0, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w1Signal": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w2Signal": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3Signal": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-22", "volume": 0, "limitUp": 132, "limitDown": 3, "bomb": 26, "chain": 0, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w1Signal": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w2Signal": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3Signal": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-20", "volume": 33317, "limitUp": 91, "limitDown": 12, "bomb": 41, "chain": 12, "newHigh": 267, "newLow": 1371, "newHighDaily": 151, "s1Name": "芯片", "s1Total": 110, "s1New": 23, "s1b1Name": "存储", "s1b1New": 45, "s1b2Name": "先进封装", "s1b2New": 44, "s2Name": "通信", "s2Total": 89, "s2New": 16, "s2b1Name": "印制电路板", "s2b1New": 50, "s2b2Name": "5G", "s2b2New": 44, "s3Name": "机器人", "s3Total": 26, "s3New": 5, "s3b1Name": "AGV机器人", "s3b1New": 2, "s3b2Name": "宇树机器人", "s3b2New": 2, "w1Name": "元器件", "w1Total": 19, "w1New": 7, "w1Reason": "", "w1b1Name": "电阻电容", "w1b1New": 16, "w1b2Name": "超级电容", "w1b2New": 3, "w2Name": "算力", "w2Total": 13, "w2New": 4, "w2Reason": "", "w2b1Name": "液冷", "w2b1New": 9, "w2b2Name": "数据中心", "w2b2New": 7, "w3Name": "化工", "w3Total": 9, "w3New": 1, "w3Reason": "", "w3b1Name": "可降解概念", "w3b1New": 2, "w3b2Name": "阻燃剂", "w3b2New": 2}, {"date": "2026-06-17", "volume": 31140, "limitUp": 85, "limitDown": 2, "bomb": 27, "chain": 19, "newHigh": 329, "newLow": 882, "newHighDaily": 100, "s1Name": "芯片", "s1Total": 99, "s1New": 40, "s1b1Name": "存储", "s1b1New": 38, "s1b2Name": "先进封装", "s1b2New": 37, "s2Name": "通信", "s2Total": 75, "s2New": 17, "s2b1Name": "印制电路板", "s2b1New": 43, "s2b2Name": "5G", "s2b2New": 35, "s3Name": "机器人", "s3Total": 24, "s3New": 8, "s3b1Name": "宇树机器人", "s3b1New": 2, "s3b2Name": "灵巧手", "s3b2New": 1, "w1Name": "元器件", "w1Total": 15, "w1New": 4, "w1Reason": "", "w1b1Name": "电阻电容", "w1b1New": 14, "w1b2Name": "超级电容", "w1b2New": 4, "w2Name": "化工", "w2Total": 13, "w2New": 1, "w2Reason": "", "w2b1Name": "环氧丙烷", "w2b1New": 3, "w2b2Name": "可降解概念", "w2b2New": 3, "w3Name": "算力", "w3Total": 12, "w3New": 3, "w3Reason": "", "w3b1Name": "液冷", "w3b1New": 6, "w3b2Name": "数据中心", "w3b2New": 5}, {"date": "2026-06-16", "volume": 30863, "limitUp": 116, "limitDown": 7, "bomb": 37, "chain": 29, "newHigh": 274, "newLow": 526, "newHighDaily": 89, "s1Name": "通信", "s1Total": 67, "s1New": 24, "s1b1Name": "印制电路板", "s1b1New": 36, "s1b2Name": "5G", "s1b2New": 28, "s2Name": "芯片", "s2Total": 66, "s2New": 17, "s2b1Name": "先进封装", "s2b1New": 26, "s2b2Name": "存储", "s2b2New": 22, "s3Name": "机器人", "s3Total": 27, "s3New": 8, "s3b1Name": "宇树机器人", "s3b1New": 1, "s3b2Name": "智元机器人", "s3b2New": 1, "w1Name": "元器件", "w1Total": 15, "w1New": 10, "w1Reason": "", "w1b1Name": "电阻电容", "w1b1New": 12, "w1b2Name": "晶体震荡器", "w1b2New": 2, "w2Name": "化工", "w2Total": 12, "w2New": 1, "w2Reason": "", "w2b1Name": "可降解概念", "w2b1New": 3, "w2b2Name": "玻纤", "w2b2New": 3, "w3Name": "算力", "w3Total": 10, "w3New": 5, "w3Reason": "", "w3b1Name": "数据中心", "w3b1New": 5, "w3b2Name": "液冷", "w3b2New": 4}, {"date": "2026-06-15", "volume": 30507, "limitUp": 144, "limitDown": 3, "bomb": 43, "chain": 11, "newHigh": 210, "newLow": 131, "newHighDaily": 118, "s1Name": "芯片", "s1Total": 57, "s1New": 44, "s1b1Name": "先进封装", "s1b1New": 22, "s1b2Name": "存储", "s1b2New": 21, "s2Name": "通信", "s2Total": 46, "s2New": 25, "s2b1Name": "印制电路板", "s2b1New": 26, "s2b2Name": "5G", "s2b2New": 18, "s3Name": "机器人", "s3Total": 20, "s3New": 12, "s3b1Name": "宇树机器人", "s3b1New": 1, "s3b2Name": "灵巧手", "s3b2New": 1, "w1Name": "化工", "w1Total": 11, "w1New": 5, "w1Reason": "", "w1b1Name": "可降解概念", "w1b1New": 3, "w1b2Name": "环氧丙烷", "w1b2New": 3, "w2Name": "银行", "w2Total": 9, "w2New": 0, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "锂电池", "w3Total": 7, "w3New": 3, "w3Reason": "", "w3b1Name": "固态电池", "w3b1New": 6, "w3b2Name": "隔膜", "w3b2New": 2}, {"date": "2026-06-12", "volume": 32361, "limitUp": 88, "limitDown": 15, "bomb": 62, "chain": 10, "newHigh": 103, "newLow": 458, "newHighDaily": 36, "s1Name": "通信", "s1Total": 22, "s1New": 7, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 13, "s2New": 3, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "银行", "s3Total": 9, "s3New": 2, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 8, "w1New": 4, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "化工", "w2Total": 6, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "算力", "w3Total": 4, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-11", "volume": 25749, "limitUp": 69, "limitDown": 32, "bomb": 30, "chain": 11, "newHigh": 142, "newLow": 2006, "newHighDaily": 36, "s1Name": "芯片", "s1Total": 49, "s1New": 17, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 80, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "化工", "s3Total": 7, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "银行", "w1Total": 7, "w1New": 1, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 7, "w2New": 1, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "地产链", "w3Total": 4, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-10", "volume": 26441, "limitUp": 70, "limitDown": 22, "bomb": 19, "chain": 15, "newHigh": 159, "newLow": 1671, "newHighDaily": 46, "s1Name": "芯片", "s1Total": 15, "s1New": 15, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 28, "s2New": 6, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 15, "s3New": 1, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "元器件", "w1Total": 7, "w1New": 1, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "元器件", "w2Total": 7, "w2New": 1, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "化工", "w3Total": 7, "w3New": 6, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-09", "volume": 26667, "limitUp": 127, "limitDown": 4, "bomb": 24, "chain": 10, "newHigh": 182, "newLow": 1067, "newHighDaily": 88, "s1Name": "通信", "s1Total": 36, "s1New": 19, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 35, "s2New": 23, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 25, "s3New": 6, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "元器件", "w1Total": 12, "w1New": 9, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "算力", "w2Total": 9, "w2New": 6, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "煤炭", "w3Total": 7, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-08", "volume": 28233, "limitUp": 55, "limitDown": 35, "bomb": 10, "chain": 14, "newHigh": 120, "newLow": 1986, "newHighDaily": 32, "s1Name": "机器人", "s1Total": 23, "s1New": 4, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 18, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 11, "s3New": 2, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "煤炭", "w1Total": 8, "w1New": 2, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "基础建设", "w2Total": 6, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "银行", "w3Total": 4, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-05", "volume": 31006, "limitUp": 71, "limitDown": 7, "bomb": 51, "chain": 6, "newHigh": 171, "newLow": 1277, "newHighDaily": 43, "s1Name": "机器人", "s1Total": 29, "s1New": 10, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 24, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 22, "s3New": 4, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "元器件", "w1Total": 18, "w1New": 2, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "算力", "w2Total": 7, "w2New": 1, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "煤炭", "w3Total": 7, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-04", "volume": 27791, "limitUp": 78, "limitDown": 7, "bomb": 19, "chain": 10, "newHigh": 213, "newLow": 1668, "newHighDaily": 61, "s1Name": "通信", "s1Total": 43, "s1New": 12, "s1b1Name": "5G", "s1b1New": 23, "s1b2Name": "印制电路板", "s1b2New": 22, "s2Name": "芯片", "s2Total": 35, "s2New": 15, "s2b1Name": "先进封装", "s2b1New": 14, "s2b2Name": "存储", "s2b2New": 13, "s3Name": "元器件", "s3Total": 26, "s3New": 7, "s3b1Name": "电阻电容", "s3b1New": 19, "s3b2Name": "超级电容", "s3b2New": 6, "w1Name": "机器人", "w1Total": 22, "w1New": 3, "w1Reason": "", "w1b1Name": "外骨骼机器人", "w1b1New": 1, "w1b2Name": "小鹏机器人", "w1b2New": 1, "w2Name": "电力", "w2Total": 11, "w2New": 1, "w2Reason": "", "w2b1Name": "绿色电力", "w2b1New": 10, "w2b2Name": "火电", "w2b2New": 5, "w3Name": "煤炭", "w3Total": 9, "w3New": 2, "w3Reason": "", "w3b1Name": "冶金煤", "w3b1New": 3, "w3b2Name": "动力煤", "w3b2New": 3}, {"date": "2026-06-03", "volume": 31531, "limitUp": 66, "limitDown": 10, "bomb": 50, "chain": 11, "newHigh": 217, "newLow": 878, "newHighDaily": 77, "s1Name": "通信", "s1Total": 37, "s1New": 12, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 27, "s2New": 15, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 24, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "元器件", "w1Total": 22, "w1New": 1, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "电力", "w2Total": 17, "w2New": 5, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "煤炭", "w3Total": 8, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-02", "volume": 28128, "limitUp": 64, "limitDown": 13, "bomb": 21, "chain": 16, "newHigh": 187, "newLow": 698, "newHighDaily": 82, "s1Name": "通信", "s1Total": 31, "s1New": 19, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "元器件", "s2Total": 26, "s2New": 16, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 22, "s3New": 16, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 15, "w1New": 5, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "电力", "w2Total": 13, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST", "w3Total": 8, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-06-01", "volume": 28965, "limitUp": 118, "limitDown": 21, "bomb": 41, "chain": 11, "newHigh": 143, "newLow": 767, "newHighDaily": 56, "s1Name": "电力", "s1Total": 16, "s1New": 1, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 15, "s2New": 3, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 12, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "元器件", "w1Total": 10, "w1New": 4, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "ST", "w2Total": 10, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "芯片", "w3Total": 9, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-29", "volume": 33190, "limitUp": 49, "limitDown": 50, "bomb": 38, "chain": 8, "newHigh": 171, "newLow": 889, "newHighDaily": 36, "s1Name": "通信", "s1Total": 32, "s1New": 7, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 20, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "电力", "s3Total": 19, "s3New": 10, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "元器件", "w1Total": 15, "w1New": 1, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "ST", "w2Total": 14, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 9, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-28", "volume": 29682, "limitUp": 101, "limitDown": 8, "bomb": 21, "chain": 9, "newHigh": 336, "newLow": 1403, "newHighDaily": 108, "s1Name": "芯片", "s1Total": 75, "s1New": 30, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 53, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 25, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "元器件", "w1Total": 23, "w1New": 7, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 15, "w2New": 7, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST", "w3Total": 15, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-27", "volume": 32599, "limitUp": 47, "limitDown": 22, "bomb": 22, "chain": 8, "newHigh": 274, "newLow": 1490, "newHighDaily": 68, "s1Name": "芯片", "s1Total": 55, "s1New": 8, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 38, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 24, "s3New": 3, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "元器件", "w1Total": 15, "w1New": 3, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 13, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST", "w3Total": 11, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-25", "volume": 32269, "limitUp": 103, "limitDown": 15, "bomb": 33, "chain": 23, "newHigh": 477, "newLow": 785, "newHighDaily": 152, "s1Name": "芯片", "s1Total": 130, "s1New": 55, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 55, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 52, "s3New": 19, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 29, "w1New": 5, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 19, "w2New": 5, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "元器件", "w3Total": 15, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-22", "volume": 29247, "limitUp": 115, "limitDown": 5, "bomb": 21, "chain": 11, "newHigh": 414, "newLow": 1098, "newHighDaily": 224, "s1Name": "芯片", "s1Total": 97, "s1New": 73, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 54, "s2New": 18, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 39, "s3New": 32, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 31, "w1New": 19, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 21, "w2New": 9, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "化工", "w3Total": 12, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-21", "volume": 34816, "limitUp": 33, "limitDown": 25, "bomb": 66, "chain": 6, "newHigh": 224, "newLow": 784, "newHighDaily": 61, "s1Name": "机器人", "s1Total": 44, "s1New": 10, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 28, "s2New": 6, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 15, "s3New": 1, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 14, "w1New": 4, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "ST", "w2Total": 10, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "医药", "w3Total": 10, "w3New": 2, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-20", "volume": 29764, "limitUp": 61, "limitDown": 22, "bomb": 19, "chain": 10, "newHigh": 540, "newLow": 531, "newHighDaily": 112, "s1Name": "芯片", "s1Total": 173, "s1New": 45, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 55, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 49, "s3New": 8, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 45, "w1New": 10, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 23, "w2New": 11, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST", "w3Total": 18, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-19", "volume": 29090, "limitUp": 90, "limitDown": 8, "bomb": 12, "chain": 19, "newHigh": 535, "newLow": 236, "newHighDaily": 134, "s1Name": "芯片", "s1Total": 139, "s1New": 42, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 59, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 58, "s3New": 20, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 41, "w1New": 9, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 19, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "化工", "w3Total": 18, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-18", "volume": 29171, "limitUp": 81, "limitDown": 18, "bomb": 34, "chain": 9, "newHigh": 481, "newLow": 731, "newHighDaily": 125, "s1Name": "芯片", "s1Total": 111, "s1New": 25, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 55, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 43, "s3New": 12, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 38, "w1New": 20, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 25, "w2New": 6, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST板块", "w3Total": 20, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-15", "volume": 33702, "limitUp": 54, "limitDown": 15, "bomb": 38, "chain": 6, "newHigh": 507, "newLow": 514, "newHighDaily": 82, "s1Name": "芯片", "s1Total": 121, "s1New": 19, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 45, "s2New": 12, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 42, "s3New": 8, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "ST", "w1Total": 29, "w1New": 2, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "通信", "w2Total": 28, "w2New": 4, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "锂电池", "w3Total": 23, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-14", "volume": 33881, "limitUp": 52, "limitDown": 17, "bomb": 31, "chain": 16, "newHigh": 650, "newLow": 307, "newHighDaily": 87, "s1Name": "芯片", "s1Total": 158, "s1New": 24, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 68, "s2New": 7, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 58, "s3New": 5, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 40, "w1New": 4, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "ST", "w2Total": 35, "w2New": 5, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "锂电池", "w3Total": 32, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-13", "volume": 32654, "limitUp": 112, "limitDown": 2, "bomb": 24, "chain": 17, "newHigh": 777, "newLow": 173, "newHighDaily": 137, "s1Name": "芯片", "s1Total": 167, "s1New": 28, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 99, "s2New": 16, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 81, "s3New": 25, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 43, "w1New": 4, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 39, "w2New": 6, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST", "w3Total": 34, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-12", "volume": 32697, "limitUp": 57, "limitDown": 7, "bomb": 23, "chain": 17, "newHigh": 736, "newLow": 125, "newHighDaily": 80, "s1Name": "芯片", "s1Total": 150, "s1New": 17, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 92, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 59, "s3New": 5, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 47, "w1New": 5, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 40, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "st板块", "w3Total": 34, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-11", "volume": 35640, "limitUp": 92, "limitDown": 3, "bomb": 34, "chain": 19, "newHigh": 788, "newLow": 62, "newHighDaily": 190, "s1Name": "芯片", "s1Total": 150, "s1New": 50, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 89, "s2New": 26, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 74, "s3New": 14, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 58, "w1New": 14, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 49, "w2New": 10, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "st板块", "w3Total": 31, "w3New": 6, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-08", "volume": 30757, "limitUp": 126, "limitDown": 1, "bomb": 38, "chain": 18, "newHigh": 661, "newLow": 91, "newHighDaily": 116, "s1Name": "芯片", "s1Total": 105, "s1New": 19, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 68, "s2New": 11, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 66, "s3New": 12, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 41, "w1New": 7, "w1Reason": "底部放量异动", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 49, "w2New": 6, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-07", "volume": 31683, "limitUp": 127, "limitDown": 35, "bomb": 31, "chain": 19, "newHigh": 643, "newLow": 116, "newHighDaily": 149, "s1Name": "芯片", "s1Total": 111, "s1New": 26, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 68, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 63, "s3New": 21, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 32, "w1New": 9, "w1Reason": "底部放量异动", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "算力", "w2Total": 58, "w2New": 15, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-05-06", "volume": 32268, "limitUp": 125, "limitDown": 41, "bomb": 30, "chain": 17, "newHigh": 543, "newLow": 141, "newHighDaily": 163, "s1Name": "芯片", "s1Total": 91, "s1New": 38, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 71, "s2New": 21, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 47, "s3New": 24, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 21, "w1New": 6, "w1Reason": "底部放量异动", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "通信", "w2Total": 40, "w2New": 14, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-30", "volume": 27400, "limitUp": 79, "limitDown": 34, "bomb": 13, "chain": 15, "newHigh": 362, "newLow": 155, "newHighDaily": 69, "s1Name": "芯片", "s1Total": 60, "s1New": 21, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 59, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "一季报增长", "s3Total": 34, "s3New": 12, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 27, "w1New": 4, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "算力", "w2Total": 26, "w2New": 4, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-29", "volume": 26089, "limitUp": 119, "limitDown": 5, "bomb": 23, "chain": 11, "newHigh": 399, "newLow": 275, "newHighDaily": 92, "s1Name": "芯片", "s1Total": 55, "s1New": 13, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 54, "s2New": 13, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 35, "s3New": 11, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 32, "w1New": 6, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "一季报增长", "w2Total": 23, "w2New": 7, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-28", "volume": 25505, "limitUp": 54, "limitDown": 27, "bomb": 13, "chain": 11, "newHigh": 362, "newLow": 348, "newHighDaily": 69, "s1Name": "芯片", "s1Total": 57, "s1New": 13, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 42, "s2New": 2, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 31, "s3New": 10, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 28, "w1New": 3, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "化工", "w2Total": 15, "w2New": 4, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-27", "volume": 26048, "limitUp": 72, "limitDown": 22, "bomb": 18, "chain": 9, "newHigh": 388, "newLow": 352, "newHighDaily": 81, "s1Name": "芯片", "s1Total": 59, "s1New": 16, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 48, "s2New": 9, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 42, "s3New": 13, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 24, "w1New": 1, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "st板块", "w2Total": 13, "w2New": 5, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-24", "volume": 26419, "limitUp": 59, "limitDown": 13, "bomb": 20, "chain": 8, "newHigh": 372, "newLow": 334, "newHighDaily": 73, "s1Name": "芯片", "s1Total": 49, "s1New": 14, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 44, "s2New": 16, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 33, "s3New": 6, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 33, "w1New": 1, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 15, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-23", "volume": 28045, "limitUp": 59, "limitDown": 20, "bomb": 22, "chain": 9, "newHigh": 409, "newLow": 192, "newHighDaily": 64, "s1Name": "芯片", "s1Total": 51, "s1New": 6, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 45, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 42, "s3New": 8, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 36, "w1New": 4, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 15, "w2New": 1, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "化工", "w3Total": 17, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-22", "volume": 25600, "limitUp": 63, "limitDown": 10, "bomb": 16, "chain": 9, "newHigh": 479, "newLow": 108, "newHighDaily": 114, "s1Name": "通信", "s1Total": 73, "s1New": 14, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 62, "s2New": 20, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "锂电池", "s3Total": 51, "s3New": 16, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 44, "w1New": 14, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "化工", "w2Total": 18, "w2New": 4, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 18, "w3New": 1, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-21", "volume": 24085, "limitUp": 65, "limitDown": 12, "bomb": 18, "chain": 10, "newHigh": 405, "newLow": 68, "newHighDaily": 74, "s1Name": "通信", "s1Total": 63, "s1New": 9, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 43, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "锂电池", "s3Total": 40, "s3New": 4, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 33, "w1New": 3, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 17, "w2New": 1, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-20", "volume": 26000, "limitUp": 72, "limitDown": 4, "bomb": 20, "chain": 17, "newHigh": 416, "newLow": 49, "newHighDaily": 84, "s1Name": "通信", "s1Total": 62, "s1New": 9, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "算力", "s2Total": 51, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 46, "s3New": 3, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 46, "w1New": 9, "w1Reason": "政策/事件催化", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 18, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-17", "volume": 24300, "limitUp": 70, "limitDown": 5, "bomb": 18, "chain": 16, "newHigh": 390, "newLow": 36, "newHighDaily": 80, "s1Name": "通信", "s1Total": 62, "s1New": 14, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 49, "s2New": 7, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 48, "s3New": 14, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 44, "w1New": 11, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 17, "w2New": 3, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-16", "volume": 23500, "limitUp": 80, "limitDown": 5, "bomb": 22, "chain": 18, "newHigh": 356, "newLow": 26, "newHighDaily": 96, "s1Name": "通信", "s1Total": 50, "s1New": 15, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 46, "s2New": 9, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 44, "s3New": 13, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 34, "w1New": 12, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "医药", "w2Total": 21, "w2New": 3, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 15, "w3New": 4, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-15", "volume": 24200, "limitUp": 60, "limitDown": 8, "bomb": 15, "chain": 14, "newHigh": 289, "newLow": 10, "newHighDaily": 63, "s1Name": "通信", "s1Total": 41, "s1New": 6, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 37, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 32, "s3New": 8, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 26, "w1New": 4, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "医药", "w2Total": 19, "w2New": 9, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 12, "w3New": 4, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-14", "volume": 24000, "limitUp": 71, "limitDown": 7, "bomb": 20, "chain": 16, "newHigh": 285, "newLow": 30, "newHighDaily": 65, "s1Name": "通信", "s1Total": 49, "s1New": 10, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 37, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 32, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 27, "w1New": 11, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "化工", "w2Total": 10, "w2New": 0, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "医药", "w3Total": 10, "w3New": 5, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-13", "volume": 22200, "limitUp": 75, "limitDown": 5, "bomb": 18, "chain": 15, "newHigh": 252, "newLow": 47, "newHighDaily": 63, "s1Name": "通信", "s1Total": 49, "s1New": 14, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 24, "s2New": 6, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 23, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "锂电池", "w1Total": 18, "w1New": 6, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "化工", "w2Total": 12, "w2New": 6, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "st板块", "w3Total": 11, "w3New": 4, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-10", "volume": 23400, "limitUp": 77, "limitDown": 7, "bomb": 25, "chain": 20, "newHigh": 224, "newLow": 11, "newHighDaily": 51, "s1Name": "通信", "s1Total": 39, "s1New": 9, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 23, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 18, "s3New": 3, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "医药", "w1Total": 12, "w1New": 3, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 12, "w2New": 4, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 10, "w3New": 1, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-09", "volume": 24500, "limitUp": 135, "limitDown": 8, "bomb": 30, "chain": 30, "newHigh": 212, "newLow": 16, "newHighDaily": 73, "s1Name": "通信", "s1Total": 42, "s1New": 14, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 18, "s2New": 6, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 18, "s3New": 11, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "医药", "w1Total": 11, "w1New": 4, "w1Reason": "政策/事件催化", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 10, "w2New": 5, "w2Reason": "政策/事件催化", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 9, "w3New": 2, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-08", "volume": 24500, "limitUp": 123, "limitDown": 12, "bomb": 35, "chain": 28, "newHigh": 179, "newLow": 7, "newHighDaily": 70, "s1Name": "通信", "s1Total": 36, "s1New": 13, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "医药", "s2Total": 17, "s2New": 2, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 13, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 10, "w1New": 7, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 7, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "基础建设", "w3Total": 7, "w3New": 2, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-07", "volume": 16100, "limitUp": 101, "limitDown": 12, "bomb": 22, "chain": 15, "newHigh": 137, "newLow": 592, "newHighDaily": 40, "s1Name": "通信", "s1Total": 23, "s1New": 9, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "医药", "s2Total": 22, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 8, "s3New": 2, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 6, "w1New": 0, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "光伏", "w2Total": 5, "w2New": 3, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "基础建设", "w3Total": 5, "w3New": 1, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-03", "volume": 16700, "limitUp": 38, "limitDown": 30, "bomb": 12, "chain": 6, "newHigh": 123, "newLow": 771, "newHighDaily": 37, "s1Name": "医药", "s1Total": 23, "s1New": 5, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 18, "s2New": 7, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 6, "s3New": 6, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 6, "w1New": 2, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "储能", "w2Total": 4, "w2New": 2, "w2Reason": "政策/事件催化", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "农业4", "w3Total": 4, "w3New": 0, "w3Reason": "政策/事件催化", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-02", "volume": 18600, "limitUp": 32, "limitDown": 10, "bomb": 15, "chain": 8, "newHigh": 134, "newLow": 295, "newHighDaily": 34, "s1Name": "医药", "s1Total": 25, "s1New": 6, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 13, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "锂电池", "s3Total": 6, "s3New": 3, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 5, "w1New": 2, "w1Reason": "政策/事件催化", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "基础建设", "w2Total": 5, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "智能电网", "w3Total": 4, "w3New": 1, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-04-01", "volume": 20300, "limitUp": 65, "limitDown": 9, "bomb": 18, "chain": 12, "newHigh": 151, "newLow": 36, "newHighDaily": 43, "s1Name": "医药", "s1Total": 22, "s1New": 7, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 15, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 11, "s3New": 3, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "电力", "w1Total": 6, "w1New": 1, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 6, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "st板块", "w3Total": 6, "w3New": 1, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-31", "volume": 18500, "limitUp": 45, "limitDown": 20, "bomb": 8, "chain": 4, "newHigh": 134, "newLow": 145, "newHighDaily": 46, "s1Name": "医药", "s1Total": 15, "s1New": 2, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "电力", "s2Total": 11, "s2New": 7, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 8, "s3New": 3, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 8, "w1New": 1, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "基础建设", "w2Total": 7, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "st板块", "w3Total": 5, "w3New": 1, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-30", "volume": 19300, "limitUp": 58, "limitDown": 6, "bomb": 44, "chain": 12, "newHigh": 156, "newLow": 266, "newHighDaily": 39, "s1Name": "锂电池", "s1Total": 21, "s1New": 4, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "医药", "s2Total": 17, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 14, "s3New": 3, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 8, "w1New": 1, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "电力", "w2Total": 8, "w2New": 1, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "环保", "w3Total": 7, "w3New": 0, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-27", "volume": 20000, "limitUp": 60, "limitDown": 10, "bomb": 13, "chain": 6, "newHigh": 161, "newLow": 331, "newHighDaily": 45, "s1Name": "电力", "s1Total": 24, "s1New": 3, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 16, "s2New": 6, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 13, "s3New": 4, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 9, "w1New": 0, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "环保", "w2Total": 7, "w2New": 2, "w2Reason": "政策/事件催化", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "医药", "w3Total": 7, "w3New": 4, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-26", "volume": 19600, "limitUp": 50, "limitDown": 14, "bomb": 10, "chain": 5, "newHigh": 156, "newLow": 141, "newHighDaily": 45, "s1Name": "电力", "s1Total": 31, "s1New": 5, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "锂电池", "s2Total": 13, "s2New": 9, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 11, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 11, "w1New": 4, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "ST板块", "w2Total": 9, "w2New": 3, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "医药", "w3Total": 6, "w3New": 1, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-25", "volume": 23000, "limitUp": 72, "limitDown": 5, "bomb": 15, "chain": 9, "newHigh": 164, "newLow": 9, "newHighDaily": 60, "s1Name": "电力", "s1Total": 37, "s1New": 12, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "算力", "s2Total": 15, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 14, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "芯片", "w1Total": 9, "w1New": 4, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "光伏", "w2Total": 6, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "医药", "w3Total": 6, "w3New": 2, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-24", "volume": 22500, "limitUp": 68, "limitDown": 7, "bomb": 14, "chain": 7, "newHigh": 123, "newLow": 490, "newHighDaily": 64, "s1Name": "电力", "s1Total": 26, "s1New": 14, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "算力", "s2Total": 11, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 7, "s3New": 5, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 6, "w1New": 4, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "st板块", "w2Total": 6, "w2New": 3, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "储能", "w3Total": 5, "w3New": 0, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-23", "volume": 21500, "limitUp": 70, "limitDown": 8, "bomb": 16, "chain": 8, "newHigh": 71, "newLow": 2466, "newHighDaily": 15, "s1Name": "电力", "s1Total": 11, "s1New": 2, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "煤炭", "s2Total": 6, "s2New": 3, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "st板块", "s3Total": 5, "s3New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "储能", "w1Total": 4, "w1New": 0, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "锂电池", "w2Total": 4, "w2New": 0, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "算力", "w3Total": 3, "w3New": 1, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-20", "volume": 22000, "limitUp": 65, "limitDown": 10, "bomb": 15, "chain": 7, "newHigh": 134, "newLow": 1244, "newHighDaily": 39, "s1Name": "电力", "s1Total": 15, "s1New": 7, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 13, "s2New": 3, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "st板块", "s3Total": 11, "s3New": 2, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "储能", "w1Total": 8, "w1New": 6, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "算力", "w2Total": 8, "w2New": 1, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "医药", "w3Total": 6, "w3New": 3, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-19", "volume": 21000, "limitUp": 58, "limitDown": 13, "bomb": 13, "chain": 6, "newHigh": 206, "newLow": 748, "newHighDaily": 43, "s1Name": "电力", "s1Total": 25, "s1New": 3, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "算力", "s2Total": 17, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 14, "s3New": 5, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "ST板块", "w1Total": 13, "w1New": 1, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "医药", "w2Total": 12, "w2New": 1, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "通信", "w3Total": 10, "w3New": 2, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-18", "volume": 20500, "limitUp": 55, "limitDown": 16, "bomb": 12, "chain": 5, "newHigh": 263, "newLow": 0, "newHighDaily": 64, "s1Name": "电力", "s1Total": 32, "s1New": 6, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "算力", "s2Total": 21, "s2New": 13, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "化工", "s3Total": 18, "s3New": 3, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "st板块", "w1Total": 16, "w1New": 4, "w1Reason": "其他", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "医药", "w2Total": 15, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "芯片", "w3Total": 14, "w3New": 3, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-17", "volume": 22000, "limitUp": 60, "limitDown": 12, "bomb": 14, "chain": 6, "newHigh": 253, "newLow": 0, "newHighDaily": 50, "s1Name": "电力", "s1Total": 27, "s1New": 4, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 24, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "st板块", "s3Total": 17, "s3New": 4, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "医药", "w1Total": 13, "w1New": 0, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "芯片", "w2Total": 12, "w2New": 4, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "风电", "w3Total": 11, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-13", "volume": 23000, "limitUp": 80, "limitDown": 4, "bomb": 18, "chain": 10, "newHigh": 419, "newLow": 0, "newHighDaily": 79, "s1Name": "化工", "s1Total": 55, "s1New": 11, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "电力", "s2Total": 44, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "医药", "s3Total": 25, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "ST板块", "w1Total": 24, "w1New": 5, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "煤炭", "w2Total": 17, "w2New": 0, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "智能电网", "w3Total": 16, "w3New": 2, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-12", "volume": 23500, "limitUp": 52, "limitDown": 5, "bomb": 21, "chain": 8, "newHigh": 511, "newLow": 0, "newHighDaily": 88, "s1Name": "化工", "s1Total": 58, "s1New": 16, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "电力", "s2Total": 57, "s2New": 7, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "智能电网", "s3Total": 37, "s3New": 5, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 33, "w1New": 5, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "ST板块", "w2Total": 25, "w2New": 4, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "智能电网", "w3Total": 37, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-11", "volume": 24000, "limitUp": 67, "limitDown": 1, "bomb": 16, "chain": 8, "newHigh": 539, "newLow": 0, "newHighDaily": 164, "s1Name": "电力", "s1Total": 56, "s1New": 10, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 50, "s2New": 33, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "智能电网", "s3Total": 50, "s3New": 4, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 42, "w1New": 8, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "通信", "w2Total": 37, "w2New": 13, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST板块", "w3Total": 24, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-10", "volume": 23500, "limitUp": 68, "limitDown": 8, "bomb": 15, "chain": 8, "newHigh": 435, "newLow": 0, "newHighDaily": 132, "s1Name": "智能电网", "s1Total": 29, "s1New": 10, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "电力", "s2Total": 46, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "算力", "s3Total": 42, "s3New": 16, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 28, "w1New": 13, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "st板块", "w2Total": 23, "w2New": 6, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "化工", "w3Total": 19, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-09", "volume": 24000, "limitUp": 65, "limitDown": 12, "bomb": 14, "chain": 7, "newHigh": 387, "newLow": 0, "newHighDaily": 76, "s1Name": "智能电网", "s1Total": 51, "s1New": 10, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "电力", "s2Total": 44, "s2New": 6, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "化工", "s3Total": 33, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 26, "w1New": 6, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "ST板块", "w2Total": 18, "w2New": 9, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "煤炭", "w3Total": 17, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-06", "volume": 25000, "limitUp": 74, "limitDown": 2, "bomb": 26, "chain": 8, "newHigh": 436, "newLow": 0, "newHighDaily": 133, "s1Name": "化工", "s1Total": 46, "s1New": 20, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "电力", "s2Total": 43, "s2New": 7, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "智能电网", "s3Total": 42, "s3New": 10, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 26, "w1New": 10, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "通信", "w2Total": 25, "w2New": 9, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST", "w3Total": 15, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-05", "volume": 24500, "limitUp": 68, "limitDown": 10, "bomb": 15, "chain": 9, "newHigh": 382, "newLow": 0, "newHighDaily": 115, "s1Name": "智能电网", "s1Total": 38, "s1New": 15, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "电力", "s2Total": 38, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "化工", "s3Total": 27, "s3New": 6, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 22, "w1New": 10, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "算力", "w2Total": 17, "w2New": 4, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "ST", "w3Total": 16, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-04", "volume": 25000, "limitUp": 72, "limitDown": 7, "bomb": 17, "chain": 11, "newHigh": 363, "newLow": 0, "newHighDaily": 79, "s1Name": "电力", "s1Total": 34, "s1New": 3, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 33, "s2New": 6, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "智能电网", "s3Total": 28, "s3New": 14, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 21, "w1New": 8, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "算力", "w2Total": 18, "w2New": 5, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "石油石化", "w3Total": 17, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-03", "volume": 23500, "limitUp": 70, "limitDown": 8, "bomb": 16, "chain": 10, "newHigh": 410, "newLow": 0, "newHighDaily": 71, "s1Name": "化工", "s1Total": 46, "s1New": 5, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "石油石化", "s2Total": 34, "s2New": 9, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "电力", "s3Total": 32, "s3New": 1, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "通信", "w1Total": 21, "w1New": 1, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "天然气", "w2Total": 19, "w2New": 12, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "煤炭", "w3Total": 17, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-03-02", "volume": 24000, "limitUp": 75, "limitDown": 7, "bomb": 18, "chain": 12, "newHigh": 712, "newLow": 0, "newHighDaily": 123, "s1Name": "化工", "s1Total": 78, "s1New": 14, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 51, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 40, "s3New": 5, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "电力", "w1Total": 36, "w1New": 5, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "算力", "w2Total": 34, "w2New": 11, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 31, "w3New": 2, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-27", "volume": 25000, "limitUp": 70, "limitDown": 5, "bomb": 16, "chain": 10, "newHigh": 739, "newLow": 0, "newHighDaily": 146, "s1Name": "化工", "s1Total": 73, "s1New": 11, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 50, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 50, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 38, "w1New": 9, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "智能电网", "w2Total": 32, "w2New": 1, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "电力", "w3Total": 32, "w3New": 16, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-26", "volume": 26000, "limitUp": 61, "limitDown": 3, "bomb": 23, "chain": 9, "newHigh": 657, "newLow": 0, "newHighDaily": 147, "s1Name": "化工", "s1Total": 70, "s1New": 7, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 51, "s2New": 25, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 46, "s3New": 15, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 37, "w1New": 15, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "智能电网", "w2Total": 35, "w2New": 10, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 31, "w3New": 9, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-25", "volume": 20000, "limitUp": 100, "limitDown": 7, "bomb": 25, "chain": 8, "newHigh": 572, "newLow": 0, "newHighDaily": 159, "s1Name": "化工", "s1Total": 76, "s1New": 30, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 33, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 27, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "智能电网", "w1Total": 24, "w1New": 3, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "基础建设", "w2Total": 23, "w2New": 5, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "算力", "w3Total": 21, "w3New": 6, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-24", "volume": 26000, "limitUp": 109, "limitDown": 14, "bomb": 42, "chain": 7, "newHigh": 474, "newLow": 0, "newHighDaily": 153, "s1Name": "化工", "s1Total": 49, "s1New": 20, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 36, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 25, "s3New": 8, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "智能电网", "w1Total": 23, "w1New": 10, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 23, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "算力", "w3Total": 20, "w3New": 6, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-20", "volume": 22500, "limitUp": 68, "limitDown": 7, "bomb": 13, "chain": 10, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-19", "volume": 23000, "limitUp": 72, "limitDown": 6, "bomb": 15, "chain": 11, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-18", "volume": 21500, "limitUp": 65, "limitDown": 8, "bomb": 13, "chain": 10, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-17", "volume": 22000, "limitUp": 70, "limitDown": 7, "bomb": 14, "chain": 11, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-16", "volume": 21000, "limitUp": 75, "limitDown": 4, "bomb": 16, "chain": 12, "newHigh": 0, "newLow": 0, "newHighDaily": 0, "s1Name": "", "s1Total": 0, "s1New": 0, "s2Name": "", "s2Total": 0, "s2New": 0, "s3Name": "", "s3Total": 0, "s3New": 0, "w1Name": "", "w1Total": 0, "w1New": 0, "w1Reason": "", "w2Name": "", "w2Total": 0, "w2New": 0, "w2Reason": "", "w3Name": "", "w3Total": 0, "w3New": 0, "w3Reason": "", "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-13", "volume": 18000, "limitUp": 70, "limitDown": 5, "bomb": 14, "chain": 10, "newHigh": 382, "newLow": 0, "newHighDaily": 70, "s1Name": "化工", "s1Total": 30, "s1New": 3, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "算力", "s2Total": 25, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 23, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "芯片", "w1Total": 22, "w1New": 5, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "通信", "w2Total": 22, "w2New": 8, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "基础建设", "w3Total": 17, "w3New": 0, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-12", "volume": 13400, "limitUp": 50, "limitDown": 12, "bomb": 10, "chain": 6, "newHigh": 448, "newLow": 65, "newHighDaily": 83, "s1Name": "化工", "s1Total": 40, "s1New": 1, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "算力", "s2Total": 31, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 28, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "光伏", "w1Total": 25, "w1New": 2, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "基础建设", "w2Total": 22, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "AI应用", "w3Total": 19, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-11", "volume": 19842, "limitUp": 65, "limitDown": 5, "bomb": 15, "chain": 9, "newHigh": 427, "newLow": 32, "newHighDaily": 83, "s1Name": "化工", "s1Total": 43, "s1New": 8, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "光伏", "s2Total": 25, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "AI应用", "s3Total": 24, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "算力", "w1Total": 23, "w1New": 11, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "地产链", "w2Total": 20, "w2New": 0, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "通信", "w3Total": 20, "w3New": 2, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-10", "volume": 22500, "limitUp": 60, "limitDown": 1, "bomb": 7, "chain": 8, "newHigh": 455, "newLow": 14, "newHighDaily": 106, "s1Name": "化工", "s1Total": 38, "s1New": 9, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "光伏", "s2Total": 30, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 29, "s3New": 8, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "AI应用", "w1Total": 29, "w1New": 13, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "地产链", "w2Total": 23, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "基础建设", "w3Total": 20, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-09", "volume": 8900, "limitUp": 83, "limitDown": 3, "bomb": 25, "chain": 0, "newHigh": 424, "newLow": 13, "newHighDaily": 144, "s1Name": "化工", "s1Total": 36, "s1New": 15, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "光伏", "s2Total": 34, "s2New": 18, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 27, "s3New": 13, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "地产链", "w1Total": 23, "w1New": 6, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 22, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "AI应用", "w3Total": 19, "w3New": 12, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-06", "volume": 22000, "limitUp": 55, "limitDown": 3, "bomb": 18, "chain": 8, "newHigh": 321, "newLow": 91, "newHighDaily": 77, "s1Name": "化工", "s1Total": 22, "s1New": 10, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人概念", "s2Total": 22, "s2New": 9, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "地产链", "s3Total": 20, "s3New": 2, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "光伏", "w1Total": 19, "w1New": 5, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "基础建设", "w2Total": 18, "w2New": 1, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "通信", "w3Total": 15, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-05", "volume": 21000, "limitUp": 44, "limitDown": 3, "bomb": 10, "chain": 10, "newHigh": 323, "newLow": 54, "newHighDaily": 73, "s1Name": "基础建设", "s1Total": 20, "s1New": 2, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "地产链", "s2Total": 19, "s2New": 3, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "化工", "s3Total": 19, "s3New": 2, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 17, "w1New": 3, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "通信", "w2Total": 16, "w2New": 0, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "光伏", "w3Total": 16, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-04", "volume": 23000, "limitUp": 68, "limitDown": 13, "bomb": 20, "chain": 10, "newHigh": 396, "newLow": 43, "newHighDaily": 115, "s1Name": "光伏", "s1Total": 29, "s1New": 12, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 27, "s2New": 7, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "通信", "s3Total": 26, "s3New": 2, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "商业航天", "w1Total": 21, "w1New": 6, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 19, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "基础建设", "w3Total": 19, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-03", "volume": 22000, "limitUp": 70, "limitDown": 16, "bomb": 18, "chain": 12, "newHigh": 353, "newLow": 181, "newHighDaily": 157, "s1Name": "通信", "s1Total": 28, "s1New": 5, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 23, "s2New": 1, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 22, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "光伏", "w1Total": 22, "w1New": 17, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "人工智能", "w2Total": 20, "w2New": 9, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "芯片", "w3Total": 18, "w3New": 11, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-02-02", "volume": 18500, "limitUp": 36, "limitDown": 98, "bomb": 18, "chain": 9, "newHigh": 221, "newLow": 227, "newHighDaily": 52, "s1Name": "机器人", "s1Total": 15, "s1New": 4, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "通信", "s2Total": 14, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "地产链", "s3Total": 13, "s3New": 2, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "化工", "w1Total": 12, "w1New": 1, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "基础建设", "w2Total": 10, "w2New": 1, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "人工智能", "w3Total": 10, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-30", "volume": 18500, "limitUp": 48, "limitDown": 52, "bomb": 21, "chain": 9, "newHigh": 482, "newLow": 112, "newHighDaily": 132, "s1Name": "化工", "s1Total": 63, "s1New": 4, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 52, "s2New": 26, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "农业", "s3Total": 27, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 25, "w1New": 11, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "人工智能", "w2Total": 21, "w2New": 7, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "通信", "w3Total": 18, "w3New": 13, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-29", "volume": 20000, "limitUp": 50, "limitDown": 12, "bomb": 10, "chain": 4, "newHigh": 527, "newLow": 161, "newHighDaily": 80, "s1Name": "化工", "s1Total": 75, "s1New": 11, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "有色金属", "s2Total": 35, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 31, "s3New": 4, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "石油化工", "w1Total": 24, "w1New": 3, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "人工智能", "w2Total": 23, "w2New": 8, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "光伏", "w3Total": 20, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-28", "volume": 21000, "limitUp": 55, "limitDown": 10, "bomb": 12, "chain": 5, "newHigh": 706, "newLow": 113, "newHighDaily": 115, "s1Name": "化工", "s1Total": 77, "s1New": 15, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 67, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "有色金属", "s3Total": 51, "s3New": 13, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 42, "w1New": 7, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "光伏", "w2Total": 32, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "黄金", "w3Total": 28, "w3New": 6, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-27", "volume": 21500, "limitUp": 60, "limitDown": 8, "bomb": 12, "chain": 6, "newHigh": 746, "newLow": 139, "newHighDaily": 140, "s1Name": "芯片", "s1Total": 73, "s1New": 31, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 67, "s2New": 2, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 52, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "光伏", "w1Total": 40, "w1New": 12, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "有色金属", "w2Total": 39, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "人工智能", "w3Total": 34, "w3New": 8, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-26", "volume": 22000, "limitUp": 80, "limitDown": 4, "bomb": 14, "chain": 9, "newHigh": 725, "newLow": 76, "newHighDaily": 165, "s1Name": "化工", "s1Total": 76, "s1New": 13, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 47, "s2New": 10, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 47, "s3New": 7, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "有色金属", "w1Total": 43, "w1New": 12, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "人工智能", "w2Total": 33, "w2New": 13, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "光伏", "w3Total": 30, "w3New": 8, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-23", "volume": 23000, "limitUp": 75, "limitDown": 5, "bomb": 17, "chain": 8, "newHigh": 761, "newLow": 40, "newHighDaily": 182, "s1Name": "芯片", "s1Total": 71, "s1New": 18, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 65, "s2New": 7, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 50, "s3New": 11, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "光伏", "w1Total": 40, "w1New": 16, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "有色金属", "w2Total": 38, "w2New": 8, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "商业航天", "w3Total": 33, "w3New": 17, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-22", "volume": 23500, "limitUp": 70, "limitDown": 7, "bomb": 16, "chain": 7, "newHigh": 654, "newLow": 43, "newHighDaily": 140, "s1Name": "芯片", "s1Total": 75, "s1New": 12, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 63, "s2New": 11, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 49, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "有色金属", "w1Total": 36, "w1New": 4, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "智能电网", "w2Total": 29, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "通信", "w3Total": 24, "w3New": 6, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-21", "volume": 24000, "limitUp": 79, "limitDown": 3, "bomb": 18, "chain": 8, "newHigh": 637, "newLow": 55, "newHighDaily": 168, "s1Name": "芯片", "s1Total": 98, "s1New": 26, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "化工", "s2Total": 58, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 47, "s3New": 8, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "有色金属", "w1Total": 41, "w1New": 12, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "智能电网", "w2Total": 39, "w2New": 4, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "锂电池", "w3Total": 22, "w3New": 14, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-20", "volume": 25000, "limitUp": 63, "limitDown": 16, "bomb": 15, "chain": 10, "newHigh": 542, "newLow": 31, "newHighDaily": 126, "s1Name": "芯片", "s1Total": 77, "s1New": 26, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "智能电网", "s2Total": 51, "s2New": 6, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "化工", "s3Total": 45, "s3New": 13, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 45, "w1New": 7, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "有色金属", "w2Total": 27, "w2New": 4, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "医药", "w3Total": 17, "w3New": 6, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-19", "volume": 26000, "limitUp": 103, "limitDown": 5, "bomb": 25, "chain": 11, "newHigh": 557, "newLow": 69, "newHighDaily": 160, "s1Name": "芯片", "s1Total": 67, "s1New": 13, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 51, "s2New": 16, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "智能电网", "s3Total": 50, "s3New": 20, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "化工", "w1Total": 38, "w1New": 12, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "有色金属", "w2Total": 25, "w2New": 5, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "商业航天", "w3Total": 23, "w3New": 8, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-16", "volume": 31000, "limitUp": 80, "limitDown": 8, "bomb": 18, "chain": 14, "newHigh": 478, "newLow": 59, "newHighDaily": 127, "s1Name": "芯片", "s1Total": 76, "s1New": 31, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 38, "s2New": 15, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "智能电网", "s3Total": 33, "s3New": 17, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "化工", "w1Total": 26, "w1New": 3, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "有色金属", "w2Total": 24, "w2New": 0, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "通信", "w3Total": 22, "w3New": 7, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-15", "volume": 35000, "limitUp": 55, "limitDown": 41, "bomb": 20, "chain": 16, "newHigh": 496, "newLow": 34, "newHighDaily": 98, "s1Name": "人工智能", "s1Total": 53, "s1New": 8, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 46, "s2New": 13, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "有色金属", "s3Total": 36, "s3New": 6, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "化工", "w1Total": 29, "w1New": 11, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "智能电网", "w2Total": 24, "w2New": 5, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "机器人", "w3Total": 23, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-14", "volume": 39800, "limitUp": 99, "limitDown": 14, "bomb": 59, "chain": 18, "newHigh": 0, "newLow": 21, "newHighDaily": 0, "s1Name": "人工智能", "s1Total": 114, "s1New": 46, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "商业航天", "s2Total": 38, "s2New": 14, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 36, "s3New": 16, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "有色金属", "w1Total": 30, "w1New": 2, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "机器人", "w2Total": 26, "w2New": 6, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "医药", "w3Total": 22, "w3New": 10, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-13", "volume": 36900, "limitUp": 110, "limitDown": 3, "bomb": 35, "chain": 30, "newHigh": 573, "newLow": 9, "newHighDaily": 130, "s1Name": "人工智能", "s1Total": 79, "s1New": 32, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "商业航天", "s2Total": 40, "s2New": 1, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人概念", "s3Total": 39, "s3New": 14, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "芯片", "w1Total": 32, "w1New": 0, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "有色金属", "w2Total": 30, "w2New": 3, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "化工", "w3Total": 27, "w3New": 4, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-12", "volume": 36400, "limitUp": 197, "limitDown": 2, "bomb": 40, "chain": 45, "newHigh": 767, "newLow": 6, "newHighDaily": 218, "s1Name": "商业航天", "s1Total": 150, "s1New": 36, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "人工智能", "s2Total": 89, "s2New": 53, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 59, "s3New": 11, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 41, "w1New": 10, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "核电", "w2Total": 31, "w2New": 4, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "有色金属", "w3Total": 29, "w3New": 3, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-09", "volume": 32000, "limitUp": 95, "limitDown": 3, "bomb": 24, "chain": 22, "newHigh": 614, "newLow": 9, "newHighDaily": 143, "s1Name": "商业航天", "s1Total": 112, "s1New": 15, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 53, "s2New": 5, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "机器人", "s3Total": 37, "s3New": 14, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "人工智能", "w1Total": 36, "w1New": 12, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "化工", "w2Total": 32, "w2New": 2, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "有色金属", "w3Total": 30, "w3New": 12, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-08", "volume": 28322, "limitUp": 92, "limitDown": 4, "bomb": 29, "chain": 26, "newHigh": 537, "newLow": 14, "newHighDaily": 130, "s1Name": "商业航天", "s1Total": 115, "s1New": 41, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 57, "s2New": 11, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "化工", "s3Total": 32, "s3New": 1, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 26, "w1New": 4, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "核电", "w2Total": 24, "w2New": 9, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "人工智能", "w3Total": 21, "w3New": 5, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-07", "volume": 31000, "limitUp": 100, "limitDown": 2, "bomb": 22, "chain": 35, "newHigh": 479, "newLow": 6, "newHighDaily": 119, "s1Name": "商业航天", "s1Total": 75, "s1New": 15, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "芯片", "s2Total": 59, "s2New": 26, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "化工", "s3Total": 35, "s3New": 9, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "机器人", "w1Total": 29, "w1New": 6, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "人工智能", "w2Total": 18, "w2New": 5, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "有色金属", "w3Total": 23, "w3New": 1, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-06", "volume": 29500, "limitUp": 120, "limitDown": 1, "bomb": 28, "chain": 43, "newHigh": 427, "newLow": 7, "newHighDaily": 137, "s1Name": "商业航天", "s1Total": 78, "s1New": 22, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 30, "s2New": 8, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 32, "s3New": 11, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "有色金属", "w1Total": 26, "w1New": 7, "w1Reason": "", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "化工", "w2Total": 26, "w2New": 9, "w2Reason": "", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "人工智能", "w3Total": 17, "w3New": 7, "w3Reason": "", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}, {"date": "2026-01-05", "volume": 28000, "limitUp": 120, "limitDown": 3, "bomb": 30, "chain": 20, "newHigh": 344, "newLow": 55, "newHighDaily": 106, "s1Name": "商业航天", "s1Total": 66, "s1New": 19, "s1b1Name": "", "s1b1New": 0, "s1b2Name": "", "s1b2New": 0, "s2Name": "机器人", "s2Total": 30, "s2New": 4, "s2b1Name": "", "s2b1New": 0, "s2b2Name": "", "s2b2New": 0, "s3Name": "芯片", "s3Total": 24, "s3New": 15, "s3b1Name": "", "s3b1New": 0, "s3b2Name": "", "s3b2New": 0, "w1Name": "有色金属", "w1Total": 19, "w1New": 3, "w1Reason": "政策/事件催化", "w1b1Name": "", "w1b1New": 0, "w1b2Name": "", "w1b2New": 0, "w2Name": "化工", "w2Total": 18, "w2New": 2, "w2Reason": "其他", "w2b1Name": "", "w2b1New": 0, "w2b2Name": "", "w2b2New": 0, "w3Name": "锂电池", "w3Total": 13, "w3New": 4, "w3Reason": "其他", "w3b1Name": "", "w3b1New": 0, "w3b2Name": "", "w3b2New": 0}];
+  var map={};
+  for(var i=0;i<existing.length;i++)map[existing[i].date]=existing[i];
+  for(var i=0;i<backup.length;i++){
+    var bd=backup[i].date;
+    if(map[bd]){
+      // Force restore verified 涨跌停数据 from backup
+      map[bd].limitUp=backup[i].limitUp;
+      map[bd].limitDown=backup[i].limitDown;
+      map[bd].bomb=backup[i].bomb;
+    } else {
+      map[bd]=backup[i];
+    }
+  }
+  var result=Object.values(map).sort(function(a,b){return a.date<b.date?1:-1});
+  localStorage.setItem(k,JSON.stringify(result));
+  console.log("涨停数据已恢复 "+result.length+" records");
+})();
+</script>
+
+
 <script>
 (function(){
   var key = 'astock_dashboard_v3';
@@ -479,7 +505,10 @@
   <div class="dashboard">
     <div class="header">
       <h1>📊 A股波段情绪·综合看板 Pro 最终版</h1>
-      <div class="date-badge" id="currentDate"></div>
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <button class="btn btn-secondary btn-sm" onclick="localStorage.removeItem('astock_dashboard_v3');location.reload()" title="清除本地缓存，从data.json重新同步">🔄 从JSON同步</button>
+        <div class="date-badge" id="currentDate"></div>
+      </div>
     </div>
 
     <div class="legend-card">
@@ -631,6 +660,16 @@
         <div class="input-group"><label style="font-size:0.6rem;">新增</label><input type="number" id="s3b2New" placeholder="0" min="0" style="font-size:0.78rem;"></div>
       </div>
 
+      <div class="section-label">📈 涨停最多板块（连板天梯前3，填名称+涨停数）</div>
+      <div class="input-grid" style="background:#eef2ff;border-radius:0.8rem;padding:0.6rem;margin-bottom:0.4rem;">
+        <div class="input-group"><label>涨停🥇</label><input type="text" id="l1Name" placeholder="板块名称"></div>
+        <div class="input-group"><label>涨停数</label><input type="number" id="l1Count" placeholder="数量" min="0"></div>
+        <div class="input-group"><label>涨停🥈</label><input type="text" id="l2Name" placeholder="板块名称"></div>
+        <div class="input-group"><label>涨停数</label><input type="number" id="l2Count" placeholder="数量" min="0"></div>
+        <div class="input-group"><label>涨停🥉</label><input type="text" id="l3Name" placeholder="板块名称"></div>
+        <div class="input-group"><label>涨停数</label><input type="number" id="l3Count" placeholder="数量" min="0"></div>
+      </div>
+
       <!-- 潜在异动板块（新增数字输入框） -->
       <div class="watch-section">
         <h4>🔍 潜在异动板块观察（新高总数 & 今日新增 & 细分分支）</h4>
@@ -730,6 +769,7 @@
               <th>新增新高</th>
               <th>封板率<span class="tooltip">涨停/(涨停+炸板)</span></th>
               <th>强势板块</th>
+              <th>涨停最多</th>
               <th>信号</th>
               <th>潜在异动</th>
               <th>操作</th>
@@ -789,127 +829,6 @@
     </div>
   </div>
 
-  <div class="card ai-rec-card" id="aiRecCard">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-      <div class="card-title">🤖 AI 智能选股推荐</div>
-      <div>
-        <span id="aiMarketTag" class="ai-market-tag">—</span>
-        <button class="btn btn-ai-rec" id="aiRefreshBtn" onclick="getRecommendations()" style="margin-left:8px; padding:5px 14px; border-radius:8px; font-size:0.8rem;">🔄 刷新推荐</button>
-      </div>
-    </div>
-    <div id="aiRecContent">
-      <div class="ai-rec-loading" id="aiRecLoading"><div class="spinner"></div>加载中...</div>
-    </div>
-    <div class="ai-rec-hist">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div style="font-size:0.9rem;font-weight:600;color:#94a3b8;">📜 历史推荐</div>
-        <span style="font-size:0.7rem;color:#64748b;">记录介入→卖出，自动统计胜率</span>
-      </div>
-      <div id="aiRecHistoryContent">
-        <div class="ai-rec-empty" style="padding:1rem;">暂无历史记录</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 交易日志 -->
-  <div class="card journal-card" id="journalCard">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-      <span style="font-weight:700;font-size:1rem;">📒 交易日志</span>
-      <span style="font-size:0.7rem;color:#94a3b8;">数据存储在浏览器本地</span>
-    </div>
-    <div class="journal-grid">
-      <div class="journal-form" id="journalForm">
-        <div class="jf-group">
-          <label>代码</label>
-          <input type="text" id="jCode" placeholder="e.g., 600519" style="width:80px;">
-        </div>
-        <div class="jf-group">
-          <label>名称</label>
-          <input type="text" id="jName" placeholder="股票名称" style="width:100px;">
-        </div>
-        <div class="jf-group">
-          <label>买入日期</label>
-          <input type="date" id="jBuyDate" style="width:130px;">
-        </div>
-        <div class="jf-group">
-          <label>买入价</label>
-          <input type="number" id="jBuyPrice" placeholder="0.00" step="0.01" style="width:80px;">
-        </div>
-        <div class="jf-group">
-          <label>股数</label>
-          <input type="number" id="jShares" placeholder="100" style="width:80px;">
-        </div>
-        <div class="jf-group">
-          <label>备注</label>
-          <input type="text" id="jNote" placeholder="介入理由" style="width:120px;">
-        </div>
-        <button class="btn-journal" onclick="journalAdd()">+ 记录买入</button>
-      </div>
-      <div class="journal-summary" id="journalSummary"></div>
-      <div class="journal-tabs" id="journalTabs">
-        <button class="active" onclick="journalSwitchTab('open')">持仓中</button>
-        <button onclick="journalSwitchTab('closed')">已平仓</button>
-      </div>
-      <div id="journalTableWrap" style="overflow-x:auto;"></div>
-    </div>
-  </div>
-
-  <!-- 条件单参考 -->
-  <div class="card" id="orderRefCard" style="border:1px solid #e2e8f0;display:none;">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-      <span style="font-weight:700;font-size:1rem;">📋 条件单参考</span>
-      <span style="font-size:0.7rem;color:#94a3b8;">基于MA60位置自动计算买入/止损/止盈区间</span>
-    </div>
-    <div style="overflow-x:auto;">
-      <table class="journal-table" id="orderRefTable">
-        <thead><tr>
-          <th>名称</th><th>当前价</th><th>MA60</th><th>距MA60</th>
-          <th>买入区间 ↓</th><th>止损</th><th>止盈①</th><th>止盈②</th>
-          <th>建议仓位</th><th>状态</th>
-        </tr></thead>
-        <tbody id="orderRefBody"></tbody>
-      </table>
-    </div>
-    <div style="margin-top:0.5rem;font-size:0.7rem;color:#94a3b8;display:flex;gap:1rem;flex-wrap:wrap;">
-      <span>⚫ <b>买入区间</b> = MA60×0.97 ~ MA60×1.03</span>
-      <span>🔴 <b>止损</b> = 收盘破MA60 或 -7% (取较近者)</span>
-      <span>🟢 <b>止盈①</b> = +15%减半仓</span>
-      <span>🟢 <b>止盈②</b> = +20%全清</span>
-    </div>
-  </div>
-
-  <!-- 持仓跟踪 -->
-  <div class="card" id="trackingCard" style="border:1px solid #e2e8f0;">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-      <span style="font-weight:700;font-size:1rem;">📊 持仓跟踪</span>
-      <div style="display:flex;align-items:center;gap:0.5rem;">
-        <input type="date" id="trackingDate" style="background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:4px;padding:2px 6px;font-size:0.7rem;width:120px;" onchange="positionTrack(this.value)">
-        <span style="font-size:0.7rem;color:#94a3b8;">选日期查看历史持仓状态</span>
-      </div>
-    </div>
-    <div id="trackingContent">
-      <div style="padding:1rem;font-size:0.8rem;color:#64748b;">
-        先在交易日志记录买入，再看这里
-      </div>
-    </div>
-  </div>
-
-  <!-- 三步筛选分析 -->
-  <div class="card" id="threeStepCard" style="border:1px solid #e2e8f0;">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;">
-      <span style="font-weight:700;font-size:1rem;">🔍 三步筛选分析</span>
-      <span style="font-size:0.7rem;color:#94a3b8;">定出身 → 看标签 → 判位置</span>
-    </div>
-    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem;">
-      <input type="text" id="tsStockInput" placeholder="输入股票代码或名称，如 600171" style="flex:1;min-width:180px;background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:4px;padding:4px 8px;font-size:0.8rem;" onkeydown="if(event.key==='Enter')threeStepAnalyze()">
-      <button onclick="threeStepAnalyze()" style="background:#3b82f6;color:white;border:none;border-radius:4px;padding:4px 12px;font-size:0.8rem;cursor:pointer;">分析</button>
-      <button onclick="document.getElementById('tsStockInput').value='';document.getElementById('tsResult').innerHTML='<div style=\"padding:1rem;font-size:0.8rem;color:#64748b;\">输入股票代码或名称开始分析</div>'" style="background:#1e293b;color:#94a3b8;border:1px solid #334155;border-radius:4px;padding:4px 8px;font-size:0.7rem;cursor:pointer;">清空</button>
-    </div>
-    <div id="tsResult">
-      <div style="padding:1rem;font-size:0.8rem;color:#64748b;">输入股票代码或名称开始分析</div>
-    </div>
-  </div>
-
   <div class="modal" id="chartModal">
     <div class="modal-content">
       <button class="modal-close" id="modalClose">✕</button>
@@ -926,7 +845,6 @@
       // surgeState declared here, initialized by renderSurgeMonitor
       var surgeState = { data: null, page: 0, pageSize: 15, dates: [], sort: { field: 'sector_in_hot', desc: true }, filter: 'all', riskFilter: 'all', ma60Filter: 'all', qualityFilter: 'all', _curDate: '' };
       // 持仓风控: ma5/ma13价格映射
-      var maDataMap = {};
 
       const SAMPLE_DATA = [
         { date: '2026-05-01', volume: 7800, limitUp: 48, limitDown: 22, bomb: 15, chain: 12,
@@ -936,7 +854,8 @@
           s3Name: '通信', s3Total: 22, s3New: 8, s3b1Name: '', s3b1New: 0, s3b2Name: '', s3b2New: 0,
           w1Name: '', w1Total: 0, w1New: 0, w1Reason: '', w1b1Name: '', w1b1New: 0, w1b2Name: '', w1b2New: 0,
           w2Name: '', w2Total: 0, w2New: 0, w2Reason: '', w2b1Name: '', w2b1New: 0, w2b2Name: '', w2b2New: 0,
-          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0 },
+          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0,
+          l1Name: '', l1Count: 0, l2Name: '', l2Count: 0, l3Name: '', l3Count: 0 },
         { date: '2026-05-02', volume: 8100, limitUp: 55, limitDown: 18, bomb: 18, chain: 16,
           newHigh: 135, newLow: 48, newHighDaily: 32,
           s1Name: '芯片', s1Total: 38, s1New: 18, s1b1Name: '设备', s1b1New: 8, s1b2Name: '封测', s1b2New: 5,
@@ -944,7 +863,8 @@
           s3Name: 'AI', s3Total: 25, s3New: 9, s3b1Name: '', s3b1New: 0, s3b2Name: '', s3b2New: 0,
           w1Name: '', w1Total: 0, w1New: 0, w1Reason: '', w1b1Name: '', w1b1New: 0, w1b2Name: '', w1b2New: 0,
           w2Name: '', w2Total: 0, w2New: 0, w2Reason: '', w2b1Name: '', w2b1New: 0, w2b2Name: '', w2b2New: 0,
-          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0 },
+          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0,
+          l1Name: '', l1Count: 0, l2Name: '', l2Count: 0, l3Name: '', l3Count: 0 },
         { date: '2026-05-05', volume: 9100, limitUp: 72, limitDown: 9, bomb: 21, chain: 24,
           newHigh: 170, newLow: 35, newHighDaily: 41,
           s1Name: '芯片', s1Total: 52, s1New: 24, s1b1Name: '设备', s1b1New: 12, s1b2Name: '材料', s1b2New: 6,
@@ -952,7 +872,8 @@
           s3Name: '算力', s3Total: 35, s3New: 15, s3b1Name: '服务器', s3b1New: 7, s3b2Name: '', s3b2New: 0,
           w1Name: '', w1Total: 0, w1New: 0, w1Reason: '', w1b1Name: '', w1b1New: 0, w1b2Name: '', w1b2New: 0,
           w2Name: '', w2Total: 0, w2New: 0, w2Reason: '', w2b1Name: '', w2b1New: 0, w2b2Name: '', w2b2New: 0,
-          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0 },
+          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0,
+          l1Name: '', l1Count: 0, l2Name: '', l2Count: 0, l3Name: '', l3Count: 0 },
         { date: '2026-05-06', volume: 32268, limitUp: 125, limitDown: 63, bomb: 41, chain: 17,
           newHigh: 543, newLow: 141, newHighDaily: 163,
           s1Name: '芯片', s1Total: 91, s1New: 38, s1b1Name: '设备', s1b1New: 18, s1b2Name: '设计', s1b2New: 12,
@@ -960,7 +881,8 @@
           s3Name: '金融科技', s3Total: 48, s3New: 22, s3b1Name: '数字货币', s3b1New: 12, s3b2Name: '', s3b2New: 0,
           w1Name: '', w1Total: 0, w1New: 0, w1Reason: '', w1b1Name: '', w1b1New: 0, w1b2Name: '', w1b2New: 0,
           w2Name: '', w2Total: 0, w2New: 0, w2Reason: '', w2b1Name: '', w2b1New: 0, w2b2Name: '', w2b2New: 0,
-          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0 },
+          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0,
+          l1Name: '', l1Count: 0, l2Name: '', l2Count: 0, l3Name: '', l3Count: 0 },
         { date: '2026-05-07', volume: 31683, limitUp: 127, limitDown: 54, bomb: 41, chain: 19,
           newHigh: 643, newLow: 116, newHighDaily: 149,
           s1Name: '芯片', s1Total: 111, s1New: 26, s1b1Name: '设备', s1b1New: 10, s1b2Name: '材料', s1b2New: 8,
@@ -968,7 +890,8 @@
           s3Name: '通信', s3Total: 63, s3New: 21, s3b1Name: '光模块', s3b1New: 12, s3b2Name: '卫星', s3b2New: 5,
           w1Name: '', w1Total: 0, w1New: 0, w1Reason: '', w1b1Name: '', w1b1New: 0, w1b2Name: '', w1b2New: 0,
           w2Name: '', w2Total: 0, w2New: 0, w2Reason: '', w2b1Name: '', w2b1New: 0, w2b2Name: '', w2b2New: 0,
-          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0 },
+          w3Name: '', w3Total: 0, w3New: 0, w3Reason: '', w3b1Name: '', w3b1New: 0, w3b2Name: '', w3b2New: 0,
+          l1Name: '', l1Count: 0, l2Name: '', l2Count: 0, l3Name: '', l3Count: 0 },
         { date: '2026-05-08', volume: 30757, limitUp: 126, limitDown: 34, bomb: 38, chain: 18,
           newHigh: 661, newLow: 91, newHighDaily: 116,
           s1Name: '芯片', s1Total: 105, s1New: 19, s1b1Name: '设备', s1b1New: 7, s1b2Name: '材料', s1b2New: 5,
@@ -1040,6 +963,12 @@
       const w3b1New = document.getElementById('w3b1New');
       const w3b2Name = document.getElementById('w3b2Name');
       const w3b2New = document.getElementById('w3b2New');
+      const l1Name = document.getElementById('l1Name');
+      const l1Count = document.getElementById('l1Count');
+      const l2Name = document.getElementById('l2Name');
+      const l2Count = document.getElementById('l2Count');
+      const l3Name = document.getElementById('l3Name');
+      const l3Count = document.getElementById('l3Count');
       const addBtn = document.getElementById('addBtn');
       const tableBody = document.querySelector('#dataTable tbody');
       const emptyMessage = document.getElementById('emptyMessage');
@@ -1107,7 +1036,10 @@
               w2b2Name: r.w2b2Name || '', w2b2New: parseInt(r.w2b2New) || 0,
               w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Reason: r.w3Reason || '',
               w3b1Name: r.w3b1Name || '', w3b1New: parseInt(r.w3b1New) || 0,
-              w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0
+              w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0,
+              l1Name: r.l1Name || '', l1Count: parseInt(r.l1Count) || 0,
+              l2Name: r.l2Name || '', l2Count: parseInt(r.l2Count) || 0,
+              l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0
             }));
           } catch (e) { records = []; }
         } else { records = []; }
@@ -1160,6 +1092,14 @@
           if (b1 || b2) s += ` [${[b1,b2].filter(Boolean).join(', ')}]`;
           parts.push(s);
         }
+        return parts.length ? parts.join(' · ') : '—';
+      }
+
+      function getLimitUpSummary(rec) {
+        const parts = [];
+        if (rec.l1Name) parts.push(`${rec.l1Name}(${rec.l1Count||0})`);
+        if (rec.l2Name) parts.push(`${rec.l2Name}(${rec.l2Count||0})`);
+        if (rec.l3Name) parts.push(`${rec.l3Name}(${rec.l3Count||0})`);
         return parts.length ? parts.join(' · ') : '—';
       }
 
@@ -1298,6 +1238,9 @@
         w3Reason.value = rec.w3Reason || '';
         w3b1Name.value = rec.w3b1Name || ''; w3b1New.value = rec.w3b1New || '';
         w3b2Name.value = rec.w3b2Name || ''; w3b2New.value = rec.w3b2New || '';
+        l1Name.value = rec.l1Name || ''; l1Count.value = rec.l1Count || '';
+        l2Name.value = rec.l2Name || ''; l2Count.value = rec.l2Count || '';
+        l3Name.value = rec.l3Name || ''; l3Count.value = rec.l3Count || '';
         updateWatchSignal('watch1Reason', 'watch1Signal');
         updateWatchSignal('watch2Reason', 'watch2Signal');
         updateWatchSignal('watch3Reason', 'watch3Signal');
@@ -1341,6 +1284,7 @@
               <td>${rec.newHighDaily||0}</td>
               <td><strong>${sealRateStr}</strong></td>
               <td class="sector-cell">${getSectorSummary(rec)}</td>
+              <td class="sector-cell" style="color:#2563eb;font-size:0.8rem;">${getLimitUpSummary(rec)}</td>
               <td class="${signalCls}">${signal.label}</td>
               <td class="sector-cell" style="color:#a16207;">${getWatchSummary(rec)}</td>
               <td style="white-space:nowrap;">
@@ -1619,7 +1563,10 @@
           w2b2Name: w2b2Name.value.trim(), w2b2New: parseInt(w2b2New.value) || 0,
           w3Name: w3Name.value.trim(), w3Total: parseInt(w3Total.value) || 0, w3New: parseInt(w3New.value) || 0, w3Reason: w3Reason.value,
           w3b1Name: w3b1Name.value.trim(), w3b1New: parseInt(w3b1New.value) || 0,
-          w3b2Name: w3b2Name.value.trim(), w3b2New: parseInt(w3b2New.value) || 0
+          w3b2Name: w3b2Name.value.trim(), w3b2New: parseInt(w3b2New.value) || 0,
+          l1Name: l1Name.value.trim(), l1Count: parseInt(l1Count.value) || 0,
+          l2Name: l2Name.value.trim(), l2Count: parseInt(l2Count.value) || 0,
+          l3Name: l3Name.value.trim(), l3Count: parseInt(l3Count.value) || 0
         };
 
         const existIdx = records.findIndex(r => r.date === date);
@@ -1649,6 +1596,8 @@
         w2b1Name.value = ''; w2b1New.value = ''; w2b2Name.value = ''; w2b2New.value = '';
         w3Name.value = ''; w3Total.value = ''; w3New.value = ''; w3Reason.value = ''; w3Signal.value = '';
         w3b1Name.value = ''; w3b1New.value = ''; w3b2Name.value = ''; w3b2New.value = '';
+        l1Name.value = ''; l1Count.value = ''; l2Name.value = ''; l2Count.value = '';
+        l3Name.value = ''; l3Count.value = '';
         setDefaultDate();
       }
 
@@ -1706,375 +1655,9 @@
             // ===========================
       //  推荐历史管理（localStorage）
       // ===========================
-      const AI_REC_KEY = 'ai_rec_history';
 
-      function loadRecHistory() {
-        try {
-          const raw = localStorage.getItem(AI_REC_KEY);
-          return raw ? JSON.parse(raw) : [];
-        } catch { return []; }
-      }
 
-      function saveRecHistory(h) {
-        localStorage.setItem(AI_REC_KEY, JSON.stringify(h));
-      }
 
-      // 记录介入
-      async function recordEntry(code, name, sector, reason) {
-        const h = loadRecHistory();
-        const today = getTodayStr();
-        // 获取当日价格（从最新百日新高找）
-        let price = null;
-        try {
-          const ds = today.replace(/-/g, '');
-          let resp;
-          try { resp = await fetch('百日新高系统/百日新高_' + ds + '.json'); } catch { resp = null; }
-          if (!resp || !resp.ok) {
-            const dir = await fetch('百日新高系统/');
-            const html = await dir.text();
-            const m = [...html.matchAll(/百日新高_(\d{8})\.json/g)];
-            if (m.length) {
-              m.sort((a,b) => b[1].localeCompare(a[1]));
-              resp = await fetch('百日新高系统/百日新高_' + m[0][1] + '.json');
-            }
-          }
-          if (resp && resp.ok) {
-            const d = await resp.json();
-            const stk = (d.stocks || []).find(s => s.code === code);
-            if (stk) price = stk.close || null;
-          }
-        } catch {}
-        if (!price) price = prompt('请输入 ' + name + ' 的买入价格：') || '—';
-
-        h.push({
-          code, name, sector, reason,
-          entryPrice: price,
-          entryDate: today,
-          exitPrice: null,
-          exitDate: null,
-          pnl: null,
-          status: 'holding'
-        });
-        saveRecHistory(h);
-        renderRecHistory();
-        alert('✅ 已记录介入：' + name + ' @ ' + price);
-      }
-
-      // 记录卖出
-      function recordExit(code) {
-        const h = loadRecHistory();
-        const idx = h.findIndex(r => r.code === code && r.status === 'holding');
-        if (idx < 0) { alert('未找到持仓记录'); return; }
-        const p = prompt('请输入 ' + h[idx].name + ' 的卖出价格：');
-        if (!p) return;
-        const entry = parseFloat(h[idx].entryPrice);
-        const exit = parseFloat(p);
-        if (isNaN(entry) || isNaN(exit)) { alert('价格异常'); return; }
-        h[idx].exitPrice = p;
-        h[idx].exitDate = getTodayStr();
-        h[idx].pnl = ((exit - entry) / entry * 100).toFixed(1);
-        h[idx].status = 'closed';
-        saveRecHistory(h);
-        renderRecHistory();
-        alert('✅ 已记录卖出：' + h[idx].name + ' @ ' + p + ' (盈亏:' + h[idx].pnl + '%)');
-      }
-
-      // 渲染历史
-      function renderRecHistory() {
-        const el = document.getElementById('aiRecHistoryContent');
-        if (!el) return;
-        const h = loadRecHistory();
-        if (h.length === 0) {
-          el.innerHTML = '<div class="ai-rec-empty" style="padding:1rem;">暂无历史记录</div>';
-          return;
-        }
-
-        // 统计
-        const total = h.length;
-        const closed = h.filter(r => r.status === 'closed');
-        const wins = closed.filter(r => parseFloat(r.pnl) > 0);
-        const winRate = closed.length ? (wins.length / closed.length * 100).toFixed(0) : '—';
-        const avgPnl = closed.length
-          ? (closed.reduce((s, r) => s + parseFloat(r.pnl || 0), 0) / closed.length).toFixed(1)
-          : '—';
-        const holding = h.filter(r => r.status === 'holding');
-
-        let html = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px;">';
-        html += '<div class="stat-card" style="flex:1;min-width:80px;"><div class="num num-yellow">' + total + '</div><div class="label">总推荐</div></div>';
-        html += '<div class="stat-card" style="flex:1;min-width:80px;"><div class="num num-green">' + winRate + '%</div><div class="label">胜率</div></div>';
-        html += '<div class="stat-card" style="flex:1;min-width:80px;"><div class="num num-cyan">' + avgPnl + '%</div><div class="label">平均盈亏</div></div>';
-        html += '<div class="stat-card" style="flex:1;min-width:80px;"><div class="num num-red">' + holding.length + '</div><div class="label">持仓中</div></div>';
-        html += '</div>';
-
-        // 持仓
-        if (holding.length) {
-          html += '<div style="font-size:0.85rem;font-weight:600;margin:8px 0 4px;color:#fbbf24;">📌 当前持仓</div>';
-          for (const r of holding) {
-            html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 8px;background:rgba(255,255,255,0.04);border-radius:6px;margin:2px 0;font-size:0.8rem;">';
-            html += '<span>' + r.name + '(' + r.code + ') <span style="color:#94a3b8;">@' + r.entryPrice + ' ' + r.entryDate + '</span></span>';
-            html += '<button class="btn btn-sm btn-outline" onclick="recordExit(\'' + r.code + '\')" style="padding:2px 8px;font-size:0.7rem;">💹 卖出</button>';
-            html += '</div>';
-          }
-        }
-
-        // 已完结
-        if (closed.length) {
-          html += '<div style="font-size:0.85rem;font-weight:600;margin:8px 0 4px;color:#94a3b8;">📜 历史交易</div>';
-          html += '<table style="font-size:0.75rem;"><thead><tr><th>代码</th><th>名称</th><th>介入</th><th>卖出</th><th>盈亏</th></tr></thead><tbody>';
-          const recentClosed = [...closed].reverse().slice(0, 20);
-          for (const r of recentClosed) {
-            const pnlCls = parseFloat(r.pnl) > 0 ? 'num-green' : 'num-red';
-            html += '<tr><td>' + r.code + '</td><td>' + r.name + '</td><td>' + r.entryDate + '</td><td>' + (r.exitDate || '—') + '</td><td class="' + pnlCls + '">' + r.pnl + '%</td></tr>';
-          }
-          html += '</tbody></table>';
-        }
-
-        html += '<div style="text-align:right;margin-top:8px;">';
-        html += '<button class="btn btn-sm btn-outline" onclick="if(confirm(\'确定清空所有历史推荐记录？\')){saveRecHistory([]);renderRecHistory();}" style="padding:2px 10px;font-size:0.7rem;">🗑️ 清空历史</button>';
-        html += '</div>';
-
-        el.innerHTML = html;
-      }
-
-      // ===========================
-      //  AI 智能选股推荐（龙头分歧低吸策略）
-      // ===========================
-      async function getRecommendations() {
-        const contentEl = document.getElementById('aiRecContent');
-        const tagEl = document.getElementById('aiMarketTag');
-        contentEl.innerHTML = '<div class="ai-rec-loading"><div class="spinner"></div>分析中...</div>';
-
-        let allFiles = [];
-        try {
-          const dirResp = await fetch('百日新高系统/');
-          const html = await dirResp.text();
-          const matches = [...html.matchAll(/百日新高_(\d{8})\.json/g)];
-          allFiles = matches.map(m => ({ date: m[1], file: '百日新高_' + m[1] + '.json' }));
-          allFiles.sort((a, b) => b.date.localeCompare(a.date));
-        } catch(e) { console.warn('getRecommendations dir fetch failed:', e); }
-
-        if (allFiles.length === 0) {
-          contentEl.innerHTML = '<div class="ai-rec-empty">暂无百日新高历史数据</div>';
-          return;
-        }
-
-        const recentFiles = allFiles.slice(0, 20);
-        const sectorDayCount = {};
-        const stockDayCount = {};
-        const stockLastDate = {};
-        const stockMaxChange = {};
-        const stockFirstClose = {}; // 个股首次上榜收盘价（用于估算距MA60幅度）
-        let latestStocks = [];
-
-        const jsonResults = await Promise.allSettled(
-          recentFiles.map(f =>
-            fetch('百日新高系统/' + f.file).then(r => r.json()).then(data => ({ date: f.date, data }))
-          )
-        );
-
-        for (const result of jsonResults) {
-          if (result.status !== 'fulfilled' || !result.value) continue;
-          const { date, data } = result.value;
-          const stocks = data.stocks || [];
-          const sectorSet = new Set();
-          for (const s of stocks) {
-            const sec = (s.sector || '').trim();
-            if (sec && sec !== '其他') sectorSet.add(sec);
-            const code = s.code || '';
-            if (code) {
-              stockDayCount[code] = (stockDayCount[code] || 0) + 1;
-              stockLastDate[code] = date;
-              const chg = parseFloat(s.change) || 0;
-              if (!stockMaxChange[code] || chg > stockMaxChange[code]) {
-                stockMaxChange[code] = chg;
-              }
-              // 记录首次上榜价格（日期升序，越早越接近MA60）
-              if (!stockFirstClose[code]) {
-                stockFirstClose[code] = { price: parseFloat(s.close) || 0, date: date };
-              }
-            }
-          }
-          for (const sec of sectorSet) sectorDayCount[sec] = (sectorDayCount[sec] || 0) + 1;
-          if (date === allFiles[0].date) {
-            latestStocks = stocks.map(s => ({
-              ...s,
-              change: parseFloat(s.change) || 0,
-              volume_ratio: parseFloat(s.volume_ratio) || 0
-            }));
-          }
-        }
-
-        const topSectors = Object.entries(sectorDayCount)
-          .sort((a, b) => b[1] - a[1]).slice(0, 3).map(e => e[0]);
-
-        const excludedNames = ['ST', '*ST', 'SST', 'S*ST'];
-        const candidates = [];
-        const usedCodes = new Set();
-
-        function starScore(stock, appears) {
-          let s = 0;
-          if (topSectors.includes(stock.sector || '')) s += 2;
-          if (appears >= 3) s += 2;
-          else if (appears >= 1) s += 1;
-          const vr = stock.volume_ratio || 0;
-          if (vr >= 0.8 && vr <= 2.5) s += 1;
-          if (stock.change >= -3 && stock.change <= 1) s += 1;
-          return Math.max(1, Math.min(5, s));
-        }
-        function starStr(n) { return '★'.repeat(n) + '☆'.repeat(5 - n); }
-
-        for (const sector of topSectors) {
-          const pool = latestStocks.filter(s => (s.sector || '') === sector);
-          for (const s of pool) {
-            if (usedCodes.has(s.code)) continue;
-            if (excludedNames.some(kw => (s.name || '').includes(kw))) continue;
-            if (s.change >= 9.5) continue;
-            if (s.change < -7) continue;
-            const isDivergence = s.change >= -3 && s.change <= 3;
-            const appears = stockDayCount[s.code] || 0;
-            const lastDate = stockLastDate[s.code] || '';
-            const latestDate = allFiles[0].date;
-            const daysSinceLast = latestDate && lastDate
-              ? Math.abs(parseInt(latestDate) - parseInt(lastDate)) : 99;
-            const recentBurst = daysSinceLast <= 10;
-            if (!recentBurst && appears < 2) continue;
-            // 必须有近期强势表现（涨停或接近涨停）才能算龙头分歧
-            const maxChg = stockMaxChange[s.code] || 0;
-            if (maxChg < 8) continue;
-            // 估算距60日均线幅度：首次上榜价≈近期启动位置，现价比首次涨幅>25%说明短期涨幅过大
-            const firstInfo = stockFirstClose[s.code];
-            let cumulativeRise = 0;
-            if (firstInfo && firstInfo.price > 0) {
-              cumulativeRise = ((parseFloat(s.close) - firstInfo.price) / firstInfo.price) * 100;
-              if (cumulativeRise > 25) continue; // 短期涨幅过大，远离均线
-            const score = starScore(s, appears);
-            usedCodes.add(s.code);
-            candidates.push({ ...s, appearsDays: appears, score, isDivergence });
-          }
-        }
-
-        if (candidates.length < 3) {
-          for (const s of latestStocks) {
-            if (candidates.length >= 3) break;
-            if (usedCodes.has(s.code)) continue;
-            if (excludedNames.some(kw => (s.name || '').includes(kw))) continue;
-            if (s.change >= 9.5 || s.change < -7) continue;
-            const appears = stockDayCount[s.code] || 0;
-            if (appears < 1) continue;
-            const maxChg = stockMaxChange[s.code] || 0;
-            if (maxChg < 8) continue;
-            const firstInfo = stockFirstClose[s.code];
-            if (firstInfo && firstInfo.price > 0) {
-              const rise = ((parseFloat(s.close) - firstInfo.price) / firstInfo.price) * 100;
-              if (rise > 25) continue;
-            }
-            const score = starScore(s, appears);
-            usedCodes.add(s.code);
-            candidates.push({ ...s, appearsDays: appears, score, isDivergence: s.change >= -3 && s.change <= 3 });
-          }
-        }
-
-        candidates.sort((a, b) => {
-          if (a.isDivergence !== b.isDivergence) return a.isDivergence ? -1 : 1;
-          if (b.score !== a.score) return b.score - a.score;
-          return (b.volume_ratio || 0) - (a.volume_ratio || 0);
-        });
-
-        const topPicks = candidates.slice(0, 3);
-
-        // 渲染
-        if (topPicks.length === 0) {
-          contentEl.innerHTML = '<div class="ai-rec-empty">暂无符合条件标的</div>';
-          return;
-        }
-
-        let summaryLine = '';
-        let marketTag = '中性市场';
-        let badgeClass = 'badge-normal';
-        let diffVal = 0;
-        if (records.length) {
-          const rec = records[records.length - 1];
-          const nh = rec.newHigh || 0;
-          const nl = rec.newLow || 0;
-          diffVal = nh - nl;
-          summaryLine = '百日新高 ' + nh + ' / 新低 ' + nl + ' · 差值 ' + (diffVal >= 0 ? '+' : '') + diffVal;
-          if (diffVal > 200) { marketTag = '强势市场'; badgeClass = 'badge-strong'; }
-          else if (diffVal < -50) { marketTag = '谨慎市场'; badgeClass = 'badge-ice'; }
-        }
-        tagEl.textContent = marketTag;
-        tagEl.className = 'ai-market-tag ' + badgeClass;
-
-        // 仓位建议
-        let posAdvice = '';
-        if (diffVal > 200) posAdvice = '单票≤20%仓位，最多3只';
-        else if (diffVal > 50) posAdvice = '单票≤15%仓位，最多2只';
-        else if (diffVal > -50) posAdvice = '单票≤10%仓位，轻仓试错';
-        else posAdvice = '空仓观望或≤5%仓位';
-
-        const sectorSummary = topSectors.length
-          ? '龙头板块（近20日）：' + topSectors.join('、')
-          : '暂无板块数据';
-
-        let html = '<div class="ai-summary">' + summaryLine + '<br>' + sectorSummary + '<br>策略：龙头分歧低吸 · 涨停后回踩介入</div>';
-
-        // 交易规则
-        html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:12px;">';
-        html += '<div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:8px 12px;"><div style="font-size:0.75rem;color:#94a3b8;">📌 介入条件</div><div style="font-size:0.8rem;">分歧回踩缩量止跌时<br>或分时均线附近低吸</div></div>';
-        html += '<div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:8px 12px;"><div style="font-size:0.75rem;color:#94a3b8;">⚖️ 仓位建议</div><div style="font-size:0.8rem;font-weight:600;color:#fbbf24;">' + posAdvice + '</div></div>';
-        html += '<div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:8px 12px;"><div style="font-size:0.75rem;color:#94a3b8;">🎯 止盈条件</div><div style="font-size:0.8rem;">浮盈+15%减半仓<br>浮盈+25%全出</div></div>';
-        html += '<div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:8px 12px;"><div style="font-size:0.75rem;color:#94a3b8;">🛑 止损条件</div><div style="font-size:0.8rem;color:#fca5a5;">浮亏-7%无条件止损<br>10日无波动离场</div></div>';
-        html += '</div>';
-
-        html += '<div class="ai-rec-grid">';
-        for (const s of topPicks) {
-          const sector = s.sector || '其他';
-          const price = s.close || '—';
-          const appears = s.appearsDays || 1;
-          const score = s.score || 1;
-          const stars = starStr(score);
-          const tag = s.isDivergence ? '分歧回踩' : '趋势跟踪';
-
-          const maxChg = stockMaxChange[s.code] || 0;
-          const firstInfo = stockFirstClose[s.code];
-          const cumRise = firstInfo && firstInfo.price > 0
-            ? ((parseFloat(s.close) - firstInfo.price) / firstInfo.price * 100).toFixed(1) : '—';
-          let reason = sector + '龙头';
-          if (appears >= 3) reason += '·' + appears + '次上榜确认';
-          if (s.isDivergence) reason += '·曾涨' + maxChg.toFixed(1) + '%后分歧·低吸机会';
-          else reason += '·趋势延续·曾涨' + maxChg.toFixed(1) + '%';
-          reason += '·阶段涨幅' + cumRise + '%·量比' + (s.volume_ratio ? s.volume_ratio.toFixed(1) + '倍' : '—');
-
-          // 检查是否已介入
-          const h = loadRecHistory();
-          const alreadyIn = h.some(r => r.code === s.code && r.status === 'holding');
-
-          html += '<div class="ai-rec-item">';
-          html += '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">';
-          html += '<span class="name">' + s.name + '</span>';
-          html += '<span class="code">' + s.code + '</span>';
-          html += '<span class="badge badge-strong">' + stars + '</span>';
-          html += '<span style="font-size:0.7rem;padding:2px 6px;border-radius:4px;background:rgba(251,191,36,0.2);color:#fbbf24;">' + tag + '</span>';
-          if (alreadyIn) html += '<span style="font-size:0.7rem;padding:2px 6px;border-radius:4px;background:rgba(34,197,94,0.2);color:#4ade80;">持仓中</span>';
-          html += '</div>';
-          html += '<div><span class="sector">' + sector + '</span>';
-          html += ' <span style="font-size:0.75rem;color:#94a3b8;">价格' + price + ' · 当日' + (s.change >= 0 ? '+' : '') + s.change + '%</span></div>';
-          html += '<div class="reason">' + reason + '</div>';
-          html += '<div style="margin-top:6px;display:flex;gap:6px;">';
-          if (!alreadyIn) {
-            html += '<button class="btn btn-sm btn-ai-rec" onclick="recordEntry(\'' + s.code + '\',\'' + s.name + '\',\'' + sector + '\',\'' + reason.replace(/'/g, '') + '\')" style="padding:2px 10px;font-size:0.7rem;">📝 介入</button>';
-          } else {
-            html += '<button class="btn btn-sm btn-outline" onclick="recordExit(\'' + s.code + '\')" style="padding:2px 10px;font-size:0.7rem;">💹 卖出</button>';
-          }
-          html += '</div>';
-          html += '</div>';
-        }
-        html += '</div>';
-
-        contentEl.innerHTML = html;
-        renderRecHistory();
-        renderBattlePlan();
-      }
-      }
 
       function importData(file) {
         const reader = new FileReader();
@@ -2110,7 +1693,10 @@
               w2b2Name: r.w2b2Name || '', w2b2New: parseInt(r.w2b2New) || 0,
               w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Reason: r.w3Reason || '',
               w3b1Name: r.w3b1Name || '', w3b1New: parseInt(r.w3b1New) || 0,
-              w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0
+              w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0,
+              l1Name: r.l1Name || '', l1Count: parseInt(r.l1Count) || 0,
+              l2Name: r.l2Name || '', l2Count: parseInt(r.l2Count) || 0,
+              l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0
             }));
             records.sort((a, b) => a.date < b.date ? -1 : 1);
             saveRecords();
@@ -2740,7 +2326,10 @@
                   w2b2Name: r.w2b2Name || '', w2b2New: parseInt(r.w2b2New) || 0,
                   w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Reason: r.w3Reason || '',
                   w3b1Name: r.w3b1Name || '', w3b1New: parseInt(r.w3b1New) || 0,
-                  w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0
+                  w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0,
+                  l1Name: r.l1Name || '', l1Count: parseInt(r.l1Count) || 0,
+                  l2Name: r.l2Name || '', l2Count: parseInt(r.l2Count) || 0,
+                  l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0
                 };
               });
               saveRecords();
@@ -2892,85 +2481,6 @@
       }
 
       // ── 条件单参考 ──
-      function renderOrderRef() {
-        var card = document.getElementById('orderRefCard');
-        var tbody = document.getElementById('orderRefBody');
-        if (!card || !tbody) return;
-        if (!surgeState || !surgeState.data || !surgeState.data.stocks || !surgeState.data.stocks.length) {
-          card.style.display = 'none';
-          return;
-        }
-        card.style.display = 'block';
-        var stocks = surgeState.data.stocks;
-        var html = '';
-        for (var i = 0; i < Math.min(stocks.length, 25); i++) {
-          var s = stocks[i];
-          var close = s.latest_close || s.close || 0;
-          var pma = s.pct_from_ma60 || 0;
-          var pma13 = s.pct_from_ma13 || 0;
-          if (!close || !pma) { html += '<tr><td colspan="11" style="color:#94a3b8;">缺少价格数据</td></tr>'; continue; }
-          var ma60 = close / (1 + pma / 100);
-          var ma13 = close / (1 + pma13 / 100);
-          var buyLow = ma60 * 0.97;
-          var buyHigh = ma60 * 1.03;
-          var stopLoss = Math.min(ma60, close * 0.93);
-          var tp1 = close * 1.15;
-          var tp2 = close * 1.20;
-          // Determine status
-          var status, statusColor;
-          if (pma < -3) { status = '已跌破'; statusColor = '#ef4444'; }
-          else if (pma <= 3) { status = '✅ 可介入'; statusColor = '#22c55e'; }
-          else if (pma <= 8) { status = '⏳ 等回踩'; statusColor = '#eab308'; }
-          else { status = '❌ 已偏离'; statusColor = '#ef4444'; }
-          // Position suggestion
-          var posHint = '';
-          var rating = s.rating || 'D';
-          if (pma > 3 && pma <= 8) { posHint = '等回踩+3~+5%'; }
-          else if (pma >= -3 && pma <= 3) {
-            if (rating === 'A+' || rating === 'A') posHint = '≤10%';
-            else if (rating === 'B') posHint = '≤5%';
-            else posHint = '≤3%';
-          } else { posHint = '—'; }
-          html += '<tr>'
-            + '<td style="font-weight:600;">' + (s.name || s.code) + '<br><span style="font-size:0.6rem;color:#94a3b8;">' + s.code.split('.')[0] + '</span></td>'
-            + '<td style="font-weight:600;">' + close.toFixed(2) + '</td>'
-            + '<td style="color:#64748b;">' + ma60.toFixed(2) + '</td>'
-            + '<td style="color:' + (pma < 0 ? '#60a5fa' : '#f87171') + ';">' + (pma >= 0 ? '+' : '') + pma.toFixed(1) + '%</td>'
-            + '<td style="color:#22c55e;">' + buyLow.toFixed(2) + ' ~ ' + buyHigh.toFixed(2) + '</td>'
-            + '<td style="color:#ef4444;">' + stopLoss.toFixed(2) + '</td>'
-            + '<td style="color:#eab308;">' + tp1.toFixed(2) + '</td>'
-            + '<td style="color:#22c55e;">' + tp2.toFixed(2) + '</td>'
-            + '<td style="color:#94a3b8;">' + posHint + '</td>'
-            + '<td style="color:' + statusColor + ';font-weight:600;font-size:0.8rem;">' + status + '</td>'
-            + '</tr>';
-        }
-        tbody.innerHTML = html;
-      }
-      function buildCurrentPriceMap(data) {
-        var map = {};
-        maDataMap = {};
-        if (data && data.stocks) {
-          data.stocks.forEach(function(s) {
-            if (s.code) {
-              map[s.code] = s.latest_close || s.close || null;
-              maDataMap[s.code] = {
-                ma5: s.ma5 || null,
-                ma13: s.ma13 || null,
-                ma5_dir: s.ma5_dir || '',
-                ma13_dir: s.ma13_dir || '',
-                ema5: s.ema5 || null,
-                ema13: s.ema13 || null,
-                pct_from_ema5: s.pct_from_ema5 || null,
-                pct_from_ema13: s.pct_from_ema13 || null,
-                atr14: s.atr14 || null,
-                close: s.latest_close || s.close || null,
-              };
-            }
-          });
-        }
-        currentPriceMap = map;
-        journalRender();
-      }
 
       // ── 大盘状态显示 ──
       function updateMarketStateDisplay(data) {
@@ -3018,191 +2528,6 @@
         if (scenarioEl && hs300 !== '?') {
           scenarioEl.textContent = '沪深' + hs300 + ' MA20=' + ma20 + ' MA60=' + ma60;
         }
-      }
-
-      // ── 交易日志 (localStorage持久化) ──
-      var JOURNAL_KEY = 'trade_journal_v1';
-      var journalTab = 'open';
-      var currentPriceMap = {};
-
-      function journalLoad() {
-        var raw = localStorage.getItem(JOURNAL_KEY);
-        if (!raw) return [];
-        try { return JSON.parse(raw); } catch(e) { return []; }
-      }
-
-      function journalSave(trades) {
-        localStorage.setItem(JOURNAL_KEY, JSON.stringify(trades));
-      }
-
-      function journalAdd() {
-        var code = document.getElementById('jCode').value.trim();
-        var name = document.getElementById('jName').value.trim();
-        var buyDate = document.getElementById('jBuyDate').value;
-        var buyPrice = parseFloat(document.getElementById('jBuyPrice').value);
-        var shares = parseInt(document.getElementById('jShares').value) || 100;
-        var note = document.getElementById('jNote').value.trim();
-        if (!code || !name || !buyDate || !buyPrice) { alert('请填写代码、名称、日期和买入价'); return; }
-        var trades = journalLoad();
-        trades.push({
-          id: Date.now(),
-          code: code, name: name, buy_date: buyDate, buy_price: buyPrice,
-          shares: shares, note: note,
-          close_date: null, close_price: null, status: 'open',
-          created_at: new Date().toISOString()
-        });
-        journalSave(trades);
-        journalRender();
-        document.getElementById('jCode').value = '';
-        document.getElementById('jName').value = '';
-        document.getElementById('jBuyPrice').value = '';
-        document.getElementById('jShares').value = '';
-        document.getElementById('jNote').value = '';
-        positionTrack();
-      }
-
-      function journalCloseTrade(id) {
-        var closePrice = prompt('请输入卖出价:');
-        if (closePrice === null) return;
-        closePrice = parseFloat(closePrice);
-        if (isNaN(closePrice) || closePrice <= 0) { alert('请输入有效价格'); return; }
-        var trades = journalLoad();
-        for (var i = 0; i < trades.length; i++) {
-          if (trades[i].id === id && trades[i].status === 'open') {
-            trades[i].close_date = new Date().toISOString().substring(0, 10);
-            trades[i].close_price = closePrice;
-            trades[i].status = 'closed';
-            break;
-          }
-        }
-        journalSave(trades);
-        journalRender();
-        positionTrack();
-      }
-
-      function journalDeleteTrade(id) {
-        if (!confirm('确定删除此记录？')) return;
-        journalSave(journalLoad().filter(function(t) { return t.id !== id; }));
-        journalRender();
-        positionTrack();
-      }
-
-      function journalReopenTrade(id) {
-        var trades = journalLoad();
-        for (var i = 0; i < trades.length; i++) {
-          if (trades[i].id === id) {
-            trades[i].status = 'open';
-            trades[i].close_date = null;
-            trades[i].close_price = null;
-            break;
-          }
-        }
-        journalSave(trades);
-        journalRender();
-        positionTrack();
-      }
-
-      function journalSwitchTab(tab) {
-        journalTab = tab;
-        var btns = document.querySelectorAll('#journalTabs button');
-        var labels = { open: '持仓中', closed: '已平仓' };
-        for (var i = 0; i < btns.length; i++) {
-          btns[i].classList.toggle('active', btns[i].textContent === labels[tab]);
-        }
-        journalRender();
-      }
-
-      function journalRender() {
-        var wrap = document.getElementById('journalTableWrap');
-        var sumEl = document.getElementById('journalSummary');
-        if (!wrap) return;
-        var trades = journalLoad();
-        var filtered = trades.filter(function(t) { return t.status === (journalTab === 'open' ? 'open' : 'closed'); });
-        // Summary stats
-        var openTrades = trades.filter(function(t) { return t.status === 'open'; });
-        var totalCost = 0, totalPnl = 0;
-        openTrades.forEach(function(t) {
-          var cost = t.buy_price * t.shares;
-          totalCost += cost;
-          var cp = currentPriceMap[t.code] || null;
-          if (cp) totalPnl += (cp - t.buy_price) * t.shares;
-        });
-        var pnlPct = totalCost > 0 ? (totalPnl / totalCost * 100) : 0;
-        var closedTrades = trades.filter(function(t) { return t.status === 'closed'; });
-        var winCount = 0;
-        closedTrades.forEach(function(t) { if (t.close_price && t.buy_price && t.close_price > t.buy_price) winCount++; });
-        var winRate = closedTrades.length > 0 ? (winCount / closedTrades.length * 100) : 0;
-        sumEl.innerHTML =
-          '<div class="js-item"><div class="js-val">' + openTrades.length + '</div><div class="js-label">持仓</div></div>' +
-          '<div class="js-item"><div class="js-val" style="color:' + (totalPnl >= 0 ? '#22c55e' : '#ef4444') + '">' + (totalPnl >= 0 ? '+' : '') + totalPnl.toFixed(0) + '</div><div class="js-label">浮动盈亏</div></div>' +
-          '<div class="js-item"><div class="js-val" style="color:' + (pnlPct >= 0 ? '#22c55e' : '#ef4444') + '">' + (pnlPct >= 0 ? '+' : '') + pnlPct.toFixed(1) + '%</div><div class="js-label">收益率</div></div>' +
-          '<div class="js-item"><div class="js-val">' + closedTrades.length + '</div><div class="js-label">已平仓</div></div>' +
-          '<div class="js-item"><div class="js-val" style="color:' + (winRate >= 50 ? '#22c55e' : '#ef4444') + '">' + winRate.toFixed(0) + '%</div><div class="js-label">胜率</div></div>';
-        if (filtered.length === 0) {
-          wrap.innerHTML = '<div style="padding:1rem;text-align:center;color:#94a3b8;font-size:0.85rem;">' + (journalTab === 'open' ? '暂无持仓记录，通过上方表单记录买入' : '暂无平仓记录') + '</div>';
-          return;
-        }
-        var html = '<table class="journal-table"><thead><tr><th>日期</th><th>代码</th><th>名称</th><th>买入价</th><th>股数</th><th>成本</th>';
-        html += journalTab === 'open' ? '<th>当前价</th><th>盈亏%</th><th>EMA5</th><th>EMA13</th><th>风控</th>' : '<th>卖出价</th><th>盈亏%</th>';
-        html += '<th>持有天</th><th>备注</th><th>操作</th></tr></thead><tbody>';
-        for (var i = filtered.length - 1; i >= 0; i--) {
-          var t = filtered[i];
-          var cost = (t.buy_price * t.shares).toFixed(0);
-          var daysHeld = t.status === 'closed' && t.close_date
-            ? Math.round((new Date(t.close_date) - new Date(t.buy_date)) / 86400000)
-            : Math.round((Date.now() - new Date(t.buy_date).getTime()) / 86400000);
-          var rawPnl = t.status === 'closed'
-            ? (t.close_price - t.buy_price) / t.buy_price * 100
-            : (currentPriceMap[t.code] ? (currentPriceMap[t.code] - t.buy_price) / t.buy_price * 100 : null);
-          var pnlStr = rawPnl !== null ? ((rawPnl >= 0 ? '+' : '') + rawPnl.toFixed(1) + '%') : '--';
-          var pnlColor = rawPnl !== null ? (rawPnl >= 0 ? '#22c55e' : '#ef4444') : '';
-          html += '<tr><td>' + t.buy_date + '</td><td>' + t.code + '</td><td><b>' + t.name + '</b></td><td>' + t.buy_price.toFixed(2) + '</td><td>' + t.shares + '</td><td>' + cost + '</td>';
-          if (t.status === 'open') {
-            var cp = currentPriceMap[t.code];
-            var mad = maDataMap[t.code] || {};
-            var ma5 = mad.ma5;
-            var ma13 = mad.ma13;
-            var ema5 = mad.ema5;
-            var ema13 = mad.ema13;
-            var atr = mad.atr14;
-            // 改进风控: EMA13优先 + ATR波动过滤
-            var riskBadge = '';
-            if (typeof cp === 'number') {
-              // 用EMA13判断(比SMA13敏感), ATR宽口径避免震荡假跌破
-              var ema5break = typeof ema5 === 'number' && cp < ema5;
-              var ema13break = typeof ema13 === 'number' && cp < ema13;
-              var sma5break = typeof ma5 === 'number' && cp < ma5;
-              var sma13break = typeof ma13 === 'number' && cp < ma13;
-              // ATR缓冲: 高波票需跌破更多才触发
-              var atrBand = typeof atr === 'number' && atr > 0 ? atr : 0;
-              var ema13breakHard = typeof ema13 === 'number' && cp < ema13 - atrBand * 0.3;
-              if (ema13breakHard || (sma13break && ema13break)) {
-                riskBadge = '<span style="display:inline-block;background:#ef4444;color:white;padding:1px 6px;border-radius:4px;font-size:0.65rem;font-weight:600;">🔴 破13日线·清仓</span>';
-              } else if (ema5break || sma5break) {
-                riskBadge = '<span style="display:inline-block;background:#eab308;color:black;padding:1px 6px;border-radius:4px;font-size:0.65rem;font-weight:600;">⚠️ 破5日线·减半</span>';
-              } else {
-                riskBadge = '<span style="display:inline-block;background:#22c55e20;color:#22c55e;padding:1px 6px;border-radius:4px;font-size:0.65rem;font-weight:600;">✅ 正常</span>';
-              }
-            }
-            html += '<td>' + (typeof cp === 'number' ? cp.toFixed(2) : '--') + '</td>';
-            html += '<td style="color:' + pnlColor + ';font-weight:600;">' + pnlStr + '</td>';
-            html += '<td style="font-size:0.7rem;color:' + (typeof ema5 === 'number' ? '#64748b' : '#94a3b8') + ';">' + (typeof ema5 === 'number' ? ema5.toFixed(2) : '--') + '<br><span style="font-size:0.55rem;color:#94a3b8;">SMA' + (typeof ma5 === 'number' ? ma5.toFixed(2) : '--') + '</span></td>';
-            html += '<td style="font-size:0.7rem;color:' + (typeof ema13 === 'number' ? '#64748b' : '#94a3b8') + ';">' + (typeof ema13 === 'number' ? ema13.toFixed(2) : '--') + '<br><span style="font-size:0.55rem;color:#94a3b8;">ATR' + (typeof atr === 'number' ? atr.toFixed(2) : '--') + '</span></td>';
-            html += '<td>' + riskBadge + '</td>';
-            html += '<td>' + daysHeld + '天</td>';
-            html += '<td style="font-size:0.7rem;color:#94a3b8;max-width:100px;overflow:hidden;text-overflow:ellipsis;">' + (t.note || '') + '</td>';
-            html += '<td><button class="btn-journal-sm btn-close-trade" onclick="journalCloseTrade(' + t.id + ')">卖出</button> <button class="btn-journal-sm btn-delete-trade" onclick="journalDeleteTrade(' + t.id + ')">✕</button></td>';
-          } else {
-            html += '<td>' + (t.close_price ? t.close_price.toFixed(2) : '--') + '</td>';
-            html += '<td style="color:' + pnlColor + ';font-weight:600;">' + pnlStr + '</td>';
-            html += '<td>' + daysHeld + '天</td>';
-            html += '<td style="font-size:0.7rem;color:#94a3b8;">' + (t.note || '') + '</td>';
-            html += '<td><button class="btn-journal-sm" style="background:#f1f5f9;color:#64748b;border:1px solid #e2e8f0;" onclick="journalReopenTrade(' + t.id + ')">重开</button> <button class="btn-journal-sm btn-delete-trade" onclick="journalDeleteTrade(' + t.id + ')">✕</button></td>';
-          }
-          html += '</tr>';
-        }
-        html += '</tbody></table>';
-        wrap.innerHTML = html;
       }
 
       function renderSurgeMonitor() {
@@ -3584,10 +2909,7 @@
               if (timeEl) timeEl.textContent = info;
               // Update market state display
               updateMarketStateDisplay(data);
-               buildCurrentPriceMap(data);
               renderBattlePlan();
-              renderOrderRef();
-              positionTrack();
               renderPage();
               renderResonance();
             })
@@ -3771,203 +3093,10 @@
         renderBattlePlan();
         renderSurgeMonitor();
         renderBuguMonitor();
-        setTimeout(() => { getRecommendations(); renderRecHistory(); }, 500);
         // Bind export button (re-bind on every click since elements are recreated)
         document.getElementById('exportSurgeBtn').addEventListener('click', exportSurgeCSV);
-        // Initialize trade journal
-        journalRender();
-        renderOrderRef();
-        var td = document.getElementById('trackingDate');
-        if (td && !td.value) td.value = new Date().toISOString().substring(0,10);
-        positionTrack();
       }
 
-      // ── 持仓跟踪 ──
-      window.positionTrack = function(targetDate) {
-        var el = document.getElementById('trackingContent');
-        if (!el) return;
-        try {
-          var raw = localStorage.getItem('journal_trades');
-          if (!raw) { el.innerHTML = '<div style="padding:1rem;font-size:0.8rem;color:#64748b;">📭 交易日志为空，记录买入后自动显示</div>'; return; }
-          var trades = JSON.parse(raw);
-          var openTrades = trades.filter(function(t) { return !t.sellPrice && t.code; });
-          if (!openTrades.length) { el.innerHTML = '<div style="padding:1rem;font-size:0.8rem;color:#22c55e;">✅ 无持仓</div>'; return; }
-          // Use targetDate or last date picker value
-          var dp = document.getElementById('trackingDate');
-          if (!dp) return;
-          if (targetDate) { dp.value = targetDate; }
-          else if (!dp.value) { /* keep empty = latest */ }
-          var dateParam = dp.value;
-          var codes = openTrades.map(function(t) { return t.code.replace(/\.(SH|SZ|BJ)$/,''); }).join(',');
-          var url = '/api/stock-ma?codes=' + encodeURIComponent(codes);
-          if (dateParam) url += '&date=' + encodeURIComponent(dateParam);
-          el.innerHTML = '<div style="padding:1rem;font-size:0.8rem;color:#64748b;">⏳ 加载持仓数据...</div>';
-          var xhr = new XMLHttpRequest();
-          xhr.open('GET', url, true);
-          xhr.onload = function() {
-            if (xhr.status !== 200) { el.innerHTML = '<div style="padding:1rem;font-size:0.8rem;color:#ef4444;">❌ 获取数据失败</div>'; return; }
-            try {
-              var data = JSON.parse(xhr.responseText);
-              var html = '<div style="overflow-x:auto;"><table class="journal-table"><thead><tr>';
-              html += '<th>代码</th><th>名称</th><th>买入价</th><th>当前价</th><th>盈亏</th>';
-              html += '<th>EMA5</th><th>EMA13<br><span style="font-size:0.55rem;color:#94a3b8;">ATR↓线</span></th><th>MA60</th><th>距MA60</th>';
-              html += '<th>风控</th><th>建议</th></tr></thead><tbody>';
-              var hasErrors = false;
-              for (var i = 0; i < openTrades.length; i++) {
-                var t = openTrades[i];
-                var rc = (t.code || '').replace(/\.(SH|SZ|BJ)$/,'');
-                var md = data[rc] || data[rc+'.SH'] || data[rc+'.SZ'] || data[t.code] || {};
-                var cp = md.close;
-                var bp = parseFloat(t.buyPrice) || 0;
-                var shares = parseInt(t.shares) || 0;
-                var pnl = typeof cp === 'number' && bp > 0 ? (cp - bp) / bp * 100 : null;
-                var pnlColor = pnl !== null ? (pnl >= 0 ? '#22c55e' : '#ef4444') : '#94a3b8';
-                var pnlStr = pnl !== null ? (pnl >= 0 ? '+' : '') + pnl.toFixed(1) + '%' : '--';
-                var pnlVal = pnl !== null ? (cp - bp) * shares : 0;
-                var ema5 = md.ema5, ema13 = md.ema13, ma60 = md.ma60;
-                var atr = md.atr14;
-                var riskBadge = '', suggest = '';
-                if (typeof cp === 'number' && typeof ema13 === 'number') {
-                  var atrBand = typeof atr === 'number' && atr > 0 ? atr * 0.3 : 0;
-                  if (cp < ema13 - atrBand) {
-                    riskBadge = '<span style="background:#ef4444;color:white;padding:1px 6px;border-radius:4px;font-size:0.65rem;font-weight:600;">🔴 破EMA13</span>';
-                    suggest = '<span style="color:#ef4444;font-size:0.7rem;">清仓</span>';
-                  } else if (cp < ema5) {
-                    riskBadge = '<span style="background:#eab308;color:black;padding:1px 6px;border-radius:4px;font-size:0.65rem;font-weight:600;">⚠️ 破EMA5</span>';
-                    suggest = '<span style="color:#eab308;font-size:0.7rem;">减半仓</span>';
-                  } else {
-                    riskBadge = '<span style="background:#22c55e20;color:#22c55e;padding:1px 6px;border-radius:4px;font-size:0.65rem;font-weight:600;">✅ 正常</span>';
-                    suggest = '<span style="color:#22c55e;font-size:0.7rem;">持股</span>';
-                  }
-                } else {
-                  riskBadge = '<span style="color:#64748b;font-size:0.7rem;">--</span>';
-                  suggest = '<span style="color:#64748b;font-size:0.7rem;">数据不足</span>';
-                }
-                if (md.error) { hasErrors = true; }
-                var distMa60 = typeof cp === 'number' && typeof ma60 === 'number' ? ((cp - ma60)/ma60*100).toFixed(1) + '%' : '--';
-                html += '<tr>';
-                html += '<td>' + t.code + '</td>';
-                html += '<td>' + (t.name || '--') + '</td>';
-                html += '<td>' + bp.toFixed(2) + '</td>';
-                html += '<td style="color:' + pnlColor + ';font-weight:600;">' + (typeof cp === 'number' ? cp.toFixed(2) : '--') + '</td>';
-                html += '<td style="color:' + pnlColor + ';font-weight:600;">' + pnlStr + '<br><span style="font-size:0.6rem;color:#64748b;">' + (pnlVal >= 0 ? '+' : '') + pnlVal.toFixed(0) + '元</span></td>';
-                html += '<td style="font-size:0.7rem;color:' + (typeof ema5 === 'number' ? '#64748b' : '#94a3b8') + ';">' + (typeof ema5 === 'number' ? ema5.toFixed(2) : '--') + '</td>';
-                html += '<td style="font-size:0.7rem;color:' + (typeof ema13 === 'number' ? '#64748b' : '#94a3b8') + ';">' + (typeof ema13 === 'number' ? ema13.toFixed(2) : '--');
-                if (typeof ema13 === 'number' && typeof atr === 'number' && atr > 0) {
-                  html += '<br><span style="font-size:0.55rem;color:#94a3b8;">' + (ema13 - atr * 0.3).toFixed(2) + '</span>';
-                }
-                html += '</td>';
-                html += '<td style="font-size:0.7rem;">' + (typeof ma60 === 'number' ? ma60.toFixed(2) : '--') + '</td>';
-                html += '<td style="font-size:0.7rem;">' + distMa60 + '</td>';
-                html += '<td>' + riskBadge + '</td>';
-                html += '<td>' + suggest + '</td>';
-                html += '</tr>';
-              }
-              html += '</tbody></table></div>';
-              var totalCost = 0, totalPnl = 0, validCount = 0;
-              for (var i = 0; i < openTrades.length; i++) {
-                var t = openTrades[i];
-                var rc = (t.code || '').replace(/\.(SH|SZ|BJ)$/,'');
-                var md = data[rc] || data[rc+'.SH'] || data[rc+'.SZ'] || data[t.code] || {};
-                var cp = md.close;
-                var bp = parseFloat(t.buyPrice) || 0;
-                var shares = parseInt(t.shares) || 0;
-                if (typeof cp === 'number' && bp > 0 && shares > 0) {
-                  totalCost += bp * shares;
-                  totalPnl += (cp - bp) * shares;
-                  validCount++;
-                }
-              }
-              if (validCount > 0) {
-                var totalPnlPct = totalCost > 0 ? (totalPnl / totalCost * 100) : 0;
-                html += '<div style="display:flex;gap:1.5rem;margin-top:0.5rem;padding:0.5rem 0;border-top:1px solid #e2e8f0;font-size:0.8rem;">';
-                html += '<span>总成本: <b>' + totalCost.toFixed(0) + '元</b></span>';
-                html += '<span>浮动盈亏: <b style="color:' + (totalPnl >= 0 ? '#22c55e' : '#ef4444') + ';">' + (totalPnl >= 0 ? '+' : '') + totalPnl.toFixed(0) + '元 (' + (totalPnlPct >= 0 ? '+' : '') + totalPnlPct.toFixed(1) + '%)</b></span>';
-                html += '<span>持仓: <b>' + validCount + '只</b></span>';
-                html += '</div>';
-              }
-              if (hasErrors) { html += '<div style="margin-top:0.3rem;font-size:0.7rem;color:#eab308;">⚠️ 部分股票在kline_cache中未找到</div>'; }
-              el.innerHTML = html;
-            } catch(e) { el.innerHTML = '<div style="padding:1rem;font-size:0.8rem;color:#ef4444;">❌ 解析错误: ' + e.message + '</div>'; }
-          };
-          xhr.onerror = function() { el.innerHTML = '<div style="padding:1rem;font-size:0.8rem;color:#ef4444;">❌ 网络错误</div>'; };
-          xhr.send();
-        } catch(e) { el.innerHTML = '<div style="padding:1rem;font-size:0.8rem;color:#ef4444;">❌ ' + e.message + '</div>'; }
-      }
-      // ── 持仓跟踪结束 ──
-
-      // ── 三步筛选分析 ──
-      window.threeStepAnalyze = function() {
-        var input = document.getElementById('tsStockInput');
-        var resultEl = document.getElementById('tsResult');
-        if (!input || !resultEl) return;
-        var stock = input.value.trim();
-        if (!stock) { resultEl.innerHTML = '<div style="padding:0.5rem;font-size:0.8rem;color:#eab308;">\u8bf7\u8f93\u5165\u80a1\u7968\u4ee3\u7801\u6216\u540d\u79f0</div>'; return; }
-        resultEl.innerHTML = '<div style="padding:1rem;font-size:0.8rem;color:#64748b;">\u23f3 \u5206\u6790\u4e2d...</div>';
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/api/three-step-analyze?stock=' + encodeURIComponent(stock), true);
-        xhr.onload = function() {
-          if (xhr.status !== 200) { resultEl.innerHTML = '<div style="padding:0.5rem;font-size:0.8rem;color:#ef4444;">\u274c \u8bf7\u6c42\u5931\u8d25 (' + xhr.status + ')</div>'; return; }
-          try {
-            var d = JSON.parse(xhr.responseText);
-            if (d.error) { resultEl.innerHTML = '<div style="padding:0.5rem;font-size:0.8rem;color:#ef4444;">\u274c ' + d.error + '</div>'; return; }
-            var h = '<div style="font-size:0.8rem;line-height:1.7;color:#e2e8f0;">';
-            h += '<div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #334155;padding-bottom:0.4rem;margin-bottom:0.6rem;">';
-            h += '<span style="font-weight:700;font-size:1rem;">' + (d.name||'--') + ' (' + d.code + ')</span>';
-            h += '<span style="font-size:0.65rem;color:#64748b;">' + (d.time||'') + '</span></div>';
-            var s1=d.step1_business||{};
-            h += '<div style="background:rgba(59,130,246,0.08);border-radius:4px;padding:0.4rem 0.5rem;margin-bottom:0.4rem;">';
-            h += '<span style="color:#3b82f6;font-weight:600;">\u7b2c\u4e00\u6b65\uff1a\u5b9a\u51fa\u8eab</span>';
-            h += '<div style="margin-top:0.2rem;"><b>\u884c\u4e1a\uff1a</b>'+(s1.industry||'--')+' | <b>\u5730\u533a\uff1a</b>'+(s1.area||'--')+'</div>';
-            h += '<div style="color:#94a3b8;font-size:0.75rem;">📌 '+(s1.conclusion||'')+'</div></div>';
-            var s2=d.step2_tags||{};
-            h += '<div style="background:rgba(34,197,94,0.08);border-radius:4px;padding:0.4rem 0.5rem;margin-bottom:0.4rem;">';
-            h += '<span style="color:#22c55e;font-weight:600;">\u7b2c\u4e8c\u6b65\uff1a\u770b\u6807\u7b7e</span>';
-            if(s2.tags&&s2.tags.length){
-              h += '<div style="display:flex;gap:0.3rem;flex-wrap:wrap;margin-top:0.2rem;">';
-              for(var i=0;i<s2.tags.length;i++){var t=s2.tags[i];var sc=t.stars>=4?'#22c55e':'#eab308';var ss='';for(var s=0;s<t.stars;s++)ss+='\u2605';
-              h += '<span style="background:rgba(30,41,59,0.8);border:1px solid '+sc+'30;border-radius:4px;padding:1px 6px;font-size:0.7rem;">'+(t.tag||'')+' <span style="color:'+sc+';">'+ss+'</span></span>';}
-              h += '</div>';}
-            if(s2.best_tag)h += '<div style="font-size:0.7rem;margin-top:0.15rem;color:#22c55e;">\u2705 \u542b\u91d1\u91cf\u6700\u9ad8: '+s2.best_tag+'</div>';
-            if(s2.stale_tag)h += '<div style="font-size:0.7rem;color:#eab308;">\u26a0\ufe0f \u62d6\u7d2f\u4f30\u503c: '+s2.stale_tag+'</div>';
-            var ml=s2.mainlines||{};
-            if(ml.highest_board&&ml.highest_board.stock)h += '<div style="font-size:0.7rem;color:#64748b;">📊 当前最高连板: '+ml.highest_board.stock+' ('+ml.highest_board.continue_num+'\u677f'+(ml.highest_board.reason?', '+ml.highest_board.reason:'')+')</div>';
-            h += '</div>';
-            var s3=d.step3_position||{};
-            var cc={'上\u6e38':'#f59e0b','中\u6e38':'#3b82f6','下\u6e38':'#22c55e'};var ck=cc[s3.chain]||'#64748b';
-            h += '<div style="background:rgba(139,92,246,0.08);border-radius:4px;padding:0.4rem 0.5rem;margin-bottom:0.4rem;">';
-            h += '<span style="color:#8b5cf6;font-weight:600;">\u7b2c\u4e09\u6b65\uff1a\u5224\u4f4d\u7f6e</span>';
-            h += '<div style="margin-top:0.2rem;">\u4ea7\u4e1a\u94fe\u4f4d\u7f6e: <span style="color:'+ck+';font-weight:600;">'+(s3.chain||'--')+'</span>';
-            if(s3.market_preference)h += ' | \u5e02\u573a\u504f\u597d: <b>'+s3.market_preference+'</b>';
-            h += '</div><div style="font-size:0.75rem;color:'+(s3.suitable?'#22c55e':'#eab308')+';">'+(s3.suitable?'\u2705 \u5f53\u524d\u5e02\u573a\u504f\u597d\u8be5\u4ea7\u4e1a\u94fe\u4f4d\u7f6e':'\u26a0\ufe0f \u4e0d\u5728\u5f53\u524d\u5e02\u573a\u504f\u597d\u65b9\u5411')+'</div></div>';
-            var tech=d.technical||{};
-            h += '<div style="background:rgba(100,116,139,0.08);border-radius:4px;padding:0.4rem 0.5rem;margin-bottom:0.4rem;">';
-            h += '<span style="color:#94a3b8;font-weight:600;">📈 \u6280\u672f\u9762</span>';
-            if(tech.close){
-              h += '<div style="display:grid;grid-template-columns:repeat(4,auto);gap:0.4rem 1rem;margin-top:0.2rem;font-size:0.75rem;">';
-              h += '<span>\u6536\u76d8 <b>'+tech.close+'</b></span>';
-              h += '<span>MA5 <b style="color:'+(tech.close>=tech.ma5?'#22c55e':'#ef4444')+';">'+(tech.ma5||'--')+'</b></span>';
-              h += '<span>MA13 <b style="color:'+(tech.close>=tech.ma13?'#22c55e':'#ef4444')+';">'+(tech.ma13||'--')+'</b></span>';
-              h += '<span>MA60 <b>'+(tech.ma60||'--')+'</b></span>';
-              h += '<span>\u8dddMA60 <b style="color:'+(tech.pct_from_ma60>0?'#22c55e':'#ef4444')+';">'+(tech.pct_from_ma60!=null?tech.pct_from_ma60+'%':'--')+'</b></span>';
-              h += '<span>ATR14 <b>'+(tech.atr14||'--')+'</b></span></div>';}else{h += '<div style="color:#64748b;font-size:0.75rem;">'+(tech.error||'\u6570\u636e\u4e0d\u8db3')+'</div>';}
-            h += '</div>';
-            var sm=d.summary||{};
-            var pc={'\u6838\u5fc3\u5e95\u4ed3':'#22c55e','\u536b\u661f\u4ed3\u4f4d':'#3b82f6','\u72ec\u7acb\u914d\u7f6e':'#eab308','\u4e0d\u5b9c\u53c2\u4e0e':'#ef4444'};
-            h += '<div style="background:rgba(30,41,59,0.5);border:1px solid #334155;border-radius:4px;padding:0.4rem 0.5rem;">';
-            h += '<span style="font-weight:600;">\u7efc\u5408\u8bc4\u4f30</span>';
-            h += '<div style="display:flex;align-items:center;gap:0.5rem;margin-top:0.2rem;flex-wrap:wrap;">';
-            h += '<span style="background:'+(pc[sm.position_type]||'#64748b')+'20;color:'+(pc[sm.position_type]||'#64748b')+';border:1px solid '+(pc[sm.position_type]||'#64748b')+'40;border-radius:4px;padding:1px 8px;font-weight:600;font-size:0.75rem;">'+(sm.position_type||'--')+'</span>';
-            h += '<span style="font-size:0.75rem;color:#94a3b8;">'+(sm.position_advice||'')+'</span></div>';
-            if(sm.verify_signals)h += '<div style="margin-top:0.2rem;font-size:0.7rem;color:#64748b;">\u9a8c\u8bc1\u4fe1\u53f7: '+sm.verify_signals.join(' | ')+'</div>';
-            h += '<div style="margin-top:0.2rem;font-size:0.6rem;color:#475569;">\u26a0\ufe0f \u6570\u636e\u4ec5\u4f9b\u53c2\u8003\uff0c\u4e0d\u6784\u6210\u6295\u8d44\u5efa\u8bae</div></div></div>';
-            resultEl.innerHTML = h;
-          } catch(e) { resultEl.innerHTML = '<div style="padding:0.5rem;font-size:0.8rem;color:#ef4444;">\u274c \u89e3\u6790\u9519\u8bef: ' + e.message + '</div>'; }
-        };
-        xhr.onerror = function() { resultEl.innerHTML = '<div style="padding:0.5rem;font-size:0.8rem;color:#ef4444;">\u274c \u7f51\u7edc\u9519\u8bef</div>'; };
-        xhr.send();
-      }
-      // ── 三步筛选分析结束 ──
 
       window.addEventListener('DOMContentLoaded', init);
     })();
