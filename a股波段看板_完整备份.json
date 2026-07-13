@@ -1,5 +1,64 @@
 [
   {
+    "date": "2026-07-13",
+    "volume": 28178,
+    "limitUp": 27,
+    "limitDown": 172,
+    "bomb": 13,
+    "chain": 9,
+    "newHigh": 37,
+    "newLow": 1051,
+    "newHighDaily": 16,
+    "s1Name": "医药",
+    "s1Total": 11,
+    "s1New": 0,
+    "s1b1Name": "",
+    "s1b1New": 0,
+    "s1b2Name": "",
+    "s1b2New": 0,
+    "s2Name": "芯片",
+    "s2Total": 7,
+    "s2New": 0,
+    "s2b1Name": "",
+    "s2b1New": 0,
+    "s2b2Name": "",
+    "s2b2New": 0,
+    "s3Name": "算力",
+    "s3Total": 5,
+    "s3New": 0,
+    "s3b1Name": "",
+    "s3b1New": 0,
+    "s3b2Name": "",
+    "s3b2New": 0,
+    "w1Name": "通信",
+    "w1Total": 3,
+    "w1New": 3,
+    "w1Reason": "",
+    "w1Signal": "冰点",
+    "w1b1Name": "CPO",
+    "w1b1New": 2,
+    "w1b2Name": "交换机",
+    "w1b2New": 2,
+    "w2Name": "物理AI",
+    "w2Total": 2,
+    "w2New": 0,
+    "w2Reason": "",
+    "w2Signal": "",
+    "w2b1Name": "机器视觉",
+    "w2b1New": 2,
+    "w2b2Name": "",
+    "w2b2New": 0,
+    "w3Name": "其他",
+    "w3Total": 9,
+    "w3New": 6,
+    "w3Reason": "",
+    "w3Signal": "",
+    "w3b1Name": "",
+    "w3b1New": 0,
+    "w3b2Name": "",
+    "w3b2New": 0
+  },
+  {
     "date": "2026-07-10",
     "volume": 33885,
     "limitUp": 88,
@@ -34,7 +93,7 @@
     "w1Total": 15,
     "w1New": 9,
     "w1Reason": "",
-    "w1Signal": "",
+    "w1Signal": "正常",
     "w1b1Name": "创新药",
     "w1b1New": 14,
     "w1b2Name": "CRO",
@@ -118,7 +177,8 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "w1Signal": "正常"
   },
   {
     "date": "2026-07-08",
@@ -180,7 +240,8 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "w1Signal": "冰点"
   },
   {
     "date": "2026-07-07",
@@ -242,7 +303,8 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "w1Signal": "正常"
   },
   {
     "date": "2026-07-06",
@@ -304,7 +366,8 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "w1Signal": "预警"
   },
   {
     "date": "2026-07-03",
@@ -360,7 +423,8 @@
     "w3b1Name": "参控股基金",
     "w3b1New": 5,
     "w3b2Name": "",
-    "w3b2New": 0
+    "w3b2New": 0,
+    "w1Signal": "正常"
   },
   {
     "date": "2026-07-02",
@@ -416,7 +480,8 @@
     "w3b1Name": "液冷",
     "w3b1New": 3,
     "w3b2Name": "数据中心",
-    "w3b2New": 2
+    "w3b2New": 2,
+    "w1Signal": "正常"
   },
   {
     "date": "2026-07-01",
@@ -472,7 +537,8 @@
     "w3b1Name": "氢氟酸",
     "w3b1New": 4,
     "w3b2Name": "制冷剂",
-    "w3b2New": 4
+    "w3b2New": 4,
+    "w1Signal": "正常"
   },
   {
     "date": "2026-06-30",
