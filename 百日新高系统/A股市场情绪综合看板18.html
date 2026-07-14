@@ -742,6 +742,18 @@
         </div>
         <input type="file" id="importFileInput" accept=".json" style="display: none;">
       </div>
+      <div class="input-grid" style="margin-bottom:0.8rem; background:#f8fafc; padding:0.6rem 1rem; border-radius:1rem;">
+        <div class="input-group"><label>开始日期</label><input type="date" id="filterDateFrom" style="font-size:0.78rem;"></div>
+        <div class="input-group"><label>结束日期</label><input type="date" id="filterDateTo" style="font-size:0.78rem;"></div>
+        <div class="input-group"><label>板块搜索</label><input type="text" id="filterSector" placeholder="芯片/机器人/医药..." style="font-size:0.78rem;"></div>
+        <div class="input-group"><label>信号</label><select id="filterSignal" style="font-size:0.78rem;"><option value="">全部</option><option value="正常">正常</option><option value="预警">预警</option><option value="冰点">冰点</option></select></div>
+        <div class="input-group"><label>成交量≥</label><input type="number" id="filterVolMin" placeholder="万亿" step="100" style="font-size:0.78rem;"></div>
+        <div class="input-group"><label>涨停≥</label><input type="number" id="filterLUMin" placeholder="家" min="0" style="font-size:0.78rem;"></div>
+        <div style="display:flex;align-items:flex-end;gap:0.3rem;">
+          <button class="btn btn-secondary btn-sm" id="filterApplyBtn" style="padding:0.5rem 1rem;">🔍 筛选</button>
+          <button class="btn btn-secondary btn-sm" id="filterClearBtn" style="padding:0.5rem 0.8rem;">✕</button>
+        </div>
+      </div>
       <div class="table-wrapper">
         <table id="dataTable">
           <thead>
@@ -1237,7 +1249,52 @@
         updateWatchSignal('watch3Reason', 'watch3Signal');
       }
 
-      function renderTable() {
+      let filteredRecords = null;
+
+      function getFilteredRecords() {
+        const f = {};
+        f.dateFrom = document.getElementById('filterDateFrom').value;
+        f.dateTo = document.getElementById('filterDateTo').value;
+        f.sector = (document.getElementById('filterSector').value || '').trim();
+        f.signal = document.getElementById('filterSignal').value;
+        f.volMin = parseFloat(document.getElementById('filterVolMin').value) || 0;
+        f.luMin = parseInt(document.getElementById('filterLUMin').value) || 0;
+        const anyFilter = f.dateFrom || f.dateTo || f.sector || f.signal || f.volMin || f.luMin;
+        if (!anyFilter) return records;
+        return records.filter(r => {
+          if (f.dateFrom && r.date < f.dateFrom) return false;
+          if (f.dateTo && r.date > f.dateTo) return false;
+          if (f.signal) {
+            const sig = getSignal(r, records.indexOf(r));
+            if (sig.label !== f.signal) return false;
+          }
+          if (f.volMin > 0 && r.volume < f.volMin * 10000) return false;
+          if (f.luMin > 0 && r.limitUp < f.luMin) return false;
+          if (f.sector) {
+            const all = [r.s1Name,r.s2Name,r.s3Name,r.w1Name,r.w2Name,r.w3Name].join('');
+            if (!all.includes(f.sector)) return false;
+          }
+          return true;
+        });
+      }
+
+      function applyFilter() {
+        filteredRecords = getFilteredRecords();
+        renderTable(filteredRecords);
+        document.getElementById('filterClearBtn').style.display = 'inline-block';
+      }
+
+      function clearFilter() {
+        ['filterDateFrom','filterDateTo','filterSector','filterSignal','filterVolMin','filterLUMin'].forEach(id => {
+          document.getElementById(id).value = '';
+        });
+        filteredRecords = null;
+        renderTable(records);
+        document.getElementById('filterClearBtn').style.display = 'none';
+      }
+
+      function renderTable(data) {
+        const displayData = data || records;
         tableBody.innerHTML = '';
         if (!records.length) {
           emptyMessage.style.display = 'block';
@@ -1245,13 +1302,14 @@
         } else {
           emptyMessage.style.display = 'none';
           document.querySelector('.table-wrapper').style.display = 'block';
-          records.forEach((rec, idx) => {
-            const flags = getExtremeFlags(idx);
+          displayData.forEach((rec, idx) => {
+            const origIdx = records.findIndex(r => r.date === rec.date);
+            const flags = getExtremeFlags(origIdx >= 0 ? origIdx : idx);
             const diff = getDiff(rec);
             const diffClass = diff >= 0 ? 'diff-positive' : 'diff-negative';
             const sealRateStr = getSealRateStr(rec);
-            const signal = getSignal(rec, idx);
-            const prev = idx > 0 ? records[idx - 1] : null;
+            const signal = getSignal(rec, origIdx >= 0 ? origIdx : idx);
+            const prev = idx > 0 ? displayData[idx - 1] : null;
             const volChange = prev ? ((rec.volume - prev.volume) / prev.volume * 100).toFixed(1) : '—';
             const limChange = prev ? ((rec.limitUp - prev.limitUp) / prev.limitUp * 100).toFixed(1) : '—';
 
@@ -2250,6 +2308,9 @@
         exportBtn.addEventListener('click', exportData);
         importBtn.addEventListener('click', () => importFileInput.click());
         syncBtn.addEventListener('click', syncToRepo);
+        document.getElementById('filterApplyBtn').addEventListener('click', applyFilter);
+        document.getElementById('filterClearBtn').addEventListener('click', clearFilter);
+        document.getElementById('filterClearBtn').style.display = 'none';
         importFileInput.addEventListener('change', (e) => {
           if (e.target.files.length) { importData(e.target.files[0]); importFileInput.value = ''; }
         });

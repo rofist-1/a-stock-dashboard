@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>百日新高跟踪报表</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif; background: #0f1923; color: #e0e0e0; padding: 20px; }
+.header { text-align: center; margin-bottom: 24px; }
+.header h1 { font-size: 24px; color: #ff6b35; margin-bottom: 4px; }
+.header .sub { color: #888; font-size: 14px; }
+.cards { display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+.card { background: #1a2736; border-radius: 10px; padding: 16px 24px; text-align: center; min-width: 140px; }
+.card .num { font-size: 32px; font-weight: bold; }
+.card .label { font-size: 12px; color: #888; margin-top: 4px; }
+.card-1 .num { color: #4fc3f7; }
+.card-2 .num { color: #ffb74d; }
+.card-3 .num { color: #ff6b35; }
+.card-4 .num { color: #ef5350; }
+table { width: 100%; border-collapse: collapse; background: #1a2736; border-radius: 10px; overflow: hidden; }
+th { background: #243447; color: #aaa; font-weight: 500; font-size: 13px; padding: 12px 10px; text-align: left; white-space: nowrap; position: sticky; top: 0; }
+td { padding: 10px; font-size: 13px; border-bottom: 1px solid #243447; }
+tr:hover { background: #243447; }
+a { color: #4fc3f7; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.up { color: #ef5350; }
+.down { color: #4caf50; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+.badge-1 { background: #333; color: #888; }
+.badge-2 { background: #3e2723; color: #ffb74d; }
+.badge-3 { background: #4e342e; color: #ff6b35; }
+.badge-4 { background: #b71c1c; color: #fff; }
+.hot-2 { background: rgba(255,183,77,0.06); }
+.hot-3 { background: rgba(255,107,53,0.08); }
+.hot-4 { background: rgba(239,83,80,0.12); }
+.sector-filter { margin-bottom: 16px; text-align: center; }
+.sector-filter button { background: #243447; border: 1px solid #333; color: #aaa; padding: 6px 14px; margin: 3px; border-radius: 16px; cursor: pointer; font-size: 12px; }
+.sector-filter button.active { background: #ff6b35; color: #fff; border-color: #ff6b35; }
+@media (max-width: 768px) { body { padding: 10px; } th, td { font-size: 11px; padding: 6px 4px; } }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>百日新高 · 跟踪报表</h1>
+    <div class="sub">数据覆盖日期：2026-07-14 ~ 2026-07-14 ｜ 更新于 2026-07-14 22:55</div>
+</div>
+
+<div class="cards">
+    <div class="card card-1"><div class="num">36</div><div class="label">累计个股数</div></div>
+    <div class="card card-2"><div class="num">0</div><div class="label">≥2次出现</div></div>
+    <div class="card card-3"><div class="num">0</div><div class="label">≥3次出现</div></div>
+    <div class="card card-4"><div class="num">0</div><div class="label">≥4次出现</div></div>
+    <div class="card card-1"><div class="num">1</div><div class="label">覆盖交易日</div></div>
+</div>
+
+<table id="table">
+<thead>
+<tr>
+    <th>热度</th>
+    <th>股票</th>
+    <th>最新价</th>
+    <th>今日涨幅</th>
+    <th>板块</th>
+    <th>成交额</th>
+    <th>主力净额</th>
+    <th>出现日期</th>
+</tr>
+</thead>
+<tbody>
+
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/300990" target="_blank">同飞股份(300990)</a></td>
+            <td>120.41</td>
+            <td class="up">+14.69%</td>
+            <td>液冷算力</td>
+            <td>18.19亿</td>
+            <td>+8418万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/002536" target="_blank">飞龙股份(002536)</a></td>
+            <td>54.07</td>
+            <td class="up">+10.01%</td>
+            <td>液冷算力</td>
+            <td>22.03亿</td>
+            <td>+2.03亿</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603580" target="_blank">艾艾精工(603580)</a></td>
+            <td>33.75</td>
+            <td class="up">+10.01%</td>
+            <td>实控人变更</td>
+            <td>2075万</td>
+            <td>+1504万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603065" target="_blank">宿迁联盛(603065)</a></td>
+            <td>23.54</td>
+            <td class="up">+10.00%</td>
+            <td>芯片</td>
+            <td>12.28亿</td>
+            <td>+2092万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603137" target="_blank">恒尚节能(603137)</a></td>
+            <td>32.37</td>
+            <td class="up">+9.99%</td>
+            <td>并购重组</td>
+            <td>11.31亿</td>
+            <td>-9345万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/300214" target="_blank">日科化学(300214)</a></td>
+            <td>13.4</td>
+            <td class="up">+8.94%</td>
+            <td>并购重组算力</td>
+            <td>11.87亿</td>
+            <td>-5365万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/300592" target="_blank">华凯易佰(300592)</a></td>
+            <td>19.02</td>
+            <td class="up">+8.87%</td>
+            <td>AI应用</td>
+            <td>3.91亿</td>
+            <td>+3231万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603233" target="_blank">大参林(603233)</a></td>
+            <td>19.68</td>
+            <td class="up">+8.85%</td>
+            <td>医药零售</td>
+            <td>3.80亿</td>
+            <td>+657万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603669" target="_blank">灵康药业(603669)</a></td>
+            <td>7.4</td>
+            <td class="up">+8.82%</td>
+            <td>创新药</td>
+            <td>7.28亿</td>
+            <td>+2145万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/300759" target="_blank">康龙化成(300759)</a></td>
+            <td>36.93</td>
+            <td class="up">+8.36%</td>
+            <td>创新药</td>
+            <td>44.03亿</td>
+            <td>+3.21亿</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/600428" target="_blank">中远海特(600428)</a></td>
+            <td>10.58</td>
+            <td class="up">+7.74%</td>
+            <td>航运</td>
+            <td>18.75亿</td>
+            <td></td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603087" target="_blank">甘李药业(603087)</a></td>
+            <td>70.0</td>
+            <td class="up">+7.18%</td>
+            <td>医药</td>
+            <td>15.47亿</td>
+            <td>+4.03亿</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603127" target="_blank">昭衍新药(603127)</a></td>
+            <td>46.02</td>
+            <td class="up">+7.00%</td>
+            <td>创新药CRO</td>
+            <td>29.98亿</td>
+            <td>+1.17亿</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/003033" target="_blank">征和工业(003033)</a></td>
+            <td>71.0</td>
+            <td class="up">+6.59%</td>
+            <td>机器人概念</td>
+            <td>2.52亿</td>
+            <td>-343万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/002185" target="_blank">华天科技(002185)</a></td>
+            <td>25.68</td>
+            <td class="up">+6.42%</td>
+            <td>芯片</td>
+            <td>210.81亿</td>
+            <td>-5.26亿</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/301080" target="_blank">百普赛斯(301080)</a></td>
+            <td>53.31</td>
+            <td class="up">+6.13%</td>
+            <td>医药</td>
+            <td>5.27亿</td>
+            <td>+2810万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/605208" target="_blank">永茂泰(605208)</a></td>
+            <td>19.31</td>
+            <td class="up">+4.49%</td>
+            <td>机器人概念</td>
+            <td>5.56亿</td>
+            <td>+461万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/002303" target="_blank">美盈森(002303)</a></td>
+            <td>4.55</td>
+            <td class="up">+4.36%</td>
+            <td>食品饮料</td>
+            <td>2.58亿</td>
+            <td>+485万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/600288" target="_blank">大恒科技(600288)</a></td>
+            <td>17.18</td>
+            <td class="up">+3.25%</td>
+            <td>机器视觉</td>
+            <td>15.91亿</td>
+            <td>+4043万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/688758" target="_blank">赛分科技(688758)</a></td>
+            <td>23.06</td>
+            <td class="up">+2.26%</td>
+            <td>医药</td>
+            <td>3.22亿</td>
+            <td>+405万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603903" target="_blank">中持股份(603903)</a></td>
+            <td>15.5</td>
+            <td class="up">+1.71%</td>
+            <td>股权转让</td>
+            <td>2.49亿</td>
+            <td>+1252万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603068" target="_blank">博通集成(603068)</a></td>
+            <td>39.25</td>
+            <td class="up">+0.95%</td>
+            <td>端侧芯片</td>
+            <td>4.52亿</td>
+            <td>-2201万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/300105" target="_blank">龙源技术(300105)</a></td>
+            <td>7.86</td>
+            <td class="up">+0.64%</td>
+            <td>智能电网</td>
+            <td>2.57亿</td>
+            <td>+654万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/600900" target="_blank">长江电力(600900)</a></td>
+            <td>28.55</td>
+            <td class="up">+0.22%</td>
+            <td>电力</td>
+            <td>45.30亿</td>
+            <td>-2.30亿</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/688802" target="_blank">沐曦股份(688802)</a></td>
+            <td>974.98</td>
+            <td class="up">+0.19%</td>
+            <td>GPU算力</td>
+            <td>31.12亿</td>
+            <td>-1580万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603268" target="_blank">松发股份(603268)</a></td>
+            <td>163.24</td>
+            <td class="up">+0.18%</td>
+            <td>并购重组造船</td>
+            <td>14.53亿</td>
+            <td>+3833万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/600285" target="_blank">羚锐制药(600285)</a></td>
+            <td>22.7</td>
+            <td class="up">+0.18%</td>
+            <td>中药创新药</td>
+            <td>3.69亿</td>
+            <td>-255万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/688222" target="_blank">成都先导(688222)</a></td>
+            <td>35.52</td>
+            <td class="up">+0.03%</td>
+            <td>创新药</td>
+            <td>9.25亿</td>
+            <td>+1394万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/300765" target="_blank">石药创新(300765)</a></td>
+            <td>37.39</td>
+            <td class="down">-0.43%</td>
+            <td>创新药</td>
+            <td>6.47亿</td>
+            <td>+348万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/603893" target="_blank">瑞芯微(603893)</a></td>
+            <td>216.91</td>
+            <td class="down">-0.95%</td>
+            <td>端侧AI芯片</td>
+            <td>48.77亿</td>
+            <td>-1.26亿</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/000779" target="_blank">甘咨询(000779)</a></td>
+            <td>10.61</td>
+            <td class="down">-1.39%</td>
+            <td>环保</td>
+            <td>9.24亿</td>
+            <td>+4411万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/002317" target="_blank">众生药业(002317)</a></td>
+            <td>31.15</td>
+            <td class="down">-1.42%</td>
+            <td>创新药中药</td>
+            <td>24.61亿</td>
+            <td>-5512万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/600129" target="_blank">太极集团(600129)</a></td>
+            <td>17.63</td>
+            <td class="down">-1.73%</td>
+            <td>中药创新药</td>
+            <td>12.53亿</td>
+            <td>-3804万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/301310" target="_blank">鑫宏业(301310)</a></td>
+            <td>67.6</td>
+            <td class="down">-1.80%</td>
+            <td>机器人概念</td>
+            <td>9.23亿</td>
+            <td>+443万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/002674" target="_blank">兴业科技(002674)</a></td>
+            <td>31.9</td>
+            <td class="down">-3.22%</td>
+            <td>芯片并购重组</td>
+            <td>11.81亿</td>
+            <td>-3232万</td>
+            <td>2026-07-14</td>
+        </tr>
+        <tr class="">
+            <td><span class="badge badge-1">1次</span></td>
+            <td><a href="https://stock.quicktiny.cn/quote/688710" target="_blank">益诺思(688710)</a></td>
+            <td>81.08</td>
+            <td class="down">-3.50%</td>
+            <td>创新药CRO</td>
+            <td>5.01亿</td>
+            <td>+1.67亿</td>
+            <td>2026-07-14</td>
+        </tr>
+</tbody>
+</table>
+
+<script>
+// 自动按出现次数排序，高亮重复出现
+document.querySelectorAll('.hot-2, .hot-3, .hot-4').forEach(el => {
+    el.style.fontWeight = '500';
+});
+</script>
+</body>
+</html>
