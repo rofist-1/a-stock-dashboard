@@ -1,0 +1,7313 @@
+{
+  "records": [
+    {
+      "date": "2026-07-01",
+      "stocks": [
+        {
+          "code": "300873",
+          "name": "海晨股份",
+          "price": 28.72,
+          "changePct": 20.02,
+          "sector": "机器人概念",
+          "turnover": "15.24亿",
+          "mainNet": "-6485万"
+        },
+        {
+          "code": "300607",
+          "name": "拓斯达",
+          "price": 49.48,
+          "changePct": 20.01,
+          "sector": "机器人概念",
+          "turnover": "24.54亿",
+          "mainNet": "+4.34亿"
+        },
+        {
+          "code": "688106",
+          "name": "金宏气体",
+          "price": 49.78,
+          "changePct": 20.01,
+          "sector": "芯片",
+          "turnover": "26.58亿",
+          "mainNet": "+4.95亿"
+        },
+        {
+          "code": "688728",
+          "name": "格科微",
+          "price": 25.25,
+          "changePct": 20.01,
+          "sector": "芯片",
+          "turnover": "42.98亿",
+          "mainNet": "-2.32亿"
+        },
+        {
+          "code": "300518",
+          "name": "新迅达",
+          "price": 39.66,
+          "changePct": 20.0,
+          "sector": "锂电池",
+          "turnover": "5.27亿",
+          "mainNet": "+5207万"
+        },
+        {
+          "code": "300852",
+          "name": "四会富仕",
+          "price": 83.09,
+          "changePct": 20.0,
+          "sector": "通信",
+          "turnover": "16.41亿",
+          "mainNet": "+1385万"
+        },
+        {
+          "code": "688571",
+          "name": "杭华股份",
+          "price": 10.5,
+          "changePct": 20.0,
+          "sector": "芯片",
+          "turnover": "3.00亿",
+          "mainNet": "+4402万"
+        },
+        {
+          "code": "300481",
+          "name": "濮阳惠成",
+          "price": 22.82,
+          "changePct": 19.98,
+          "sector": "化工",
+          "turnover": "11.17亿",
+          "mainNet": "+2.13亿"
+        },
+        {
+          "code": "688689",
+          "name": "银河微电",
+          "price": 77.5,
+          "changePct": 19.75,
+          "sector": "芯片",
+          "turnover": "17.95亿",
+          "mainNet": "+8046万"
+        },
+        {
+          "code": "688721",
+          "name": "龙图光罩",
+          "price": 69.24,
+          "changePct": 18.6,
+          "sector": "芯片",
+          "turnover": "11.54亿",
+          "mainNet": "+9716万"
+        },
+        {
+          "code": "688286",
+          "name": "敏芯股份",
+          "price": 133.33,
+          "changePct": 15.87,
+          "sector": "芯片",
+          "turnover": "14.45亿",
+          "mainNet": "-3639万"
+        },
+        {
+          "code": "688578",
+          "name": "艾力斯",
+          "price": 125.81,
+          "changePct": 15.21,
+          "sector": "医药",
+          "turnover": "22.60亿",
+          "mainNet": "-4701万"
+        },
+        {
+          "code": "300720",
+          "name": "海川智能",
+          "price": 110.3,
+          "changePct": 14.66,
+          "sector": "机器人概念",
+          "turnover": "24.74亿",
+          "mainNet": "+9353万"
+        },
+        {
+          "code": "300560",
+          "name": "中富通",
+          "price": 21.84,
+          "changePct": 14.65,
+          "sector": "算力",
+          "turnover": "7.45亿",
+          "mainNet": "+3229万"
+        },
+        {
+          "code": "688432",
+          "name": "有研硅",
+          "price": 45.8,
+          "changePct": 14.59,
+          "sector": "芯片",
+          "turnover": "36.83亿",
+          "mainNet": "+5501万"
+        },
+        {
+          "code": "300566",
+          "name": "激智科技",
+          "price": 42.24,
+          "changePct": 14.32,
+          "sector": "面板",
+          "turnover": "19.78亿",
+          "mainNet": "-5641万"
+        },
+        {
+          "code": "301281",
+          "name": "科源制药",
+          "price": 56.29,
+          "changePct": 14.18,
+          "sector": "医药",
+          "turnover": "3.41亿",
+          "mainNet": "-1584万"
+        },
+        {
+          "code": "300540",
+          "name": "蜀道装备",
+          "price": 43.21,
+          "changePct": 14.01,
+          "sector": "芯片",
+          "turnover": "19.35亿",
+          "mainNet": "-443.1万"
+        },
+        {
+          "code": "688766",
+          "name": "普冉股份",
+          "price": 870.0,
+          "changePct": 13.49,
+          "sector": "芯片",
+          "turnover": "82.13亿",
+          "mainNet": "+6.44亿"
+        },
+        {
+          "code": "301328",
+          "name": "维峰电子",
+          "price": 80.6,
+          "changePct": 13.2,
+          "sector": "通信",
+          "turnover": "5.42亿",
+          "mainNet": "+7590万"
+        },
+        {
+          "code": "688652",
+          "name": "京仪装备",
+          "price": 225.0,
+          "changePct": 12.4,
+          "sector": "芯片",
+          "turnover": "37.99亿",
+          "mainNet": "+1.32亿"
+        },
+        {
+          "code": "688207",
+          "name": "格灵深瞳",
+          "price": 22.59,
+          "changePct": 12.39,
+          "sector": "物理AI",
+          "turnover": "8.36亿",
+          "mainNet": "+7478万"
+        },
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "price": 17.18,
+          "changePct": 11.49,
+          "sector": "环保",
+          "turnover": "2.99亿",
+          "mainNet": "+487.3万"
+        },
+        {
+          "code": "688266",
+          "name": "泽璟制药",
+          "price": 130.0,
+          "changePct": 11.43,
+          "sector": "医药",
+          "turnover": "15.24亿",
+          "mainNet": "+377.6万"
+        },
+        {
+          "code": "688233",
+          "name": "神工股份",
+          "price": 238.56,
+          "changePct": 11.26,
+          "sector": "芯片",
+          "turnover": "41.72亿",
+          "mainNet": "-2.88亿"
+        },
+        {
+          "code": "301617",
+          "name": "博苑新材",
+          "price": 65.4,
+          "changePct": 11.13,
+          "sector": "锂电池",
+          "turnover": "6.41亿",
+          "mainNet": "+1270万"
+        },
+        {
+          "code": "688549",
+          "name": "中巨芯",
+          "price": 40.6,
+          "changePct": 10.3,
+          "sector": "芯片",
+          "turnover": "46.08亿",
+          "mainNet": "+2.74亿"
+        },
+        {
+          "code": "002635",
+          "name": "安洁科技",
+          "price": 22.5,
+          "changePct": 10.02,
+          "sector": "通信",
+          "turnover": "1.29亿",
+          "mainNet": "+9975万"
+        },
+        {
+          "code": "002167",
+          "name": "东方锆业",
+          "price": 24.28,
+          "changePct": 10.01,
+          "sector": "非金属材料",
+          "turnover": "39.66亿",
+          "mainNet": "+3.95亿"
+        },
+        {
+          "code": "603738",
+          "name": "泰晶科技",
+          "price": 66.06,
+          "changePct": 10.01,
+          "sector": "通信",
+          "turnover": "3.44亿",
+          "mainNet": "+2.18亿"
+        },
+        {
+          "code": "600641",
+          "name": "先导基电",
+          "price": 43.85,
+          "changePct": 10.01,
+          "sector": "芯片",
+          "turnover": "54.71亿",
+          "mainNet": "+4.65亿"
+        },
+        {
+          "code": "600667",
+          "name": "太极实业",
+          "price": 32.1,
+          "changePct": 10.01,
+          "sector": "芯片",
+          "turnover": "129.91亿",
+          "mainNet": "+8.22亿"
+        },
+        {
+          "code": "603120",
+          "name": "肯特催化",
+          "price": 58.69,
+          "changePct": 10.01,
+          "sector": "芯片",
+          "turnover": "3.84亿",
+          "mainNet": "+5070万"
+        },
+        {
+          "code": "001256",
+          "name": "炜冈科技",
+          "price": 30.02,
+          "changePct": 10.0,
+          "sector": "新型工业化",
+          "turnover": "9681万",
+          "mainNet": "+5117万"
+        },
+        {
+          "code": "600885",
+          "name": "宏发股份",
+          "price": 37.94,
+          "changePct": 10.0,
+          "sector": "智能电网",
+          "turnover": "11.90亿",
+          "mainNet": "+5437万"
+        },
+        {
+          "code": "603379",
+          "name": "三美股份",
+          "price": 83.48,
+          "changePct": 10.0,
+          "sector": "化工",
+          "turnover": "35.91亿",
+          "mainNet": "-4583万"
+        },
+        {
+          "code": "605289",
+          "name": "罗曼股份",
+          "price": 159.5,
+          "changePct": 10.0,
+          "sector": "算力",
+          "turnover": "5.39亿",
+          "mainNet": "+1.41亿"
+        },
+        {
+          "code": "001331",
+          "name": "胜通能源",
+          "price": 62.02,
+          "changePct": 10.0,
+          "sector": "机器人概念",
+          "turnover": "8.61亿",
+          "mainNet": "+2419万"
+        },
+        {
+          "code": "603991",
+          "name": "领先股份",
+          "price": 155.27,
+          "changePct": 10.0,
+          "sector": "芯片",
+          "turnover": "21.03亿",
+          "mainNet": "+7225万"
+        },
+        {
+          "code": "605178",
+          "name": "时空科技",
+          "price": 104.3,
+          "changePct": 10.0,
+          "sector": "芯片",
+          "turnover": "7.02亿",
+          "mainNet": "+2.64亿"
+        },
+        {
+          "code": "600857",
+          "name": "宁波中百",
+          "price": 21.91,
+          "changePct": 9.99,
+          "sector": "零售",
+          "turnover": "2.78亿",
+          "mainNet": "+6139万"
+        },
+        {
+          "code": "600397",
+          "name": "江钨装备",
+          "price": 29.95,
+          "changePct": 9.99,
+          "sector": "有色金属",
+          "turnover": "12.16亿",
+          "mainNet": "+3.31亿"
+        },
+        {
+          "code": "600909",
+          "name": "华安证券",
+          "price": 12.22,
+          "changePct": 9.99,
+          "sector": "证券",
+          "turnover": "25.11亿",
+          "mainNet": "+3.64亿"
+        },
+        {
+          "code": "002747",
+          "name": "埃斯顿",
+          "price": 41.06,
+          "changePct": 9.99,
+          "sector": "机器人概念",
+          "turnover": "21.97亿",
+          "mainNet": "+6.39亿"
+        },
+        {
+          "code": "000733",
+          "name": "振华科技",
+          "price": 62.3,
+          "changePct": 9.99,
+          "sector": "芯片",
+          "turnover": "8.49亿",
+          "mainNet": "+4.48亿"
+        },
+        {
+          "code": "002559",
+          "name": "亚威股份",
+          "price": 13.98,
+          "changePct": 9.99,
+          "sector": "芯片",
+          "turnover": "2.89亿",
+          "mainNet": "+1.89亿"
+        },
+        {
+          "code": "002407",
+          "name": "多氟多",
+          "price": 55.25,
+          "changePct": 9.99,
+          "sector": "芯片",
+          "turnover": "38.93亿",
+          "mainNet": "+6.07亿"
+        },
+        {
+          "code": "301592",
+          "name": "六九一二",
+          "price": 145.56,
+          "changePct": 9.98,
+          "sector": "军工",
+          "turnover": "5.89亿",
+          "mainNet": "+3558万"
+        },
+        {
+          "code": "002653",
+          "name": "海思科",
+          "price": 72.96,
+          "changePct": 9.98,
+          "sector": "医药",
+          "turnover": "14.96亿",
+          "mainNet": "+1.28亿"
+        },
+        {
+          "code": "300503",
+          "name": "昊志机电",
+          "price": 101.48,
+          "changePct": 9.95,
+          "sector": "机器人概念",
+          "turnover": "51.40亿",
+          "mainNet": "-7.51亿"
+        },
+        {
+          "code": "300801",
+          "name": "泰和科技",
+          "price": 35.45,
+          "changePct": 9.75,
+          "sector": "芯片",
+          "turnover": "8.75亿",
+          "mainNet": "+4.32亿"
+        },
+        {
+          "code": "688179",
+          "name": "阿拉丁",
+          "price": 30.21,
+          "changePct": 9.02,
+          "sector": "化工",
+          "turnover": "10.04亿",
+          "mainNet": "+1.01亿"
+        },
+        {
+          "code": "600961",
+          "name": "株冶集团",
+          "price": 35.3,
+          "changePct": 8.98,
+          "sector": "有色金属",
+          "turnover": "36.89亿",
+          "mainNet": "+4.29亿"
+        },
+        {
+          "code": "600366",
+          "name": "宁波韵升",
+          "price": 15.99,
+          "changePct": 8.92,
+          "sector": "机器人概念",
+          "turnover": "28.63亿",
+          "mainNet": "+2.70亿"
+        },
+        {
+          "code": "002422",
+          "name": "科伦药业",
+          "price": 41.95,
+          "changePct": 8.9,
+          "sector": "医药",
+          "turnover": "20.14亿",
+          "mainNet": "-4772万"
+        },
+        {
+          "code": "600999",
+          "name": "招商证券",
+          "price": 22.94,
+          "changePct": 8.72,
+          "sector": "证券",
+          "turnover": "54.63亿",
+          "mainNet": "+7.45亿"
+        },
+        {
+          "code": "002317",
+          "name": "众生药业",
+          "price": 26.71,
+          "changePct": 8.71,
+          "sector": "创新药",
+          "turnover": "19.61亿",
+          "mainNet": "+2.10亿"
+        },
+        {
+          "code": "688206",
+          "name": "概伦电子",
+          "price": 48.2,
+          "changePct": 8.63,
+          "sector": "芯片",
+          "turnover": "10.05亿",
+          "mainNet": "+3368万"
+        },
+        {
+          "code": "301280",
+          "name": "珠城科技",
+          "price": 54.89,
+          "changePct": 8.54,
+          "sector": "机器人概念",
+          "turnover": "4.27亿",
+          "mainNet": "-1451万"
+        },
+        {
+          "code": "300323",
+          "name": "华灿光电",
+          "price": 22.14,
+          "changePct": 8.53,
+          "sector": "面板",
+          "turnover": "38.72亿",
+          "mainNet": "+2.10亿"
+        },
+        {
+          "code": "688020",
+          "name": "方邦股份",
+          "price": 270.08,
+          "changePct": 8.21,
+          "sector": "通信",
+          "turnover": "14.49亿",
+          "mainNet": "+7105万"
+        },
+        {
+          "code": "000783",
+          "name": "长江证券",
+          "price": 10.54,
+          "changePct": 8.1,
+          "sector": "证券",
+          "turnover": "45.27亿",
+          "mainNet": "+5.73亿"
+        },
+        {
+          "code": "300005",
+          "name": "探路者",
+          "price": 24.43,
+          "changePct": 8.1,
+          "sector": "机器人概念",
+          "turnover": "15.89亿",
+          "mainNet": "+5587万"
+        },
+        {
+          "code": "605020",
+          "name": "永和股份",
+          "price": 43.99,
+          "changePct": 8.03,
+          "sector": "化工",
+          "turnover": "25.53亿",
+          "mainNet": "+1.77亿"
+        },
+        {
+          "code": "603324",
+          "name": "盛剑科技",
+          "price": 55.3,
+          "changePct": 7.88,
+          "sector": "芯片",
+          "turnover": "10.81亿",
+          "mainNet": "+8257万"
+        },
+        {
+          "code": "603713",
+          "name": "密尔克卫",
+          "price": 76.65,
+          "changePct": 7.7,
+          "sector": "芯片",
+          "turnover": "4.97亿",
+          "mainNet": "+2207万"
+        },
+        {
+          "code": "300821",
+          "name": "东岳硅材",
+          "price": 22.13,
+          "changePct": 7.64,
+          "sector": "化工",
+          "turnover": "28.38亿",
+          "mainNet": "+2038万"
+        },
+        {
+          "code": "688359",
+          "name": "三孚新科",
+          "price": 213.5,
+          "changePct": 7.59,
+          "sector": "芯片",
+          "turnover": "15.32亿",
+          "mainNet": "+4.12亿"
+        },
+        {
+          "code": "600378",
+          "name": "昊华科技",
+          "price": 81.0,
+          "changePct": 7.46,
+          "sector": "芯片",
+          "turnover": "111.5亿",
+          "mainNet": "+2.48亿"
+        },
+        {
+          "code": "300416",
+          "name": "苏试试验",
+          "price": 21.88,
+          "changePct": 7.36,
+          "sector": "芯片",
+          "turnover": "10.79亿",
+          "mainNet": "+7159万"
+        },
+        {
+          "code": "688138",
+          "name": "清溢光电",
+          "price": 50.39,
+          "changePct": 7.21,
+          "sector": "芯片",
+          "turnover": "10.81亿",
+          "mainNet": "+2589万"
+        },
+        {
+          "code": "688105",
+          "name": "诺唯赞",
+          "price": 18.6,
+          "changePct": 7.2,
+          "sector": "医药",
+          "turnover": "3.02亿",
+          "mainNet": "+3578万"
+        },
+        {
+          "code": "300033",
+          "name": "同花顺",
+          "price": 258.0,
+          "changePct": 7.05,
+          "sector": "金融概念",
+          "turnover": "103.41亿",
+          "mainNet": "+11.15亿"
+        },
+        {
+          "code": "300666",
+          "name": "江丰电子",
+          "price": 394.33,
+          "changePct": 6.98,
+          "sector": "芯片",
+          "turnover": "99.77亿",
+          "mainNet": "+5668万"
+        },
+        {
+          "code": "603067",
+          "name": "振华股份",
+          "price": 49.5,
+          "changePct": 6.93,
+          "sector": "化工",
+          "turnover": "34.08亿",
+          "mainNet": "+5285万"
+        },
+        {
+          "code": "688117",
+          "name": "圣诺生物",
+          "price": 28.88,
+          "changePct": 6.84,
+          "sector": "医药",
+          "turnover": "3.82亿",
+          "mainNet": "+1646万"
+        },
+        {
+          "code": "301165",
+          "name": "锐捷网络",
+          "price": 85.92,
+          "changePct": 6.8,
+          "sector": "通信",
+          "turnover": "35.46亿",
+          "mainNet": "-4.53亿"
+        },
+        {
+          "code": "003043",
+          "name": "华亚智能",
+          "price": 106.0,
+          "changePct": 6.65,
+          "sector": "芯片",
+          "turnover": "15.65亿",
+          "mainNet": "+1.29亿"
+        },
+        {
+          "code": "603078",
+          "name": "江化微",
+          "price": 52.66,
+          "changePct": 6.56,
+          "sector": "芯片",
+          "turnover": "35.69亿",
+          "mainNet": "-7600万"
+        },
+        {
+          "code": "688046",
+          "name": "药康生物",
+          "price": 25.77,
+          "changePct": 6.49,
+          "sector": "医药",
+          "turnover": "2.68亿",
+          "mainNet": "+830.9万"
+        },
+        {
+          "code": "300671",
+          "name": "富满微",
+          "price": 91.74,
+          "changePct": 6.48,
+          "sector": "芯片",
+          "turnover": "37.39亿",
+          "mainNet": "-8011万"
+        },
+        {
+          "code": "600906",
+          "name": "财达证券",
+          "price": 7.93,
+          "changePct": 6.3,
+          "sector": "证券",
+          "turnover": "13.98亿",
+          "mainNet": "+1.23亿"
+        },
+        {
+          "code": "000776",
+          "name": "广发证券",
+          "price": 24.86,
+          "changePct": 6.24,
+          "sector": "证券",
+          "turnover": "47.82亿",
+          "mainNet": "+3.89亿"
+        },
+        {
+          "code": "601678",
+          "name": "滨化股份",
+          "price": 7.0,
+          "changePct": 6.22,
+          "sector": "化工",
+          "turnover": "25.00亿",
+          "mainNet": "-1921万"
+        },
+        {
+          "code": "688584",
+          "name": "上海合晶",
+          "price": 38.1,
+          "changePct": 5.98,
+          "sector": "芯片",
+          "turnover": "14.08亿",
+          "mainNet": "+1.04亿"
+        },
+        {
+          "code": "688545",
+          "name": "兴福电子",
+          "price": 140.9,
+          "changePct": 5.89,
+          "sector": "芯片",
+          "turnover": "31.08亿",
+          "mainNet": "-106.5万"
+        },
+        {
+          "code": "300586",
+          "name": "美联新材",
+          "price": 16.56,
+          "changePct": 5.88,
+          "sector": "锂电池",
+          "turnover": "14.63亿",
+          "mainNet": "-87.61万"
+        },
+        {
+          "code": "688596",
+          "name": "正帆科技",
+          "price": 83.66,
+          "changePct": 5.82,
+          "sector": "芯片",
+          "turnover": "10.19亿",
+          "mainNet": "-4.07亿"
+        },
+        {
+          "code": "002861",
+          "name": "瀛通通讯",
+          "price": 23.57,
+          "changePct": 5.79,
+          "sector": "消费电子",
+          "turnover": "47.17亿",
+          "mainNet": "+1289万"
+        },
+        {
+          "code": "603155",
+          "name": "新亚强",
+          "price": 30.23,
+          "changePct": 5.77,
+          "sector": "通信",
+          "turnover": "2.02亿",
+          "mainNet": "-377.3万"
+        },
+        {
+          "code": "002371",
+          "name": "北方华创",
+          "price": 935.36,
+          "changePct": 5.74,
+          "sector": "芯片",
+          "turnover": "136.01亿",
+          "mainNet": "+1.24亿"
+        },
+        {
+          "code": "301588",
+          "name": "美新科技",
+          "price": 46.23,
+          "changePct": 5.64,
+          "sector": "地产链",
+          "turnover": "3.44亿",
+          "mainNet": "+3877万"
+        },
+        {
+          "code": "688548",
+          "name": "广钢气体",
+          "price": 55.0,
+          "changePct": 5.57,
+          "sector": "芯片",
+          "turnover": "34.97亿",
+          "mainNet": "+342.9万"
+        },
+        {
+          "code": "603678",
+          "name": "火炬电子",
+          "price": 87.5,
+          "changePct": 5.42,
+          "sector": "元器件",
+          "turnover": "45.36亿",
+          "mainNet": "+2.01亿"
+        },
+        {
+          "code": "300938",
+          "name": "信测标准",
+          "price": 52.57,
+          "changePct": 5.39,
+          "sector": "芯片",
+          "turnover": "10.12亿",
+          "mainNet": "-1397万"
+        },
+        {
+          "code": "600160",
+          "name": "巨化股份",
+          "price": 55.85,
+          "changePct": 5.36,
+          "sector": "化工",
+          "turnover": "69.36亿",
+          "mainNet": "+2458万"
+        },
+        {
+          "code": "688168",
+          "name": "安博通",
+          "price": 72.43,
+          "changePct": 5.35,
+          "sector": "AI应用",
+          "turnover": "3.60亿",
+          "mainNet": "+127.1万"
+        },
+        {
+          "code": "600400",
+          "name": "红豆股份",
+          "price": 3.46,
+          "changePct": 5.17,
+          "sector": "机器人概念",
+          "turnover": "3.21亿",
+          "mainNet": "-7.09亿"
+        },
+        {
+          "code": "002409",
+          "name": "雅克科技",
+          "price": 236.09,
+          "changePct": 5.16,
+          "sector": "芯片",
+          "turnover": "106.31亿",
+          "mainNet": "-5.54亿"
+        },
+        {
+          "code": "000100",
+          "name": "TCL科技",
+          "price": 6.12,
+          "changePct": 5.15,
+          "sector": "面板",
+          "turnover": "157.81亿",
+          "mainNet": "+411.1万"
+        },
+        {
+          "code": "688620",
+          "name": "安凯微",
+          "price": 17.03,
+          "changePct": 5.12,
+          "sector": "芯片",
+          "turnover": "6.01亿",
+          "mainNet": ""
+        },
+        {
+          "code": "300480",
+          "name": "光力科技",
+          "price": 44.85,
+          "changePct": 5.08,
+          "sector": "芯片",
+          "turnover": "20.48亿",
+          "mainNet": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "stocks": [
+        {
+          "code": "301092",
+          "name": "争光股份",
+          "price": 58.91,
+          "changePct": 20.0,
+          "sector": "通信",
+          "turnover": "5.40亿",
+          "mainNet": "+8065万"
+        },
+        {
+          "code": "688216",
+          "name": "气派科技",
+          "price": 51.3,
+          "changePct": 20.0,
+          "sector": "芯片",
+          "turnover": "10.24亿",
+          "mainNet": "+1.30亿"
+        },
+        {
+          "code": "688305",
+          "name": "科德数控",
+          "price": 75.56,
+          "changePct": 12.37,
+          "sector": "机器人概念",
+          "turnover": "11.64亿",
+          "mainNet": "+8103万"
+        },
+        {
+          "code": "002458",
+          "name": "益生股份",
+          "price": 9.41,
+          "changePct": 10.06,
+          "sector": "农业",
+          "turnover": "9.76亿",
+          "mainNet": "-357.0万"
+        },
+        {
+          "code": "603505",
+          "name": "金石资源",
+          "price": 24.39,
+          "changePct": 10.01,
+          "sector": "化工",
+          "turnover": "25.15亿",
+          "mainNet": "+1.21亿"
+        },
+        {
+          "code": "002559",
+          "name": "亚威股份",
+          "price": 15.38,
+          "changePct": 10.01,
+          "sector": "芯片",
+          "turnover": "14.24亿",
+          "mainNet": "+2.20亿"
+        },
+        {
+          "code": "600641",
+          "name": "先导基电",
+          "price": 48.24,
+          "changePct": 10.01,
+          "sector": "芯片",
+          "turnover": "32.82亿",
+          "mainNet": "+3.67亿"
+        },
+        {
+          "code": "601678",
+          "name": "滨化股份",
+          "price": 7.7,
+          "changePct": 10.01,
+          "sector": "化工",
+          "turnover": "17.12亿",
+          "mainNet": "+2.34亿"
+        },
+        {
+          "code": "605020",
+          "name": "永和股份",
+          "price": 48.39,
+          "changePct": 10.0,
+          "sector": "化工",
+          "turnover": "29.34亿",
+          "mainNet": "+2.40亿"
+        },
+        {
+          "code": "002354",
+          "name": "天娱数科",
+          "price": 10.34,
+          "changePct": 10.0,
+          "sector": "机器人概念",
+          "turnover": "10.57亿",
+          "mainNet": "+6.79亿"
+        },
+        {
+          "code": "603928",
+          "name": "兴业股份",
+          "price": 15.84,
+          "changePct": 10.0,
+          "sector": "芯片",
+          "turnover": "7.96亿",
+          "mainNet": "+1.99亿"
+        },
+        {
+          "code": "600630",
+          "name": "龙头股份",
+          "price": 10.69,
+          "changePct": 10.0,
+          "sector": "外贸",
+          "turnover": "5.33亿",
+          "mainNet": "+1.05亿"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 15.65,
+          "changePct": 9.98,
+          "sector": "并购重组",
+          "turnover": "568.4万",
+          "mainNet": "+430.4万"
+        },
+        {
+          "code": "603078",
+          "name": "江化微",
+          "price": 56.9,
+          "changePct": 9.98,
+          "sector": "芯片",
+          "turnover": "39.39亿",
+          "mainNet": "+2.30亿"
+        },
+        {
+          "code": "600322",
+          "name": "津投城开",
+          "price": 3.09,
+          "changePct": 8.05,
+          "sector": "地产链",
+          "turnover": "2.99亿",
+          "mainNet": "+986.0万"
+        },
+        {
+          "code": "002653",
+          "name": "海思科",
+          "price": 78.8,
+          "changePct": 8.0,
+          "sector": "医药",
+          "turnover": "17.55亿",
+          "mainNet": "+4.79亿"
+        },
+        {
+          "code": "603823",
+          "name": "百合花",
+          "price": 61.22,
+          "changePct": 7.82,
+          "sector": "芯片",
+          "turnover": "11.11亿",
+          "mainNet": "+1.02亿"
+        },
+        {
+          "code": "605178",
+          "name": "时空科技",
+          "price": 112.28,
+          "changePct": 7.65,
+          "sector": "芯片",
+          "turnover": "13.38亿",
+          "mainNet": "+7410万"
+        },
+        {
+          "code": "688103",
+          "name": "国力电子",
+          "price": 74.85,
+          "changePct": 7.51,
+          "sector": "芯片",
+          "turnover": "5.04亿",
+          "mainNet": "+4840万"
+        },
+        {
+          "code": "002167",
+          "name": "东方锆业",
+          "price": 26.05,
+          "changePct": 7.29,
+          "sector": "非金属材料",
+          "turnover": "50.97亿",
+          "mainNet": "-1.41亿"
+        },
+        {
+          "code": "600601",
+          "name": "方正科技",
+          "price": 14.92,
+          "changePct": 6.8,
+          "sector": "通信",
+          "turnover": "77.32亿",
+          "mainNet": "+13.51亿"
+        },
+        {
+          "code": "002422",
+          "name": "科伦药业",
+          "price": 44.75,
+          "changePct": 6.67,
+          "sector": "医药",
+          "turnover": "24.83亿",
+          "mainNet": "-4430万"
+        },
+        {
+          "code": "301045",
+          "name": "天禄科技",
+          "price": 98.31,
+          "changePct": 6.18,
+          "sector": "面板",
+          "turnover": "13.41亿",
+          "mainNet": "-4524万"
+        },
+        {
+          "code": "300655",
+          "name": "晶瑞电材",
+          "price": 21.93,
+          "changePct": 5.89,
+          "sector": "芯片",
+          "turnover": "45.33亿",
+          "mainNet": "+1.51亿"
+        },
+        {
+          "code": "301588",
+          "name": "美新科技",
+          "price": 48.88,
+          "changePct": 5.73,
+          "sector": "地产链",
+          "turnover": "4.55亿",
+          "mainNet": "+3983万"
+        },
+        {
+          "code": "603270",
+          "name": "金帝股份",
+          "price": 34.88,
+          "changePct": 5.7,
+          "sector": "机器人概念",
+          "turnover": "5.91亿",
+          "mainNet": "+3290万"
+        },
+        {
+          "code": "603650",
+          "name": "彤程新材",
+          "price": 97.71,
+          "changePct": 5.64,
+          "sector": "芯片",
+          "turnover": "54.80亿",
+          "mainNet": "+4409万"
+        },
+        {
+          "code": "688571",
+          "name": "杭华股份",
+          "price": 11.06,
+          "changePct": 5.33,
+          "sector": "芯片",
+          "turnover": "5.46亿",
+          "mainNet": "+1892万"
+        },
+        {
+          "code": "002955",
+          "name": "鸿合科技",
+          "price": 37.54,
+          "changePct": 5.21,
+          "sector": "AI应用",
+          "turnover": "5.19亿",
+          "mainNet": "+3453万"
+        },
+        {
+          "code": "600458",
+          "name": "时代新材",
+          "price": 17.44,
+          "changePct": 5.12,
+          "sector": "风电",
+          "turnover": "15.46亿",
+          "mainNet": "+1.21亿"
+        },
+        {
+          "code": "300720",
+          "name": "海川智能",
+          "price": 115.74,
+          "changePct": 4.93,
+          "sector": "机器人概念",
+          "turnover": "22.57亿",
+          "mainNet": "-995.0万"
+        },
+        {
+          "code": "688506",
+          "name": "百利天恒",
+          "price": 335.5,
+          "changePct": 4.88,
+          "sector": "医药",
+          "turnover": "17.43亿",
+          "mainNet": "+5.46亿"
+        },
+        {
+          "code": "688266",
+          "name": "泽璟制药",
+          "price": 136.31,
+          "changePct": 4.85,
+          "sector": "医药",
+          "turnover": "20.32亿",
+          "mainNet": "+2.11亿"
+        },
+        {
+          "code": "688163",
+          "name": "赛伦生物",
+          "price": 51.4,
+          "changePct": 4.54,
+          "sector": "医药",
+          "turnover": "2.09亿",
+          "mainNet": "+369.5万"
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 6.06,
+          "changePct": 4.3,
+          "sector": "创新药",
+          "turnover": "2.89亿",
+          "mainNet": "+735.6万"
+        },
+        {
+          "code": "301603",
+          "name": "乔锋智能",
+          "price": 144.73,
+          "changePct": 4.23,
+          "sector": "机器人概念",
+          "turnover": "7.41亿",
+          "mainNet": "+7028万"
+        },
+        {
+          "code": "603607",
+          "name": "京华激光",
+          "price": 26.6,
+          "changePct": 4.07,
+          "sector": "芯片",
+          "turnover": "3.35亿",
+          "mainNet": "-1267万"
+        },
+        {
+          "code": "688578",
+          "name": "艾力斯",
+          "price": 130.87,
+          "changePct": 4.02,
+          "sector": "医药",
+          "turnover": "29.63亿",
+          "mainNet": "+3.37亿"
+        },
+        {
+          "code": "600366",
+          "name": "宁波韵升",
+          "price": 16.63,
+          "changePct": 4.0,
+          "sector": "机器人概念",
+          "turnover": "27.05亿",
+          "mainNet": "-1.42亿"
+        },
+        {
+          "code": "603257",
+          "name": "中国瑞林",
+          "price": 84.2,
+          "changePct": 3.95,
+          "sector": "有色金属",
+          "turnover": "2.70亿",
+          "mainNet": "+1697万"
+        },
+        {
+          "code": "000970",
+          "name": "中科三环",
+          "price": 16.1,
+          "changePct": 3.94,
+          "sector": "稀土永磁",
+          "turnover": "24.87亿",
+          "mainNet": "+1.28亿"
+        },
+        {
+          "code": "000725",
+          "name": "京东方A",
+          "price": 9.1,
+          "changePct": 3.76,
+          "sector": "芯片",
+          "turnover": "493.41亿",
+          "mainNet": "+13.03亿"
+        },
+        {
+          "code": "301365",
+          "name": "矩阵股份",
+          "price": 39.93,
+          "changePct": 3.71,
+          "sector": "地产链",
+          "turnover": "4.90亿",
+          "mainNet": "+518.3万"
+        },
+        {
+          "code": "002211",
+          "name": "ST宏达",
+          "price": 4.2,
+          "changePct": 3.7,
+          "sector": "ST板块",
+          "turnover": "6522万",
+          "mainNet": "+314.1万"
+        },
+        {
+          "code": "300907",
+          "name": "康平科技",
+          "price": 58.8,
+          "changePct": 3.69,
+          "sector": "机器人概念",
+          "turnover": "4.26亿",
+          "mainNet": "+362.7万"
+        },
+        {
+          "code": "002025",
+          "name": "航天电器",
+          "price": 83.1,
+          "changePct": 3.62,
+          "sector": "商业航天",
+          "turnover": "31.52亿",
+          "mainNet": "+1.69亿"
+        },
+        {
+          "code": "301072",
+          "name": "中捷精工",
+          "price": 43.09,
+          "changePct": 3.58,
+          "sector": "汽车零部件",
+          "turnover": "2.50亿",
+          "mainNet": "+2785万"
+        },
+        {
+          "code": "300661",
+          "name": "圣邦股份",
+          "price": 142.0,
+          "changePct": 3.49,
+          "sector": "芯片",
+          "turnover": "43.87亿",
+          "mainNet": "+3.52亿"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 40.36,
+          "changePct": 3.49,
+          "sector": "芯片",
+          "turnover": "5.56亿",
+          "mainNet": "+6615万"
+        },
+        {
+          "code": "300568",
+          "name": "星源材质",
+          "price": 20.34,
+          "changePct": 3.46,
+          "sector": "锂电池",
+          "turnover": "31.47亿",
+          "mainNet": "+7291万"
+        },
+        {
+          "code": "300562",
+          "name": "乐心医疗",
+          "price": 14.89,
+          "changePct": 3.4,
+          "sector": "AI应用",
+          "turnover": "3.49亿",
+          "mainNet": "+2118万"
+        },
+        {
+          "code": "600857",
+          "name": "宁波中百",
+          "price": 22.63,
+          "changePct": 3.29,
+          "sector": "零售",
+          "turnover": "5.51亿",
+          "mainNet": "+1377万"
+        },
+        {
+          "code": "300985",
+          "name": "致远新能",
+          "price": 41.39,
+          "changePct": 3.29,
+          "sector": "天然气",
+          "turnover": "2.45亿",
+          "mainNet": "+816.9万"
+        },
+        {
+          "code": "300938",
+          "name": "信测标准",
+          "price": 54.3,
+          "changePct": 3.29,
+          "sector": "芯片",
+          "turnover": "14.26亿",
+          "mainNet": "-2945万"
+        },
+        {
+          "code": "300964",
+          "name": "本川智能",
+          "price": 83.0,
+          "changePct": 3.25,
+          "sector": "通信",
+          "turnover": "8.99亿",
+          "mainNet": "+1203万"
+        },
+        {
+          "code": "688689",
+          "name": "银河微电",
+          "price": 80.0,
+          "changePct": 3.23,
+          "sector": "芯片",
+          "turnover": "13.94亿",
+          "mainNet": "+1966万"
+        },
+        {
+          "code": "301281",
+          "name": "科源制药",
+          "price": 58.05,
+          "changePct": 3.13,
+          "sector": "医药",
+          "turnover": "4.23亿",
+          "mainNet": "+2882万"
+        },
+        {
+          "code": "603120",
+          "name": "肯特催化",
+          "price": 60.37,
+          "changePct": 2.86,
+          "sector": "芯片",
+          "turnover": "7.01亿",
+          "mainNet": "+184.4万"
+        },
+        {
+          "code": "688221",
+          "name": "前沿生物",
+          "price": 27.33,
+          "changePct": 2.78,
+          "sector": "医药",
+          "turnover": "10.84亿",
+          "mainNet": "-1794万"
+        },
+        {
+          "code": "002046",
+          "name": "国机精工",
+          "price": 72.4,
+          "changePct": 2.77,
+          "sector": "金刚石概念",
+          "turnover": "18.20亿",
+          "mainNet": "+5731万"
+        },
+        {
+          "code": "301237",
+          "name": "和顺科技",
+          "price": 80.37,
+          "changePct": 2.64,
+          "sector": "商业航天",
+          "turnover": "4.50亿",
+          "mainNet": "+2268万"
+        },
+        {
+          "code": "300717",
+          "name": "华信新材",
+          "price": 22.6,
+          "changePct": 2.22,
+          "sector": "新材料概念",
+          "turnover": "1.70亿",
+          "mainNet": "+781.5万"
+        },
+        {
+          "code": "002937",
+          "name": "兴瑞科技",
+          "price": 44.1,
+          "changePct": 2.2,
+          "sector": "算力",
+          "turnover": "5.84亿",
+          "mainNet": "+3517万"
+        },
+        {
+          "code": "002687",
+          "name": "乔治白",
+          "price": 5.54,
+          "changePct": 2.03,
+          "sector": "服装家纺",
+          "turnover": "2.00亿",
+          "mainNet": ""
+        },
+        {
+          "code": "600177",
+          "name": "雅戈尔",
+          "price": 7.83,
+          "changePct": 1.95,
+          "sector": "服装家纺",
+          "turnover": "3.03亿",
+          "mainNet": ""
+        },
+        {
+          "code": "300041",
+          "name": "回天新材",
+          "price": 15.68,
+          "changePct": 1.88,
+          "sector": "光伏",
+          "turnover": "13.37亿",
+          "mainNet": "-5329万"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "price": 37.5,
+          "changePct": 1.52,
+          "sector": "芯片",
+          "turnover": "3.78亿",
+          "mainNet": "+838.9万"
+        },
+        {
+          "code": "600378",
+          "name": "昊华科技",
+          "price": 82.17,
+          "changePct": 1.44,
+          "sector": "芯片",
+          "turnover": "96.21亿",
+          "mainNet": "-5.87亿"
+        },
+        {
+          "code": "688059",
+          "name": "华锐精密",
+          "price": 217.77,
+          "changePct": 1.29,
+          "sector": "机器人概念",
+          "turnover": "14.12亿",
+          "mainNet": "+9407万"
+        },
+        {
+          "code": "301617",
+          "name": "博苑新材",
+          "price": 66.21,
+          "changePct": 1.24,
+          "sector": "锂电池",
+          "turnover": "5.04亿",
+          "mainNet": "+8201万"
+        },
+        {
+          "code": "301607",
+          "name": "富特科技",
+          "price": 52.22,
+          "changePct": 1.22,
+          "sector": "芯片",
+          "turnover": "9.33亿",
+          "mainNet": "+1.34亿"
+        },
+        {
+          "code": "688391",
+          "name": "钜泉科技",
+          "price": 36.0,
+          "changePct": 1.21,
+          "sector": "芯片",
+          "turnover": "1.66亿",
+          "mainNet": "+773.6万"
+        },
+        {
+          "code": "688117",
+          "name": "圣诺生物",
+          "price": 29.2,
+          "changePct": 1.11,
+          "sector": "医药",
+          "turnover": "3.44亿",
+          "mainNet": "+1242万"
+        },
+        {
+          "code": "002668",
+          "name": "TCL智家",
+          "price": 11.03,
+          "changePct": 1.1,
+          "sector": "端侧AI",
+          "turnover": "2.58亿",
+          "mainNet": "+1314万"
+        },
+        {
+          "code": "603006",
+          "name": "联明股份",
+          "price": 14.61,
+          "changePct": 1.04,
+          "sector": "物流",
+          "turnover": "1.42亿",
+          "mainNet": "+583.9万"
+        },
+        {
+          "code": "688112",
+          "name": "鼎阳科技",
+          "price": 80.3,
+          "changePct": 1.04,
+          "sector": "通信",
+          "turnover": "5.71亿",
+          "mainNet": "+3717万"
+        },
+        {
+          "code": "603978",
+          "name": "深圳新星",
+          "price": 33.51,
+          "changePct": 0.9,
+          "sector": "锂电池",
+          "turnover": "7.22亿",
+          "mainNet": "+305.2万"
+        },
+        {
+          "code": "603223",
+          "name": "恒通股份",
+          "price": 13.46,
+          "changePct": 0.75,
+          "sector": "物流",
+          "turnover": "3.77亿",
+          "mainNet": "-878.8万"
+        },
+        {
+          "code": "300671",
+          "name": "富满微",
+          "price": 92.24,
+          "changePct": 0.55,
+          "sector": "芯片",
+          "turnover": "34.62亿",
+          "mainNet": "+3.84亿"
+        },
+        {
+          "code": "002965",
+          "name": "祥鑫科技",
+          "price": 51.18,
+          "changePct": 0.51,
+          "sector": "算力",
+          "turnover": "10.11亿",
+          "mainNet": "+842.4万"
+        },
+        {
+          "code": "002972",
+          "name": "科安达",
+          "price": 19.07,
+          "changePct": 0.37,
+          "sector": "轨道交通",
+          "turnover": "2.20亿",
+          "mainNet": "+753.9万"
+        },
+        {
+          "code": "688432",
+          "name": "有研硅",
+          "price": 45.91,
+          "changePct": 0.24,
+          "sector": "芯片",
+          "turnover": "38.71亿",
+          "mainNet": "+1.14亿"
+        },
+        {
+          "code": "301328",
+          "name": "维峰电子",
+          "price": 80.66,
+          "changePct": 0.07,
+          "sector": "通信",
+          "turnover": "6.93亿",
+          "mainNet": "+4495万"
+        },
+        {
+          "code": "603379",
+          "name": "三美股份",
+          "price": 83.48,
+          "changePct": 0.0,
+          "sector": "化工",
+          "turnover": "45.13亿",
+          "mainNet": "-6.29亿"
+        },
+        {
+          "code": "002935",
+          "name": "天奥电子",
+          "price": 23.02,
+          "changePct": 0.0,
+          "sector": "芯片",
+          "turnover": "4.06亿",
+          "mainNet": "+3713万"
+        },
+        {
+          "code": "300894",
+          "name": "火星人",
+          "price": 12.2,
+          "changePct": -0.16,
+          "sector": "家电",
+          "turnover": "1.52亿",
+          "mainNet": "+1326万"
+        },
+        {
+          "code": "002303",
+          "name": "美盈森",
+          "price": 4.29,
+          "changePct": -0.23,
+          "sector": "食品饮料",
+          "turnover": "2.47亿",
+          "mainNet": "-1015万"
+        },
+        {
+          "code": "300727",
+          "name": "润禾材料",
+          "price": 38.68,
+          "changePct": -0.26,
+          "sector": "化工",
+          "turnover": "5.17亿",
+          "mainNet": "-102.6万"
+        },
+        {
+          "code": "002056",
+          "name": "横店东磁",
+          "price": 30.66,
+          "changePct": -0.33,
+          "sector": "元器件",
+          "turnover": "30.36亿",
+          "mainNet": "-1743万"
+        },
+        {
+          "code": "002631",
+          "name": "德尔未来",
+          "price": 11.44,
+          "changePct": -0.35,
+          "sector": "石墨烯",
+          "turnover": "6.08亿",
+          "mainNet": "+2667万"
+        },
+        {
+          "code": "605208",
+          "name": "永茂泰",
+          "price": 16.47,
+          "changePct": -0.48,
+          "sector": "机器人概念",
+          "turnover": "2.57亿",
+          "mainNet": "-2488万"
+        },
+        {
+          "code": "688168",
+          "name": "安博通",
+          "price": 71.98,
+          "changePct": -0.62,
+          "sector": "AI应用",
+          "turnover": "4.24亿",
+          "mainNet": "+1154万"
+        },
+        {
+          "code": "688629",
+          "name": "华丰科技",
+          "price": 179.4,
+          "changePct": -0.64,
+          "sector": "通信",
+          "turnover": "54.83亿",
+          "mainNet": "+4.23亿"
+        },
+        {
+          "code": "300263",
+          "name": "隆华科技",
+          "price": 16.6,
+          "changePct": -0.66,
+          "sector": "芯片",
+          "turnover": "24.11亿",
+          "mainNet": ""
+        },
+        {
+          "code": "001331",
+          "name": "胜通能源",
+          "price": 61.6,
+          "changePct": -0.68,
+          "sector": "机器人概念",
+          "turnover": "12.11亿",
+          "mainNet": "+3.17亿"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "stocks": [
+        {
+          "code": "300985",
+          "name": "致远新能",
+          "price": 49.67,
+          "changePct": 20.0,
+          "sector": "天然气",
+          "turnover": "3.70亿",
+          "mainNet": "+2732万"
+        },
+        {
+          "code": "301379",
+          "name": "天山电子",
+          "price": 32.16,
+          "changePct": 20.0,
+          "sector": "芯片",
+          "turnover": "15.60亿",
+          "mainNet": "+3.59亿"
+        },
+        {
+          "code": "688017",
+          "name": "绿的谐波",
+          "price": 488.0,
+          "changePct": 18.15,
+          "sector": "机器人概念",
+          "turnover": "125.31亿",
+          "mainNet": "+10.11亿"
+        },
+        {
+          "code": "301051",
+          "name": "信濠光电",
+          "price": 22.77,
+          "changePct": 17.07,
+          "sector": "储能",
+          "turnover": "7.91亿",
+          "mainNet": "+4969万"
+        },
+        {
+          "code": "300503",
+          "name": "昊志机电",
+          "price": 111.0,
+          "changePct": 16.99,
+          "sector": "机器人概念",
+          "turnover": "55.26亿",
+          "mainNet": "+2.32亿"
+        },
+        {
+          "code": "300163",
+          "name": "先锋新材",
+          "price": 7.5,
+          "changePct": 15.92,
+          "sector": "基础建设",
+          "turnover": "9.17亿",
+          "mainNet": "-1641万"
+        },
+        {
+          "code": "300607",
+          "name": "拓斯达",
+          "price": 52.96,
+          "changePct": 13.55,
+          "sector": "机器人概念",
+          "turnover": "45.95亿",
+          "mainNet": "+1.44亿"
+        },
+        {
+          "code": "688322",
+          "name": "奥比中光",
+          "price": 147.33,
+          "changePct": 13.32,
+          "sector": "机器人概念",
+          "turnover": "53.48亿",
+          "mainNet": "+1.75亿"
+        },
+        {
+          "code": "301520",
+          "name": "万邦医药",
+          "price": 35.55,
+          "changePct": 13.22,
+          "sector": "医药",
+          "turnover": "4.53亿",
+          "mainNet": "+1083万"
+        },
+        {
+          "code": "301232",
+          "name": "飞沃科技",
+          "price": 182.0,
+          "changePct": 11.69,
+          "sector": "商业航天",
+          "turnover": "22.13亿",
+          "mainNet": "+9897万"
+        },
+        {
+          "code": "688661",
+          "name": "和林微纳",
+          "price": 174.37,
+          "changePct": 11.41,
+          "sector": "芯片",
+          "turnover": "12.04亿",
+          "mainNet": "+8102万"
+        },
+        {
+          "code": "300878",
+          "name": "维康药业",
+          "price": 39.45,
+          "changePct": 10.66,
+          "sector": "医药",
+          "turnover": "3.91亿",
+          "mainNet": "+801.3万"
+        },
+        {
+          "code": "301603",
+          "name": "乔锋智能",
+          "price": 159.99,
+          "changePct": 10.54,
+          "sector": "机器人概念",
+          "turnover": "11.97亿",
+          "mainNet": "+1.37亿"
+        },
+        {
+          "code": "301588",
+          "name": "美新科技",
+          "price": 53.9,
+          "changePct": 10.27,
+          "sector": "地产链",
+          "turnover": "5.17亿",
+          "mainNet": "+3559万"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 17.22,
+          "changePct": 10.03,
+          "sector": "并购重组",
+          "turnover": "1043万",
+          "mainNet": "+679.1万"
+        },
+        {
+          "code": "603580",
+          "name": "艾艾精工",
+          "price": 30.13,
+          "changePct": 10.0,
+          "sector": "ST摘帽",
+          "turnover": "2.04亿",
+          "mainNet": "-3531万"
+        },
+        {
+          "code": "603713",
+          "name": "密尔克卫",
+          "price": 79.23,
+          "changePct": 10.0,
+          "sector": "芯片",
+          "turnover": "2.82亿",
+          "mainNet": "+6424万"
+        },
+        {
+          "code": "002979",
+          "name": "雷赛智能",
+          "price": 69.55,
+          "changePct": 10.0,
+          "sector": "机器人概念",
+          "turnover": "3.84亿",
+          "mainNet": "+1.07亿"
+        },
+        {
+          "code": "002747",
+          "name": "埃斯顿",
+          "price": 44.77,
+          "changePct": 10.0,
+          "sector": "机器人概念",
+          "turnover": "55.08亿",
+          "mainNet": "+4.47亿"
+        },
+        {
+          "code": "002850",
+          "name": "科达利",
+          "price": 226.16,
+          "changePct": 10.0,
+          "sector": "机器人概念",
+          "turnover": "19.54亿",
+          "mainNet": "+1.69亿"
+        },
+        {
+          "code": "603726",
+          "name": "朗迪集团",
+          "price": 35.45,
+          "changePct": 9.99,
+          "sector": "芯片",
+          "turnover": "4.30亿",
+          "mainNet": "+6597万"
+        },
+        {
+          "code": "002472",
+          "name": "双环传动",
+          "price": 47.01,
+          "changePct": 9.99,
+          "sector": "机器人概念",
+          "turnover": "34.12亿",
+          "mainNet": "+5.23亿"
+        },
+        {
+          "code": "002635",
+          "name": "安洁科技",
+          "price": 23.36,
+          "changePct": 9.98,
+          "sector": "通信",
+          "turnover": "11.09亿",
+          "mainNet": "+3.17亿"
+        },
+        {
+          "code": "002520",
+          "name": "日发精机",
+          "price": 7.72,
+          "changePct": 9.97,
+          "sector": "机器人概念",
+          "turnover": "5.11亿",
+          "mainNet": "+1.31亿"
+        },
+        {
+          "code": "688319",
+          "name": "欧林生物",
+          "price": 42.72,
+          "changePct": 9.54,
+          "sector": "医药",
+          "turnover": "8.72亿",
+          "mainNet": "+4214万"
+        },
+        {
+          "code": "603725",
+          "name": "天安新材",
+          "price": 13.9,
+          "changePct": 9.54,
+          "sector": "机器人概念",
+          "turnover": "6.38亿",
+          "mainNet": "+2931万"
+        },
+        {
+          "code": "301018",
+          "name": "申菱环境",
+          "price": 117.78,
+          "changePct": 9.5,
+          "sector": "算力",
+          "turnover": "32.74亿",
+          "mainNet": "-2.12亿"
+        },
+        {
+          "code": "688400",
+          "name": "凌云光",
+          "price": 71.41,
+          "changePct": 9.02,
+          "sector": "机器人概念",
+          "turnover": "25.61亿",
+          "mainNet": "+1.89亿"
+        },
+        {
+          "code": "300558",
+          "name": "贝达药业",
+          "price": 72.9,
+          "changePct": 8.48,
+          "sector": "医药",
+          "turnover": "19.81亿",
+          "mainNet": "+7763万"
+        },
+        {
+          "code": "603662",
+          "name": "柯力传感",
+          "price": 80.0,
+          "changePct": 8.37,
+          "sector": "机器人概念",
+          "turnover": "27.98亿",
+          "mainNet": "+5508万"
+        },
+        {
+          "code": "002821",
+          "name": "凯莱英",
+          "price": 165.8,
+          "changePct": 8.23,
+          "sector": "医药",
+          "turnover": "27.46亿",
+          "mainNet": "+993.7万"
+        },
+        {
+          "code": "688141",
+          "name": "杰华特",
+          "price": 156.0,
+          "changePct": 8.18,
+          "sector": "芯片",
+          "turnover": "29.79亿",
+          "mainNet": "+8342万"
+        },
+        {
+          "code": "300966",
+          "name": "共同药业",
+          "price": 31.07,
+          "changePct": 8.03,
+          "sector": "医药",
+          "turnover": "3.72亿",
+          "mainNet": "-2610万"
+        },
+        {
+          "code": "688231",
+          "name": "隆达股份",
+          "price": 40.7,
+          "changePct": 7.93,
+          "sector": "燃气轮机",
+          "turnover": "4.27亿",
+          "mainNet": "+2264万"
+        },
+        {
+          "code": "603638",
+          "name": "艾迪精密",
+          "price": 27.9,
+          "changePct": 7.85,
+          "sector": "机器人概念",
+          "turnover": "15.96亿",
+          "mainNet": "+8280万"
+        },
+        {
+          "code": "002860",
+          "name": "星帅尔",
+          "price": 15.96,
+          "changePct": 7.84,
+          "sector": "汽车零部件",
+          "turnover": "6.12亿",
+          "mainNet": "+4083万"
+        },
+        {
+          "code": "002916",
+          "name": "深南电路",
+          "price": 454.48,
+          "changePct": 7.42,
+          "sector": "通信",
+          "turnover": "79.51亿",
+          "mainNet": "+8.64亿"
+        },
+        {
+          "code": "002422",
+          "name": "科伦药业",
+          "price": 47.98,
+          "changePct": 7.22,
+          "sector": "医药",
+          "turnover": "24.17亿",
+          "mainNet": "+7908万"
+        },
+        {
+          "code": "300151",
+          "name": "昌红科技",
+          "price": 26.72,
+          "changePct": 7.18,
+          "sector": "芯片",
+          "turnover": "13.24亿",
+          "mainNet": "+2036万"
+        },
+        {
+          "code": "002056",
+          "name": "横店东磁",
+          "price": 32.82,
+          "changePct": 7.05,
+          "sector": "机器人概念",
+          "turnover": "40.66亿",
+          "mainNet": "+4.81亿"
+        },
+        {
+          "code": "301067",
+          "name": "显盈科技",
+          "price": 37.97,
+          "changePct": 6.93,
+          "sector": "通信",
+          "turnover": "3.83亿",
+          "mainNet": "+2980万"
+        },
+        {
+          "code": "605178",
+          "name": "时空科技",
+          "price": 120.06,
+          "changePct": 6.93,
+          "sector": "芯片",
+          "turnover": "11.31亿",
+          "mainNet": "+7690万"
+        },
+        {
+          "code": "301210",
+          "name": "金杨精密",
+          "price": 32.67,
+          "changePct": 6.76,
+          "sector": "机器人概念",
+          "turnover": "3.19亿",
+          "mainNet": "+1126万"
+        },
+        {
+          "code": "688669",
+          "name": "聚石化学",
+          "price": 112.2,
+          "changePct": 6.57,
+          "sector": "化工",
+          "turnover": "7.51亿",
+          "mainNet": "-1369万"
+        },
+        {
+          "code": "600360",
+          "name": "华微电子",
+          "price": 14.96,
+          "changePct": 6.1,
+          "sector": "芯片",
+          "turnover": "27.47亿",
+          "mainNet": "+9.48亿"
+        },
+        {
+          "code": "688646",
+          "name": "ST逸飞",
+          "price": 78.18,
+          "changePct": 5.93,
+          "sector": "ST板块",
+          "turnover": "2.11亿",
+          "mainNet": "+1040万"
+        },
+        {
+          "code": "688729",
+          "name": "屹唐股份",
+          "price": 42.63,
+          "changePct": 5.81,
+          "sector": "芯片",
+          "turnover": "22.32亿",
+          "mainNet": "+4528万"
+        },
+        {
+          "code": "688685",
+          "name": "迈信林",
+          "price": 57.45,
+          "changePct": 5.78,
+          "sector": "商业航天",
+          "turnover": "7.56亿",
+          "mainNet": "-9491万"
+        },
+        {
+          "code": "688112",
+          "name": "鼎阳科技",
+          "price": 84.91,
+          "changePct": 5.74,
+          "sector": "通信",
+          "turnover": "5.69亿",
+          "mainNet": "+3981万"
+        },
+        {
+          "code": "300460",
+          "name": "ST惠伦",
+          "price": 10.95,
+          "changePct": 5.39,
+          "sector": "ST板块",
+          "turnover": "1.47亿",
+          "mainNet": "+2524万"
+        },
+        {
+          "code": "603678",
+          "name": "火炬电子",
+          "price": 85.48,
+          "changePct": 5.18,
+          "sector": "元器件",
+          "turnover": "36.36亿",
+          "mainNet": "+2763万"
+        },
+        {
+          "code": "603223",
+          "name": "恒通股份",
+          "price": 14.15,
+          "changePct": 5.13,
+          "sector": "物流",
+          "turnover": "4.84亿",
+          "mainNet": "-146.0万"
+        },
+        {
+          "code": "603588",
+          "name": "高能环境",
+          "price": 19.8,
+          "changePct": 5.04,
+          "sector": "有色金属",
+          "turnover": "25.85亿",
+          "mainNet": "+1.27亿"
+        },
+        {
+          "code": "688102",
+          "name": "斯瑞新材",
+          "price": 48.61,
+          "changePct": 5.03,
+          "sector": "商业航天",
+          "turnover": "18.57亿",
+          "mainNet": "+1.89亿"
+        },
+        {
+          "code": "002485",
+          "name": "ST雪发",
+          "price": 5.85,
+          "changePct": 5.03,
+          "sector": "ST板块",
+          "turnover": "3136万",
+          "mainNet": "+618.8万"
+        },
+        {
+          "code": "688266",
+          "name": "泽璟制药",
+          "price": 143.0,
+          "changePct": 4.91,
+          "sector": "医药",
+          "turnover": "19.35亿",
+          "mainNet": "+1.45亿"
+        },
+        {
+          "code": "002600",
+          "name": "领益智造",
+          "price": 18.02,
+          "changePct": 4.89,
+          "sector": "算力",
+          "turnover": "82.96亿",
+          "mainNet": "+5.37亿"
+        },
+        {
+          "code": "600885",
+          "name": "宏发股份",
+          "price": 38.09,
+          "changePct": 4.87,
+          "sector": "智能电网",
+          "turnover": "13.28亿",
+          "mainNet": "+1.33亿"
+        },
+        {
+          "code": "688222",
+          "name": "成都先导",
+          "price": 32.41,
+          "changePct": 4.38,
+          "sector": "医药",
+          "turnover": "7.12亿",
+          "mainNet": "-1723万"
+        },
+        {
+          "code": "000551",
+          "name": "创元科技",
+          "price": 20.5,
+          "changePct": 4.06,
+          "sector": "芯片",
+          "turnover": "12.75亿",
+          "mainNet": "+1.23亿"
+        },
+        {
+          "code": "300420",
+          "name": "五洋自控",
+          "price": 9.88,
+          "changePct": 4.0,
+          "sector": "算力",
+          "turnover": "16.04亿",
+          "mainNet": "-3525万"
+        },
+        {
+          "code": "688320",
+          "name": "禾川科技",
+          "price": 42.95,
+          "changePct": 3.97,
+          "sector": "机器人概念",
+          "turnover": "6.01亿",
+          "mainNet": "+2865万"
+        },
+        {
+          "code": "688219",
+          "name": "会通股份",
+          "price": 13.38,
+          "changePct": 3.96,
+          "sector": "机器人概念",
+          "turnover": "3.62亿",
+          "mainNet": "+3517万"
+        },
+        {
+          "code": "600667",
+          "name": "太极实业",
+          "price": 29.96,
+          "changePct": 3.7,
+          "sector": "芯片",
+          "turnover": "118.91亿",
+          "mainNet": "+2.60亿"
+        },
+        {
+          "code": "600906",
+          "name": "财达证券",
+          "price": 7.79,
+          "changePct": 3.59,
+          "sector": "证券",
+          "turnover": "10.95亿",
+          "mainNet": "+8790万"
+        },
+        {
+          "code": "002317",
+          "name": "众生药业",
+          "price": 27.44,
+          "changePct": 3.59,
+          "sector": "创新药",
+          "turnover": "18.83亿",
+          "mainNet": "+5169万"
+        },
+        {
+          "code": "002937",
+          "name": "兴瑞科技",
+          "price": 45.67,
+          "changePct": 3.56,
+          "sector": "算力",
+          "turnover": "5.84亿",
+          "mainNet": "+6678万"
+        },
+        {
+          "code": "688620",
+          "name": "安凯微",
+          "price": 16.62,
+          "changePct": 3.55,
+          "sector": "芯片",
+          "turnover": "4.34亿",
+          "mainNet": "+1573万"
+        },
+        {
+          "code": "300873",
+          "name": "海晨股份",
+          "price": 31.0,
+          "changePct": 3.3,
+          "sector": "机器人概念",
+          "turnover": "13.27亿",
+          "mainNet": "-1.08亿"
+        },
+        {
+          "code": "001331",
+          "name": "胜通能源",
+          "price": 63.49,
+          "changePct": 3.07,
+          "sector": "机器人概念",
+          "turnover": "13.01亿",
+          "mainNet": "+2530万"
+        },
+        {
+          "code": "688117",
+          "name": "圣诺生物",
+          "price": 30.08,
+          "changePct": 3.01,
+          "sector": "医药",
+          "turnover": "3.59亿",
+          "mainNet": "+409.7万"
+        },
+        {
+          "code": "688105",
+          "name": "诺唯赞",
+          "price": 18.56,
+          "changePct": 2.83,
+          "sector": "医药",
+          "turnover": "2.45亿",
+          "mainNet": "+3160万"
+        },
+        {
+          "code": "002816",
+          "name": "*ST和科",
+          "price": 29.49,
+          "changePct": 2.82,
+          "sector": "ST板块",
+          "turnover": "7487万",
+          "mainNet": "+796.3万"
+        },
+        {
+          "code": "002965",
+          "name": "祥鑫科技",
+          "price": 52.6,
+          "changePct": 2.77,
+          "sector": "算力",
+          "turnover": "11.73亿",
+          "mainNet": "+8528万"
+        },
+        {
+          "code": "600060",
+          "name": "海信视像",
+          "price": 27.52,
+          "changePct": 2.76,
+          "sector": "面板",
+          "turnover": "3.91亿",
+          "mainNet": "-190.2万"
+        },
+        {
+          "code": "300780",
+          "name": "德恩精工",
+          "price": 35.27,
+          "changePct": 2.59,
+          "sector": "机器人概念",
+          "turnover": "5.96亿",
+          "mainNet": "+2778万"
+        },
+        {
+          "code": "688168",
+          "name": "安博通",
+          "price": 73.8,
+          "changePct": 2.53,
+          "sector": "AI应用",
+          "turnover": "3.14亿",
+          "mainNet": "+2152万"
+        },
+        {
+          "code": "605208",
+          "name": "永茂泰",
+          "price": 16.87,
+          "changePct": 2.43,
+          "sector": "机器人概念",
+          "turnover": "3.58亿",
+          "mainNet": "-196.0万"
+        },
+        {
+          "code": "301307",
+          "name": "美利信",
+          "price": 81.19,
+          "changePct": 2.41,
+          "sector": "算力",
+          "turnover": "13.39亿",
+          "mainNet": "-5749万"
+        },
+        {
+          "code": "000970",
+          "name": "中科三环",
+          "price": 16.48,
+          "changePct": 2.36,
+          "sector": "稀土永磁",
+          "turnover": "24.20亿",
+          "mainNet": "+1.93亿"
+        },
+        {
+          "code": "603259",
+          "name": "药明康德",
+          "price": 124.12,
+          "changePct": 2.32,
+          "sector": "医药",
+          "turnover": "87.54亿",
+          "mainNet": "+3.35亿"
+        },
+        {
+          "code": "600400",
+          "name": "红豆股份",
+          "price": 3.46,
+          "changePct": 2.06,
+          "sector": "机器人概念",
+          "turnover": "2.55亿",
+          "mainNet": "-67.29万"
+        },
+        {
+          "code": "300894",
+          "name": "火星人",
+          "price": 12.45,
+          "changePct": 2.05,
+          "sector": "家电",
+          "turnover": "1.95亿",
+          "mainNet": "+1416万"
+        },
+        {
+          "code": "301328",
+          "name": "维峰电子",
+          "price": 82.31,
+          "changePct": 2.05,
+          "sector": "通信",
+          "turnover": "5.08亿",
+          "mainNet": "+1096万"
+        },
+        {
+          "code": "002687",
+          "name": "乔治白",
+          "price": 5.65,
+          "changePct": 1.99,
+          "sector": "服装家纺",
+          "turnover": "1.82亿",
+          "mainNet": "-731.8万"
+        },
+        {
+          "code": "688257",
+          "name": "新锐股份",
+          "price": 110.45,
+          "changePct": 1.81,
+          "sector": "通信",
+          "turnover": "25.61亿",
+          "mainNet": "-6698万"
+        },
+        {
+          "code": "301070",
+          "name": "开勒股份",
+          "price": 86.76,
+          "changePct": 1.66,
+          "sector": "通信",
+          "turnover": "3.64亿",
+          "mainNet": "+506.4万"
+        },
+        {
+          "code": "000012",
+          "name": "南玻A",
+          "price": 5.1,
+          "changePct": 1.59,
+          "sector": "芯片",
+          "turnover": "6.10亿",
+          "mainNet": "-3441万"
+        },
+        {
+          "code": "688221",
+          "name": "前沿生物",
+          "price": 27.73,
+          "changePct": 1.46,
+          "sector": "医药",
+          "turnover": "8.80亿",
+          "mainNet": "-2436万"
+        },
+        {
+          "code": "002119",
+          "name": "康强电子",
+          "price": 39.04,
+          "changePct": 1.46,
+          "sector": "芯片",
+          "turnover": "32.57亿",
+          "mainNet": "+4454万"
+        },
+        {
+          "code": "603006",
+          "name": "联明股份",
+          "price": 14.82,
+          "changePct": 1.44,
+          "sector": "物流",
+          "turnover": "1.38亿",
+          "mainNet": "+245.0万"
+        },
+        {
+          "code": "300083",
+          "name": "创世纪",
+          "price": 13.66,
+          "changePct": 1.41,
+          "sector": "算力",
+          "turnover": "23.03亿",
+          "mainNet": "+1.27亿"
+        },
+        {
+          "code": "300562",
+          "name": "乐心医疗",
+          "price": 15.09,
+          "changePct": 1.34,
+          "sector": "养老概念",
+          "turnover": "2.82亿",
+          "mainNet": "-626.6万"
+        },
+        {
+          "code": "600601",
+          "name": "方正科技",
+          "price": 15.12,
+          "changePct": 1.34,
+          "sector": "通信",
+          "turnover": "73.37亿",
+          "mainNet": "+2.09亿"
+        },
+        {
+          "code": "688506",
+          "name": "百利天恒",
+          "price": 340.0,
+          "changePct": 1.34,
+          "sector": "医药",
+          "turnover": "14.67亿",
+          "mainNet": "+1.06亿"
+        },
+        {
+          "code": "301280",
+          "name": "珠城科技",
+          "price": 54.07,
+          "changePct": 1.25,
+          "sector": "机器人概念",
+          "turnover": "2.91亿",
+          "mainNet": "+1620万"
+        },
+        {
+          "code": "600366",
+          "name": "宁波韵升",
+          "price": 16.83,
+          "changePct": 1.2,
+          "sector": "机器人概念",
+          "turnover": "19.00亿",
+          "mainNet": "+3519万"
+        },
+        {
+          "code": "688207",
+          "name": "格灵深瞳",
+          "price": 22.84,
+          "changePct": 1.15,
+          "sector": "物理AI",
+          "turnover": "8.08亿",
+          "mainNet": "+1379万"
+        },
+        {
+          "code": "600030",
+          "name": "中信证券",
+          "price": 28.95,
+          "changePct": 1.15,
+          "sector": "证券",
+          "turnover": "66.28亿",
+          "mainNet": "+3.13亿"
+        },
+        {
+          "code": "300592",
+          "name": "华凯易佰",
+          "price": 18.25,
+          "changePct": 1.11,
+          "sector": "AI应用",
+          "turnover": "2.99亿",
+          "mainNet": "+1825万"
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 6.12,
+          "changePct": 0.99,
+          "sector": "创新药",
+          "turnover": "2.67亿",
+          "mainNet": "+2105万"
+        },
+        {
+          "code": "300907",
+          "name": "康平科技",
+          "price": 59.38,
+          "changePct": 0.99,
+          "sector": "机器人概念",
+          "turnover": "4.44亿",
+          "mainNet": "+2965万"
+        },
+        {
+          "code": "603595",
+          "name": "ST东尼",
+          "price": 36.0,
+          "changePct": 0.95,
+          "sector": "ST板块",
+          "turnover": "1.51亿",
+          "mainNet": "+588.1万"
+        },
+        {
+          "code": "688511",
+          "name": "天微电子",
+          "price": 31.26,
+          "changePct": 0.84,
+          "sector": "军工",
+          "turnover": "9148万",
+          "mainNet": "-84.88万"
+        },
+        {
+          "code": "002935",
+          "name": "天奥电子",
+          "price": 23.2,
+          "changePct": 0.78,
+          "sector": "芯片",
+          "turnover": "3.47亿",
+          "mainNet": "-910.9万"
+        },
+        {
+          "code": "600999",
+          "name": "招商证券",
+          "price": 21.82,
+          "changePct": 0.55,
+          "sector": "证券",
+          "turnover": "37.34亿",
+          "mainNet": "+1.06亿"
+        },
+        {
+          "code": "300964",
+          "name": "本川智能",
+          "price": 83.4,
+          "changePct": 0.48,
+          "sector": "通信",
+          "turnover": "7.03亿",
+          "mainNet": "+2009万"
+        },
+        {
+          "code": "601995",
+          "name": "中金公司",
+          "price": 36.38,
+          "changePct": 0.41,
+          "sector": "证券",
+          "turnover": "11.82亿",
+          "mainNet": "+1763万"
+        },
+        {
+          "code": "603991",
+          "name": "领先股份",
+          "price": 151.67,
+          "changePct": 0.38,
+          "sector": "芯片",
+          "turnover": "11.13亿",
+          "mainNet": "-2390万"
+        },
+        {
+          "code": "688758",
+          "name": "赛分科技",
+          "price": 21.86,
+          "changePct": 0.37,
+          "sector": "医药",
+          "turnover": "1.82亿",
+          "mainNet": "-190.2万"
+        },
+        {
+          "code": "688629",
+          "name": "华丰科技",
+          "price": 180.0,
+          "changePct": 0.33,
+          "sector": "通信",
+          "turnover": "42.72亿",
+          "mainNet": "+2.06亿"
+        },
+        {
+          "code": "301365",
+          "name": "矩阵股份",
+          "price": 40.02,
+          "changePct": 0.23,
+          "sector": "地产链",
+          "turnover": "3.87亿",
+          "mainNet": "-1461万"
+        },
+        {
+          "code": "300560",
+          "name": "中富通",
+          "price": 21.08,
+          "changePct": 0.19,
+          "sector": "算力",
+          "turnover": "4.02亿",
+          "mainNet": "+1161万"
+        },
+        {
+          "code": "688578",
+          "name": "艾力斯",
+          "price": 130.88,
+          "changePct": 0.01,
+          "sector": "医药",
+          "turnover": "23.71亿",
+          "mainNet": "+1.21亿"
+        },
+        {
+          "code": "600177",
+          "name": "雅戈尔",
+          "price": 7.83,
+          "changePct": 0.0,
+          "sector": "服装家纺",
+          "turnover": "1.90亿",
+          "mainNet": "+286.5万"
+        },
+        {
+          "code": "002211",
+          "name": "ST宏达",
+          "price": 4.2,
+          "changePct": 0.0,
+          "sector": "ST板块",
+          "turnover": "5855万",
+          "mainNet": "+31.99万"
+        },
+        {
+          "code": "301555",
+          "name": "惠柏新材",
+          "price": 45.82,
+          "changePct": -0.07,
+          "sector": "化工",
+          "turnover": "2.69亿",
+          "mainNet": "+1628万"
+        },
+        {
+          "code": "603257",
+          "name": "中国瑞林",
+          "price": 84.0,
+          "changePct": -0.24,
+          "sector": "有色金属",
+          "turnover": "2.49亿",
+          "mainNet": "+343.4万"
+        },
+        {
+          "code": "000776",
+          "name": "广发证券",
+          "price": 23.72,
+          "changePct": -0.25,
+          "sector": "证券",
+          "turnover": "22.06亿",
+          "mainNet": "+467.9万"
+        },
+        {
+          "code": "301607",
+          "name": "富特科技",
+          "price": 52.0,
+          "changePct": -0.42,
+          "sector": "芯片",
+          "turnover": "8.03亿",
+          "mainNet": "+4836万"
+        },
+        {
+          "code": "300382",
+          "name": "斯莱克",
+          "price": 22.5,
+          "changePct": -0.62,
+          "sector": "机器人概念",
+          "turnover": "6.91亿",
+          "mainNet": "+1202万"
+        },
+        {
+          "code": "301127",
+          "name": "武汉天源",
+          "price": 20.17,
+          "changePct": -0.64,
+          "sector": "算力",
+          "turnover": "7.45亿",
+          "mainNet": "+7904万"
+        },
+        {
+          "code": "600322",
+          "name": "津投城开",
+          "price": 3.07,
+          "changePct": -0.65,
+          "sector": "地产链",
+          "turnover": "3.77亿",
+          "mainNet": "-1863万"
+        },
+        {
+          "code": "000783",
+          "name": "长江证券",
+          "price": 9.98,
+          "changePct": -0.7,
+          "sector": "证券",
+          "turnover": "21.70亿",
+          "mainNet": "+2233万"
+        },
+        {
+          "code": "301045",
+          "name": "天禄科技",
+          "price": 97.5,
+          "changePct": -0.82,
+          "sector": "面板",
+          "turnover": "8.45亿",
+          "mainNet": "-348.6万"
+        },
+        {
+          "code": "002955",
+          "name": "鸿合科技",
+          "price": 37.15,
+          "changePct": -1.04,
+          "sector": "AI应用",
+          "turnover": "3.18亿",
+          "mainNet": "+1926万"
+        },
+        {
+          "code": "603078",
+          "name": "江化微",
+          "price": 56.26,
+          "changePct": -1.12,
+          "sector": "芯片",
+          "turnover": "40.46亿",
+          "mainNet": "-6335万"
+        },
+        {
+          "code": "002972",
+          "name": "科安达",
+          "price": 18.81,
+          "changePct": -1.36,
+          "sector": "轨道交通",
+          "turnover": "1.94亿",
+          "mainNet": "-798.0万"
+        },
+        {
+          "code": "600641",
+          "name": "先导基电",
+          "price": 47.51,
+          "changePct": -1.51,
+          "sector": "芯片",
+          "turnover": "88.44亿",
+          "mainNet": "-5.63亿"
+        },
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "price": 16.36,
+          "changePct": -1.56,
+          "sector": "环保",
+          "turnover": "9931万",
+          "mainNet": "-528.0万"
+        },
+        {
+          "code": "603270",
+          "name": "金帝股份",
+          "price": 34.3,
+          "changePct": -1.66,
+          "sector": "机器人概念",
+          "turnover": "5.74亿",
+          "mainNet": "+1096万"
+        },
+        {
+          "code": "300568",
+          "name": "星源材质",
+          "price": 20.0,
+          "changePct": -1.67,
+          "sector": "锂电池",
+          "turnover": "22.92亿",
+          "mainNet": "-2.38亿"
+        },
+        {
+          "code": "688103",
+          "name": "国力电子",
+          "price": 73.01,
+          "changePct": -2.16,
+          "sector": "芯片",
+          "turnover": "3.81亿",
+          "mainNet": "+3233万"
+        },
+        {
+          "code": "603823",
+          "name": "百合花",
+          "price": 59.88,
+          "changePct": -2.19,
+          "sector": "芯片",
+          "turnover": "14.77亿",
+          "mainNet": "+6017万"
+        },
+        {
+          "code": "301072",
+          "name": "中捷精工",
+          "price": 42.09,
+          "changePct": -2.32,
+          "sector": "汽车零部件",
+          "turnover": "1.78亿",
+          "mainNet": "+481.3万"
+        },
+        {
+          "code": "300717",
+          "name": "华信新材",
+          "price": 21.98,
+          "changePct": -2.74,
+          "sector": "新材料概念",
+          "turnover": "1.57亿",
+          "mainNet": "+538.5万"
+        },
+        {
+          "code": "002861",
+          "name": "瀛通通讯",
+          "price": 22.18,
+          "changePct": -2.85,
+          "sector": "消费电子",
+          "turnover": "1.34亿",
+          "mainNet": "-32.90万"
+        },
+        {
+          "code": "000810",
+          "name": "创维数字",
+          "price": 12.91,
+          "changePct": -2.86,
+          "sector": "算力",
+          "turnover": "4.05亿",
+          "mainNet": ""
+        },
+        {
+          "code": "301281",
+          "name": "科源制药",
+          "price": 56.37,
+          "changePct": -2.89,
+          "sector": "医药",
+          "turnover": "4.38亿",
+          "mainNet": "-1740万"
+        },
+        {
+          "code": "002653",
+          "name": "海思科",
+          "price": 76.47,
+          "changePct": -2.96,
+          "sector": "医药",
+          "turnover": "19.12亿",
+          "mainNet": "+5680万"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 38.95,
+          "changePct": -3.49,
+          "sector": "芯片",
+          "turnover": "3.47亿",
+          "mainNet": "+716.2万"
+        },
+        {
+          "code": "002167",
+          "name": "东方锆业",
+          "price": 25.04,
+          "changePct": -3.88,
+          "sector": "非金属材料",
+          "turnover": "41.81亿",
+          "mainNet": "-3478万"
+        },
+        {
+          "code": "603607",
+          "name": "京华激光",
+          "price": 25.14,
+          "changePct": -5.49,
+          "sector": "芯片",
+          "turnover": "3.04亿",
+          "mainNet": "+9904万"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "stocks": [
+        {
+          "code": "688206",
+          "name": "概伦电子",
+          "price": 48.76,
+          "changePct": 20.01,
+          "sector": "芯片",
+          "turnover": "11.52亿",
+          "mainNet": "+1.56亿"
+        },
+        {
+          "code": "300684",
+          "name": "中石科技",
+          "price": 74.41,
+          "changePct": 20.0,
+          "sector": "算力",
+          "turnover": "33.57亿",
+          "mainNet": "+3.25亿"
+        },
+        {
+          "code": "300716",
+          "name": "*ST泉为",
+          "price": 29.09,
+          "changePct": 19.07,
+          "sector": "ST板块",
+          "turnover": "3.59亿",
+          "mainNet": "+52.13万"
+        },
+        {
+          "code": "688689",
+          "name": "银河微电",
+          "price": 80.75,
+          "changePct": 18.7,
+          "sector": "芯片",
+          "turnover": "12.38亿",
+          "mainNet": "+3345万"
+        },
+        {
+          "code": "688103",
+          "name": "国力电子",
+          "price": 85.26,
+          "changePct": 16.78,
+          "sector": "芯片",
+          "turnover": "7.51亿",
+          "mainNet": "+8212万"
+        },
+        {
+          "code": "300821",
+          "name": "东岳硅材",
+          "price": 22.02,
+          "changePct": 12.92,
+          "sector": "化工",
+          "turnover": "39.78亿",
+          "mainNet": "+2.83亿"
+        },
+        {
+          "code": "688629",
+          "name": "华丰科技",
+          "price": 201.26,
+          "changePct": 11.81,
+          "sector": "算力",
+          "turnover": "66.79亿",
+          "mainNet": "+3.51亿"
+        },
+        {
+          "code": "688372",
+          "name": "伟测科技",
+          "price": 180.88,
+          "changePct": 11.45,
+          "sector": "芯片",
+          "turnover": "35.87亿",
+          "mainNet": "+4987万"
+        },
+        {
+          "code": "301379",
+          "name": "天山电子",
+          "price": 35.61,
+          "changePct": 10.73,
+          "sector": "芯片",
+          "turnover": "22.48亿",
+          "mainNet": "-9216万"
+        },
+        {
+          "code": "603789",
+          "name": "ST星农",
+          "price": 6.99,
+          "changePct": 10.08,
+          "sector": "ST板块",
+          "turnover": "1784万",
+          "mainNet": "+1024万"
+        },
+        {
+          "code": "603903",
+          "name": "中持股份",
+          "price": 15.57,
+          "changePct": 10.04,
+          "sector": "股权转让",
+          "turnover": "6.20亿",
+          "mainNet": "+4825万"
+        },
+        {
+          "code": "002860",
+          "name": "星帅尔",
+          "price": 17.56,
+          "changePct": 10.03,
+          "sector": "家电",
+          "turnover": "7.24亿",
+          "mainNet": "+5499万"
+        },
+        {
+          "code": "002774",
+          "name": "快意电梯",
+          "price": 15.83,
+          "changePct": 10.01,
+          "sector": "地产链",
+          "turnover": "8194万",
+          "mainNet": "+2823万"
+        },
+        {
+          "code": "603155",
+          "name": "新亚强",
+          "price": 29.57,
+          "changePct": 10.01,
+          "sector": "芯片",
+          "turnover": "3.64亿",
+          "mainNet": "+1.40亿"
+        },
+        {
+          "code": "002025",
+          "name": "航天电器",
+          "price": 92.07,
+          "changePct": 10.0,
+          "sector": "商业航天",
+          "turnover": "25.22亿",
+          "mainNet": "+1.75亿"
+        },
+        {
+          "code": "603067",
+          "name": "振华股份",
+          "price": 48.73,
+          "changePct": 10.0,
+          "sector": "化工",
+          "turnover": "4.95亿",
+          "mainNet": "+1.75亿"
+        },
+        {
+          "code": "603722",
+          "name": "阿科力",
+          "price": 43.56,
+          "changePct": 10.0,
+          "sector": "化工",
+          "turnover": "2590万",
+          "mainNet": "+1899万"
+        },
+        {
+          "code": "603757",
+          "name": "大元泵业",
+          "price": 79.19,
+          "changePct": 10.0,
+          "sector": "算力",
+          "turnover": "12.22亿",
+          "mainNet": "+2.36亿"
+        },
+        {
+          "code": "001287",
+          "name": "中电港",
+          "price": 31.47,
+          "changePct": 10.0,
+          "sector": "芯片",
+          "turnover": "9.57亿",
+          "mainNet": "+3.33亿"
+        },
+        {
+          "code": "603211",
+          "name": "晋拓股份",
+          "price": 39.53,
+          "changePct": 9.99,
+          "sector": "机器人概念",
+          "turnover": "5.39亿",
+          "mainNet": "+1119万"
+        },
+        {
+          "code": "603823",
+          "name": "百合花",
+          "price": 65.86,
+          "changePct": 9.99,
+          "sector": "芯片",
+          "turnover": "18.31亿",
+          "mainNet": "+8945万"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 18.94,
+          "changePct": 9.99,
+          "sector": "并购重组",
+          "turnover": "1372万",
+          "mainNet": "+862.6万"
+        },
+        {
+          "code": "300943",
+          "name": "春晖智控",
+          "price": 50.42,
+          "changePct": 8.9,
+          "sector": "商业航天",
+          "turnover": "8.46亿",
+          "mainNet": "-918.5万"
+        },
+        {
+          "code": "300671",
+          "name": "富满微",
+          "price": 102.32,
+          "changePct": 8.45,
+          "sector": "芯片",
+          "turnover": "34.46亿",
+          "mainNet": "+1.40亿"
+        },
+        {
+          "code": "688380",
+          "name": "中微半导",
+          "price": 62.78,
+          "changePct": 8.41,
+          "sector": "芯片",
+          "turnover": "13.87亿",
+          "mainNet": "+1943万"
+        },
+        {
+          "code": "688141",
+          "name": "杰华特",
+          "price": 168.26,
+          "changePct": 7.86,
+          "sector": "芯片",
+          "turnover": "30.59亿",
+          "mainNet": "+3.79亿"
+        },
+        {
+          "code": "603928",
+          "name": "兴业股份",
+          "price": 15.85,
+          "changePct": 7.82,
+          "sector": "芯片",
+          "turnover": "9.79亿",
+          "mainNet": "+1.04亿"
+        },
+        {
+          "code": "603032",
+          "name": "德新科技",
+          "price": 29.75,
+          "changePct": 7.79,
+          "sector": "锂电池",
+          "turnover": "10.80亿",
+          "mainNet": "+1246万"
+        },
+        {
+          "code": "688231",
+          "name": "隆达股份",
+          "price": 43.8,
+          "changePct": 7.62,
+          "sector": "燃气轮机",
+          "turnover": "5.32亿",
+          "mainNet": "+768.7万"
+        },
+        {
+          "code": "301165",
+          "name": "锐捷网络",
+          "price": 102.0,
+          "changePct": 7.49,
+          "sector": "通信",
+          "turnover": "46.79亿",
+          "mainNet": "-1.53亿"
+        },
+        {
+          "code": "301161",
+          "name": "唯万密封",
+          "price": 40.35,
+          "changePct": 7.09,
+          "sector": "基础建设",
+          "turnover": "5.24亿",
+          "mainNet": "-108.9万"
+        },
+        {
+          "code": "002452",
+          "name": "长高电气",
+          "price": 13.83,
+          "changePct": 6.96,
+          "sector": "智能电网",
+          "turnover": "8.27亿",
+          "mainNet": "+5488万"
+        },
+        {
+          "code": "301307",
+          "name": "美利信",
+          "price": 86.66,
+          "changePct": 6.74,
+          "sector": "算力",
+          "turnover": "12.34亿",
+          "mainNet": "-1.53亿"
+        },
+        {
+          "code": "002485",
+          "name": "ST雪发",
+          "price": 6.24,
+          "changePct": 6.67,
+          "sector": "ST板块",
+          "turnover": "6466万",
+          "mainNet": "+194.3万"
+        },
+        {
+          "code": "603380",
+          "name": "易德龙",
+          "price": 45.92,
+          "changePct": 6.47,
+          "sector": "机器人概念",
+          "turnover": "3.65亿",
+          "mainNet": "+2560万"
+        },
+        {
+          "code": "300163",
+          "name": "先锋新材",
+          "price": 7.98,
+          "changePct": 6.4,
+          "sector": "基础建设",
+          "turnover": "8.10亿",
+          "mainNet": "-5888万"
+        },
+        {
+          "code": "600520",
+          "name": "三佳科技",
+          "price": 38.35,
+          "changePct": 6.23,
+          "sector": "芯片",
+          "turnover": "9.16亿",
+          "mainNet": "+9362万"
+        },
+        {
+          "code": "301018",
+          "name": "申菱环境",
+          "price": 125.0,
+          "changePct": 6.13,
+          "sector": "算力",
+          "turnover": "29.99亿",
+          "mainNet": "+1.26亿"
+        },
+        {
+          "code": "002353",
+          "name": "杰瑞股份",
+          "price": 171.11,
+          "changePct": 5.98,
+          "sector": "燃气轮机",
+          "turnover": "40.73亿",
+          "mainNet": "+1.05亿"
+        },
+        {
+          "code": "688653",
+          "name": "康希通信",
+          "price": 16.88,
+          "changePct": 5.96,
+          "sector": "芯片",
+          "turnover": "3.97亿",
+          "mainNet": "+1538万"
+        },
+        {
+          "code": "002536",
+          "name": "飞龙股份",
+          "price": 55.0,
+          "changePct": 5.85,
+          "sector": "算力",
+          "turnover": "40.57亿",
+          "mainNet": "+5212万"
+        },
+        {
+          "code": "301617",
+          "name": "博苑新材",
+          "price": 65.38,
+          "changePct": 5.83,
+          "sector": "锂电池",
+          "turnover": "3.28亿",
+          "mainNet": "+2488万"
+        },
+        {
+          "code": "603950",
+          "name": "长源东谷",
+          "price": 88.46,
+          "changePct": 5.66,
+          "sector": "发电机",
+          "turnover": "14.73亿",
+          "mainNet": "+2700万"
+        },
+        {
+          "code": "002317",
+          "name": "众生药业",
+          "price": 28.99,
+          "changePct": 5.65,
+          "sector": "创新药",
+          "turnover": "19.71亿",
+          "mainNet": "-5341万"
+        },
+        {
+          "code": "688123",
+          "name": "聚辰股份",
+          "price": 214.99,
+          "changePct": 5.39,
+          "sector": "芯片",
+          "turnover": "38.25亿",
+          "mainNet": "+5.60亿"
+        },
+        {
+          "code": "002979",
+          "name": "雷赛智能",
+          "price": 73.27,
+          "changePct": 5.35,
+          "sector": "机器人概念",
+          "turnover": "44.23亿",
+          "mainNet": "+3824万"
+        },
+        {
+          "code": "300083",
+          "name": "创世纪",
+          "price": 14.39,
+          "changePct": 5.34,
+          "sector": "算力",
+          "turnover": "26.44亿",
+          "mainNet": "+2.39亿"
+        },
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "price": 17.19,
+          "changePct": 5.07,
+          "sector": "环保",
+          "turnover": "1.50亿",
+          "mainNet": "+931.2万"
+        },
+        {
+          "code": "603725",
+          "name": "天安新材",
+          "price": 14.6,
+          "changePct": 5.04,
+          "sector": "机器人概念",
+          "turnover": "6.61亿",
+          "mainNet": "+3120万"
+        },
+        {
+          "code": "000566",
+          "name": "海南海药",
+          "price": 6.43,
+          "changePct": 4.72,
+          "sector": "医药",
+          "turnover": "21.82亿",
+          "mainNet": "-1.41亿"
+        },
+        {
+          "code": "002458",
+          "name": "益生股份",
+          "price": 9.45,
+          "changePct": 4.3,
+          "sector": "农业",
+          "turnover": "12.75亿",
+          "mainNet": "+542.7万"
+        },
+        {
+          "code": "001331",
+          "name": "胜通能源",
+          "price": 66.17,
+          "changePct": 4.22,
+          "sector": "机器人概念",
+          "turnover": "11.56亿",
+          "mainNet": "+1.38亿"
+        },
+        {
+          "code": "688222",
+          "name": "成都先导",
+          "price": 33.65,
+          "changePct": 3.83,
+          "sector": "创新药",
+          "turnover": "9.68亿",
+          "mainNet": "-1078万"
+        },
+        {
+          "code": "301365",
+          "name": "矩阵股份",
+          "price": 41.53,
+          "changePct": 3.77,
+          "sector": "地产链",
+          "turnover": "3.86亿",
+          "mainNet": "-878.1万"
+        },
+        {
+          "code": "300592",
+          "name": "华凯易佰",
+          "price": 18.86,
+          "changePct": 3.34,
+          "sector": "AI应用",
+          "turnover": "3.75亿",
+          "mainNet": "+3354万"
+        },
+        {
+          "code": "002965",
+          "name": "祥鑫科技",
+          "price": 54.31,
+          "changePct": 3.25,
+          "sector": "算力",
+          "turnover": "18.46亿",
+          "mainNet": "+1760万"
+        },
+        {
+          "code": "301051",
+          "name": "信濠光电",
+          "price": 23.48,
+          "changePct": 3.12,
+          "sector": "储能",
+          "turnover": "6.55亿",
+          "mainNet": "+2419万"
+        },
+        {
+          "code": "000429",
+          "name": "粤高速A",
+          "price": 14.28,
+          "changePct": 2.81,
+          "sector": "金融概念",
+          "turnover": "1.32亿",
+          "mainNet": "-1.28万"
+        },
+        {
+          "code": "002747",
+          "name": "埃斯顿",
+          "price": 46.03,
+          "changePct": 2.81,
+          "sector": "机器人概念",
+          "turnover": "90.48亿",
+          "mainNet": "-4.65亿"
+        },
+        {
+          "code": "688620",
+          "name": "安凯微",
+          "price": 17.05,
+          "changePct": 2.59,
+          "sector": "芯片",
+          "turnover": "7.66亿",
+          "mainNet": "+2854万"
+        },
+        {
+          "code": "603078",
+          "name": "江化微",
+          "price": 57.7,
+          "changePct": 2.56,
+          "sector": "芯片",
+          "turnover": "35.66亿",
+          "mainNet": "+5806万"
+        },
+        {
+          "code": "601995",
+          "name": "中金公司",
+          "price": 37.24,
+          "changePct": 2.36,
+          "sector": "证券",
+          "turnover": "17.07亿",
+          "mainNet": "-8560万"
+        },
+        {
+          "code": "301393",
+          "name": "昊帆生物",
+          "price": 68.3,
+          "changePct": 2.35,
+          "sector": "医药",
+          "turnover": "3.37亿",
+          "mainNet": "+473.2万"
+        },
+        {
+          "code": "688168",
+          "name": "安博通",
+          "price": 75.48,
+          "changePct": 2.28,
+          "sector": "AI应用",
+          "turnover": "5.59亿",
+          "mainNet": ""
+        },
+        {
+          "code": "601211",
+          "name": "国泰海通",
+          "price": 19.8,
+          "changePct": 2.22,
+          "sector": "证券",
+          "turnover": "50.44亿",
+          "mainNet": "+2.37亿"
+        },
+        {
+          "code": "688391",
+          "name": "钜泉科技",
+          "price": 34.95,
+          "changePct": 2.16,
+          "sector": "芯片",
+          "turnover": "1.26亿",
+          "mainNet": "+599.5万"
+        },
+        {
+          "code": "002841",
+          "name": "视源股份",
+          "price": 39.16,
+          "changePct": 2.14,
+          "sector": "机器人概念",
+          "turnover": "5.99亿",
+          "mainNet": "+7885万"
+        },
+        {
+          "code": "688117",
+          "name": "圣诺生物",
+          "price": 30.7,
+          "changePct": 2.06,
+          "sector": "医药",
+          "turnover": "4.83亿",
+          "mainNet": "-510.2万"
+        },
+        {
+          "code": "605208",
+          "name": "永茂泰",
+          "price": 17.19,
+          "changePct": 1.9,
+          "sector": "机器人概念",
+          "turnover": "4.99亿",
+          "mainNet": "-986.2万"
+        },
+        {
+          "code": "603223",
+          "name": "恒通股份",
+          "price": 14.4,
+          "changePct": 1.77,
+          "sector": "物流",
+          "turnover": "6.25亿",
+          "mainNet": "+323.3万"
+        },
+        {
+          "code": "600182",
+          "name": "S佳通",
+          "price": 14.97,
+          "changePct": 1.77,
+          "sector": "ST板块",
+          "turnover": "7001万",
+          "mainNet": "-392.7万"
+        },
+        {
+          "code": "603127",
+          "name": "昭衍新药",
+          "price": 41.24,
+          "changePct": 1.68,
+          "sector": "创新药CRO",
+          "turnover": "19.60亿",
+          "mainNet": "+1.14亿"
+        },
+        {
+          "code": "002293",
+          "name": "罗莱生活",
+          "price": 11.24,
+          "changePct": 1.54,
+          "sector": "服装家纺",
+          "turnover": "1.21亿",
+          "mainNet": "-987.7万"
+        },
+        {
+          "code": "688319",
+          "name": "欧林生物",
+          "price": 43.37,
+          "changePct": 1.52,
+          "sector": "医药",
+          "turnover": "5.67亿",
+          "mainNet": "+2764万"
+        },
+        {
+          "code": "600060",
+          "name": "海信视像",
+          "price": 27.92,
+          "changePct": 1.45,
+          "sector": "面板",
+          "turnover": "4.00亿",
+          "mainNet": "+1415万"
+        },
+        {
+          "code": "603607",
+          "name": "京华激光",
+          "price": 25.5,
+          "changePct": 1.43,
+          "sector": "芯片",
+          "turnover": "2.30亿",
+          "mainNet": "+72.69万"
+        },
+        {
+          "code": "301127",
+          "name": "武汉天源",
+          "price": 20.45,
+          "changePct": 1.39,
+          "sector": "算力",
+          "turnover": "6.72亿",
+          "mainNet": "-1882万"
+        },
+        {
+          "code": "603991",
+          "name": "领先股份",
+          "price": 153.59,
+          "changePct": 1.27,
+          "sector": "芯片",
+          "turnover": "12.24亿",
+          "mainNet": "+7561万"
+        },
+        {
+          "code": "600030",
+          "name": "中信证券",
+          "price": 29.23,
+          "changePct": 0.97,
+          "sector": "证券",
+          "turnover": "65.34亿",
+          "mainNet": "+1.83亿"
+        },
+        {
+          "code": "002211",
+          "name": "ST宏达",
+          "price": 4.24,
+          "changePct": 0.95,
+          "sector": "ST板块",
+          "turnover": "5430万",
+          "mainNet": "-125.6万"
+        },
+        {
+          "code": "300440",
+          "name": "运达科技",
+          "price": 20.93,
+          "changePct": 0.87,
+          "sector": "军工",
+          "turnover": "2.49亿",
+          "mainNet": "+725.3万"
+        },
+        {
+          "code": "688173",
+          "name": "希荻微",
+          "price": 18.66,
+          "changePct": 0.81,
+          "sector": "芯片",
+          "turnover": "3.31亿",
+          "mainNet": "-931.8万"
+        },
+        {
+          "code": "002972",
+          "name": "科安达",
+          "price": 18.95,
+          "changePct": 0.74,
+          "sector": "轨道交通",
+          "turnover": "1.42亿",
+          "mainNet": "+560.1万"
+        },
+        {
+          "code": "301070",
+          "name": "开勒股份",
+          "price": 87.39,
+          "changePct": 0.73,
+          "sector": "通信",
+          "turnover": "5.88亿",
+          "mainNet": "-1096万"
+        },
+        {
+          "code": "300568",
+          "name": "星源材质",
+          "price": 20.13,
+          "changePct": 0.65,
+          "sector": "锂电池",
+          "turnover": "20.85亿",
+          "mainNet": "-6878万"
+        },
+        {
+          "code": "300894",
+          "name": "火星人",
+          "price": 12.53,
+          "changePct": 0.64,
+          "sector": "家电",
+          "turnover": "2.21亿",
+          "mainNet": "+591.6万"
+        },
+        {
+          "code": "000776",
+          "name": "广发证券",
+          "price": 23.86,
+          "changePct": 0.59,
+          "sector": "证券",
+          "turnover": "24.01亿",
+          "mainNet": "+1.17亿"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 39.16,
+          "changePct": 0.54,
+          "sector": "芯片",
+          "turnover": "3.53亿",
+          "mainNet": "+1120万"
+        },
+        {
+          "code": "300382",
+          "name": "斯莱克",
+          "price": 22.6,
+          "changePct": 0.44,
+          "sector": "机器人概念",
+          "turnover": "8.52亿",
+          "mainNet": "+1562万"
+        },
+        {
+          "code": "688418",
+          "name": "震有科技",
+          "price": 52.14,
+          "changePct": 0.08,
+          "sector": "商业航天",
+          "turnover": "5.63亿",
+          "mainNet": "+3413万"
+        },
+        {
+          "code": "002472",
+          "name": "双环传动",
+          "price": 46.75,
+          "changePct": 0.04,
+          "sector": "机器人概念",
+          "turnover": "52.41亿",
+          "mainNet": "-5199万"
+        },
+        {
+          "code": "002668",
+          "name": "TCL智家",
+          "price": 10.87,
+          "changePct": -0.18,
+          "sector": "端侧AI",
+          "turnover": "3.12亿",
+          "mainNet": "-1177万"
+        },
+        {
+          "code": "688578",
+          "name": "艾力斯",
+          "price": 130.58,
+          "changePct": -0.23,
+          "sector": "医药",
+          "turnover": "25.34亿",
+          "mainNet": "-6338万"
+        },
+        {
+          "code": "600885",
+          "name": "宏发股份",
+          "price": 38.0,
+          "changePct": -0.24,
+          "sector": "智能电网",
+          "turnover": "14.95亿",
+          "mainNet": "+2549万"
+        },
+        {
+          "code": "600177",
+          "name": "雅戈尔",
+          "price": 7.8,
+          "changePct": -0.38,
+          "sector": "服装家纺",
+          "turnover": "2.10亿",
+          "mainNet": "+778.7万"
+        },
+        {
+          "code": "002520",
+          "name": "日发精机",
+          "price": 7.68,
+          "changePct": -0.52,
+          "sector": "机器人概念",
+          "turnover": "13.98亿",
+          "mainNet": "-7562万"
+        },
+        {
+          "code": "300985",
+          "name": "致远新能",
+          "price": 49.35,
+          "changePct": -0.64,
+          "sector": "天然气",
+          "turnover": "4.99亿",
+          "mainNet": "+1502万"
+        },
+        {
+          "code": "600601",
+          "name": "方正科技",
+          "price": 14.99,
+          "changePct": -0.86,
+          "sector": "通信",
+          "turnover": "54.28亿",
+          "mainNet": "+1.06亿"
+        },
+        {
+          "code": "603259",
+          "name": "药明康德",
+          "price": 122.97,
+          "changePct": -0.93,
+          "sector": "医药",
+          "turnover": "115.21亿",
+          "mainNet": "-1.36亿"
+        },
+        {
+          "code": "002850",
+          "name": "科达利",
+          "price": 223.91,
+          "changePct": -0.99,
+          "sector": "机器人概念",
+          "turnover": "38.22亿",
+          "mainNet": "-2.61亿"
+        },
+        {
+          "code": "300503",
+          "name": "昊志机电",
+          "price": 109.8,
+          "changePct": -1.08,
+          "sector": "机器人概念",
+          "turnover": "58.54亿",
+          "mainNet": "+1.69亿"
+        },
+        {
+          "code": "603713",
+          "name": "密尔克卫",
+          "price": 78.35,
+          "changePct": -1.11,
+          "sector": "芯片",
+          "turnover": "8.89亿",
+          "mainNet": "-72.25万"
+        },
+        {
+          "code": "600906",
+          "name": "财达证券",
+          "price": 7.69,
+          "changePct": -1.28,
+          "sector": "证券",
+          "turnover": "7.71亿",
+          "mainNet": "-1785万"
+        },
+        {
+          "code": "002955",
+          "name": "鸿合科技",
+          "price": 36.47,
+          "changePct": -1.83,
+          "sector": "AI应用",
+          "turnover": "2.67亿",
+          "mainNet": "+1105万"
+        },
+        {
+          "code": "300460",
+          "name": "ST惠伦",
+          "price": 10.75,
+          "changePct": -1.83,
+          "sector": "ST板块",
+          "turnover": "1.09亿",
+          "mainNet": "-588.0万"
+        },
+        {
+          "code": "301588",
+          "name": "美新科技",
+          "price": 52.8,
+          "changePct": -2.04,
+          "sector": "地产链",
+          "turnover": "4.57亿",
+          "mainNet": "+2338万"
+        },
+        {
+          "code": "688105",
+          "name": "诺唯赞",
+          "price": 18.17,
+          "changePct": -2.1,
+          "sector": "医药",
+          "turnover": "2.63亿",
+          "mainNet": "+462.7万"
+        },
+        {
+          "code": "301210",
+          "name": "金杨精密",
+          "price": 31.92,
+          "changePct": -2.3,
+          "sector": "机器人概念",
+          "turnover": "2.35亿",
+          "mainNet": "-1104万"
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 5.97,
+          "changePct": -2.45,
+          "sector": "创新药",
+          "turnover": "2.32亿",
+          "mainNet": ""
+        },
+        {
+          "code": "688320",
+          "name": "禾川科技",
+          "price": 41.68,
+          "changePct": -2.96,
+          "sector": "机器人概念",
+          "turnover": "3.99亿",
+          "mainNet": "+2112万"
+        },
+        {
+          "code": "002935",
+          "name": "天奥电子",
+          "price": 22.5,
+          "changePct": -3.02,
+          "sector": "芯片",
+          "turnover": "3.56亿",
+          "mainNet": "+718.2万"
+        },
+        {
+          "code": "603726",
+          "name": "朗迪集团",
+          "price": 33.9,
+          "changePct": -4.37,
+          "sector": "芯片",
+          "turnover": "4.99亿",
+          "mainNet": "+1771万"
+        },
+        {
+          "code": "603257",
+          "name": "中国瑞林",
+          "price": 80.17,
+          "changePct": -4.56,
+          "sector": "有色金属",
+          "turnover": "2.77亿",
+          "mainNet": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "stocks": [
+        {
+          "code": "688432",
+          "name": "有研硅",
+          "price": 46.14,
+          "changePct": 20.0,
+          "sector": "芯片",
+          "turnover": "33.89亿",
+          "mainNet": "+2.55亿"
+        },
+        {
+          "code": "688605",
+          "name": "先锋精科",
+          "price": 113.05,
+          "changePct": 15.22,
+          "sector": "芯片",
+          "turnover": "13.64亿",
+          "mainNet": "+3775万"
+        },
+        {
+          "code": "301237",
+          "name": "和顺科技",
+          "price": 85.0,
+          "changePct": 14.63,
+          "sector": "商业航天",
+          "turnover": "7.43亿",
+          "mainNet": "+2868万"
+        },
+        {
+          "code": "300985",
+          "name": "致远新能",
+          "price": 56.47,
+          "changePct": 14.43,
+          "sector": "天然气",
+          "turnover": "6.28亿",
+          "mainNet": "+2927万"
+        },
+        {
+          "code": "688802",
+          "name": "沐曦股份",
+          "price": 833.99,
+          "changePct": 14.09,
+          "sector": "GPU算力",
+          "turnover": "35.76亿",
+          "mainNet": "+3.85亿"
+        },
+        {
+          "code": "300745",
+          "name": "欣锐科技",
+          "price": 56.01,
+          "changePct": 12.72,
+          "sector": "机器人概念",
+          "turnover": "11.16亿",
+          "mainNet": "+2508万"
+        },
+        {
+          "code": "300717",
+          "name": "华信新材",
+          "price": 23.86,
+          "changePct": 10.98,
+          "sector": "新材料概念",
+          "turnover": "3.18亿",
+          "mainNet": "+1285万"
+        },
+        {
+          "code": "002841",
+          "name": "视源股份",
+          "price": 43.08,
+          "changePct": 10.01,
+          "sector": "AI办公",
+          "turnover": "2.38亿",
+          "mainNet": "+1.06亿"
+        },
+        {
+          "code": "603823",
+          "name": "百合花",
+          "price": 72.45,
+          "changePct": 10.01,
+          "sector": "芯片",
+          "turnover": "21.18亿",
+          "mainNet": "+1705万"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "price": 38.82,
+          "changePct": 10.0,
+          "sector": "机器视觉",
+          "turnover": "7033万",
+          "mainNet": "+4254万"
+        },
+        {
+          "code": "600360",
+          "name": "华微电子",
+          "price": 15.32,
+          "changePct": 9.98,
+          "sector": "芯片",
+          "turnover": "28.16亿",
+          "mainNet": "+6.05亿"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 20.83,
+          "changePct": 9.98,
+          "sector": "并购重组",
+          "turnover": "1518万",
+          "mainNet": "+717.1万"
+        },
+        {
+          "code": "002266",
+          "name": "浙富控股",
+          "price": 5.75,
+          "changePct": 8.7,
+          "sector": "基础建设",
+          "turnover": "20.93亿",
+          "mainNet": "+3.09亿"
+        },
+        {
+          "code": "688392",
+          "name": "骄成超声",
+          "price": 229.79,
+          "changePct": 7.81,
+          "sector": "算力",
+          "turnover": "11.77亿",
+          "mainNet": "+3895万"
+        },
+        {
+          "code": "301151",
+          "name": "冠龙节能",
+          "price": 20.36,
+          "changePct": 7.55,
+          "sector": "算力",
+          "turnover": "2.48亿",
+          "mainNet": "+9167万"
+        },
+        {
+          "code": "300540",
+          "name": "蜀道装备",
+          "price": 42.9,
+          "changePct": 7.46,
+          "sector": "芯片",
+          "turnover": "12.39亿",
+          "mainNet": "+3.63亿"
+        },
+        {
+          "code": "002077",
+          "name": "大港股份",
+          "price": 19.07,
+          "changePct": 7.44,
+          "sector": "芯片",
+          "turnover": "16.93亿",
+          "mainNet": "+2.95亿"
+        },
+        {
+          "code": "688702",
+          "name": "盛科通信",
+          "price": 382.0,
+          "changePct": 7.0,
+          "sector": "通信",
+          "turnover": "48.22亿",
+          "mainNet": "+1.04亿"
+        },
+        {
+          "code": "300145",
+          "name": "南方泵业",
+          "price": 6.45,
+          "changePct": 6.97,
+          "sector": "算力",
+          "turnover": "20.81亿",
+          "mainNet": "+2190万"
+        },
+        {
+          "code": "301045",
+          "name": "天禄科技",
+          "price": 99.2,
+          "changePct": 6.89,
+          "sector": "面板",
+          "turnover": "10.64亿",
+          "mainNet": "-2560万"
+        },
+        {
+          "code": "688362",
+          "name": "甬矽电子",
+          "price": 102.54,
+          "changePct": 6.89,
+          "sector": "芯片",
+          "turnover": "44.43亿",
+          "mainNet": "+1.73亿"
+        },
+        {
+          "code": "002457",
+          "name": "青龙管业",
+          "price": 14.99,
+          "changePct": 6.54,
+          "sector": "基础建设",
+          "turnover": "13.83亿",
+          "mainNet": "-8438万"
+        },
+        {
+          "code": "002747",
+          "name": "埃斯顿",
+          "price": 49.0,
+          "changePct": 6.45,
+          "sector": "机器人概念",
+          "turnover": "83.04亿",
+          "mainNet": "+9890万"
+        },
+        {
+          "code": "000970",
+          "name": "中科三环",
+          "price": 16.55,
+          "changePct": 6.29,
+          "sector": "稀土永磁",
+          "turnover": "25.25亿",
+          "mainNet": "+3.57亿"
+        },
+        {
+          "code": "002768",
+          "name": "国恩股份",
+          "price": 58.0,
+          "changePct": 6.23,
+          "sector": "化工",
+          "turnover": "10.02亿",
+          "mainNet": "+2319万"
+        },
+        {
+          "code": "300821",
+          "name": "东岳硅材",
+          "price": 23.3,
+          "changePct": 5.81,
+          "sector": "化工",
+          "turnover": "42.22亿",
+          "mainNet": "-6568万"
+        },
+        {
+          "code": "603638",
+          "name": "艾迪精密",
+          "price": 26.5,
+          "changePct": 5.54,
+          "sector": "机器人概念",
+          "turnover": "10.87亿",
+          "mainNet": "+577.6万"
+        },
+        {
+          "code": "301072",
+          "name": "中捷精工",
+          "price": 41.86,
+          "changePct": 5.49,
+          "sector": "汽车零部件",
+          "turnover": "2.09亿",
+          "mainNet": "-597.2万"
+        },
+        {
+          "code": "688036",
+          "name": "传音控股",
+          "price": 63.78,
+          "changePct": 5.25,
+          "sector": "端侧AI",
+          "turnover": "21.47亿",
+          "mainNet": "-1095万"
+        },
+        {
+          "code": "688103",
+          "name": "国力电子",
+          "price": 88.95,
+          "changePct": 4.33,
+          "sector": "芯片",
+          "turnover": "8.22亿",
+          "mainNet": "+5850万"
+        },
+        {
+          "code": "002079",
+          "name": "苏州固锝",
+          "price": 14.36,
+          "changePct": 3.68,
+          "sector": "光伏",
+          "turnover": "9.59亿",
+          "mainNet": ""
+        },
+        {
+          "code": "002141",
+          "name": "贤丰控股",
+          "price": 5.85,
+          "changePct": 3.54,
+          "sector": "通信",
+          "turnover": "14.71亿",
+          "mainNet": "-6341万"
+        },
+        {
+          "code": "603269",
+          "name": "海鸥股份",
+          "price": 18.15,
+          "changePct": 3.54,
+          "sector": "算力",
+          "turnover": "13.52亿",
+          "mainNet": "-1649万"
+        },
+        {
+          "code": "300458",
+          "name": "全志科技",
+          "price": 38.3,
+          "changePct": 3.18,
+          "sector": "芯片",
+          "turnover": "25.66亿",
+          "mainNet": "+1.39亿"
+        },
+        {
+          "code": "301307",
+          "name": "美利信",
+          "price": 89.17,
+          "changePct": 2.9,
+          "sector": "算力",
+          "turnover": "14.22亿",
+          "mainNet": "+1.07亿"
+        },
+        {
+          "code": "002396",
+          "name": "星网锐捷",
+          "price": 26.45,
+          "changePct": 2.76,
+          "sector": "通信",
+          "turnover": "47.91亿",
+          "mainNet": "-4.18亿"
+        },
+        {
+          "code": "688620",
+          "name": "安凯微",
+          "price": 17.48,
+          "changePct": 2.52,
+          "sector": "芯片",
+          "turnover": "4.84亿",
+          "mainNet": "+1167万"
+        },
+        {
+          "code": "600366",
+          "name": "宁波韵升",
+          "price": 16.51,
+          "changePct": 2.48,
+          "sector": "机器人概念",
+          "turnover": "15.50亿",
+          "mainNet": "+3321万"
+        },
+        {
+          "code": "688017",
+          "name": "绿的谐波",
+          "price": 465.07,
+          "changePct": 2.44,
+          "sector": "机器人概念",
+          "turnover": "87.56亿",
+          "mainNet": "-4.29亿"
+        },
+        {
+          "code": "300163",
+          "name": "先锋新材",
+          "price": 8.15,
+          "changePct": 2.13,
+          "sector": "基础建设",
+          "turnover": "6.27亿",
+          "mainNet": "+3326万"
+        },
+        {
+          "code": "301617",
+          "name": "博苑新材",
+          "price": 66.75,
+          "changePct": 2.1,
+          "sector": "锂电池",
+          "turnover": "3.10亿",
+          "mainNet": "-157.8万"
+        },
+        {
+          "code": "688479",
+          "name": "友车科技",
+          "price": 38.99,
+          "changePct": 1.91,
+          "sector": "AI应用",
+          "turnover": "1.28亿",
+          "mainNet": "+961.8万"
+        },
+        {
+          "code": "603903",
+          "name": "中持股份",
+          "price": 15.82,
+          "changePct": 1.61,
+          "sector": "股权转让",
+          "turnover": "5.06亿",
+          "mainNet": "+1431万"
+        },
+        {
+          "code": "002520",
+          "name": "日发精机",
+          "price": 7.8,
+          "changePct": 1.56,
+          "sector": "机器人概念",
+          "turnover": "10.62亿",
+          "mainNet": "-1743万"
+        },
+        {
+          "code": "002174",
+          "name": "游族网络",
+          "price": 12.58,
+          "changePct": 1.53,
+          "sector": "AI应用",
+          "turnover": "8.71亿",
+          "mainNet": ""
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 6.06,
+          "changePct": 1.51,
+          "sector": "创新药",
+          "turnover": "2.43亿",
+          "mainNet": ""
+        },
+        {
+          "code": "603713",
+          "name": "密尔克卫",
+          "price": 79.52,
+          "changePct": 1.49,
+          "sector": "芯片",
+          "turnover": "6.57亿",
+          "mainNet": ""
+        },
+        {
+          "code": "300568",
+          "name": "星源材质",
+          "price": 20.35,
+          "changePct": 1.09,
+          "sector": "锂电池",
+          "turnover": "1.28亿",
+          "mainNet": ""
+        },
+        {
+          "code": "600350",
+          "name": "山东高速",
+          "price": 12.26,
+          "changePct": 0.91,
+          "sector": "电力",
+          "turnover": "12.63万",
+          "mainNet": ""
+        },
+        {
+          "code": "688206",
+          "name": "概伦电子",
+          "price": 49.2,
+          "changePct": 0.9,
+          "sector": "芯片",
+          "turnover": "22.49亿",
+          "mainNet": ""
+        },
+        {
+          "code": "603991",
+          "name": "领先股份",
+          "price": 154.69,
+          "changePct": 0.72,
+          "sector": "芯片",
+          "turnover": "472.5万",
+          "mainNet": ""
+        },
+        {
+          "code": "688372",
+          "name": "伟测科技",
+          "price": 182.14,
+          "changePct": 0.7,
+          "sector": "芯片",
+          "turnover": "6.44亿",
+          "mainNet": ""
+        },
+        {
+          "code": "300894",
+          "name": "火星人",
+          "price": 12.61,
+          "changePct": 0.64,
+          "sector": "家电",
+          "turnover": "211.4万",
+          "mainNet": ""
+        },
+        {
+          "code": "000429",
+          "name": "粤高速A",
+          "price": 14.35,
+          "changePct": 0.49,
+          "sector": "金融概念",
+          "turnover": "651.6万",
+          "mainNet": ""
+        },
+        {
+          "code": "301529",
+          "name": "福赛科技",
+          "price": 125.62,
+          "changePct": 0.45,
+          "sector": "机器人概念",
+          "turnover": "8296万",
+          "mainNet": ""
+        },
+        {
+          "code": "300759",
+          "name": "康龙化成",
+          "price": 30.57,
+          "changePct": -0.1,
+          "sector": "创新药",
+          "turnover": "11.45亿",
+          "mainNet": "-1.51亿"
+        },
+        {
+          "code": "301588",
+          "name": "美新科技",
+          "price": 52.64,
+          "changePct": -0.3,
+          "sector": "地产链",
+          "turnover": "11.45亿",
+          "mainNet": "-7599万"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 38.98,
+          "changePct": -0.46,
+          "sector": "芯片",
+          "turnover": "3.74亿",
+          "mainNet": ""
+        },
+        {
+          "code": "300083",
+          "name": "创世纪",
+          "price": 14.32,
+          "changePct": -0.49,
+          "sector": "算力",
+          "turnover": "4.13亿",
+          "mainNet": ""
+        },
+        {
+          "code": "301070",
+          "name": "开勒股份",
+          "price": 86.71,
+          "changePct": -0.78,
+          "sector": "通信",
+          "turnover": "10.11亿",
+          "mainNet": ""
+        },
+        {
+          "code": "688629",
+          "name": "华丰科技",
+          "price": 199.4,
+          "changePct": -0.92,
+          "sector": "算力",
+          "turnover": "48.88亿",
+          "mainNet": ""
+        },
+        {
+          "code": "002353",
+          "name": "杰瑞股份",
+          "price": 168.81,
+          "changePct": -1.34,
+          "sector": "燃气轮机",
+          "turnover": "21.37亿",
+          "mainNet": "-8814万"
+        },
+        {
+          "code": "600177",
+          "name": "雅戈尔",
+          "price": 7.68,
+          "changePct": -1.54,
+          "sector": "服装家纺",
+          "turnover": "1.85亿",
+          "mainNet": "-170.0万"
+        },
+        {
+          "code": "605208",
+          "name": "永茂泰",
+          "price": 16.9,
+          "changePct": -1.69,
+          "sector": "机器人概念",
+          "turnover": "7.39亿",
+          "mainNet": "+2988万"
+        },
+        {
+          "code": "300382",
+          "name": "斯莱克",
+          "price": 22.18,
+          "changePct": -1.86,
+          "sector": "机器人概念",
+          "turnover": "1.85亿",
+          "mainNet": "-5451万"
+        },
+        {
+          "code": "002025",
+          "name": "航天电器",
+          "price": 90.15,
+          "changePct": -2.09,
+          "sector": "商业航天",
+          "turnover": "4.61亿",
+          "mainNet": "+7734万"
+        },
+        {
+          "code": "002293",
+          "name": "罗莱生活",
+          "price": 11.0,
+          "changePct": -2.14,
+          "sector": "服装家纺",
+          "turnover": "713.8万",
+          "mainNet": "+52.88万"
+        },
+        {
+          "code": "603087",
+          "name": "甘李药业",
+          "price": 65.54,
+          "changePct": -2.31,
+          "sector": "医药",
+          "turnover": "33.00亿",
+          "mainNet": "+5898万"
+        },
+        {
+          "code": "601995",
+          "name": "中金公司",
+          "price": 36.28,
+          "changePct": -2.58,
+          "sector": "证券",
+          "turnover": "16.39亿",
+          "mainNet": "-5992万"
+        },
+        {
+          "code": "600030",
+          "name": "中信证券",
+          "price": 28.45,
+          "changePct": -2.67,
+          "sector": "证券",
+          "turnover": "9.96亿",
+          "mainNet": "-1.32亿"
+        },
+        {
+          "code": "688141",
+          "name": "杰华特",
+          "price": 162.92,
+          "changePct": -3.17,
+          "sector": "芯片",
+          "turnover": "21.41亿",
+          "mainNet": "-13.00亿"
+        },
+        {
+          "code": "300592",
+          "name": "华凯易佰",
+          "price": 18.25,
+          "changePct": -3.23,
+          "sector": "AI应用",
+          "turnover": "2.19亿",
+          "mainNet": "-1753万"
+        },
+        {
+          "code": "688319",
+          "name": "欧林生物",
+          "price": 41.6,
+          "changePct": -4.08,
+          "sector": "医药",
+          "turnover": "1.03亿",
+          "mainNet": ""
+        },
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "price": 16.41,
+          "changePct": -4.54,
+          "sector": "环保",
+          "turnover": "639.6万",
+          "mainNet": ""
+        },
+        {
+          "code": "603725",
+          "name": "天安新材",
+          "price": 13.9,
+          "changePct": -4.79,
+          "sector": "机器人概念",
+          "turnover": "3.35亿",
+          "mainNet": "+114.4万"
+        },
+        {
+          "code": "600182",
+          "name": "S佳通",
+          "price": 14.22,
+          "changePct": -5.01,
+          "sector": "ST板块",
+          "turnover": "3786万",
+          "mainNet": "-498.8万"
+        },
+        {
+          "code": "002860",
+          "name": "星帅尔",
+          "price": 16.6,
+          "changePct": -5.47,
+          "sector": "家电",
+          "turnover": "6.03亿",
+          "mainNet": "-6451万"
+        },
+        {
+          "code": "002452",
+          "name": "长高电气",
+          "price": 13.03,
+          "changePct": -5.78,
+          "sector": "智能电网",
+          "turnover": "5.62亿",
+          "mainNet": "-613.6万"
+        },
+        {
+          "code": "300684",
+          "name": "中石科技",
+          "price": 69.38,
+          "changePct": -6.76,
+          "sector": "算力",
+          "turnover": "26.48亿",
+          "mainNet": "+6307万"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-08",
+      "stocks": [
+        {
+          "code": "301321",
+          "name": "翰博高新",
+          "price": 49.81,
+          "changePct": 20.0,
+          "sector": "面板",
+          "turnover": "6.31亿",
+          "mainNet": "+5094万"
+        },
+        {
+          "code": "301251",
+          "name": "威尔高",
+          "price": 60.92,
+          "changePct": 19.99,
+          "sector": "电源",
+          "turnover": "13.54亿",
+          "mainNet": "+7778万"
+        },
+        {
+          "code": "300821",
+          "name": "东岳硅材",
+          "price": 26.44,
+          "changePct": 13.48,
+          "sector": "化工",
+          "turnover": "47.95亿",
+          "mainNet": "+2.10亿"
+        },
+        {
+          "code": "301520",
+          "name": "万邦医药",
+          "price": 42.74,
+          "changePct": 13.25,
+          "sector": "医药",
+          "turnover": "5.96亿",
+          "mainNet": "+947.6万"
+        },
+        {
+          "code": "688448",
+          "name": "磁谷科技",
+          "price": 64.1,
+          "changePct": 11.69,
+          "sector": "算力",
+          "turnover": "7.96亿",
+          "mainNet": "-1.02亿"
+        },
+        {
+          "code": "301165",
+          "name": "锐捷网络",
+          "price": 105.5,
+          "changePct": 11.63,
+          "sector": "通信",
+          "turnover": "39.44亿",
+          "mainNet": "+9993万"
+        },
+        {
+          "code": "688347",
+          "name": "华虹宏力",
+          "price": 358.4,
+          "changePct": 10.62,
+          "sector": "芯片",
+          "turnover": "100.01亿",
+          "mainNet": "+7.10亿"
+        },
+        {
+          "code": "600350",
+          "name": "山东高速",
+          "price": 13.49,
+          "changePct": 10.03,
+          "sector": "基础建设",
+          "turnover": "1.52亿",
+          "mainNet": "+5.61万"
+        },
+        {
+          "code": "600288",
+          "name": "大恒科技",
+          "price": 17.11,
+          "changePct": 10.03,
+          "sector": "机器视觉",
+          "turnover": "19.53亿",
+          "mainNet": "+5528万"
+        },
+        {
+          "code": "603339",
+          "name": "四方科技",
+          "price": 15.47,
+          "changePct": 10.03,
+          "sector": "算力",
+          "turnover": "5.10亿",
+          "mainNet": "+9561万"
+        },
+        {
+          "code": "603789",
+          "name": "ST星农",
+          "price": 7.03,
+          "changePct": 10.02,
+          "sector": "ST板块",
+          "turnover": "1.21亿",
+          "mainNet": "+900.8万"
+        },
+        {
+          "code": "002396",
+          "name": "星网锐捷",
+          "price": 29.1,
+          "changePct": 10.02,
+          "sector": "通信",
+          "turnover": "15.64亿",
+          "mainNet": "+2.72亿"
+        },
+        {
+          "code": "603928",
+          "name": "兴业股份",
+          "price": 16.36,
+          "changePct": 10.02,
+          "sector": "芯片",
+          "turnover": "7.83亿",
+          "mainNet": "+1.10亿"
+        },
+        {
+          "code": "002841",
+          "name": "视源股份",
+          "price": 47.39,
+          "changePct": 10.0,
+          "sector": "AI办公",
+          "turnover": "13.48亿",
+          "mainNet": "+2018万"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "price": 42.7,
+          "changePct": 9.99,
+          "sector": "机器视觉",
+          "turnover": "4825万",
+          "mainNet": "-9594万"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 22.91,
+          "changePct": 9.99,
+          "sector": "并购重组",
+          "turnover": "10.70亿",
+          "mainNet": "+7.18亿"
+        },
+        {
+          "code": "688141",
+          "name": "杰华特",
+          "price": 177.0,
+          "changePct": 8.64,
+          "sector": "芯片",
+          "turnover": "34.03亿",
+          "mainNet": "+5116万"
+        },
+        {
+          "code": "603065",
+          "name": "宿迁联盛",
+          "price": 21.91,
+          "changePct": 8.2,
+          "sector": "芯片",
+          "turnover": "15.83亿",
+          "mainNet": "+1958万"
+        },
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "price": 17.58,
+          "changePct": 7.13,
+          "sector": "环保",
+          "turnover": "1.40亿",
+          "mainNet": "+982.3万"
+        },
+        {
+          "code": "301151",
+          "name": "冠龙节能",
+          "price": 21.77,
+          "changePct": 6.93,
+          "sector": "算力",
+          "turnover": "3.44亿",
+          "mainNet": "+897.1万"
+        },
+        {
+          "code": "000938",
+          "name": "紫光股份",
+          "price": 33.62,
+          "changePct": 6.8,
+          "sector": "算力",
+          "turnover": "164.21亿",
+          "mainNet": "+22.26亿"
+        },
+        {
+          "code": "688702",
+          "name": "盛科通信",
+          "price": 401.5,
+          "changePct": 5.1,
+          "sector": "通信",
+          "turnover": "50.02亿",
+          "mainNet": "+1.41亿"
+        },
+        {
+          "code": "605208",
+          "name": "永茂泰",
+          "price": 17.69,
+          "changePct": 4.67,
+          "sector": "机器人概念",
+          "turnover": "6.66亿",
+          "mainNet": "+3364万"
+        },
+        {
+          "code": "603268",
+          "name": "松发股份",
+          "price": 167.77,
+          "changePct": 4.61,
+          "sector": "造船",
+          "turnover": "31.48亿",
+          "mainNet": "+4314万"
+        },
+        {
+          "code": "603519",
+          "name": "立霸股份",
+          "price": 15.4,
+          "changePct": 4.34,
+          "sector": "家电",
+          "turnover": "2.05亿",
+          "mainNet": "+1507万"
+        },
+        {
+          "code": "300550",
+          "name": "和仁科技",
+          "price": 15.27,
+          "changePct": 3.81,
+          "sector": "互联网医疗",
+          "turnover": "2.35亿",
+          "mainNet": "+1798万"
+        },
+        {
+          "code": "300458",
+          "name": "全志科技",
+          "price": 39.76,
+          "changePct": 3.81,
+          "sector": "芯片",
+          "turnover": "41.20亿",
+          "mainNet": "+2.14亿"
+        },
+        {
+          "code": "688372",
+          "name": "伟测科技",
+          "price": 188.6,
+          "changePct": 3.55,
+          "sector": "芯片",
+          "turnover": "29.80亿",
+          "mainNet": "+9044万"
+        },
+        {
+          "code": "002768",
+          "name": "国恩股份",
+          "price": 60.01,
+          "changePct": 3.47,
+          "sector": "化工",
+          "turnover": "13.54亿",
+          "mainNet": "-2759万"
+        },
+        {
+          "code": "688629",
+          "name": "华丰科技",
+          "price": 205.98,
+          "changePct": 3.3,
+          "sector": "算力",
+          "turnover": "54.68亿",
+          "mainNet": "+17.00亿"
+        },
+        {
+          "code": "002457",
+          "name": "青龙管业",
+          "price": 15.48,
+          "changePct": 3.27,
+          "sector": "基础建设",
+          "turnover": "13.14亿",
+          "mainNet": "+1335万"
+        },
+        {
+          "code": "300041",
+          "name": "回天新材",
+          "price": 15.61,
+          "changePct": 2.83,
+          "sector": "光伏",
+          "turnover": "12.86亿",
+          "mainNet": "-6184万"
+        },
+        {
+          "code": "000429",
+          "name": "粤高速A",
+          "price": 14.72,
+          "changePct": 2.58,
+          "sector": "金融概念",
+          "turnover": "1.29亿",
+          "mainNet": "-214.1万"
+        },
+        {
+          "code": "002137",
+          "name": "实益达",
+          "price": 11.72,
+          "changePct": 2.54,
+          "sector": "机器人概念",
+          "turnover": "20.55亿",
+          "mainNet": "-2.30亿"
+        },
+        {
+          "code": "688002",
+          "name": "睿创微纳",
+          "price": 154.6,
+          "changePct": 2.32,
+          "sector": "芯片",
+          "turnover": "23.23亿",
+          "mainNet": "+8746万"
+        },
+        {
+          "code": "300717",
+          "name": "华信新材",
+          "price": 24.4,
+          "changePct": 2.26,
+          "sector": "新材料概念",
+          "turnover": "3.11亿",
+          "mainNet": "+2894万"
+        },
+        {
+          "code": "600285",
+          "name": "羚锐制药",
+          "price": 21.9,
+          "changePct": 2.1,
+          "sector": "中药创新药",
+          "turnover": "2.30亿",
+          "mainNet": "+336.3万"
+        },
+        {
+          "code": "002937",
+          "name": "兴瑞科技",
+          "price": 43.08,
+          "changePct": 1.94,
+          "sector": "算力",
+          "turnover": "3.38亿",
+          "mainNet": "+3742万"
+        },
+        {
+          "code": "002485",
+          "name": "ST雪发",
+          "price": 6.0,
+          "changePct": 1.69,
+          "sector": "ST板块",
+          "turnover": "4025万",
+          "mainNet": "+154.8万"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 39.31,
+          "changePct": 0.85,
+          "sector": "芯片",
+          "turnover": "3.52亿",
+          "mainNet": "+1406万"
+        },
+        {
+          "code": "688802",
+          "name": "沐曦股份",
+          "price": 840.08,
+          "changePct": 0.73,
+          "sector": "GPU算力",
+          "turnover": "21.63亿",
+          "mainNet": "+2391万"
+        },
+        {
+          "code": "003004",
+          "name": "声迅股份",
+          "price": 80.33,
+          "changePct": 0.48,
+          "sector": "机器视觉",
+          "turnover": "4.54亿",
+          "mainNet": "-200.9万"
+        },
+        {
+          "code": "301070",
+          "name": "开勒股份",
+          "price": 87.1,
+          "changePct": 0.45,
+          "sector": "通信",
+          "turnover": "4.59亿",
+          "mainNet": "+4440万"
+        },
+        {
+          "code": "688605",
+          "name": "先锋精科",
+          "price": 113.47,
+          "changePct": 0.37,
+          "sector": "芯片",
+          "turnover": "11.45亿",
+          "mainNet": "+2515万"
+        },
+        {
+          "code": "600177",
+          "name": "雅戈尔",
+          "price": 7.7,
+          "changePct": 0.26,
+          "sector": "服装家纺",
+          "turnover": "1.43亿",
+          "mainNet": "+82.75万"
+        },
+        {
+          "code": "603903",
+          "name": "中持股份",
+          "price": 15.84,
+          "changePct": 0.13,
+          "sector": "股权转让",
+          "turnover": "4.38亿",
+          "mainNet": "+810.1万"
+        },
+        {
+          "code": "002293",
+          "name": "罗莱生活",
+          "price": 11.0,
+          "changePct": 0.0,
+          "sector": "服装家纺",
+          "turnover": "8018万",
+          "mainNet": ""
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 6.04,
+          "changePct": -0.33,
+          "sector": "创新药",
+          "turnover": "1.43亿",
+          "mainNet": "+458.4万"
+        },
+        {
+          "code": "300759",
+          "name": "康龙化成",
+          "price": 30.31,
+          "changePct": -0.85,
+          "sector": "创新药",
+          "turnover": "20.17亿",
+          "mainNet": "-2.06亿"
+        },
+        {
+          "code": "688103",
+          "name": "国力电子",
+          "price": 87.7,
+          "changePct": -1.41,
+          "sector": "芯片",
+          "turnover": "6.00亿",
+          "mainNet": "+3035万"
+        },
+        {
+          "code": "300145",
+          "name": "南方泵业",
+          "price": 6.34,
+          "changePct": -1.71,
+          "sector": "算力",
+          "turnover": "15.77亿",
+          "mainNet": "-67.37万"
+        },
+        {
+          "code": "603991",
+          "name": "领先股份",
+          "price": 151.87,
+          "changePct": -1.82,
+          "sector": "芯片",
+          "turnover": "10.07亿",
+          "mainNet": "+1221万"
+        },
+        {
+          "code": "600360",
+          "name": "华微电子",
+          "price": 14.97,
+          "changePct": -2.28,
+          "sector": "芯片",
+          "turnover": "25.97亿",
+          "mainNet": "-2.37亿"
+        },
+        {
+          "code": "688036",
+          "name": "传音控股",
+          "price": 62.25,
+          "changePct": -2.4,
+          "sector": "端侧AI",
+          "turnover": "10.21亿",
+          "mainNet": "-9047万"
+        },
+        {
+          "code": "688392",
+          "name": "骄成超声",
+          "price": 223.77,
+          "changePct": -2.62,
+          "sector": "算力",
+          "turnover": "12.89亿",
+          "mainNet": "+6390万"
+        },
+        {
+          "code": "603823",
+          "name": "百合花",
+          "price": 69.79,
+          "changePct": -3.67,
+          "sector": "芯片",
+          "turnover": "21.86亿",
+          "mainNet": "+1756万"
+        },
+        {
+          "code": "688206",
+          "name": "概伦电子",
+          "price": 47.2,
+          "changePct": -4.07,
+          "sector": "芯片",
+          "turnover": "8.22亿",
+          "mainNet": "+3104万"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "stocks": [
+        {
+          "code": "688720",
+          "name": "艾森股份",
+          "price": 105.6,
+          "changePct": 20.0,
+          "sector": "芯片",
+          "turnover": "11.23亿",
+          "mainNet": "+8373万"
+        },
+        {
+          "code": "688432",
+          "name": "有研硅",
+          "price": 53.77,
+          "changePct": 20.0,
+          "sector": "芯片",
+          "turnover": "42.85亿",
+          "mainNet": "+4643万"
+        },
+        {
+          "code": "301607",
+          "name": "富特科技",
+          "price": 57.37,
+          "changePct": 20.0,
+          "sector": "芯片",
+          "turnover": "10.60亿",
+          "mainNet": "+4481万"
+        },
+        {
+          "code": "301379",
+          "name": "天山电子",
+          "price": 36.97,
+          "changePct": 19.99,
+          "sector": "芯片",
+          "turnover": "14.59亿",
+          "mainNet": "+1.45亿"
+        },
+        {
+          "code": "300604",
+          "name": "长川科技",
+          "price": 374.0,
+          "changePct": 17.9,
+          "sector": "芯片",
+          "turnover": "134.61亿",
+          "mainNet": "+10.77亿"
+        },
+        {
+          "code": "688362",
+          "name": "甬矽电子",
+          "price": 114.8,
+          "changePct": 17.14,
+          "sector": "芯片",
+          "turnover": "55.08亿",
+          "mainNet": "-2139万"
+        },
+        {
+          "code": "688802",
+          "name": "沐曦股份",
+          "price": 981.88,
+          "changePct": 16.88,
+          "sector": "GPU算力",
+          "turnover": "51.43亿",
+          "mainNet": "+4.52亿"
+        },
+        {
+          "code": "688103",
+          "name": "国力电子",
+          "price": 100.97,
+          "changePct": 15.13,
+          "sector": "芯片",
+          "turnover": "10.69亿",
+          "mainNet": "+1890万"
+        },
+        {
+          "code": "300821",
+          "name": "东岳硅材",
+          "price": 30.33,
+          "changePct": 14.71,
+          "sector": "化工",
+          "turnover": "59.26亿",
+          "mainNet": "-1.05亿"
+        },
+        {
+          "code": "688795",
+          "name": "摩尔线程",
+          "price": 759.0,
+          "changePct": 13.96,
+          "sector": "GPU算力",
+          "turnover": "51.02亿",
+          "mainNet": "+6.25亿"
+        },
+        {
+          "code": "688981",
+          "name": "中芯国际",
+          "price": 173.0,
+          "changePct": 13.74,
+          "sector": "芯片",
+          "turnover": "236.5亿",
+          "mainNet": "+29.55亿"
+        },
+        {
+          "code": "688057",
+          "name": "金达莱",
+          "price": 19.96,
+          "changePct": 13.54,
+          "sector": "机器人概念",
+          "turnover": "4.22亿",
+          "mainNet": "+2418万"
+        },
+        {
+          "code": "301307",
+          "name": "美利信",
+          "price": 92.84,
+          "changePct": 13.21,
+          "sector": "算力",
+          "turnover": "26.02亿",
+          "mainNet": "-3.89亿"
+        },
+        {
+          "code": "688206",
+          "name": "概伦电子",
+          "price": 53.0,
+          "changePct": 12.29,
+          "sector": "芯片",
+          "turnover": "12.73亿",
+          "mainNet": "+4763万"
+        },
+        {
+          "code": "688347",
+          "name": "华虹宏力",
+          "price": 400.5,
+          "changePct": 11.75,
+          "sector": "芯片",
+          "turnover": "115.71亿",
+          "mainNet": "+2.88亿"
+        },
+        {
+          "code": "688262",
+          "name": "国芯科技",
+          "price": 46.61,
+          "changePct": 10.74,
+          "sector": "芯片",
+          "turnover": "16.17亿",
+          "mainNet": "+7011万"
+        },
+        {
+          "code": "603928",
+          "name": "兴业股份",
+          "price": 18.0,
+          "changePct": 10.02,
+          "sector": "芯片",
+          "turnover": "11.72亿",
+          "mainNet": "-6938万"
+        },
+        {
+          "code": "603726",
+          "name": "朗迪集团",
+          "price": 33.5,
+          "changePct": 10.02,
+          "sector": "芯片",
+          "turnover": "1.61亿",
+          "mainNet": "+5193万"
+        },
+        {
+          "code": "002841",
+          "name": "视源股份",
+          "price": 52.13,
+          "changePct": 10.0,
+          "sector": "AI办公",
+          "turnover": "25.47亿",
+          "mainNet": "-2.09亿"
+        },
+        {
+          "code": "000977",
+          "name": "浪潮信息",
+          "price": 85.99,
+          "changePct": 10.0,
+          "sector": "算力",
+          "turnover": "185.31亿",
+          "mainNet": "+24.64亿"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 25.2,
+          "changePct": 10.0,
+          "sector": "并购重组",
+          "turnover": "3.27亿",
+          "mainNet": "+887.8万"
+        },
+        {
+          "code": "603991",
+          "name": "领先股份",
+          "price": 167.06,
+          "changePct": 10.0,
+          "sector": "芯片",
+          "turnover": "6.42亿",
+          "mainNet": "+8468万"
+        },
+        {
+          "code": "688222",
+          "name": "成都先导",
+          "price": 33.45,
+          "changePct": 9.1,
+          "sector": "创新药",
+          "turnover": "8.99亿",
+          "mainNet": "+5894万"
+        },
+        {
+          "code": "300041",
+          "name": "回天新材",
+          "price": 16.88,
+          "changePct": 8.14,
+          "sector": "通信",
+          "turnover": "18.57亿",
+          "mainNet": "+8212万"
+        },
+        {
+          "code": "688392",
+          "name": "骄成超声",
+          "price": 241.8,
+          "changePct": 8.06,
+          "sector": "算力",
+          "turnover": "12.74亿",
+          "mainNet": "+5540万"
+        },
+        {
+          "code": "300765",
+          "name": "石药创新",
+          "price": 36.38,
+          "changePct": 7.47,
+          "sector": "创新药",
+          "turnover": "9.66亿",
+          "mainNet": "-7454万"
+        },
+        {
+          "code": "300592",
+          "name": "华凯易佰",
+          "price": 18.49,
+          "changePct": 7.19,
+          "sector": "AI应用",
+          "turnover": "4.19亿",
+          "mainNet": "-2173万"
+        },
+        {
+          "code": "300540",
+          "name": "蜀道装备",
+          "price": 47.33,
+          "changePct": 6.82,
+          "sector": "芯片",
+          "turnover": "13.45亿",
+          "mainNet": "+8083万"
+        },
+        {
+          "code": "600360",
+          "name": "华微电子",
+          "price": 15.99,
+          "changePct": 6.81,
+          "sector": "芯片",
+          "turnover": "29.80亿",
+          "mainNet": "-1.43亿"
+        },
+        {
+          "code": "688036",
+          "name": "传音控股",
+          "price": 66.37,
+          "changePct": 6.62,
+          "sector": "端侧AI",
+          "turnover": "18.84亿",
+          "mainNet": "+6347万"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "price": 45.47,
+          "changePct": 6.49,
+          "sector": "机器视觉",
+          "turnover": "6.50亿",
+          "mainNet": "-2731万"
+        },
+        {
+          "code": "002353",
+          "name": "杰瑞股份",
+          "price": 168.0,
+          "changePct": 6.34,
+          "sector": "燃气轮机",
+          "turnover": "27.81亿",
+          "mainNet": "+1.94亿"
+        },
+        {
+          "code": "600172",
+          "name": "黄河旋风",
+          "price": 18.7,
+          "changePct": 6.31,
+          "sector": "金刚石概念",
+          "turnover": "57.02亿",
+          "mainNet": "+19.67亿"
+        },
+        {
+          "code": "300649",
+          "name": "杭州园林",
+          "price": 29.85,
+          "changePct": 6.3,
+          "sector": "股权转让",
+          "turnover": "2.20亿",
+          "mainNet": "+481.7万"
+        },
+        {
+          "code": "688002",
+          "name": "睿创微纳",
+          "price": 164.32,
+          "changePct": 6.29,
+          "sector": "芯片",
+          "turnover": "28.37亿",
+          "mainNet": "+5396万"
+        },
+        {
+          "code": "000938",
+          "name": "紫光股份",
+          "price": 35.68,
+          "changePct": 6.13,
+          "sector": "算力",
+          "turnover": "150.01亿",
+          "mainNet": "+2.26亿"
+        },
+        {
+          "code": "002860",
+          "name": "星帅尔",
+          "price": 16.68,
+          "changePct": 6.11,
+          "sector": "家电",
+          "turnover": "4.72亿",
+          "mainNet": "+1777万"
+        },
+        {
+          "code": "301321",
+          "name": "翰博高新",
+          "price": 52.73,
+          "changePct": 5.86,
+          "sector": "面板",
+          "turnover": "9.56亿",
+          "mainNet": "+2164万"
+        },
+        {
+          "code": "003004",
+          "name": "声迅股份",
+          "price": 84.49,
+          "changePct": 5.18,
+          "sector": "机器视觉",
+          "turnover": "4.22亿",
+          "mainNet": "+1135万"
+        },
+        {
+          "code": "688702",
+          "name": "盛科通信",
+          "price": 422.0,
+          "changePct": 5.11,
+          "sector": "通信",
+          "turnover": "47.87亿",
+          "mainNet": "+1.21亿"
+        },
+        {
+          "code": "002174",
+          "name": "游族网络",
+          "price": 12.51,
+          "changePct": 4.77,
+          "sector": "AI应用",
+          "turnover": "7.02亿",
+          "mainNet": "-893.7万"
+        },
+        {
+          "code": "002137",
+          "name": "实益达",
+          "price": 12.25,
+          "changePct": 4.52,
+          "sector": "机器人概念",
+          "turnover": "16.66亿",
+          "mainNet": "-4393万"
+        },
+        {
+          "code": "688448",
+          "name": "磁谷科技",
+          "price": 66.54,
+          "changePct": 3.81,
+          "sector": "算力",
+          "turnover": "6.22亿",
+          "mainNet": "-668.7万"
+        },
+        {
+          "code": "301165",
+          "name": "锐捷网络",
+          "price": 109.18,
+          "changePct": 3.49,
+          "sector": "通信",
+          "turnover": "33.69亿",
+          "mainNet": "+1.60亿"
+        },
+        {
+          "code": "605208",
+          "name": "永茂泰",
+          "price": 18.3,
+          "changePct": 3.45,
+          "sector": "机器人概念",
+          "turnover": "5.39亿",
+          "mainNet": "+2281万"
+        },
+        {
+          "code": "002077",
+          "name": "大港股份",
+          "price": 20.13,
+          "changePct": 3.23,
+          "sector": "芯片",
+          "turnover": "19.90亿",
+          "mainNet": "+6100万"
+        },
+        {
+          "code": "688605",
+          "name": "先锋精科",
+          "price": 116.9,
+          "changePct": 3.02,
+          "sector": "芯片",
+          "turnover": "13.02亿",
+          "mainNet": "+1.02亿"
+        },
+        {
+          "code": "688595",
+          "name": "芯海科技",
+          "price": 43.35,
+          "changePct": 2.48,
+          "sector": "芯片",
+          "turnover": "4.43亿",
+          "mainNet": "+4588万"
+        },
+        {
+          "code": "301070",
+          "name": "开勒股份",
+          "price": 89.19,
+          "changePct": 2.4,
+          "sector": "通信",
+          "turnover": "5.19亿",
+          "mainNet": "+807万"
+        },
+        {
+          "code": "300759",
+          "name": "康龙化成",
+          "price": 30.98,
+          "changePct": 2.21,
+          "sector": "创新药",
+          "turnover": "22.54亿",
+          "mainNet": "-1.03亿"
+        },
+        {
+          "code": "300458",
+          "name": "全志科技",
+          "price": 40.63,
+          "changePct": 2.19,
+          "sector": "芯片",
+          "turnover": "35.57亿",
+          "mainNet": "+1.60亿"
+        },
+        {
+          "code": "300717",
+          "name": "华信新材",
+          "price": 24.92,
+          "changePct": 2.13,
+          "sector": "新材料概念",
+          "turnover": "2.85亿",
+          "mainNet": "+132.9万"
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 6.16,
+          "changePct": 1.99,
+          "sector": "创新药",
+          "turnover": "1.51亿",
+          "mainNet": "+1165万"
+        },
+        {
+          "code": "603903",
+          "name": "中持股份",
+          "price": 16.15,
+          "changePct": 1.96,
+          "sector": "股权转让",
+          "turnover": "3.54亿",
+          "mainNet": "-163.8万"
+        },
+        {
+          "code": "688629",
+          "name": "华丰科技",
+          "price": 209.68,
+          "changePct": 1.8,
+          "sector": "算力",
+          "turnover": "54.47亿",
+          "mainNet": "+6107万"
+        },
+        {
+          "code": "002931",
+          "name": "兴瑞科技",
+          "price": 43.82,
+          "changePct": 1.72,
+          "sector": "算力",
+          "turnover": "3.03亿",
+          "mainNet": "+2938万"
+        },
+        {
+          "code": "300894",
+          "name": "火星人",
+          "price": 12.33,
+          "changePct": 1.65,
+          "sector": "家电",
+          "turnover": "1.17亿",
+          "mainNet": "-731.7万"
+        },
+        {
+          "code": "002668",
+          "name": "TCL智家",
+          "price": 10.57,
+          "changePct": 0.57,
+          "sector": "端侧AI",
+          "turnover": "1.91亿",
+          "mainNet": "+588.4万"
+        },
+        {
+          "code": "300145",
+          "name": "南方泵业",
+          "price": 6.36,
+          "changePct": 0.32,
+          "sector": "算力",
+          "turnover": "13.97亿",
+          "mainNet": "-6479万"
+        },
+        {
+          "code": "688372",
+          "name": "伟测科技",
+          "price": 188.88,
+          "changePct": 0.15,
+          "sector": "芯片",
+          "turnover": "26.61亿",
+          "mainNet": "+1.28亿"
+        },
+        {
+          "code": "002396",
+          "name": "星网锐捷",
+          "price": 28.96,
+          "changePct": -0.48,
+          "sector": "通信",
+          "turnover": "40.02亿",
+          "mainNet": "-7973万"
+        },
+        {
+          "code": "600285",
+          "name": "羚锐制药",
+          "price": 21.79,
+          "changePct": -0.5,
+          "sector": "中药创新药",
+          "turnover": "1.94亿",
+          "mainNet": "-907.7万"
+        },
+        {
+          "code": "002768",
+          "name": "国恩股份",
+          "price": 59.55,
+          "changePct": -0.77,
+          "sector": "化工",
+          "turnover": "10.75亿",
+          "mainNet": ""
+        },
+        {
+          "code": "603339",
+          "name": "四方科技",
+          "price": 15.33,
+          "changePct": -0.9,
+          "sector": "算力",
+          "turnover": "5.36亿",
+          "mainNet": ""
+        },
+        {
+          "code": "603823",
+          "name": "百合花",
+          "price": 69.12,
+          "changePct": -0.96,
+          "sector": "芯片",
+          "turnover": "19.12亿",
+          "mainNet": "+1.16亿"
+        },
+        {
+          "code": "688141",
+          "name": "杰华特",
+          "price": 174.23,
+          "changePct": -1.56,
+          "sector": "芯片",
+          "turnover": "29.69亿",
+          "mainNet": "+7858万"
+        },
+        {
+          "code": "002293",
+          "name": "罗莱生活",
+          "price": 10.82,
+          "changePct": -1.64,
+          "sector": "服装家纺",
+          "turnover": "5008万",
+          "mainNet": "+31.41万"
+        },
+        {
+          "code": "600288",
+          "name": "大恒科技",
+          "price": 16.78,
+          "changePct": -1.93,
+          "sector": "机器视觉",
+          "turnover": "20.52亿",
+          "mainNet": "-3703万"
+        },
+        {
+          "code": "301520",
+          "name": "万邦医药",
+          "price": 41.6,
+          "changePct": -2.67,
+          "sector": "医药",
+          "turnover": "5.28亿",
+          "mainNet": "-1406万"
+        },
+        {
+          "code": "603065",
+          "name": "宿迁联盛",
+          "price": 20.98,
+          "changePct": -4.24,
+          "sector": "芯片",
+          "turnover": "14.05亿",
+          "mainNet": "+1.09亿"
+        },
+        {
+          "code": "301251",
+          "name": "威尔高",
+          "price": 58.01,
+          "changePct": -4.78,
+          "sector": "电源",
+          "turnover": "15.06亿",
+          "mainNet": "-2193万"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "stocks": [
+        {
+          "code": "688710",
+          "name": "益诺思",
+          "price": 77.87,
+          "changePct": 20.0,
+          "sector": "创新药CRO",
+          "turnover": "5.03亿",
+          "mainNet": "+3246万"
+        },
+        {
+          "code": "300105",
+          "name": "龙源技术",
+          "price": 8.18,
+          "changePct": 18.38,
+          "sector": "智能电网",
+          "turnover": "6.30亿",
+          "mainNet": "+9007万"
+        },
+        {
+          "code": "688328",
+          "name": "深科达",
+          "price": 118.23,
+          "changePct": 15.89,
+          "sector": "芯片",
+          "turnover": "24.52亿",
+          "mainNet": "-1.77亿"
+        },
+        {
+          "code": "301588",
+          "name": "美新科技",
+          "price": 55.43,
+          "changePct": 14.76,
+          "sector": "地产链",
+          "turnover": "6.21亿",
+          "mainNet": "+3907万"
+        },
+        {
+          "code": "300487",
+          "name": "蓝晓科技",
+          "price": 80.89,
+          "changePct": 13.96,
+          "sector": "芯片",
+          "turnover": "23.55亿",
+          "mainNet": "+9387万"
+        },
+        {
+          "code": "688202",
+          "name": "美迪西",
+          "price": 87.0,
+          "changePct": 12.77,
+          "sector": "创新药CRO",
+          "turnover": "10.22亿",
+          "mainNet": "+4415万"
+        },
+        {
+          "code": "688319",
+          "name": "欧林生物",
+          "price": 44.38,
+          "changePct": 11.54,
+          "sector": "医药",
+          "turnover": "8.40亿",
+          "mainNet": "+588.3万"
+        },
+        {
+          "code": "002774",
+          "name": "快意电梯",
+          "price": 15.9,
+          "changePct": 10.03,
+          "sector": "地产链",
+          "turnover": "1.32亿",
+          "mainNet": "+1557万"
+        },
+        {
+          "code": "002317",
+          "name": "众生药业",
+          "price": 29.54,
+          "changePct": 10.02,
+          "sector": "创新药中药",
+          "turnover": "20.42亿",
+          "mainNet": "+2.70亿"
+        },
+        {
+          "code": "603127",
+          "name": "昭衍新药",
+          "price": 43.22,
+          "changePct": 10.0,
+          "sector": "创新药CRO",
+          "turnover": "22.73亿",
+          "mainNet": "+4.11亿"
+        },
+        {
+          "code": "002687",
+          "name": "乔治白",
+          "price": 5.85,
+          "changePct": 9.76,
+          "sector": "服装家纺",
+          "turnover": "2.40亿",
+          "mainNet": "+2486万"
+        },
+        {
+          "code": "300759",
+          "name": "康龙化成",
+          "price": 33.94,
+          "changePct": 9.55,
+          "sector": "创新药",
+          "turnover": "33.95亿",
+          "mainNet": "+8677万"
+        },
+        {
+          "code": "301520",
+          "name": "万邦医药",
+          "price": 45.18,
+          "changePct": 8.61,
+          "sector": "医药",
+          "turnover": "6.45亿",
+          "mainNet": "+2558万"
+        },
+        {
+          "code": "300553",
+          "name": "集智股份",
+          "price": 78.69,
+          "changePct": 8.0,
+          "sector": "机器人概念",
+          "turnover": "8.00亿",
+          "mainNet": "-3905万"
+        },
+        {
+          "code": "000938",
+          "name": "紫光股份",
+          "price": 38.41,
+          "changePct": 7.65,
+          "sector": "算力",
+          "turnover": "185.71亿",
+          "mainNet": ""
+        },
+        {
+          "code": "688061",
+          "name": "灿瑞科技",
+          "price": 51.06,
+          "changePct": 7.34,
+          "sector": "芯片",
+          "turnover": "2.79亿",
+          "mainNet": ""
+        },
+        {
+          "code": "301151",
+          "name": "冠龙节能",
+          "price": 22.98,
+          "changePct": 7.33,
+          "sector": "算力",
+          "turnover": "3.22亿",
+          "mainNet": "+1503万"
+        },
+        {
+          "code": "688222",
+          "name": "成都先导",
+          "price": 35.87,
+          "changePct": 7.23,
+          "sector": "创新药",
+          "turnover": "11.94亿",
+          "mainNet": "+4277万"
+        },
+        {
+          "code": "002185",
+          "name": "华天科技",
+          "price": 25.31,
+          "changePct": 6.66,
+          "sector": "芯片",
+          "turnover": "127.61亿",
+          "mainNet": "+33.67亿"
+        },
+        {
+          "code": "300765",
+          "name": "石药创新",
+          "price": 38.7,
+          "changePct": 6.38,
+          "sector": "创新药",
+          "turnover": "10.83亿",
+          "mainNet": "-1027万"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 26.75,
+          "changePct": 6.15,
+          "sector": "芯片",
+          "turnover": "10.67亿",
+          "mainNet": "-1.39亿"
+        },
+        {
+          "code": "603339",
+          "name": "四方科技",
+          "price": 16.25,
+          "changePct": 6.0,
+          "sector": "算力",
+          "turnover": "5.86亿",
+          "mainNet": "+1647万"
+        },
+        {
+          "code": "603087",
+          "name": "甘李药业",
+          "price": 66.47,
+          "changePct": 5.95,
+          "sector": "医药",
+          "turnover": "12.58亿",
+          "mainNet": "+5073万"
+        },
+        {
+          "code": "300689",
+          "name": "澄天伟业",
+          "price": 74.0,
+          "changePct": 5.7,
+          "sector": "芯片",
+          "turnover": "6.83亿",
+          "mainNet": "+4909万"
+        },
+        {
+          "code": "301161",
+          "name": "唯万密封",
+          "price": 40.21,
+          "changePct": 5.37,
+          "sector": "基础建设",
+          "turnover": "3.81亿",
+          "mainNet": "+480.5万"
+        },
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "price": 50.6,
+          "changePct": 5.31,
+          "sector": "医药",
+          "turnover": "3.68亿",
+          "mainNet": "+335.2万"
+        },
+        {
+          "code": "688432",
+          "name": "有研硅",
+          "price": 56.6,
+          "changePct": 5.26,
+          "sector": "芯片",
+          "turnover": "47.06亿",
+          "mainNet": "+3187万"
+        },
+        {
+          "code": "600360",
+          "name": "华微电子",
+          "price": 16.79,
+          "changePct": 5.0,
+          "sector": "芯片",
+          "turnover": "47.91亿",
+          "mainNet": "+5.47亿"
+        },
+        {
+          "code": "002451",
+          "name": "青龙管业",
+          "price": 15.76,
+          "changePct": 4.65,
+          "sector": "基础建设",
+          "turnover": "11.88亿",
+          "mainNet": "+689.0万"
+        },
+        {
+          "code": "002303",
+          "name": "美盈森",
+          "price": 4.53,
+          "changePct": 4.62,
+          "sector": "食品饮料",
+          "turnover": "4.36亿",
+          "mainNet": "+4631万"
+        },
+        {
+          "code": "001229",
+          "name": "魅视科技",
+          "price": 47.56,
+          "changePct": 4.6,
+          "sector": "机器视觉",
+          "turnover": "5.82亿",
+          "mainNet": "-740.2万"
+        },
+        {
+          "code": "300894",
+          "name": "火星人",
+          "price": 12.33,
+          "changePct": 0.0,
+          "sector": "家电",
+          "turnover": "1.36亿",
+          "mainNet": "+125.1万"
+        },
+        {
+          "code": "002293",
+          "name": "罗莱生活",
+          "price": 10.81,
+          "changePct": -0.09,
+          "sector": "服装家纺",
+          "turnover": "5210万",
+          "mainNet": "-3.99万"
+        },
+        {
+          "code": "600285",
+          "name": "羚锐制药",
+          "price": 21.72,
+          "changePct": -0.32,
+          "sector": "中药创新药",
+          "turnover": "1.95亿",
+          "mainNet": "-359.9万"
+        },
+        {
+          "code": "300199",
+          "name": "翰宇药业",
+          "price": 25.44,
+          "changePct": -1.32,
+          "sector": "创新药",
+          "turnover": "23.04亿",
+          "mainNet": "-5217万"
+        },
+        {
+          "code": "603903",
+          "name": "中持股份",
+          "price": 15.92,
+          "changePct": -1.42,
+          "sector": "股权转让",
+          "turnover": "2.89亿",
+          "mainNet": "-387.5万"
+        },
+        {
+          "code": "600288",
+          "name": "大恒科技",
+          "price": 16.54,
+          "changePct": -1.43,
+          "sector": "机器视觉",
+          "turnover": "18.34亿",
+          "mainNet": "-438.8万"
+        },
+        {
+          "code": "002137",
+          "name": "实益达",
+          "price": 12.02,
+          "changePct": -1.88,
+          "sector": "机器人概念",
+          "turnover": "13.71亿",
+          "mainNet": "-2822万"
+        },
+        {
+          "code": "301070",
+          "name": "开勒股份",
+          "price": 87.34,
+          "changePct": -2.07,
+          "sector": "通信",
+          "turnover": "3.96亿",
+          "mainNet": "+1356万"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 39.05,
+          "changePct": -2.55,
+          "sector": "芯片",
+          "turnover": "5.50亿",
+          "mainNet": "+1310万"
+        },
+        {
+          "code": "300717",
+          "name": "华信新材",
+          "price": 24.1,
+          "changePct": -3.29,
+          "sector": "新材料概念",
+          "turnover": "1.79亿",
+          "mainNet": "-63.2万"
+        },
+        {
+          "code": "002077",
+          "name": "大港股份",
+          "price": 19.17,
+          "changePct": -4.77,
+          "sector": "芯片",
+          "turnover": "17.10亿",
+          "mainNet": "+2364万"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "stocks": [
+        {
+          "code": "301520",
+          "name": "万邦医药",
+          "price": 54.22,
+          "changePct": 20.01,
+          "sector": "并购重组医药",
+          "turnover": "9.08亿",
+          "mainNet": "-749.3万"
+        },
+        {
+          "code": "300214",
+          "name": "日科化学",
+          "price": 12.3,
+          "changePct": 20.0,
+          "sector": "并购重组算力",
+          "turnover": "7823万",
+          "mainNet": "+3895万"
+        },
+        {
+          "code": "301310",
+          "name": "鑫宏业",
+          "price": 68.84,
+          "changePct": 17.39,
+          "sector": "机器人概念通信",
+          "turnover": "16.22亿",
+          "mainNet": "+1924万"
+        },
+        {
+          "code": "301092",
+          "name": "争光股份",
+          "price": 61.28,
+          "changePct": 11.42,
+          "sector": "电子树脂通信",
+          "turnover": "9.90亿",
+          "mainNet": "+1408万"
+        },
+        {
+          "code": "688206",
+          "name": "概伦电子",
+          "price": 51.91,
+          "changePct": 10.07,
+          "sector": "EDA股权转让",
+          "turnover": "13.21亿",
+          "mainNet": "-2057万"
+        },
+        {
+          "code": "603065",
+          "name": "宿迁联盛",
+          "price": 21.4,
+          "changePct": 10.03,
+          "sector": "芯片",
+          "turnover": "8.76亿",
+          "mainNet": "+2.51亿"
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 6.8,
+          "changePct": 10.03,
+          "sector": "创新药",
+          "turnover": "4.40亿",
+          "mainNet": "+4720万"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 29.43,
+          "changePct": 10.02,
+          "sector": "并购重组",
+          "turnover": "7.82亿",
+          "mainNet": "-351.5万"
+        },
+        {
+          "code": "688710",
+          "name": "益诺思",
+          "price": 84.02,
+          "changePct": 7.9,
+          "sector": "创新药CRO",
+          "turnover": "7.07亿",
+          "mainNet": "+5887万"
+        },
+        {
+          "code": "002674",
+          "name": "兴业科技",
+          "price": 32.96,
+          "changePct": 7.01,
+          "sector": "芯片并购重组",
+          "turnover": "14.97亿",
+          "mainNet": "+6945万"
+        },
+        {
+          "code": "688802",
+          "name": "沐曦股份",
+          "price": 972.86,
+          "changePct": 6.98,
+          "sector": "GPU算力",
+          "turnover": "34.25亿",
+          "mainNet": "+1.51亿"
+        },
+        {
+          "code": "002317",
+          "name": "众生药业",
+          "price": 31.6,
+          "changePct": 6.97,
+          "sector": "创新药中药",
+          "turnover": "26.06亿",
+          "mainNet": "-1.12亿"
+        },
+        {
+          "code": "688758",
+          "name": "赛分科技",
+          "price": 22.55,
+          "changePct": 6.27,
+          "sector": "医药",
+          "turnover": "3.28亿",
+          "mainNet": "+2205万"
+        },
+        {
+          "code": "002396",
+          "name": "星网锐捷",
+          "price": 28.99,
+          "changePct": 5.53,
+          "sector": "交换机",
+          "turnover": "45.00亿",
+          "mainNet": "+5.66亿"
+        },
+        {
+          "code": "301191",
+          "name": "菲菱科思",
+          "price": 129.08,
+          "changePct": 5.09,
+          "sector": "交换机通信",
+          "turnover": "18.69亿",
+          "mainNet": "+1.90亿"
+        },
+        {
+          "code": "603893",
+          "name": "瑞芯微",
+          "price": 219.0,
+          "changePct": 4.89,
+          "sector": "端侧AI芯片",
+          "turnover": "53.80亿",
+          "mainNet": "+22.85亿"
+        },
+        {
+          "code": "600285",
+          "name": "羚锐制药",
+          "price": 22.66,
+          "changePct": 4.33,
+          "sector": "中药创新药",
+          "turnover": "4.60亿",
+          "mainNet": "-3518万"
+        },
+        {
+          "code": "688795",
+          "name": "摩尔线程",
+          "price": 715.9,
+          "changePct": 2.12,
+          "sector": "GPU算力",
+          "turnover": "33.70亿",
+          "mainNet": "+561.9万"
+        },
+        {
+          "code": "603268",
+          "name": "松发股份",
+          "price": 162.93,
+          "changePct": 2.04,
+          "sector": "并购重组造船",
+          "turnover": "23.26亿",
+          "mainNet": "+2427万"
+        },
+        {
+          "code": "000779",
+          "name": "甘咨询",
+          "price": 10.76,
+          "changePct": 1.51,
+          "sector": "环保",
+          "turnover": "9.12亿",
+          "mainNet": "+1.46亿"
+        },
+        {
+          "code": "600900",
+          "name": "长江电力",
+          "price": 28.42,
+          "changePct": 1.39,
+          "sector": "电力",
+          "turnover": "56.71亿",
+          "mainNet": "+1.96亿"
+        },
+        {
+          "code": "600288",
+          "name": "大恒科技",
+          "price": 16.64,
+          "changePct": 0.6,
+          "sector": "机器视觉",
+          "turnover": "17.07亿",
+          "mainNet": "-4.09亿"
+        },
+        {
+          "code": "300759",
+          "name": "康龙化成",
+          "price": 34.08,
+          "changePct": 0.41,
+          "sector": "创新药",
+          "turnover": "27.63亿",
+          "mainNet": "+133.7亿"
+        },
+        {
+          "code": "000938",
+          "name": "紫光股份",
+          "price": 38.4,
+          "changePct": -0.03,
+          "sector": "交换机液冷",
+          "turnover": "1109万",
+          "mainNet": ""
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 38.88,
+          "changePct": -0.44,
+          "sector": "端侧芯片",
+          "turnover": "2.08亿",
+          "mainNet": ""
+        },
+        {
+          "code": "300506",
+          "name": "名家汇",
+          "price": 6.53,
+          "changePct": -0.61,
+          "sector": "LED",
+          "turnover": "1.08亿",
+          "mainNet": ""
+        },
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "price": 50.23,
+          "changePct": -0.73,
+          "sector": "医药",
+          "turnover": "4832万",
+          "mainNet": ""
+        },
+        {
+          "code": "688222",
+          "name": "成都先导",
+          "price": 35.53,
+          "changePct": -0.95,
+          "sector": "创新药",
+          "turnover": "9439万",
+          "mainNet": ""
+        },
+        {
+          "code": "300487",
+          "name": "蓝晓科技",
+          "price": 80.08,
+          "changePct": -1.0,
+          "sector": "芯片",
+          "turnover": "1147万",
+          "mainNet": ""
+        },
+        {
+          "code": "000063",
+          "name": "中兴通讯",
+          "price": 40.04,
+          "changePct": -1.21,
+          "sector": "AI手机",
+          "turnover": "1956万",
+          "mainNet": "+2.00亿"
+        },
+        {
+          "code": "603019",
+          "name": "中科曙光",
+          "price": 106.13,
+          "changePct": -1.27,
+          "sector": "算力并购重组",
+          "turnover": "190.61亿",
+          "mainNet": "-16.03亿"
+        },
+        {
+          "code": "603339",
+          "name": "四方科技",
+          "price": 15.98,
+          "changePct": -1.66,
+          "sector": "数据中心算力",
+          "turnover": "4.33亿",
+          "mainNet": ""
+        },
+        {
+          "code": "001000",
+          "name": "魅视科技",
+          "price": 46.74,
+          "changePct": -1.72,
+          "sector": "机器视觉",
+          "turnover": "3.08亿",
+          "mainNet": ""
+        },
+        {
+          "code": "603087",
+          "name": "甘李药业",
+          "price": 65.31,
+          "changePct": -1.75,
+          "sector": "医药",
+          "turnover": "7.78亿",
+          "mainNet": "+1100万"
+        },
+        {
+          "code": "300765",
+          "name": "石药创新",
+          "price": 37.55,
+          "changePct": -2.97,
+          "sector": "创新药",
+          "turnover": "7.40亿",
+          "mainNet": "+1338万"
+        },
+        {
+          "code": "002303",
+          "name": "美盈森",
+          "price": 4.36,
+          "changePct": -3.75,
+          "sector": "食品饮料",
+          "turnover": "2.79亿",
+          "mainNet": "+1762万"
+        },
+        {
+          "code": "300105",
+          "name": "龙源技术",
+          "price": 7.81,
+          "changePct": -4.52,
+          "sector": "智能电网",
+          "turnover": "4.01亿",
+          "mainNet": "+2.00亿"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "stocks": [
+        {
+          "code": "300990",
+          "name": "同飞股份",
+          "price": 120.41,
+          "changePct": 14.69,
+          "sector": "液冷算力",
+          "turnover": "18.19亿",
+          "mainNet": "+8418万"
+        },
+        {
+          "code": "002536",
+          "name": "飞龙股份",
+          "price": 54.07,
+          "changePct": 10.01,
+          "sector": "液冷算力",
+          "turnover": "22.03亿",
+          "mainNet": "+2.03亿"
+        },
+        {
+          "code": "603580",
+          "name": "艾艾精工",
+          "price": 33.75,
+          "changePct": 10.01,
+          "sector": "实控人变更",
+          "turnover": "2075万",
+          "mainNet": "+1504万"
+        },
+        {
+          "code": "603065",
+          "name": "宿迁联盛",
+          "price": 23.54,
+          "changePct": 10.0,
+          "sector": "芯片",
+          "turnover": "12.28亿",
+          "mainNet": "+2092万"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 32.37,
+          "changePct": 9.99,
+          "sector": "并购重组",
+          "turnover": "11.31亿",
+          "mainNet": "-9345万"
+        },
+        {
+          "code": "300214",
+          "name": "日科化学",
+          "price": 13.4,
+          "changePct": 8.94,
+          "sector": "并购重组算力",
+          "turnover": "11.87亿",
+          "mainNet": "-5365万"
+        },
+        {
+          "code": "300592",
+          "name": "华凯易佰",
+          "price": 19.02,
+          "changePct": 8.87,
+          "sector": "AI应用",
+          "turnover": "3.91亿",
+          "mainNet": "+3231万"
+        },
+        {
+          "code": "603233",
+          "name": "大参林",
+          "price": 19.68,
+          "changePct": 8.85,
+          "sector": "医药零售",
+          "turnover": "3.80亿",
+          "mainNet": "+657万"
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 7.4,
+          "changePct": 8.82,
+          "sector": "创新药",
+          "turnover": "7.28亿",
+          "mainNet": "+2145万"
+        },
+        {
+          "code": "300759",
+          "name": "康龙化成",
+          "price": 36.93,
+          "changePct": 8.36,
+          "sector": "创新药",
+          "turnover": "44.03亿",
+          "mainNet": "+3.21亿"
+        },
+        {
+          "code": "600428",
+          "name": "中远海特",
+          "price": 10.58,
+          "changePct": 7.74,
+          "sector": "航运",
+          "turnover": "18.75亿",
+          "mainNet": ""
+        },
+        {
+          "code": "603087",
+          "name": "甘李药业",
+          "price": 70.0,
+          "changePct": 7.18,
+          "sector": "医药",
+          "turnover": "15.47亿",
+          "mainNet": "+4.03亿"
+        },
+        {
+          "code": "603127",
+          "name": "昭衍新药",
+          "price": 46.02,
+          "changePct": 7.0,
+          "sector": "创新药CRO",
+          "turnover": "29.98亿",
+          "mainNet": "+1.17亿"
+        },
+        {
+          "code": "003033",
+          "name": "征和工业",
+          "price": 71.0,
+          "changePct": 6.59,
+          "sector": "机器人概念",
+          "turnover": "2.52亿",
+          "mainNet": "-343万"
+        },
+        {
+          "code": "002185",
+          "name": "华天科技",
+          "price": 25.68,
+          "changePct": 6.42,
+          "sector": "芯片",
+          "turnover": "210.81亿",
+          "mainNet": "-5.26亿"
+        },
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "price": 53.31,
+          "changePct": 6.13,
+          "sector": "医药",
+          "turnover": "5.27亿",
+          "mainNet": "+2810万"
+        },
+        {
+          "code": "605208",
+          "name": "永茂泰",
+          "price": 19.31,
+          "changePct": 4.49,
+          "sector": "机器人概念",
+          "turnover": "5.56亿",
+          "mainNet": "+461万"
+        },
+        {
+          "code": "002303",
+          "name": "美盈森",
+          "price": 4.55,
+          "changePct": 4.36,
+          "sector": "食品饮料",
+          "turnover": "2.58亿",
+          "mainNet": "+485万"
+        },
+        {
+          "code": "600288",
+          "name": "大恒科技",
+          "price": 17.18,
+          "changePct": 3.25,
+          "sector": "机器视觉",
+          "turnover": "15.91亿",
+          "mainNet": "+4043万"
+        },
+        {
+          "code": "688758",
+          "name": "赛分科技",
+          "price": 23.06,
+          "changePct": 2.26,
+          "sector": "医药",
+          "turnover": "3.22亿",
+          "mainNet": "+405万"
+        },
+        {
+          "code": "603903",
+          "name": "中持股份",
+          "price": 15.5,
+          "changePct": 1.71,
+          "sector": "股权转让",
+          "turnover": "2.49亿",
+          "mainNet": "+1252万"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 39.25,
+          "changePct": 0.95,
+          "sector": "端侧芯片",
+          "turnover": "4.52亿",
+          "mainNet": "-2201万"
+        },
+        {
+          "code": "300105",
+          "name": "龙源技术",
+          "price": 7.86,
+          "changePct": 0.64,
+          "sector": "智能电网",
+          "turnover": "2.57亿",
+          "mainNet": "+654万"
+        },
+        {
+          "code": "600900",
+          "name": "长江电力",
+          "price": 28.55,
+          "changePct": 0.22,
+          "sector": "电力",
+          "turnover": "45.30亿",
+          "mainNet": "-2.30亿"
+        },
+        {
+          "code": "688802",
+          "name": "沐曦股份",
+          "price": 974.98,
+          "changePct": 0.19,
+          "sector": "GPU算力",
+          "turnover": "31.12亿",
+          "mainNet": "-1580万"
+        },
+        {
+          "code": "603268",
+          "name": "松发股份",
+          "price": 163.24,
+          "changePct": 0.18,
+          "sector": "并购重组造船",
+          "turnover": "14.53亿",
+          "mainNet": "+3833万"
+        },
+        {
+          "code": "600285",
+          "name": "羚锐制药",
+          "price": 22.7,
+          "changePct": 0.18,
+          "sector": "中药创新药",
+          "turnover": "3.69亿",
+          "mainNet": "-255万"
+        },
+        {
+          "code": "688222",
+          "name": "成都先导",
+          "price": 35.52,
+          "changePct": 0.03,
+          "sector": "创新药",
+          "turnover": "9.25亿",
+          "mainNet": "+1394万"
+        },
+        {
+          "code": "300765",
+          "name": "石药创新",
+          "price": 37.39,
+          "changePct": -0.43,
+          "sector": "创新药",
+          "turnover": "6.47亿",
+          "mainNet": "+348万"
+        },
+        {
+          "code": "603893",
+          "name": "瑞芯微",
+          "price": 216.91,
+          "changePct": -0.95,
+          "sector": "端侧AI芯片",
+          "turnover": "48.77亿",
+          "mainNet": "-1.26亿"
+        },
+        {
+          "code": "000779",
+          "name": "甘咨询",
+          "price": 10.61,
+          "changePct": -1.39,
+          "sector": "环保",
+          "turnover": "9.24亿",
+          "mainNet": "+4411万"
+        },
+        {
+          "code": "002317",
+          "name": "众生药业",
+          "price": 31.15,
+          "changePct": -1.42,
+          "sector": "创新药中药",
+          "turnover": "24.61亿",
+          "mainNet": "-5512万"
+        },
+        {
+          "code": "600129",
+          "name": "太极集团",
+          "price": 17.63,
+          "changePct": -1.73,
+          "sector": "中药创新药",
+          "turnover": "12.53亿",
+          "mainNet": "-3804万"
+        },
+        {
+          "code": "301310",
+          "name": "鑫宏业",
+          "price": 67.6,
+          "changePct": -1.8,
+          "sector": "机器人概念",
+          "turnover": "9.23亿",
+          "mainNet": "+443万"
+        },
+        {
+          "code": "002674",
+          "name": "兴业科技",
+          "price": 31.9,
+          "changePct": -3.22,
+          "sector": "芯片并购重组",
+          "turnover": "11.81亿",
+          "mainNet": "-3232万"
+        },
+        {
+          "code": "688710",
+          "name": "益诺思",
+          "price": 81.08,
+          "changePct": -3.5,
+          "sector": "创新药CRO",
+          "turnover": "5.01亿",
+          "mainNet": "+1.67亿"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "stocks": [
+        {
+          "code": "688192",
+          "name": "迪哲医药",
+          "price": 67.6,
+          "changePct": 20.01,
+          "sector": "创新药",
+          "turnover": "10.57亿",
+          "mainNet": "+1.13亿"
+        },
+        {
+          "code": "301520",
+          "name": "万邦医药",
+          "price": 58.79,
+          "changePct": 20.0,
+          "sector": "医药",
+          "turnover": "9.65亿",
+          "mainNet": "+2590万"
+        },
+        {
+          "code": "688046",
+          "name": "药康生物",
+          "price": 28.81,
+          "changePct": 17.02,
+          "sector": "创新药",
+          "turnover": "6.79亿",
+          "mainNet": "+4434万"
+        },
+        {
+          "code": "688321",
+          "name": "微芯生物",
+          "price": 31.78,
+          "changePct": 12.58,
+          "sector": "创新药",
+          "turnover": "14.27亿",
+          "mainNet": "+5739万"
+        },
+        {
+          "code": "300765",
+          "name": "石药创新",
+          "price": 42.0,
+          "changePct": 12.33,
+          "sector": "创新药",
+          "turnover": "13.99亿",
+          "mainNet": "-5058万"
+        },
+        {
+          "code": "002303",
+          "name": "美盈森",
+          "price": 5.01,
+          "changePct": 10.11,
+          "sector": "食品饮料",
+          "turnover": "7.57亿",
+          "mainNet": "+1.08亿"
+        },
+        {
+          "code": "603137",
+          "name": "恒尚节能",
+          "price": 35.61,
+          "changePct": 10.01,
+          "sector": "并购重组",
+          "turnover": "10.43亿",
+          "mainNet": "-8105万"
+        },
+        {
+          "code": "002821",
+          "name": "凯莱英",
+          "price": 195.75,
+          "changePct": 10.0,
+          "sector": "医药",
+          "turnover": "42.40亿",
+          "mainNet": "+5.38亿"
+        },
+        {
+          "code": "603127",
+          "name": "昭衍新药",
+          "price": 50.62,
+          "changePct": 10.0,
+          "sector": "创新药CRO",
+          "turnover": "21.91亿",
+          "mainNet": "+5.95亿"
+        },
+        {
+          "code": "603669",
+          "name": "灵康药业",
+          "price": 8.11,
+          "changePct": 9.59,
+          "sector": "创新药",
+          "turnover": "7.85亿",
+          "mainNet": "-1239万"
+        },
+        {
+          "code": "300759",
+          "name": "康龙化成",
+          "price": 40.3,
+          "changePct": 9.13,
+          "sector": "创新药",
+          "turnover": "64.21亿",
+          "mainNet": "+2.49亿"
+        },
+        {
+          "code": "300199",
+          "name": "翰宇药业",
+          "price": 25.26,
+          "changePct": 6.94,
+          "sector": "创新药",
+          "turnover": "28.36亿",
+          "mainNet": "+9816万"
+        },
+        {
+          "code": "002317",
+          "name": "众生药业",
+          "price": 33.29,
+          "changePct": 6.87,
+          "sector": "创新药",
+          "turnover": "32.03亿",
+          "mainNet": "+2260万"
+        },
+        {
+          "code": "002536",
+          "name": "飞龙股份",
+          "price": 55.9,
+          "changePct": 3.38,
+          "sector": "算力",
+          "turnover": "31.44亿",
+          "mainNet": "+3407万"
+        },
+        {
+          "code": "603259",
+          "name": "药明康德",
+          "price": 131.5,
+          "changePct": 3.13,
+          "sector": "创新药CRO",
+          "turnover": "151.81亿",
+          "mainNet": "+4.37亿"
+        },
+        {
+          "code": "688222",
+          "name": "成都先导",
+          "price": 36.58,
+          "changePct": 2.98,
+          "sector": "创新药",
+          "turnover": "15.69亿",
+          "mainNet": "+4773万"
+        },
+        {
+          "code": "600129",
+          "name": "太极集团",
+          "price": 17.98,
+          "changePct": 1.99,
+          "sector": "中药",
+          "turnover": "13.06亿",
+          "mainNet": "-3992万"
+        },
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "price": 53.88,
+          "changePct": 1.07,
+          "sector": "医药",
+          "turnover": "7.00亿",
+          "mainNet": "+2464万"
+        },
+        {
+          "code": "688105",
+          "name": "诺唯赞",
+          "price": 18.68,
+          "changePct": 1.03,
+          "sector": "医药",
+          "turnover": "2.82亿",
+          "mainNet": "+659.0万"
+        },
+        {
+          "code": "600285",
+          "name": "羚锐制药",
+          "price": 22.92,
+          "changePct": 0.97,
+          "sector": "中药创新药",
+          "turnover": "3.70亿",
+          "mainNet": "-1424万"
+        },
+        {
+          "code": "600900",
+          "name": "长江电力",
+          "price": 28.68,
+          "changePct": 0.46,
+          "sector": "电力",
+          "turnover": "34.16亿",
+          "mainNet": "+1.30亿"
+        },
+        {
+          "code": "688758",
+          "name": "赛分科技",
+          "price": 23.1,
+          "changePct": 0.17,
+          "sector": "医药",
+          "turnover": "2.93亿",
+          "mainNet": "+247.0万"
+        },
+        {
+          "code": "600428",
+          "name": "中远海特",
+          "price": 10.57,
+          "changePct": -0.09,
+          "sector": "航运",
+          "turnover": "12.28亿",
+          "mainNet": "+7677万"
+        },
+        {
+          "code": "301310",
+          "name": "鑫宏业",
+          "price": 67.37,
+          "changePct": -0.34,
+          "sector": "机器人概念",
+          "turnover": "7.60亿",
+          "mainNet": "+6006万"
+        },
+        {
+          "code": "603087",
+          "name": "甘李药业",
+          "price": 69.69,
+          "changePct": -0.44,
+          "sector": "医药",
+          "turnover": "21.23亿",
+          "mainNet": "+5665万"
+        },
+        {
+          "code": "301393",
+          "name": "昊帆生物",
+          "price": 70.24,
+          "changePct": -1.27,
+          "sector": "医药",
+          "turnover": "6.06亿",
+          "mainNet": "+425.4万"
+        },
+        {
+          "code": "003033",
+          "name": "征和工业",
+          "price": 70.0,
+          "changePct": -1.41,
+          "sector": "机器人概念",
+          "turnover": "2.09亿",
+          "mainNet": "+921.6万"
+        },
+        {
+          "code": "605208",
+          "name": "永茂泰",
+          "price": 18.94,
+          "changePct": -1.92,
+          "sector": "机器人概念",
+          "turnover": "5.43亿",
+          "mainNet": "-2391万"
+        },
+        {
+          "code": "603233",
+          "name": "大参林",
+          "price": 19.25,
+          "changePct": -2.18,
+          "sector": "医药",
+          "turnover": "3.46亿",
+          "mainNet": "+167.6万"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 38.38,
+          "changePct": -2.22,
+          "sector": "芯片",
+          "turnover": "3.13亿",
+          "mainNet": "-1144万"
+        },
+        {
+          "code": "300592",
+          "name": "华凯易佰",
+          "price": 18.3,
+          "changePct": -3.79,
+          "sector": "AI应用",
+          "turnover": "4.03亿",
+          "mainNet": "+5572万"
+        }
+      ]
+    }
+  ]
+}
