@@ -302,7 +302,7 @@ def generate():
     
     # ═══════ Excel ═══════
     DARK="0f1923"; HB="1a2a3a"; R1="1a2736"; R2="162230"
-    RED="ef5350"; GREEN="4caf50"; ORANGE="ffb74d"; BLUE="2196f3"; PURPLE="c084fc"; CYAN="4fc3f7"
+    RED="ef5350"; GREEN="4caf50"; ORANGE="ffb74d"; BLUE="2196f3"; PURPLE="c084fc"; CYAN="4fc3f7"; GOLD="ffd700"
     FILL_S = PatternFill(start_color="0a2a0a", end_color="0a2a0a", fill_type="solid")
     FILL_R = PatternFill(start_color="1a2a3a", end_color="1a2a3a", fill_type="solid")
     FILL_W = PatternFill(start_color="4a1010", end_color="4a1010", fill_type="solid")
@@ -323,7 +323,7 @@ def generate():
     ws1.cell(row=1,column=1).alignment = CN; ws1.row_dimensions[1].height = 36
     h1 = ["代码","名称","主线","首次新高","最新新高","上榜次","状态","涨幅%","距MA13%","量比","量能","风险标记","止损"]
     for col,h in enumerate(h1,1): ws1.cell(row=3,column=col,value=h).font=FH; ws1.cell(row=3,column=col).fill=FILL_H; ws1.cell(row=3,column=col).alignment=CN
-    ws1.row_dimensions[3].height = 28
+    ws1.row_dimensions[3].height=28
     sorder = {"缩量回调":0,"高位整理":1,"强势上攻":2,"放量下跌":3}
     all_sorted = sorted(core.items(), key=lambda x: (sorder.get(x[1].get("status",""),9), x[1].get("dist13") if x[1].get("dist13") is not None else 999))
     for i,(code,st) in enumerate(all_sorted):
@@ -334,7 +334,10 @@ def generate():
         elif status=="缩量回调": bg = FILL_S
         elif status=="放量下跌": bg = FILL_W
         risk_tag = st.get("risk_reason","") if is_filtered else ""
-        vals = [code,st["name"],st.get("theme",""),st["firstDate"],st["lastDate"],len(st["recs"]),
+        # NEW marker
+        name_display = st["name"]
+        if st["firstDate"] == latest_date: name_display = name_display + " NEW"
+        vals = [code,name_display,st.get("theme",""),st["firstDate"],st["lastDate"],len(st["recs"]),
                 status,chg,st.get("dist13"),st.get("vr"),st.get("vol_status",""),risk_tag,f"MA13={st.get('stop_loss')}" if st.get("stop_loss") else ""]
         for col,val in enumerate(vals,1): ws1.cell(row=row,column=col,value=val).font=FW; ws1.cell(row=row,column=col).fill=bg; ws1.cell(row=row,column=col).alignment=CN
         ws1.cell(row=row,column=2).font=FL
@@ -415,7 +418,9 @@ def generate():
             note = ''
             if st['count'] >= 5 and st['last_chg'] < 1: note = '疑似出货'
             if abs(st['d13']) < 1: note = ('★极近均线 ' + note).strip()
-            vals=[st['code'],st['name'],st['d13'],st['vr'],st['vol_status'],st['last_date'],st['last_chg'],st['last_price'],st['count'],note]
+            name_disp = st['name']
+            if st['last_date'] == latest_date: name_disp = name_disp + ' NEW'
+            vals=[st['code'],name_disp,st['d13'],st['vr'],st['vol_status'],st['last_date'],st['last_chg'],st['last_price'],st['count'],note]
             for col,val in enumerate(vals,1): ws6.cell(row=row,column=col,value=val).font=FW; ws6.cell(row=row,column=col).fill=bg; ws6.cell(row=row,column=col).alignment=CN
             ws6.cell(row=row,column=2).font=FL
             d13_c=ws6.cell(row=row,column=3); d13_c.font=FG if abs(st['d13'])<1 else FW
@@ -424,6 +429,83 @@ def generate():
         ws6.freeze_panes="A4"; ws6.auto_filter.ref=f"A3:{get_column_letter(col_count6)}{3+len(full_scan)}"
     else: ws6.merge_cells(f"A4:{get_column_letter(col_count6)}4"); ws6.cell(row=4,column=1,value="(无)").font=Font(name="Microsoft YaHei",size=11,color="888888"); ws6.cell(row=4,column=1).alignment=CN
     for i,w in enumerate([10,12,10,9,8,12,10,10,10,18],1): ws6.column_dimensions[get_column_letter(i)].width=w
+
+    # ═══ Sheet 7: 投资洞察 ═══
+    ws7=wb.create_sheet("投资洞察")
+    ws7.merge_cells("A1:B1"); ws7.cell(row=1,column=1,value="投资洞察与规律总结 v5.0").font=Font(name="Microsoft YaHei",size=18,bold=True,color=RED); ws7.cell(row=1,column=1).alignment=CN; ws7.row_dimensions[1].height=40
+    ws7.column_dimensions['A'].width = 30; ws7.column_dimensions['B'].width = 80
+
+    insights = [
+        ("大盘状态", anchors['verdict'] + " | 仓位" + anchors['position_range'] + " | 最大持仓" + str(anchors['position_max']) + "只"),
+        ("今日主线", "创新药/CRO 大爆发（37只，+2只），医药板块整体走强"),
+        ("全库扫描", str(scan_count) + "只核心股距MA13 ±3%，首列重点关注"),
+        ("", ""),
+        ("═══ 牛股三大规律 ═══", ""),
+        ("类型一·连续涨停型", "代表：恒尚节能(603137) 9天连板+106.8%，首日涨停后每日缩量一字板，从未回调"),
+        ("类型二·回踩再起型", "代表：翰宇药业(300199) 7/14缩量回踩MA13=-0.81% → 7/15放量+6.94%，买点在缩量企稳日"),
+        ("类型三·横盘突破型", "代表：康龙化成(300759) 6次上榜涨跌交替，末段+9.1%放量突破，确认后追入"),
+        ("", ""),
+        ("═══ 垃圾股三大特征 ═══", ""),
+        ("特征一·一日游假突破", "42%的百日新高仅上榜1次，首日涨幅>15%的102只次日全部消失"),
+        ("特征二·多次上榜不涨", "博通集成(603068) 8次上榜区间-2.8%，上榜频繁但价格不动=主力借新高出货"),
+        ("特征三·首日即见顶", "11只股票上榜当日即收跌，盘中冲高回落，无主力支撑"),
+        ("", ""),
+        ("═══ 最佳介入窗口 ═══", ""),
+        ("首发后第3-5天", "前2天冲高回落概率大，第3天缩量企稳是买点（回溯验证：候选池平均前瞻+4.1%）"),
+        ("距MA13在±2%以内", "双环传动(002472) MA13=-0.17%为经典形态"),
+        ("量比0.5-2.0", "太缩量(<0.5)=无人关注，太放量(>2.0)=出货嫌疑，健康区间0.8-2.0"),
+        ("阳线或十字星", "排除放量阴线的假企稳"),
+        ("", ""),
+        ("═══ 卖出纪律 ═══", ""),
+        ("放量滞涨", "量比>1.5 + 涨幅<1% → 减仓"),
+        ("跌破MA13", "收盘<MA13 → 次日开盘止损离场"),
+        ("浮盈>20%", "止盈线收紧至MA13"),
+        ("连续3日放量加速", "止盈线从MA13收紧至MA5"),
+        ("", ""),
+        ("═══ 7/15 重点盯盘 ═══", ""),
+        ("今日医药爆发", "迪哲医药(688192) NEW +20%、万邦医药(301520) +20%、药康生物(688046) NEW +17% 均为首次新高"),
+        ("持续跟踪", "翰宇药业(300199) 缩量回踩后今日+6.9%放量反弹，关注是否持续"),
+        ("均线附近等待", "双环传动(002472) MA13=-0.17%、博通集成(603068) MA13=+0.32%，等缩量信号"),
+        ("放量下跌预警", "益诺思(688710) MA13=+17.9% 远离均线，今日不在榜但风险高"),
+        ("", ""),
+        ("═══ 回测验证 ═══", ""),
+        ("翰宇药业案例", "7/14缩量回踩MA13(-0.81%)+VR=0.74 → 7/15放量+6.94% 完美验证狙击逻辑"),
+        ("石药创新虚假信号", "近似MA13=+0.2%被证伪（真实+11.22%），系统已改用K线硬算，杜绝误判"),
+        ("", ""),
+        ("═══ 系统进化记录 ═══", ""),
+        ("v5.0 七层规则", "三锚定仓→主线过滤→状态分类→风险过滤→狙击池→后备池→卖出预警"),
+        ("全库扫描(新)", "不限于当日新高，扫描过去10天所有新高过的核心股在MA13附近的状态"),
+        ("规则一", "首日涨幅>15%过滤（102只一日游验证）"),
+        ("规则二", "5次上榜涨幅<5%标记疑似出货（博通集成8次-2.8%验证）"),
+        ("NEW标记(新)", "每日新增股票自动标注，方便识别首次突破"),
+    ]
+
+    row = 3
+    fnt_title = Font(name="Microsoft YaHei", size=12, bold=True, color=RED)
+    fnt_text = Font(name="Microsoft YaHei", size=11, color="ffffff")
+    fnt_sub = Font(name="Microsoft YaHei", size=11, color="cccccc")
+    fill_highlight = PatternFill(start_color="3a1010", end_color="3a1010", fill_type="solid")
+    fill_header = PatternFill(start_color="4a1010", end_color="4a1010", fill_type="solid")
+
+    for label, value in insights:
+        is_header = label.startswith("═══")
+        is_empty = label == ""
+        c1 = ws7.cell(row=row, column=1, value=label)
+        c2 = ws7.cell(row=row, column=2, value=value)
+        if is_empty:
+            c1.font = fnt_text; c2.font = fnt_text
+        elif is_header:
+            c1.font = fnt_title; c2.font = fnt_title
+            for c in [c1, c2]: c.fill = fill_header
+        else:
+            c1.font = Font(name="Microsoft YaHei", size=11, bold=True, color="ff6b6b")
+            c2.font = fnt_sub
+            if "重点" in label or "爆发" in label or "验证" in label:
+                for c in [c1, c2]: c.fill = fill_highlight
+        c1.alignment = Alignment(horizontal="right", vertical="center")
+        c2.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+        ws7.row_dimensions[row].height = 22 if not is_header else 28
+        row += 1
 
     wb.save(EXCEL_FILE)
     print(f"\n[OK] {EXCEL_FILE} | 全库扫描 {scan_count}只")
