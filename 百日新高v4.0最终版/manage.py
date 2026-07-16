@@ -126,6 +126,17 @@ def generate():
     if not records: return print("No data")
     latest_date = records[-1]["date"]
     anchors = market_anchors()
+    
+    # Market signals (computed early for console output)
+    nh = anchors.get("details", {}).get("nh", 0)
+    nl = anchors.get("details", {}).get("nl", 0)
+    diff = anchors.get("details", {}).get("diff", 0)
+    ice_signal = ">>冰点次日机会" if nh < 50 and diff < -500 else ("!!冰点" if nh < 50 else "")
+    diff_trend = ""
+    dh = anchors.get("details", {}).get("diff_history", [])
+    if len(dh) >= 2:
+        if dh[-1] > dh[-2] and dh[-1] < 0: diff_trend = "情绪修复中"
+        elif dh[-1] < dh[-2] and dh[-1] < -500: diff_trend = "情绪恶化"
 
     stocks = {}
     for rec in records:
@@ -242,8 +253,8 @@ def generate():
     print(f"\n{'='*60}")
     print(f"  百日新高 v5.0  七层规则  {latest_date}")
     print(f"{'='*60}")
-    print(f"\n 锚1趋势:{anchors['anchor1']} | 锚2广度:{anchors['anchor2']} | 锚3情绪:{anchors['anchor3']}")
-    print(f" 表决:{anchors['verdict']} | 仓位:{anchors['position_range']} | 最大持仓{anchors['position_max']}只")
+    print(f"\n 锚1趋势:{anchors['anchor1']} | 锚2广度:{anchors['anchor2']} | 锚3情绪:{anchors['anchor3']} {ice_signal}")
+    print(f" 表决:{anchors['verdict']} | 仓位:{anchors['position_range']} | 最大持仓{anchors['position_max']}只 | 差值{diff} {diff_trend}")
     print(f"\n 核心{len(core)}只 | 过滤{len(non_core)}只 | 第七层风险过滤{filter_count}只")
     for theme in ["半导体/芯片","算力/通信","机器人","创新药/CRO"]:
         ts = theme_stats.get(theme, {})
@@ -299,6 +310,16 @@ def generate():
         full_scan.append(st)
     full_scan.sort(key=lambda x: abs(x['d13']))
     scan_count = len(full_scan)
+    
+    # 板块轮动检测
+    sector_today = defaultdict(int)
+    for rec in records:
+        if rec['date'] == latest_date:
+            for s in rec['stocks']:
+                for sec in ['医药','创新药','CRO','芯片','机器人','算力','通信','商业航天','AI']:
+                    if sec in str(s.get('sector','')): sector_today[sec] += 1
+    top_sectors = sorted(sector_today.items(), key=lambda x:-x[1])[:3]
+    sector_rotate = ', '.join(f'{k}({v})' for k,v in top_sectors) if top_sectors else ''
     
     # ═══════ Excel ═══════
     DARK="0f1923"; HB="1a2a3a"; R1="1a2736"; R2="162230"
@@ -437,8 +458,15 @@ def generate():
 
     insights = [
         ("大盘状态", anchors['verdict'] + " | 仓位" + anchors['position_range'] + " | 最大持仓" + str(anchors['position_max']) + "只"),
-        ("今日主线", "创新药/CRO 大爆发（37只，+2只），医药板块整体走强"),
+        ("新高/新低差值", str(diff) + " " + diff_trend + " " + ice_signal),
+        ("今日主线板块", sector_rotate),
         ("全库扫描", str(scan_count) + "只核心股距MA13 ±3%，首列重点关注"),
+        ("", ""),
+        ("═══ 市场规律(基于11天回测) ═══", ""),
+        ("规律一·冰点次日效应", "新高数<50且差值<-500时为冰点。7/8冰点次日+60.9%，7/13冰点次日+196.3%。冰点=恐慌出清=机会"),
+        ("规律二·板块轮动节奏", "芯片(7/1-3)→商业航天(7/10一日游)→医药(7/13-15接棒)。主线切换时有2天真空期"),
+        ("规律三·情绪锚修复", "差值从-1506→-117持续收窄，若连续3日收窄则锚3转涨，触发满仓信号"),
+        ("规律四·NEW占比判断持续性", "当日NEW标记占比>50%=新主线上涨初期可追，占比<20%=老主线在退潮"),
         ("", ""),
         ("═══ 牛股三大规律 ═══", ""),
         ("类型一·连续涨停型", "代表：恒尚节能(603137) 9天连板+106.8%，首日涨停后每日缩量一字板，从未回调"),

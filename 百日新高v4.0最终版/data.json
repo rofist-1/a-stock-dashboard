@@ -7308,6 +7308,398 @@
           "mainNet": "+5572万"
         }
       ]
+    },
+    {
+      "date": "2026-07-16",
+      "stocks": [
+        {
+          "code": "301520",
+          "name": "万邦医药",
+          "price": 66.65,
+          "changePct": 13.37,
+          "sector": "医药",
+          "turnover": "11.33亿",
+          "mainNet": "-4556万"
+        },
+        {
+          "code": "600664",
+          "name": "哈药股份",
+          "price": 4.94,
+          "changePct": 10.02,
+          "sector": "医药",
+          "turnover": "14.64亿",
+          "mainNet": "+3403万"
+        },
+        {
+          "code": "603580",
+          "name": "艾艾精工",
+          "price": 40.84,
+          "changePct": 9.99,
+          "sector": "实控人变更",
+          "turnover": "601.9万",
+          "mainNet": "+359.3万"
+        },
+        {
+          "code": "000938",
+          "name": "紫光股份",
+          "price": 38.59,
+          "changePct": 8.61,
+          "sector": "算力",
+          "turnover": "2.88亿",
+          "mainNet": "+7.90亿"
+        },
+        {
+          "code": "300534",
+          "name": "陇神戎发",
+          "price": 11.58,
+          "changePct": 7.22,
+          "sector": "中药",
+          "turnover": "7.90亿",
+          "mainNet": "+601.9万"
+        },
+        {
+          "code": "603893",
+          "name": "瑞芯微",
+          "price": 222.24,
+          "changePct": 5.58,
+          "sector": "芯片",
+          "turnover": "171.1亿",
+          "mainNet": "+15.54亿"
+        },
+        {
+          "code": "002141",
+          "name": "贤丰控股",
+          "price": 5.91,
+          "changePct": 5.35,
+          "sector": "通信",
+          "turnover": "601.9万",
+          "mainNet": ""
+        },
+        {
+          "code": "603127",
+          "name": "昭衍新药",
+          "price": 53.25,
+          "changePct": 5.2,
+          "sector": "创新药CRO",
+          "turnover": "94.90亿",
+          "mainNet": "+2.13亿"
+        },
+        {
+          "code": "600521",
+          "name": "华海药业",
+          "price": 17.63,
+          "changePct": 4.38,
+          "sector": "创新药",
+          "turnover": "10.37亿",
+          "mainNet": "-1330万"
+        },
+        {
+          "code": "600535",
+          "name": "天士力",
+          "price": 15.93,
+          "changePct": 4.19,
+          "sector": "医药",
+          "turnover": "72.36亿",
+          "mainNet": "+5.98亿"
+        },
+        {
+          "code": "605296",
+          "name": "神农集团",
+          "price": 31.74,
+          "changePct": 3.39,
+          "sector": "农业",
+          "turnover": "41.97亿",
+          "mainNet": "+5.56亿"
+        },
+        {
+          "code": "301047",
+          "name": "义翘神州",
+          "price": 75.22,
+          "changePct": 2.96,
+          "sector": "医药",
+          "turnover": "11.77亿",
+          "mainNet": "-5365万"
+        },
+        {
+          "code": "688068",
+          "name": "热景生物",
+          "price": 143.0,
+          "changePct": 2.88,
+          "sector": "创新药",
+          "turnover": "66.41亿",
+          "mainNet": "+23.07亿"
+        },
+        {
+          "code": "300929",
+          "name": "华骐环保",
+          "price": 15.43,
+          "changePct": 2.87,
+          "sector": "环保",
+          "turnover": "5.98亿",
+          "mainNet": "-6.20亿"
+        },
+        {
+          "code": "000739",
+          "name": "普洛药业",
+          "price": 21.0,
+          "changePct": 2.59,
+          "sector": "医药",
+          "turnover": "14.92亿",
+          "mainNet": "+3.90亿"
+        },
+        {
+          "code": "002384",
+          "name": "东山精密",
+          "price": 268.8,
+          "changePct": 2.4,
+          "sector": "通信",
+          "turnover": "41.97亿",
+          "mainNet": "-2961万"
+        },
+        {
+          "code": "300725",
+          "name": "药石科技",
+          "price": 41.81,
+          "changePct": 1.98,
+          "sector": "创新药CRO",
+          "turnover": "3.90亿",
+          "mainNet": "-2961万"
+        },
+        {
+          "code": "000063",
+          "name": "中兴通讯",
+          "price": 40.0,
+          "changePct": 1.39,
+          "sector": "端侧AI",
+          "turnover": "145.81亿",
+          "mainNet": "+2.97亿"
+        },
+        {
+          "code": "688046",
+          "name": "药康生物",
+          "price": 29.0,
+          "changePct": 0.66,
+          "sector": "创新药",
+          "turnover": "7.54亿",
+          "mainNet": "-2217万"
+        },
+        {
+          "code": "002303",
+          "name": "美盈森",
+          "price": 5.04,
+          "changePct": 0.6,
+          "sector": "食品饮料",
+          "turnover": "7.24亿",
+          "mainNet": "-1385万"
+        },
+        {
+          "code": "600285",
+          "name": "羚锐制药",
+          "price": 23.05,
+          "changePct": 0.57,
+          "sector": "中药创新药",
+          "turnover": "3.16亿",
+          "mainNet": "-2403万"
+        },
+        {
+          "code": "600267",
+          "name": "海正药业",
+          "price": 11.99,
+          "changePct": 0.08,
+          "sector": "创新药",
+          "turnover": "6.38亿",
+          "mainNet": "+591.7万"
+        },
+        {
+          "code": "603068",
+          "name": "博通集成",
+          "price": 38.4,
+          "changePct": 0.05,
+          "sector": "芯片",
+          "turnover": "4.06亿",
+          "mainNet": "-941.8万"
+        },
+        {
+          "code": "603233",
+          "name": "大参林",
+          "price": 19.25,
+          "changePct": 0.0,
+          "sector": "医药",
+          "turnover": "2.08亿",
+          "mainNet": "-1784万"
+        },
+        {
+          "code": "301080",
+          "name": "百普赛斯",
+          "price": 53.71,
+          "changePct": -0.32,
+          "sector": "医药",
+          "turnover": "4.08亿",
+          "mainNet": "+2302万"
+        },
+        {
+          "code": "002603",
+          "name": "以岭药业",
+          "price": 17.38,
+          "changePct": -0.34,
+          "sector": "医药",
+          "turnover": "10.24亿",
+          "mainNet": "-3742万"
+        },
+        {
+          "code": "603087",
+          "name": "甘李药业",
+          "price": 69.4,
+          "changePct": -0.42,
+          "sector": "医药",
+          "turnover": "12.85亿",
+          "mainNet": "+3002万"
+        },
+        {
+          "code": "000779",
+          "name": "甘咨询",
+          "price": 11.12,
+          "changePct": -0.54,
+          "sector": "环保",
+          "turnover": "7.65亿",
+          "mainNet": "+778.4万"
+        },
+        {
+          "code": "300649",
+          "name": "杭州园林",
+          "price": 29.61,
+          "changePct": -0.84,
+          "sector": "股权转让",
+          "turnover": "2.23亿",
+          "mainNet": "-1.25亿"
+        },
+        {
+          "code": "000333",
+          "name": "美的集团",
+          "price": 81.8,
+          "changePct": -1.05,
+          "sector": "家电",
+          "turnover": "29.82亿",
+          "mainNet": "-456.0万"
+        },
+        {
+          "code": "002901",
+          "name": "大博医疗",
+          "price": 47.69,
+          "changePct": -1.12,
+          "sector": "医疗器械",
+          "turnover": "1.72亿",
+          "mainNet": "-1301万"
+        },
+        {
+          "code": "600018",
+          "name": "上港集团",
+          "price": 5.17,
+          "changePct": -1.34,
+          "sector": "港口",
+          "turnover": "2.88亿",
+          "mainNet": "-1.79亿"
+        },
+        {
+          "code": "600900",
+          "name": "长江电力",
+          "price": 28.24,
+          "changePct": -1.53,
+          "sector": "电力",
+          "turnover": "41.39亿",
+          "mainNet": "+1.76亿"
+        },
+        {
+          "code": "600428",
+          "name": "中远海特",
+          "price": 10.4,
+          "changePct": -1.61,
+          "sector": "航运",
+          "turnover": "9.61亿",
+          "mainNet": "-7363万"
+        },
+        {
+          "code": "003033",
+          "name": "征和工业",
+          "price": 68.85,
+          "changePct": -1.64,
+          "sector": "机器人概念",
+          "turnover": "1.19亿",
+          "mainNet": ""
+        },
+        {
+          "code": "002832",
+          "name": "比音勒芬",
+          "price": 21.69,
+          "changePct": -1.9,
+          "sector": "服装家纺",
+          "turnover": "470.9万",
+          "mainNet": "-1868万"
+        },
+        {
+          "code": "002536",
+          "name": "飞龙股份",
+          "price": 54.68,
+          "changePct": -2.18,
+          "sector": "算力",
+          "turnover": "2.20亿",
+          "mainNet": "-1868万"
+        },
+        {
+          "code": "601198",
+          "name": "东兴证券",
+          "price": 13.95,
+          "changePct": -2.38,
+          "sector": "证券",
+          "turnover": "447.1万",
+          "mainNet": "-268.4万"
+        },
+        {
+          "code": "000989",
+          "name": "九芝堂",
+          "price": 9.66,
+          "changePct": -3.3,
+          "sector": "医药",
+          "turnover": "5.98亿",
+          "mainNet": "-3.63亿"
+        },
+        {
+          "code": "300105",
+          "name": "龙源技术",
+          "price": 8.37,
+          "changePct": -3.35,
+          "sector": "智能电网",
+          "turnover": "8.48亿",
+          "mainNet": "-7006万"
+        },
+        {
+          "code": "603259",
+          "name": "药明康德",
+          "price": 127.0,
+          "changePct": -3.42,
+          "sector": "创新药",
+          "turnover": "106.91亿",
+          "mainNet": "-6.29亿"
+        },
+        {
+          "code": "002907",
+          "name": "华森制药",
+          "price": 14.52,
+          "changePct": -3.9,
+          "sector": "创新药",
+          "turnover": "4.29亿",
+          "mainNet": "-5110万"
+        },
+        {
+          "code": "601995",
+          "name": "中金公司",
+          "price": 36.45,
+          "changePct": -4.93,
+          "sector": "证券",
+          "turnover": "39.97亿",
+          "mainNet": "+1.85亿"
+        }
+      ]
     }
   ]
 }
