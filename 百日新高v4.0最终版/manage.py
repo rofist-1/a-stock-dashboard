@@ -131,7 +131,8 @@ def generate():
     nh = anchors.get("details", {}).get("nh", 0)
     nl = anchors.get("details", {}).get("nl", 0)
     diff = anchors.get("details", {}).get("diff", 0)
-    ice_signal = ">>冰点次日机会" if nh < 50 and diff < -500 else ("!!冰点" if nh < 50 else "")
+    ice_signal = "!!冰点" if nh < 50 else ""
+    if nh < 50 and diff < -500: ice_signal = "!!冰点(新低" + str(nl) + ")"
     diff_trend = ""
     dh = anchors.get("details", {}).get("diff_history", [])
     if len(dh) >= 2:
