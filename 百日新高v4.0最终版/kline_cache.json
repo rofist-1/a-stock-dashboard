@@ -1,26 +1,26 @@
 {
   "300990": {
     "indicators": {
-      "distMA13": 16.38,
+      "distMA13": 4.29,
       "distMA20": null,
-      "ma13_price": 103.46,
+      "ma13_price": 105.28,
       "ma20_price": null,
       "volRatio": 2.06,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": 103.46
+      "stopLoss": 105.28
     }
   },
   "002536": {
     "indicators": {
-      "distMA13": 7.49,
+      "distMA13": 5.82,
       "distMA20": null,
-      "ma13_price": 50.3,
+      "ma13_price": 51.67,
       "ma20_price": null,
       "volRatio": 0.98,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 50.3
+      "stopLoss": 51.67
     }
   },
   "603580": {
@@ -49,14 +49,14 @@
   },
   "603137": {
     "indicators": {
-      "distMA13": 50.58,
+      "distMA13": 37.0,
       "distMA20": null,
-      "ma13_price": 21.5,
+      "ma13_price": 23.39,
       "ma20_price": null,
       "volRatio": 1.45,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": 21.5
+      "stopLoss": 23.39
     }
   },
   "300214": {
@@ -97,26 +97,26 @@
   },
   "603669": {
     "indicators": {
-      "distMA13": 20.33,
-      "distMA20": 27.98,
-      "ma13_price": 6.15,
-      "ma20_price": 5.782,
+      "distMA13": 13.41,
+      "distMA20": null,
+      "ma13_price": 6.44,
+      "ma20_price": null,
       "volRatio": 2.57,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": 6.15
+      "stopLoss": 6.44
     }
   },
   "300759": {
     "indicators": {
-      "distMA13": 20.33,
+      "distMA13": 18.59,
       "distMA20": null,
-      "ma13_price": 30.69,
+      "ma13_price": 32.55,
       "ma20_price": null,
       "volRatio": 1.57,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": 30.69
+      "stopLoss": 32.55
     }
   },
   "600428": {
@@ -133,50 +133,50 @@
   },
   "603087": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 8.42,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 64.01,
       "ma20_price": null,
       "volRatio": 1.39,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 64.01
     }
   },
   "603127": {
     "indicators": {
-      "distMA13": 13.75,
+      "distMA13": 25.15,
       "distMA20": null,
-      "ma13_price": 40.46,
+      "ma13_price": 42.55,
       "ma20_price": null,
       "volRatio": 1.62,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": 40.46
+      "stopLoss": 42.55
     }
   },
   "003033": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 5.67,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 65.15,
       "ma20_price": null,
       "volRatio": 1.05,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 65.15
     }
   },
   "002185": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -6.81,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 22.32,
       "ma20_price": null,
       "volRatio": 1.4,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 22.32
     }
   },
   "301080": {
@@ -193,14 +193,14 @@
   },
   "605208": {
     "indicators": {
-      "distMA13": 13.3,
+      "distMA13": -1.92,
       "distMA20": null,
-      "ma13_price": 17.04,
+      "ma13_price": 17.6,
       "ma20_price": null,
       "volRatio": 0.94,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 17.04
+      "stopLoss": 17.6
     }
   },
   "002303": {
@@ -229,14 +229,14 @@
   },
   "688758": {
     "indicators": {
-      "distMA13": 7.46,
-      "distMA20": 10.46,
-      "ma13_price": 21.46,
-      "ma20_price": 20.876,
+      "distMA13": 3.77,
+      "distMA20": null,
+      "ma13_price": 21.86,
+      "ma20_price": null,
       "volRatio": 1.86,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": 21.46
+      "stopLoss": 21.86
     }
   },
   "603903": {
@@ -253,14 +253,14 @@
   },
   "603068": {
     "indicators": {
-      "distMA13": 0.32,
+      "distMA13": -2.12,
       "distMA20": null,
-      "ma13_price": 39.12,
+      "ma13_price": 39.23,
       "ma20_price": null,
       "volRatio": 1.13,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 39.12
+      "stopLoss": 39.23
     }
   },
   "300105": {
@@ -349,26 +349,26 @@
   },
   "300765": {
     "indicators": {
-      "distMA13": 11.22,
+      "distMA13": 11.53,
       "distMA20": null,
-      "ma13_price": 33.62,
+      "ma13_price": 35.84,
       "ma20_price": null,
       "volRatio": 0.69,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 33.62
+      "stopLoss": 35.84
     }
   },
   "603893": {
     "indicators": {
-      "distMA13": 12.22,
+      "distMA13": 11.87,
       "distMA20": null,
-      "ma13_price": 193.29,
+      "ma13_price": 198.67,
       "ma20_price": null,
       "volRatio": 0.75,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 193.29
+      "stopLoss": 198.67
     }
   },
   "002396": {
@@ -397,26 +397,26 @@
   },
   "002317": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 5.44,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 28.41,
       "ma20_price": null,
       "volRatio": 1.33,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 28.41
     }
   },
   "600129": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 5.89,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 15.36,
       "ma20_price": null,
       "volRatio": 1.62,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 15.36
     }
   },
   "301310": {
@@ -481,14 +481,14 @@
   },
   "000938": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 13.99,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 33.85,
       "ma20_price": null,
       "volRatio": 1.07,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 33.85
     }
   },
   "603019": {
@@ -505,14 +505,14 @@
   },
   "301092": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 4.04,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 53.47,
       "ma20_price": null,
       "volRatio": 1.14,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 53.47
     }
   },
   "300506": {
@@ -541,26 +541,26 @@
   },
   "300487": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 0.34,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 71.66,
       "ma20_price": null,
       "volRatio": 1.4,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 71.66
     }
   },
   "301520": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 53.52,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 43.41,
       "ma20_price": null,
       "volRatio": 1.08,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 43.41
     }
   },
   "603339": {
@@ -613,14 +613,14 @@
   },
   "301070": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -17.75,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 83.06,
       "ma20_price": null,
       "volRatio": 0.88,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 83.06
     }
   },
   "002841": {
@@ -649,14 +649,14 @@
   },
   "001229": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -1.87,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 40.33,
       "ma20_price": null,
       "volRatio": 1.1,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 40.33
     }
   },
   "603638": {
@@ -709,26 +709,26 @@
   },
   "688017": {
     "indicators": {
-      "distMA13": -6.23,
+      "distMA13": -8.81,
       "distMA20": null,
-      "ma13_price": 412.59,
+      "ma13_price": 415.18,
       "ma20_price": null,
       "volRatio": 0.71,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 412.59
+      "stopLoss": 415.18
     }
   },
   "688669": {
     "indicators": {
-      "distMA13": -4.22,
-      "distMA20": 2.49,
-      "ma13_price": 92.27,
-      "ma20_price": 86.2355,
+      "distMA13": -12.13,
+      "distMA20": null,
+      "ma13_price": 93.42,
+      "ma20_price": null,
       "volRatio": 0.73,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 92.27
+      "stopLoss": 93.42
     }
   },
   "688432": {
@@ -745,14 +745,14 @@
   },
   "688661": {
     "indicators": {
-      "distMA13": -6.1,
-      "distMA20": -6.31,
-      "ma13_price": 149.27,
-      "ma20_price": 149.606,
+      "distMA13": -22.31,
+      "distMA20": null,
+      "ma13_price": 145.27,
+      "ma20_price": null,
       "volRatio": 0.74,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 149.27
+      "stopLoss": 145.27
     }
   },
   "688266": {
@@ -829,14 +829,14 @@
   },
   "603713": {
     "indicators": {
-      "distMA13": -2.03,
-      "distMA20": 2.64,
-      "ma13_price": 74.73,
-      "ma20_price": 71.3255,
+      "distMA13": -12.75,
+      "distMA20": null,
+      "ma13_price": 74.27,
+      "ma20_price": null,
       "volRatio": 0.95,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 74.73
+      "stopLoss": 74.27
     }
   },
   "688061": {
@@ -865,14 +865,14 @@
   },
   "603678": {
     "indicators": {
-      "distMA13": -19.74,
-      "distMA20": -20.78,
-      "ma13_price": 69.79,
-      "ma20_price": 70.7,
+      "distMA13": -25.1,
+      "distMA20": null,
+      "ma13_price": 68.03,
+      "ma20_price": null,
       "volRatio": 1.17,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 69.79
+      "stopLoss": 68.03
     }
   },
   "688202": {
@@ -889,14 +889,14 @@
   },
   "002916": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -13.18,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 419.27,
       "ma20_price": null,
       "volRatio": 1.46,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 419.27
     }
   },
   "300163": {
@@ -913,50 +913,50 @@
   },
   "301603": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -4.93,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 141.72,
       "ma20_price": null,
       "volRatio": 0.57,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 141.72
     }
   },
   "300607": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -15.4,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 41.34,
       "ma20_price": null,
       "volRatio": 0.63,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 41.34
     }
   },
   "300151": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -22.57,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 22.33,
       "ma20_price": null,
       "volRatio": 0.67,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 22.33
     }
   },
   "301151": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 2.16,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 19.78,
       "ma20_price": null,
       "volRatio": 0.68,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 19.78
     }
   },
   "002077": {
@@ -973,26 +973,26 @@
   },
   "300966": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -0.48,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 29.22,
       "ma20_price": null,
       "volRatio": 0.73,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 29.22
     }
   },
   "300199": {
     "indicators": {
-      "distMA13": -0.81,
+      "distMA13": 0.21,
       "distMA20": null,
-      "ma13_price": 23.81,
+      "ma13_price": 24.42,
       "ma20_price": null,
       "volRatio": 0.74,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 23.81
+      "stopLoss": 24.42
     }
   },
   "002687": {
@@ -1033,14 +1033,14 @@
   },
   "300689": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -18.82,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 67.44,
       "ma20_price": null,
       "volRatio": 0.82,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 67.44
     }
   },
   "002293": {
@@ -1081,14 +1081,14 @@
   },
   "002056": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -12.34,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 28.59,
       "ma20_price": null,
       "volRatio": 0.96,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 28.59
     }
   },
   "301232": {
@@ -1117,26 +1117,26 @@
   },
   "301210": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -12.89,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 29.17,
       "ma20_price": null,
       "volRatio": 1.04,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 29.17
     }
   },
   "600360": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -14.12,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 15.0,
       "ma20_price": null,
       "volRatio": 1.05,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 15.0
     }
   },
   "002774": {
@@ -1153,38 +1153,38 @@
   },
   "300878": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 4.77,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 34.34,
       "ma20_price": null,
       "volRatio": 1.19,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 34.34
     }
   },
   "002821": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 8.52,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 165.86,
       "ma20_price": null,
       "volRatio": 1.2,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 165.86
     }
   },
   "002422": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": 10.78,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 45.04,
       "ma20_price": null,
       "volRatio": 1.22,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 45.04
     }
   },
   "002137": {
@@ -1201,14 +1201,14 @@
   },
   "688057": {
     "indicators": {
-      "distMA13": -1.32,
-      "distMA20": 6.85,
-      "ma13_price": 16.72,
-      "ma20_price": 15.44186,
+      "distMA13": -7.68,
+      "distMA20": null,
+      "ma13_price": 16.79,
+      "ma20_price": null,
       "volRatio": 0.53,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 16.72
+      "stopLoss": 16.79
     }
   },
   "688689": {
@@ -1237,50 +1237,50 @@
   },
   "688233": {
     "indicators": {
-      "distMA13": -14.37,
-      "distMA20": -7.03,
-      "ma13_price": 180.42,
-      "ma20_price": 166.1815,
+      "distMA13": -28.84,
+      "distMA20": null,
+      "ma13_price": 179.53,
+      "ma20_price": null,
       "volRatio": 0.71,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 180.42
+      "stopLoss": 179.53
     }
   },
   "688728": {
     "indicators": {
-      "distMA13": -11.47,
-      "distMA20": 0.53,
-      "ma13_price": 21.63,
-      "ma20_price": 19.0495,
+      "distMA13": -22.02,
+      "distMA20": null,
+      "ma13_price": 21.53,
+      "ma20_price": null,
       "volRatio": 0.73,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 21.63
+      "stopLoss": 21.53
     }
   },
   "688549": {
     "indicators": {
-      "distMA13": -13.02,
-      "distMA20": -13.17,
-      "ma13_price": 33.79,
-      "ma20_price": 33.8465,
+      "distMA13": -24.83,
+      "distMA20": null,
+      "ma13_price": 32.74,
+      "ma20_price": null,
       "volRatio": 0.8,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 33.79
+      "stopLoss": 32.74
     }
   },
   "688286": {
     "indicators": {
-      "distMA13": -19.8,
+      "distMA13": -25.82,
       "distMA20": null,
-      "ma13_price": 73.98,
+      "ma13_price": 71.53,
       "ma20_price": null,
       "volRatio": 0.81,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 73.98
+      "stopLoss": 71.53
     }
   },
   "688578": {
@@ -1309,38 +1309,38 @@
   },
   "600667": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -27.14,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 25.71,
       "ma20_price": null,
       "volRatio": 0.89,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 25.71
     }
   },
   "688571": {
     "indicators": {
-      "distMA13": -7.21,
+      "distMA13": -14.06,
       "distMA20": null,
-      "ma13_price": 9.38,
+      "ma13_price": 9.43,
       "ma20_price": null,
       "volRatio": 0.89,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 9.38
+      "stopLoss": 9.43
     }
   },
   "603324": {
     "indicators": {
-      "distMA13": -16.87,
-      "distMA20": -17.34,
-      "ma13_price": 44.41,
-      "ma20_price": 44.6625,
+      "distMA13": -24.88,
+      "distMA20": null,
+      "ma13_price": 43.23,
+      "ma20_price": null,
       "volRatio": 0.9,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 44.41
+      "stopLoss": 43.23
     }
   },
   "605289": {
@@ -1369,14 +1369,14 @@
   },
   "688721": {
     "indicators": {
-      "distMA13": -0.38,
+      "distMA13": -18.39,
       "distMA20": null,
-      "ma13_price": 58.42,
+      "ma13_price": 57.52,
       "ma20_price": null,
       "volRatio": 1.01,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 58.42
+      "stopLoss": 57.52
     }
   },
   "688359": {
@@ -1393,26 +1393,26 @@
   },
   "603991": {
     "indicators": {
-      "distMA13": 9.11,
+      "distMA13": 1.07,
       "distMA20": null,
-      "ma13_price": 150.98,
+      "ma13_price": 154.78,
       "ma20_price": null,
       "volRatio": 1.05,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 150.98
+      "stopLoss": 154.78
     }
   },
   "688106": {
     "indicators": {
-      "distMA13": 2.99,
-      "distMA20": 8.94,
-      "ma13_price": 39.14,
-      "ma20_price": 37.002,
-      "volRatio": 1.18,
+      "distMA13": -10.86,
+      "distMA20": null,
+      "ma13_price": 39.41,
+      "ma20_price": null,
+      "volRatio": 0.8,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 39.14
+      "stopLoss": 39.41
     }
   },
   "688138": {
@@ -1429,14 +1429,14 @@
   },
   "688448": {
     "indicators": {
-      "distMA13": -11.51,
+      "distMA13": -8.15,
       "distMA20": null,
-      "ma13_price": 59.11,
+      "ma13_price": 58.02,
       "ma20_price": null,
       "volRatio": 0.45,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 59.11
+      "stopLoss": 58.02
     }
   },
   "688219": {
@@ -1465,14 +1465,14 @@
   },
   "688123": {
     "indicators": {
-      "distMA13": -0.67,
-      "distMA20": 7.54,
-      "ma13_price": 199.27,
-      "ma20_price": 184.06,
+      "distMA13": -20.32,
+      "distMA20": null,
+      "ma13_price": 198.65,
+      "ma20_price": null,
       "volRatio": 0.67,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 199.27
+      "stopLoss": 198.65
     }
   },
   "603380": {
@@ -1501,14 +1501,14 @@
   },
   "688320": {
     "indicators": {
-      "distMA13": -16.18,
+      "distMA13": -17.29,
       "distMA20": null,
-      "ma13_price": 38.21,
+      "ma13_price": 37.14,
       "ma20_price": null,
       "volRatio": 0.75,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 38.21
+      "stopLoss": 37.14
     }
   },
   "688372": {
@@ -1537,14 +1537,14 @@
   },
   "688380": {
     "indicators": {
-      "distMA13": -9.72,
+      "distMA13": -21.87,
       "distMA20": null,
-      "ma13_price": 60.49,
+      "ma13_price": 58.23,
       "ma20_price": null,
       "volRatio": 0.93,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 60.49
+      "stopLoss": 58.23
     }
   },
   "688653": {
@@ -1585,14 +1585,14 @@
   },
   "688362": {
     "indicators": {
-      "distMA13": -1.34,
-      "distMA20": 8.45,
-      "ma13_price": 95.73,
-      "ma20_price": 87.0895,
+      "distMA13": -17.46,
+      "distMA20": null,
+      "ma13_price": 95.71,
+      "ma20_price": null,
       "volRatio": 1.0,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 95.73
+      "stopLoss": 95.71
     }
   },
   "688257": {
@@ -1657,14 +1657,14 @@
   },
   "688141": {
     "indicators": {
-      "distMA13": -4.96,
+      "distMA13": -19.9,
       "distMA20": null,
-      "ma13_price": 154.78,
+      "ma13_price": 152.12,
       "ma20_price": null,
       "volRatio": 0.96,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 154.78
+      "stopLoss": 152.12
     }
   },
   "688981": {
@@ -1693,14 +1693,14 @@
   },
   "300503": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -14.99,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 92.95,
       "ma20_price": null,
       "volRatio": 0.51,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 92.95
     }
   },
   "603757": {
@@ -1717,62 +1717,62 @@
   },
   "688702": {
     "indicators": {
-      "distMA13": 1.47,
-      "distMA20": 6.91,
-      "ma13_price": 371.14,
-      "ma20_price": 352.284,
+      "distMA13": -0.58,
+      "distMA20": null,
+      "ma13_price": 375.69,
+      "ma20_price": null,
       "volRatio": 1.19,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 371.14
+      "stopLoss": 375.69
     }
   },
   "603259": {
     "indicators": {
-      "distMA13": 4.37,
+      "distMA13": 3.03,
       "distMA20": null,
-      "ma13_price": 122.17,
+      "ma13_price": 123.26,
       "ma20_price": null,
       "volRatio": 1.25,
       "volStatus": "放量",
       "stopSignal": false,
-      "stopLoss": 122.17
+      "stopLoss": 123.26
     }
   },
   "301067": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -13.99,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 31.91,
       "ma20_price": null,
       "volRatio": 0.42,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 31.91
     }
   },
   "300852": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -23.44,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 60.44,
       "ma20_price": null,
       "volRatio": 0.85,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 60.44
     }
   },
   "300553": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -7.55,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 70.63,
       "ma20_price": null,
       "volRatio": 0.86,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 70.63
     }
   },
   "688596": {
@@ -1789,14 +1789,14 @@
   },
   "688620": {
     "indicators": {
-      "distMA13": 0.99,
+      "distMA13": -7.33,
       "distMA20": null,
-      "ma13_price": 16.28,
+      "ma13_price": 16.5,
       "ma20_price": null,
       "volRatio": 0.72,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 16.28
+      "stopLoss": 16.5
     }
   },
   "688305": {
@@ -1861,14 +1861,14 @@
   },
   "688117": {
     "indicators": {
-      "distMA13": 0.49,
-      "distMA20": 6.76,
-      "ma13_price": 28.58,
-      "ma20_price": 26.901,
+      "distMA13": 0.21,
+      "distMA20": null,
+      "ma13_price": 28.99,
+      "ma20_price": null,
       "volRatio": 1.01,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 28.58
+      "stopLoss": 28.99
     }
   },
   "688105": {
@@ -1921,38 +1921,38 @@
   },
   "688506": {
     "indicators": {
-      "distMA13": -1.48,
-      "distMA20": 6.6,
-      "ma13_price": 308.67,
-      "ma20_price": 285.2845,
+      "distMA13": 5.09,
+      "distMA20": null,
+      "ma13_price": 316.72,
+      "ma20_price": null,
       "volRatio": 0.72,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 308.67
+      "stopLoss": 316.72
     }
   },
   "603650": {
     "indicators": {
-      "distMA13": -7.32,
-      "distMA20": -3.34,
-      "ma13_price": 85.12,
-      "ma20_price": 81.6175,
-      "volRatio": 0.84,
-      "volStatus": "正常",
-      "stopSignal": false,
-      "stopLoss": 85.12
-    }
-  },
-  "688103": {
-    "indicators": {
-      "distMA13": 15.05,
+      "distMA13": -17.61,
       "distMA20": null,
-      "ma13_price": 82.52,
+      "ma13_price": 84.93,
       "ma20_price": null,
       "volRatio": 0.84,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 82.52
+      "stopLoss": 84.93
+    }
+  },
+  "688103": {
+    "indicators": {
+      "distMA13": 5.89,
+      "distMA20": null,
+      "ma13_price": 87.36,
+      "ma20_price": null,
+      "volRatio": 0.84,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 87.36
     }
   },
   "603726": {
@@ -1969,14 +1969,14 @@
   },
   "688221": {
     "indicators": {
-      "distMA13": -1.13,
-      "distMA20": 9.75,
-      "ma13_price": 25.57,
-      "ma20_price": 23.0335,
+      "distMA13": -2.57,
+      "distMA20": null,
+      "ma13_price": 25.86,
+      "ma20_price": null,
       "volRatio": 0.96,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 25.57
+      "stopLoss": 25.86
     }
   },
   "688391": {
@@ -2029,14 +2029,14 @@
   },
   "603823": {
     "indicators": {
-      "distMA13": 6.3,
+      "distMA13": 7.4,
       "distMA20": null,
-      "ma13_price": 62.54,
+      "ma13_price": 64.86,
       "ma20_price": null,
       "volRatio": 0.78,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": 62.54
+      "stopLoss": 64.86
     }
   },
   "603725": {
@@ -2077,26 +2077,26 @@
   },
   "600378": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -25.45,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 65.29,
       "ma20_price": null,
       "volRatio": 0.75,
       "volStatus": "缩量",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 65.29
     }
   },
   "300666": {
     "indicators": {
-      "distMA13": null,
+      "distMA13": -27.17,
       "distMA20": null,
-      "ma13_price": null,
+      "ma13_price": 329.55,
       "ma20_price": null,
       "volRatio": 1.14,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": null
+      "stopLoss": 329.55
     }
   },
   "300083": {
@@ -2161,14 +2161,902 @@
   },
   "002472": {
     "indicators": {
-      "distMA13": -0.17,
+      "distMA13": -3.76,
       "distMA20": null,
-      "ma13_price": 42.46,
+      "ma13_price": 43.2,
       "ma20_price": null,
       "volRatio": 0.81,
       "volStatus": "正常",
       "stopSignal": false,
-      "stopLoss": 42.46
+      "stopLoss": 43.2
+    }
+  },
+  "603078": {
+    "indicators": {
+      "distMA13": -23.85,
+      "distMA20": null,
+      "ma13_price": 48.64,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 48.64
+    }
+  },
+  "603738": {
+    "indicators": {
+      "distMA13": -23.72,
+      "distMA20": null,
+      "ma13_price": 49.55,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 49.55
+    }
+  },
+  "002635": {
+    "indicators": {
+      "distMA13": -19.12,
+      "distMA20": null,
+      "ma13_price": 18.76,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 18.76
+    }
+  },
+  "002653": {
+    "indicators": {
+      "distMA13": 11.09,
+      "distMA20": null,
+      "ma13_price": 71.28,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 71.28
+    }
+  },
+  "002747": {
+    "indicators": {
+      "distMA13": 0.74,
+      "distMA20": null,
+      "ma13_price": 42.12,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 42.12
+    }
+  },
+  "002850": {
+    "indicators": {
+      "distMA13": -5.08,
+      "distMA20": null,
+      "ma13_price": 200.76,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 200.76
+    }
+  },
+  "688757": {
+    "indicators": {
+      "distMA13": -23.26,
+      "distMA20": null,
+      "ma13_price": 53.42,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 53.42
+    }
+  },
+  "300873": {
+    "indicators": {
+      "distMA13": -21.05,
+      "distMA20": null,
+      "ma13_price": 27.86,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 27.86
+    }
+  },
+  "300720": {
+    "indicators": {
+      "distMA13": -17.29,
+      "distMA20": null,
+      "ma13_price": 98.27,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 98.27
+    }
+  },
+  "300560": {
+    "indicators": {
+      "distMA13": -22.44,
+      "distMA20": null,
+      "ma13_price": 18.57,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 18.57
+    }
+  },
+  "301281": {
+    "indicators": {
+      "distMA13": -6.23,
+      "distMA20": null,
+      "ma13_price": 51.19,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 51.19
+    }
+  },
+  "300540": {
+    "indicators": {
+      "distMA13": -15.45,
+      "distMA20": null,
+      "ma13_price": 41.25,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 41.25
+    }
+  },
+  "301328": {
+    "indicators": {
+      "distMA13": -13.03,
+      "distMA20": null,
+      "ma13_price": 71.53,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 71.53
+    }
+  },
+  "600641": {
+    "indicators": {
+      "distMA13": -15.5,
+      "distMA20": null,
+      "ma13_price": 42.29,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 42.29
+    }
+  },
+  "300005": {
+    "indicators": {
+      "distMA13": -12.95,
+      "distMA20": null,
+      "ma13_price": 21.35,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 21.35
+    }
+  },
+  "300416": {
+    "indicators": {
+      "distMA13": -20.82,
+      "distMA20": null,
+      "ma13_price": 18.27,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 18.27
+    }
+  },
+  "301165": {
+    "indicators": {
+      "distMA13": 6.5,
+      "distMA20": null,
+      "ma13_price": 97.67,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 97.67
+    }
+  },
+  "003043": {
+    "indicators": {
+      "distMA13": -20.31,
+      "distMA20": null,
+      "ma13_price": 94.13,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 94.13
+    }
+  },
+  "300671": {
+    "indicators": {
+      "distMA13": -17.2,
+      "distMA20": null,
+      "ma13_price": 89.54,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 89.54
+    }
+  },
+  "603155": {
+    "indicators": {
+      "distMA13": -40.71,
+      "distMA20": null,
+      "ma13_price": 26.24,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 26.24
+    }
+  },
+  "300938": {
+    "indicators": {
+      "distMA13": -11.54,
+      "distMA20": null,
+      "ma13_price": 47.25,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 47.25
+    }
+  },
+  "600400": {
+    "indicators": {
+      "distMA13": -11.89,
+      "distMA20": null,
+      "ma13_price": 3.13,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 3.13
+    }
+  },
+  "300041": {
+    "indicators": {
+      "distMA13": -23.21,
+      "distMA20": null,
+      "ma13_price": 14.3,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 14.3
+    }
+  },
+  "301607": {
+    "indicators": {
+      "distMA13": -9.91,
+      "distMA20": null,
+      "ma13_price": 52.46,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 52.46
+    }
+  },
+  "002965": {
+    "indicators": {
+      "distMA13": -1.37,
+      "distMA20": null,
+      "ma13_price": 51.3,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 51.3
+    }
+  },
+  "002935": {
+    "indicators": {
+      "distMA13": -19.69,
+      "distMA20": null,
+      "ma13_price": 20.75,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 20.75
+    }
+  },
+  "300263": {
+    "indicators": {
+      "distMA13": -23.95,
+      "distMA20": null,
+      "ma13_price": 13.73,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 13.73
+    }
+  },
+  "301379": {
+    "indicators": {
+      "distMA13": -6.34,
+      "distMA20": null,
+      "ma13_price": 33.08,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 33.08
+    }
+  },
+  "002600": {
+    "indicators": {
+      "distMA13": -18.14,
+      "distMA20": null,
+      "ma13_price": 15.4,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 15.4
+    }
+  },
+  "300420": {
+    "indicators": {
+      "distMA13": -11.63,
+      "distMA20": null,
+      "ma13_price": 8.7,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 8.7
+    }
+  },
+  "300780": {
+    "indicators": {
+      "distMA13": -15.72,
+      "distMA20": null,
+      "ma13_price": 31.68,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 31.68
+    }
+  },
+  "301307": {
+    "indicators": {
+      "distMA13": -12.8,
+      "distMA20": null,
+      "ma13_price": 81.23,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 81.23
+    }
+  },
+  "002119": {
+    "indicators": {
+      "distMA13": -22.84,
+      "distMA20": null,
+      "ma13_price": 34.03,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 34.03
+    }
+  },
+  "300382": {
+    "indicators": {
+      "distMA13": -18.03,
+      "distMA20": null,
+      "ma13_price": 20.84,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 20.84
+    }
+  },
+  "301127": {
+    "indicators": {
+      "distMA13": -7.3,
+      "distMA20": null,
+      "ma13_price": 18.99,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 18.99
+    }
+  },
+  "000810": {
+    "indicators": {
+      "distMA13": -9.62,
+      "distMA20": null,
+      "ma13_price": 12.0,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 12.0
+    }
+  },
+  "603269": {
+    "indicators": {
+      "distMA13": -13.78,
+      "distMA20": null,
+      "ma13_price": 16.28,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 16.28
+    }
+  },
+  "300458": {
+    "indicators": {
+      "distMA13": -0.55,
+      "distMA20": null,
+      "ma13_price": 38.73,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 38.73
+    }
+  },
+  "301529": {
+    "indicators": {
+      "distMA13": -7.87,
+      "distMA20": null,
+      "ma13_price": 112.1,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 112.1
+    }
+  },
+  "300604": {
+    "indicators": {
+      "distMA13": -9.04,
+      "distMA20": null,
+      "ma13_price": 322.27,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 322.27
+    }
+  },
+  "000977": {
+    "indicators": {
+      "distMA13": 10.28,
+      "distMA20": null,
+      "ma13_price": 77.08,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 77.08
+    }
+  },
+  "002931": {
+    "indicators": {
+      "distMA13": -20.24,
+      "distMA20": null,
+      "ma13_price": 63.25,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 63.25
+    }
+  },
+  "603120": {
+    "indicators": {
+      "distMA13": -4.82,
+      "distMA20": null,
+      "ma13_price": 54.12,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 54.12
+    }
+  },
+  "001331": {
+    "indicators": {
+      "distMA13": -9.31,
+      "distMA20": null,
+      "ma13_price": 58.75,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 58.75
+    }
+  },
+  "000733": {
+    "indicators": {
+      "distMA13": -16.76,
+      "distMA20": null,
+      "ma13_price": 49.76,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 49.76
+    }
+  },
+  "002559": {
+    "indicators": {
+      "distMA13": -12.33,
+      "distMA20": null,
+      "ma13_price": 12.44,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 12.44
+    }
+  },
+  "300801": {
+    "indicators": {
+      "distMA13": -20.73,
+      "distMA20": null,
+      "ma13_price": 28.19,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 28.19
+    }
+  },
+  "600366": {
+    "indicators": {
+      "distMA13": -15.43,
+      "distMA20": null,
+      "ma13_price": 15.18,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 15.18
+    }
+  },
+  "301280": {
+    "indicators": {
+      "distMA13": -10.26,
+      "distMA20": null,
+      "ma13_price": 48.83,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 48.83
+    }
+  },
+  "002979": {
+    "indicators": {
+      "distMA13": -8.09,
+      "distMA20": null,
+      "ma13_price": 63.66,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 63.66
+    }
+  },
+  "002520": {
+    "indicators": {
+      "distMA13": -13.05,
+      "distMA20": null,
+      "ma13_price": 6.82,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 6.82
+    }
+  },
+  "301018": {
+    "indicators": {
+      "distMA13": -10.11,
+      "distMA20": null,
+      "ma13_price": 114.49,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 114.49
+    }
+  },
+  "300558": {
+    "indicators": {
+      "distMA13": -2.27,
+      "distMA20": null,
+      "ma13_price": 66.6,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 66.6
+    }
+  },
+  "300480": {
+    "indicators": {
+      "distMA13": -23.17,
+      "distMA20": null,
+      "ma13_price": 38.7,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 38.7
+    }
+  },
+  "600601": {
+    "indicators": {
+      "distMA13": -13.78,
+      "distMA20": null,
+      "ma13_price": 13.55,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 13.55
+    }
+  },
+  "300655": {
+    "indicators": {
+      "distMA13": -22.61,
+      "distMA20": null,
+      "ma13_price": 18.21,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 18.21
+    }
+  },
+  "000725": {
+    "indicators": {
+      "distMA13": -21.29,
+      "distMA20": null,
+      "ma13_price": 7.69,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 7.69
+    }
+  },
+  "300907": {
+    "indicators": {
+      "distMA13": -3.73,
+      "distMA20": null,
+      "ma13_price": 52.98,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 52.98
+    }
+  },
+  "300661": {
+    "indicators": {
+      "distMA13": -16.45,
+      "distMA20": null,
+      "ma13_price": 128.45,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 128.45
+    }
+  },
+  "300964": {
+    "indicators": {
+      "distMA13": -19.55,
+      "distMA20": null,
+      "ma13_price": 72.97,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 72.97
+    }
+  },
+  "002937": {
+    "indicators": {
+      "distMA13": -3.78,
+      "distMA20": null,
+      "ma13_price": 42.61,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 42.61
+    }
+  },
+  "300684": {
+    "indicators": {
+      "distMA13": 2.0,
+      "distMA20": null,
+      "ma13_price": 65.51,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 65.51
+    }
+  },
+  "001287": {
+    "indicators": {
+      "distMA13": -13.48,
+      "distMA20": null,
+      "ma13_price": 29.16,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 29.16
+    }
+  },
+  "603211": {
+    "indicators": {
+      "distMA13": 1.26,
+      "distMA20": null,
+      "ma13_price": 35.55,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 35.55
+    }
+  },
+  "600520": {
+    "indicators": {
+      "distMA13": -17.61,
+      "distMA20": null,
+      "ma13_price": 35.05,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 35.05
+    }
+  },
+  "301393": {
+    "indicators": {
+      "distMA13": 0.46,
+      "distMA20": null,
+      "ma13_price": 66.26,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 66.26
+    }
+  },
+  "300745": {
+    "indicators": {
+      "distMA13": -16.52,
+      "distMA20": null,
+      "ma13_price": 45.35,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 45.35
+    }
+  },
+  "688392": {
+    "indicators": {
+      "distMA13": -17.67,
+      "distMA20": null,
+      "ma13_price": 212.56,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 212.56
+    }
+  },
+  "688192": {
+    "indicators": {
+      "distMA13": 29.06,
+      "distMA20": null,
+      "ma13_price": 49.59,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 49.59
+    }
+  },
+  "688321": {
+    "indicators": {
+      "distMA13": 8.58,
+      "distMA20": null,
+      "ma13_price": 28.26,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 28.26
+    }
+  },
+  "600664": {
+    "indicators": {
+      "distMA13": 41.7,
+      "distMA20": null,
+      "ma13_price": 3.49,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 3.49
+    }
+  },
+  "300534": {
+    "indicators": {
+      "distMA13": 38.39,
+      "distMA20": null,
+      "ma13_price": 8.37,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 8.37
+    }
+  },
+  "600521": {
+    "indicators": {
+      "distMA13": 9.0,
+      "distMA20": null,
+      "ma13_price": 16.17,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 16.17
+    }
+  },
+  "600535": {
+    "indicators": {
+      "distMA13": 11.69,
+      "distMA20": null,
+      "ma13_price": 14.26,
+      "ma20_price": null,
+      "volRatio": null,
+      "volStatus": "正常",
+      "stopSignal": false,
+      "stopLoss": 14.26
     }
   }
 }

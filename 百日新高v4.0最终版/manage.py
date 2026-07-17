@@ -138,6 +138,14 @@ def generate():
         if dh[-1] > dh[-2] and dh[-1] < 0: diff_trend = "情绪修复中"
         elif dh[-1] < dh[-2] and dh[-1] < -500: diff_trend = "情绪恶化"
 
+    edge_ai_count = 0
+    for rec in records:
+        if rec['date'] == latest_date:
+            for s in rec['stocks']:
+                sec_str = str(s.get('sector',''))
+                if any(kw in sec_str for kw in ['端侧AI','AI手机','AI眼镜','智能穿戴']):
+                    edge_ai_count += 1
+
     stocks = {}
     for rec in records:
         for s in rec["stocks"]:
@@ -255,6 +263,10 @@ def generate():
     print(f"{'='*60}")
     print(f"\n 锚1趋势:{anchors['anchor1']} | 锚2广度:{anchors['anchor2']} | 锚3情绪:{anchors['anchor3']} {ice_signal}")
     print(f" 表决:{anchors['verdict']} | 仓位:{anchors['position_range']} | 最大持仓{anchors['position_max']}只 | 差值{diff} {diff_trend}")
+    if anchors['position_max'] <= 1:
+        print(f" >>> 冰点期，不开新仓 <<<")
+    if edge_ai_count > 0:
+        print(f" 端侧AI: {edge_ai_count}只 | 连续3天>=5只将纳入主线监控")
     print(f"\n 核心{len(core)}只 | 过滤{len(non_core)}只 | 第七层风险过滤{filter_count}只")
     for theme in ["半导体/芯片","算力/通信","机器人","创新药/CRO"]:
         ts = theme_stats.get(theme, {})
@@ -313,11 +325,15 @@ def generate():
     
     # 板块轮动检测
     sector_today = defaultdict(int)
+    edge_ai_count = 0
     for rec in records:
         if rec['date'] == latest_date:
             for s in rec['stocks']:
+                sec_str = str(s.get('sector',''))
                 for sec in ['医药','创新药','CRO','芯片','机器人','算力','通信','商业航天','AI']:
-                    if sec in str(s.get('sector','')): sector_today[sec] += 1
+                    if sec in sec_str: sector_today[sec] += 1
+                if '端侧AI' in sec_str or 'AI手机' in sec_str or 'AI眼镜' in sec_str or '智能穿戴' in sec_str:
+                    edge_ai_count += 1
     top_sectors = sorted(sector_today.items(), key=lambda x:-x[1])[:3]
     sector_rotate = ', '.join(f'{k}({v})' for k,v in top_sectors) if top_sectors else ''
     
@@ -490,11 +506,17 @@ def generate():
         ("浮盈>20%", "止盈线收紧至MA13"),
         ("连续3日放量加速", "止盈线从MA13收紧至MA5"),
         ("", ""),
-        ("═══ 7/15 重点盯盘 ═══", ""),
-        ("今日医药爆发", "迪哲医药(688192) NEW +20%、万邦医药(301520) +20%、药康生物(688046) NEW +17% 均为首次新高"),
-        ("持续跟踪", "翰宇药业(300199) 缩量回踩后今日+6.9%放量反弹，关注是否持续"),
-        ("均线附近等待", "双环传动(002472) MA13=-0.17%、博通集成(603068) MA13=+0.32%，等缩量信号"),
-        ("放量下跌预警", "益诺思(688710) MA13=+17.9% 远离均线，今日不在榜但风险高"),
+        ("═══ 7/16 今日发现 ═══", ""),
+        ("发现一·新高股普遍远离均线", "7/16上榜43只中仅博通集成+药康生物2只距MA13±3%。多数新高股已'飘'起，追高风险大。这正是全库扫描价值所在——盯的是过去新高、现在回踩的票"),
+        ("发现二·医药主力内部分化", "热景生物主力+23亿 vs 药明康德-6.29亿，同一板块内资金在调仓换股而非全面撤退。追医药需精选个股"),
+        ("发现三·翰宇药业验证完整", "7/1首高(+8.4%)→7/13暴跌(-7.6%)→7/14缩量企稳MA13=-0.81%→7/15放量+6.9%→7/16回落-5.3%。完整走完'突破→回踩→反弹→再回落'周期。最佳介入点：缩量企稳日，不是反弹追涨日"),
+        ("发现四·博通集成持续缩量靠拢", "10次上榜，MA13从+0.32%→-2.12%，价格持续向均线靠拢。VR=1.13仍偏高，等缩到0.8以下就是完美狙击点"),
+        ("", ""),
+        ("═══ 持续跟踪 ═══", ""),
+        ("翰宇药业(300199)", "MA13=+0.21% VR=0.74缩量 仍是最佳狙击候选，等放量阳线确认"),
+        ("博通集成(603068)", "MA13=-2.12% VR=1.13 已靠近均线但量比偏高，等缩量信号"),
+        ("共同药业(300966)", "MA13=-0.48% VR=0.73缩量 新进入候选池，7/15上榜+12.6%，关注后续回踩"),
+        ("冠龙节能(301151)", "MA13=+2.16% VR=0.68缩量 新进入，但距均线略远"),
         ("", ""),
         ("═══ 回测验证 ═══", ""),
         ("翰宇药业案例", "7/14缩量回踩MA13(-0.81%)+VR=0.74 → 7/15放量+6.94% 完美验证狙击逻辑"),
