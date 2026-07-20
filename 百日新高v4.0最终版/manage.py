@@ -262,6 +262,28 @@ def generate():
     print(f"\n{'='*60}")
     print(f"  百日新高 v5.0  七层规则  {latest_date}")
     print(f"{'='*60}")
+    
+    # Ice period counter
+    ice_days = 1 if anchors['position_max'] <= 1 else 0
+    if ice_days:
+        mkt = load_json(MARKET_DATA_FILE)
+        dh = mkt.get('diff_history', [])
+        for d in reversed(dh[:-1]):
+            if d < 0: ice_days += 1
+            else: break
+    
+    # Operation summary (Suggestion 1)
+    if anchors['position_max'] == 0:
+        op_cmd = "强制空仓 | 不开新仓 | 持仓止盈线MA5"
+    elif anchors['position_max'] <= 5:
+        op_cmd = "震荡市 | 仓位3-5只 | 等缩量回踩信号"
+    else:
+        op_cmd = "上涨市 | 仓位5-8只 | 可正常开仓"
+    
+    print(f"\n >>> 今日指令: {op_cmd}")
+    if ice_days >= 2:
+        print(f" >>> 连续冰点第{ice_days}天 | 冰点越久，反弹越近 <<<")
+    
     print(f"\n 锚1趋势:{anchors['anchor1']} | 锚2广度:{anchors['anchor2']} | 锚3情绪:{anchors['anchor3']} {ice_signal}")
     print(f" 表决:{anchors['verdict']} | 仓位:{anchors['position_range']} | 最大持仓{anchors['position_max']}只 | 差值{diff} {diff_trend}")
     if anchors['position_max'] <= 1:
@@ -320,8 +342,19 @@ def generate():
         st['d13'] = d13; st['vr'] = vr; st['code'] = c
         vs = '缩量' if vr and vr < 0.8 else ('放量' if vr and vr > 1.2 else '正常')
         st['vol_status'] = vs
+        # Calculate days since last new high
+        try:
+            ld_dt = datetime.strptime(st['last_date'], '%Y-%m-%d')
+            latest_dt = datetime.strptime(latest_date, '%Y-%m-%d')
+            st['days_since'] = (latest_dt - ld_dt).days
+        except: st['days_since'] = 99
+        # Composite score: MA distance weight 50%, volume 30%, recency 20%
+        ma_score = max(0, 100 - abs(d13)*33) if d13 else 0
+        vol_score = 100 if vs == '缩量' else (50 if vs == '正常' else 0)
+        recency_score = max(0, 100 - st['days_since']*10)
+        st['score'] = int(ma_score*0.5 + vol_score*0.3 + recency_score*0.2)
         full_scan.append(st)
-    full_scan.sort(key=lambda x: abs(x['d13']))
+    full_scan.sort(key=lambda x: -x.get('score', 0))
     scan_count = len(full_scan)
     
     # 板块轮动检测
@@ -444,9 +477,9 @@ def generate():
 
     # Sheet 6: 全库扫描 (过去10天新高+距MA13 ±3%)
     ws6=wb.create_sheet("全库扫描(MA13±3%)")
-    h6=["代码","名称","距MA13%","量比","量能","末次日期","末次涨幅%","末次价格","10天上榜次","备注"]
-    col_count6 = 10
-    ws6.merge_cells(f"A1:{get_column_letter(col_count6)}1"); ws6.cell(row=1,column=1,value=f"全库扫描·距MA13±3% {latest_date} ({scan_count}只)").font=Font(name="Microsoft YaHei",size=16,bold=True,color=CYAN); ws6.cell(row=1,column=1).alignment=CN; ws6.row_dimensions[1].height=36
+    h6=["代码","名称","距MA13%","量比","量能","综合分","距上次新高(天)","末次日期","末次涨幅%","10天上榜次","备注"]
+    col_count6 = 11
+    ws6.merge_cells(f"A1:{get_column_letter(col_count6)}1"); ws6.cell(row=1,column=1,value=f"回踩狙击榜 {latest_date} ({scan_count}只·按综合分排序)").font=Font(name="Microsoft YaHei",size=16,bold=True,color=CYAN); ws6.cell(row=1,column=1).alignment=CN; ws6.row_dimensions[1].height=36
     for col,h in enumerate(h6,1): ws6.cell(row=3,column=col,value=h).font=FH; ws6.cell(row=3,column=col).fill=FILL_H; ws6.cell(row=3,column=col).alignment=CN
     ws6.row_dimensions[3].height=28
     if full_scan:
@@ -456,17 +489,19 @@ def generate():
             note = ''
             if st['count'] >= 5 and st['last_chg'] < 1: note = '疑似出货'
             if abs(st['d13']) < 1: note = ('★极近均线 ' + note).strip()
+            if st.get('score',0) >= 80: note = '🎯首选 ' + note
             name_disp = st['name']
             if st['last_date'] == latest_date: name_disp = name_disp + ' NEW'
-            vals=[st['code'],name_disp,st['d13'],st['vr'],st['vol_status'],st['last_date'],st['last_chg'],st['last_price'],st['count'],note]
+            vals=[st['code'],name_disp,st['d13'],st['vr'],st['vol_status'],st.get('score',''),st.get('days_since',''),st['last_date'],st['last_chg'],st['count'],note]
             for col,val in enumerate(vals,1): ws6.cell(row=row,column=col,value=val).font=FW; ws6.cell(row=row,column=col).fill=bg; ws6.cell(row=row,column=col).alignment=CN
             ws6.cell(row=row,column=2).font=FL
             d13_c=ws6.cell(row=row,column=3); d13_c.font=FG if abs(st['d13'])<1 else FW
             ws6.cell(row=row,column=5).font=FG if st['vol_status']=='缩量' else (FR if st['vol_status']=='放量' else FW)
+            ws6.cell(row=row,column=6).font=FG if st.get('score',0)>=80 else FW
             ws6.row_dimensions[row].height=26
         ws6.freeze_panes="A4"; ws6.auto_filter.ref=f"A3:{get_column_letter(col_count6)}{3+len(full_scan)}"
     else: ws6.merge_cells(f"A4:{get_column_letter(col_count6)}4"); ws6.cell(row=4,column=1,value="(无)").font=Font(name="Microsoft YaHei",size=11,color="888888"); ws6.cell(row=4,column=1).alignment=CN
-    for i,w in enumerate([10,12,10,9,8,12,10,10,10,18],1): ws6.column_dimensions[get_column_letter(i)].width=w
+    for i,w in enumerate([10,12,10,9,8,8,12,12,10,10,20],1): ws6.column_dimensions[get_column_letter(i)].width=w
 
     # ═══ Sheet 7: 投资洞察 ═══
     ws7=wb.create_sheet("投资洞察")
@@ -559,7 +594,7 @@ def generate():
         row += 1
 
     wb.save(EXCEL_FILE)
-    print(f"\n[OK] {EXCEL_FILE} | 全库扫描 {scan_count}只")
+    print(f"\n[OK] {EXCEL_FILE} | 回踩狙击榜 {scan_count}只 | 冰点第{ice_days}天")
 
 if __name__ == "__main__":
     generate()
