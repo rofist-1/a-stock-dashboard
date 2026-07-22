@@ -8532,6 +8532,15 @@
           "sector": "两轮车",
           "turnover": "8.12亿",
           "mainNet": "+1293万"
+        },
+        {
+          "code": "688728",
+          "name": "格科微",
+          "price": 16.9,
+          "changePct": 20.03,
+          "sector": "芯片",
+          "turnover": "11.64亿",
+          "mainNet": ""
         }
       ]
     }
