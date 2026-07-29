@@ -498,7 +498,7 @@
     <div class="header">
       <h1>📊 A股波段情绪·综合看板 Pro 最终版</h1>
       <div style="display:flex;align-items:center;gap:0.5rem;">
-        <button class="btn btn-secondary btn-sm" onclick="localStorage.removeItem('astock_dashboard_v3');location.reload()" title="清除本地缓存，从data.json重新同步">🔄 从JSON同步</button>
+        <button class="btn btn-secondary btn-sm" onclick="localStorage.removeItem('astock_dashboard_v3');localStorage.removeItem('backup_seeded');location.reload()" title="清除本地缓存，从内置备份重新同步">🔄 从内置备份同步</button>
         <div class="date-badge" id="currentDate"></div>
       </div>
     </div>
@@ -606,6 +606,7 @@
       <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
         <span style="font-weight: 700; font-size: 1.1rem;">✍️ 每日数据录入</span>
         <span style="color: #64748b; font-size: 0.85rem;">浏览器本地保存</span>
+        <span id="saveStatus" style="color: #16a34a; font-size: 0.85rem;"></span>
       </div>
 
       <div class="input-grid">
@@ -1050,7 +1051,7 @@
         records.sort((a, b) => a.date < b.date ? -1 : 1);
       }
 
-      function saveRecords() { localStorage.setItem(STORAGE_KEY, JSON.stringify(records)); }
+      function saveRecords() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(records)); return true; } catch(e) { alert('保存失败：' + e.message); return false; } }
 
       function getDiff(rec) { return (rec.newHigh || 0) - (rec.newLow || 0); }
 
@@ -1627,7 +1628,11 @@
           records.push(rec);
         }
         records.sort((a, b) => a.date < b.date ? -1 : 1);
-        saveRecords();
+        if (saveRecords()) {
+          const count = records.filter(r => r.date >= '2026-07-01').length;
+          document.getElementById('saveStatus').textContent = '✅ 已保存 ' + date + ' (本月共' + count + '条)';
+          setTimeout(() => document.getElementById('saveStatus').textContent = '', 3000);
+        }
         renderAll();
         syncSurgeResonance();
 
