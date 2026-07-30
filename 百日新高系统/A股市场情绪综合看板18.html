@@ -515,6 +515,9 @@
       <div style="margin-top: 0.4rem; font-size: 0.7rem; color: #64748b;">
         📊 图表参考线：涨停跌停图 → 跌停=6🟡 / 跌停=30🔴 | 差值图 → +500🟢 / -100🟠 | 成交量图 → 极值标记🟡🔵
       </div>
+      <div style="margin-top: 0.4rem; font-size: 0.7rem; color: #64748b;">
+        🎯 主线信号（按增速异动区自动判定）：👁关注=首破5家 | 🔵有效=≥10家+涨停助攻 | 🟢确认=环比≥+80%或≥20家→可买 | 🔴退潮=峰值回落≥30%或破5家→必卖
+      </div>
     </div>
 
     <div class="card battle-card" id="battlePlan">
@@ -554,6 +557,16 @@
         🛑 止损 -5% &nbsp;|&nbsp; 🎯 止盈 +8% 或破5日线 &nbsp;|&nbsp; ⏳ 分歧低吸不追高 &nbsp;|&nbsp; 💰 仓位上限 <span id="battlePosLimit">--</span>
         <div id="battleRulesHint" style="margin-top:0.3rem;font-size:0.7rem;color:#eab308;"></div>
       </div>
+    </div>
+
+    <!-- 🎯 主线信号（基于增速异动区） -->
+    <div class="card" style="padding:0.65rem 0.85rem;" id="mainlineSignals">
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:0.3rem;">
+        <span style="font-weight:700;font-size:1.05rem;">🎯 主线信号（增速异动区判定）</span>
+        <span style="font-size:0.68rem;color:#64748b;">根据3个观察板块的增速与涨停助攻自动判定阶段</span>
+        <button onclick="exportMainlineSignals()" style="margin-left:auto;background:#2d4a6b;color:#e2e8f0;border:none;border-radius:4px;padding:2px 10px;font-size:0.7rem;cursor:pointer;">📋 复制</button>
+      </div>
+      <div id="mainlineSignalsContent" style="font-size:0.8rem;color:#64748b;">数据加载中...</div>
     </div>
 
     <!-- 底部放量大阳线监测 -->
@@ -663,72 +676,149 @@
         <div class="input-group"><label>涨停数</label><input type="number" id="l3Count" placeholder="数量" min="0"></div>
       </div>
 
-      <!-- 潜在异动板块（新增数字输入框） -->
+      <!-- 增速异动板块观察 -->
       <div class="watch-section">
-        <h4>🔍 潜在异动板块观察（新高总数 & 今日新增 & 细分分支）</h4>
+        <h4>🔍 增速异动板块观察<br><span style="font-weight:400;font-size:0.7rem;color:#ef4444;">⚠ 仅在此处记录有明确增速异动信号的板块（环比异动），不做全量新高排名登记</span></h4>
+
+        <!-- 📌 固定跟踪池 -->
+        <div style="margin-bottom:0.5rem;padding:0.5rem 0.6rem;background:#1e293b;border:1px solid #334155;border-radius:0.6rem;">
+          <details>
+            <summary style="cursor:pointer;font-weight:600;font-size:0.8rem;color:#e2e8f0;">📌 固定跟踪池（展开编辑，最多6个题材）</summary>
+            <div class="input-grid" style="margin-top:0.4rem;">
+              <div class="input-group"><label style="font-size:0.6rem;">①</label><input type="text" id="trackSector1" placeholder="如：芯片" style="font-size:0.78rem;"></div>
+              <div class="input-group"><label style="font-size:0.6rem;">②</label><input type="text" id="trackSector2" placeholder="如：医药" style="font-size:0.78rem;"></div>
+              <div class="input-group"><label style="font-size:0.6rem;">③</label><input type="text" id="trackSector3" placeholder="如：机器人" style="font-size:0.78rem;"></div>
+              <div class="input-group"><label style="font-size:0.6rem;">④</label><input type="text" id="trackSector4" placeholder="如：通信" style="font-size:0.78rem;"></div>
+              <div class="input-group"><label style="font-size:0.6rem;">⑤</label><input type="text" id="trackSector5" placeholder="如：算力" style="font-size:0.78rem;"></div>
+              <div class="input-group"><label style="font-size:0.6rem;">⑥</label><input type="text" id="trackSector6" placeholder="如：银行" style="font-size:0.78rem;"></div>
+            </div>
+            <button onclick="saveTrackedSectors()" style="margin-top:0.3rem;background:#2d4a6b;color:#e2e8f0;border:none;border-radius:4px;padding:3px 12px;font-size:0.7rem;cursor:pointer;">💾 保存跟踪池</button>
+          </details>
+        </div>
+
         <div class="input-grid">
           <div class="input-group"><label>板块1</label><input type="text" id="watch1Name" placeholder="名称"></div>
           <div class="input-group"><label>新高总数</label><input type="number" id="watch1Total" placeholder="总数" min="0"></div>
           <div class="input-group"><label>新增</label><input type="number" id="watch1New" placeholder="新增" min="0"></div>
+          <div class="input-group"><label>环比增速%</label><input type="number" id="watch1Pct" placeholder="%" step="0.1"></div>
+          <div class="input-group"><label>涨停助攻</label><select id="watch1Assist">
+            <option value="">--选择--</option>
+            <option value="无">无</option>
+            <option value="主涨">有(主涨)</option>
+            <option value="跟涨">有(跟涨)</option>
+          </select></div>
           <div class="input-group"><label>观察理由</label><select id="watch1Reason">
             <option value="">--选择--</option>
-            <option value="首次进前五">首次进前五</option>
-            <option value="新增家数翻倍">新增家数翻倍</option>
-            <option value="底部放量异动">底部放量异动</option>
-            <option value="政策/事件催化">政策/事件催化</option>
+            <option value="增速榜第1">增速榜第1</option>
+            <option value="增速榜第2">增速榜第2</option>
+            <option value="增速榜第3">增速榜第3</option>
+            <option value="增速≥+30%">增速≥+30%</option>
+            <option value="增速由负转正">增速由负转正</option>
+            <option value="分歧后收复">分歧后收复</option>
             <option value="其他">其他</option>
           </select></div>
           <div class="input-group"><label>参考信号</label><input type="text" id="watch1Signal" placeholder="自动填充" readonly style="background:#f0f9ff; font-size:0.8rem;"></div>
         </div>
         <div class="input-grid" style="margin-top:-0.3rem;padding-left:0.5rem;">
-          <div class="input-group"><label style="font-size:0.6rem;">分支①</label><input type="text" id="w1b1Name" placeholder="分支名称" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">新增</label><input type="number" id="w1b1New" placeholder="0" min="0" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">分支②</label><input type="text" id="w1b2Name" placeholder="分支名称" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">新增</label><input type="number" id="w1b2New" placeholder="0" min="0" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">联动①</label><input type="text" id="w1b1Name" placeholder="联动方向" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">筹码松动</label><select id="w1b1New" style="font-size:0.78rem;">
+            <option value="">--选择--</option>
+            <option value="涨停">涨停</option>
+            <option value="断板">断板</option>
+            <option value="无">无</option>
+          </select></div>
+          <div class="input-group"><label style="font-size:0.6rem;">联动②</label><input type="text" id="w1b2Name" placeholder="联动方向" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">筹码松动</label><select id="w1b2New" style="font-size:0.78rem;">
+            <option value="">--选择--</option>
+            <option value="涨停">涨停</option>
+            <option value="断板">断板</option>
+            <option value="无">无</option>
+          </select></div>
         </div>
+        <div id="pctSource1" style="font-size:0.6rem;color:#64748b;padding:0.1rem 0.5rem;margin:-0.2rem 0 0.2rem 0;"></div>
         <div class="input-grid">
           <div class="input-group"><label>板块2</label><input type="text" id="watch2Name" placeholder="名称"></div>
           <div class="input-group"><label>新高总数</label><input type="number" id="watch2Total" placeholder="总数" min="0"></div>
           <div class="input-group"><label>新增</label><input type="number" id="watch2New" placeholder="新增" min="0"></div>
+          <div class="input-group"><label>环比增速%</label><input type="number" id="watch2Pct" placeholder="%" step="0.1"></div>
+          <div class="input-group"><label>涨停助攻</label><select id="watch2Assist">
+            <option value="">--选择--</option>
+            <option value="无">无</option>
+            <option value="主涨">有(主涨)</option>
+            <option value="跟涨">有(跟涨)</option>
+          </select></div>
           <div class="input-group"><label>观察理由</label><select id="watch2Reason">
             <option value="">--选择--</option>
-            <option value="首次进前五">首次进前五</option>
-            <option value="新增家数翻倍">新增家数翻倍</option>
-            <option value="底部放量异动">底部放量异动</option>
-            <option value="政策/事件催化">政策/事件催化</option>
+            <option value="增速榜第1">增速榜第1</option>
+            <option value="增速榜第2">增速榜第2</option>
+            <option value="增速榜第3">增速榜第3</option>
+            <option value="增速≥+30%">增速≥+30%</option>
+            <option value="增速由负转正">增速由负转正</option>
+            <option value="分歧后收复">分歧后收复</option>
             <option value="其他">其他</option>
           </select></div>
           <div class="input-group"><label>参考信号</label><input type="text" id="watch2Signal" placeholder="自动填充" readonly style="background:#f0f9ff; font-size:0.8rem;"></div>
         </div>
         <div class="input-grid" style="margin-top:-0.3rem;padding-left:0.5rem;">
-          <div class="input-group"><label style="font-size:0.6rem;">分支①</label><input type="text" id="w2b1Name" placeholder="分支名称" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">新增</label><input type="number" id="w2b1New" placeholder="0" min="0" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">分支②</label><input type="text" id="w2b2Name" placeholder="分支名称" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">新增</label><input type="number" id="w2b2New" placeholder="0" min="0" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">联动①</label><input type="text" id="w2b1Name" placeholder="联动方向" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">筹码松动</label><select id="w2b1New" style="font-size:0.78rem;">
+            <option value="">--选择--</option>
+            <option value="涨停">涨停</option>
+            <option value="断板">断板</option>
+            <option value="无">无</option>
+          </select></div>
+          <div class="input-group"><label style="font-size:0.6rem;">联动②</label><input type="text" id="w2b2Name" placeholder="联动方向" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">筹码松动</label><select id="w2b2New" style="font-size:0.78rem;">
+            <option value="">--选择--</option>
+            <option value="涨停">涨停</option>
+            <option value="断板">断板</option>
+            <option value="无">无</option>
+          </select></div>
         </div>
+        <div id="pctSource2" style="font-size:0.6rem;color:#64748b;padding:0.1rem 0.5rem;margin:-0.2rem 0 0.2rem 0;"></div>
         <div class="input-grid">
           <div class="input-group"><label>板块3</label><input type="text" id="watch3Name" placeholder="名称"></div>
           <div class="input-group"><label>新高总数</label><input type="number" id="watch3Total" placeholder="总数" min="0"></div>
           <div class="input-group"><label>新增</label><input type="number" id="watch3New" placeholder="新增" min="0"></div>
+          <div class="input-group"><label>环比增速%</label><input type="number" id="watch3Pct" placeholder="%" step="0.1"></div>
+          <div class="input-group"><label>涨停助攻</label><select id="watch3Assist">
+            <option value="">--选择--</option>
+            <option value="无">无</option>
+            <option value="主涨">有(主涨)</option>
+            <option value="跟涨">有(跟涨)</option>
+          </select></div>
           <div class="input-group"><label>观察理由</label><select id="watch3Reason">
             <option value="">--选择--</option>
-            <option value="首次进前五">首次进前五</option>
-            <option value="新增家数翻倍">新增家数翻倍</option>
-            <option value="底部放量异动">底部放量异动</option>
-            <option value="政策/事件催化">政策/事件催化</option>
+            <option value="增速榜第1">增速榜第1</option>
+            <option value="增速榜第2">增速榜第2</option>
+            <option value="增速榜第3">增速榜第3</option>
+            <option value="增速≥+30%">增速≥+30%</option>
+            <option value="增速由负转正">增速由负转正</option>
+            <option value="分歧后收复">分歧后收复</option>
             <option value="其他">其他</option>
           </select></div>
           <div class="input-group"><label>参考信号</label><input type="text" id="watch3Signal" placeholder="自动填充" readonly style="background:#f0f9ff; font-size:0.8rem;"></div>
         </div>
         <div class="input-grid" style="margin-top:-0.3rem;padding-left:0.5rem;">
-          <div class="input-group"><label style="font-size:0.6rem;">分支①</label><input type="text" id="w3b1Name" placeholder="分支名称" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">新增</label><input type="number" id="w3b1New" placeholder="0" min="0" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">分支②</label><input type="text" id="w3b2Name" placeholder="分支名称" style="font-size:0.78rem;"></div>
-          <div class="input-group"><label style="font-size:0.6rem;">新增</label><input type="number" id="w3b2New" placeholder="0" min="0" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">联动①</label><input type="text" id="w3b1Name" placeholder="联动方向" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">筹码松动</label><select id="w3b1New" style="font-size:0.78rem;">
+            <option value="">--选择--</option>
+            <option value="涨停">涨停</option>
+            <option value="断板">断板</option>
+            <option value="无">无</option>
+          </select></div>
+          <div class="input-group"><label style="font-size:0.6rem;">联动②</label><input type="text" id="w3b2Name" placeholder="联动方向" style="font-size:0.78rem;"></div>
+          <div class="input-group"><label style="font-size:0.6rem;">筹码松动</label><select id="w3b2New" style="font-size:0.78rem;">
+            <option value="">--选择--</option>
+            <option value="涨停">涨停</option>
+            <option value="断板">断板</option>
+            <option value="无">无</option>
+          </select></div>
           <div style="display: flex; align-items: flex-end;">
             <button class="btn" id="addBtn">➕ 添加记录</button>
           </div>
         </div>
+        <div id="pctSource3" style="font-size:0.6rem;color:#64748b;padding:0.1rem 0.5rem;margin:-0.2rem 0 0.2rem 0;"></div>
       </div>
     </div>
 
@@ -774,6 +864,7 @@
               <th>新增新高</th>
               <th>封板率<span class="tooltip">涨停/(涨停+炸板)</span></th>
               <th>强势板块</th>
+              <th>增速异动（环比）</th>
               <th>涨停最多</th>
               <th>信号</th>
               <th>潜在异动</th>
@@ -945,6 +1036,8 @@
       const w1Total = document.getElementById('watch1Total');
       const w1New = document.getElementById('watch1New');
       const w1Reason = document.getElementById('watch1Reason');
+      const w1Pct = document.getElementById('watch1Pct');
+      const w1Assist = document.getElementById('watch1Assist');
       const w1Signal = document.getElementById('watch1Signal');
       const w1b1Name = document.getElementById('w1b1Name');
       const w1b1New = document.getElementById('w1b1New');
@@ -954,6 +1047,8 @@
       const w2Total = document.getElementById('watch2Total');
       const w2New = document.getElementById('watch2New');
       const w2Reason = document.getElementById('watch2Reason');
+      const w2Pct = document.getElementById('watch2Pct');
+      const w2Assist = document.getElementById('watch2Assist');
       const w2Signal = document.getElementById('watch2Signal');
       const w2b1Name = document.getElementById('w2b1Name');
       const w2b1New = document.getElementById('w2b1New');
@@ -963,6 +1058,8 @@
       const w3Total = document.getElementById('watch3Total');
       const w3New = document.getElementById('watch3New');
       const w3Reason = document.getElementById('watch3Reason');
+      const w3Pct = document.getElementById('watch3Pct');
+      const w3Assist = document.getElementById('watch3Assist');
       const w3Signal = document.getElementById('watch3Signal');
       const w3b1Name = document.getElementById('w3b1Name');
       const w3b1New = document.getElementById('w3b1New');
@@ -1033,15 +1130,15 @@
               s3Name: r.s3Name || '', s3Total: parseInt(r.s3Total) || 0, s3New: parseInt(r.s3New) || 0,
               s3b1Name: r.s3b1Name || '', s3b1New: parseInt(r.s3b1New) || 0,
               s3b2Name: r.s3b2Name || '', s3b2New: parseInt(r.s3b2New) || 0,
-              w1Name: r.w1Name || '', w1Total: parseInt(r.w1Total) || 0, w1New: parseInt(r.w1New) || 0, w1Reason: r.w1Reason || '',
-              w1b1Name: r.w1b1Name || '', w1b1New: parseInt(r.w1b1New) || 0,
-              w1b2Name: r.w1b2Name || '', w1b2New: parseInt(r.w1b2New) || 0,
-              w2Name: r.w2Name || '', w2Total: parseInt(r.w2Total) || 0, w2New: parseInt(r.w2New) || 0, w2Reason: r.w2Reason || '',
-              w2b1Name: r.w2b1Name || '', w2b1New: parseInt(r.w2b1New) || 0,
-              w2b2Name: r.w2b2Name || '', w2b2New: parseInt(r.w2b2New) || 0,
-              w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Reason: r.w3Reason || '',
-              w3b1Name: r.w3b1Name || '', w3b1New: parseInt(r.w3b1New) || 0,
-              w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0,
+              w1Name: r.w1Name || '', w1Total: parseInt(r.w1Total) || 0, w1New: parseInt(r.w1New) || 0, w1Pct: parseFloat(r.w1Pct) || 0, w1Assist: r.w1Assist || '', w1Reason: r.w1Reason || '',
+              w1b1Name: r.w1b1Name || '', w1b1New: r.w1b1New != null ? r.w1b1New : '',
+              w1b2Name: r.w1b2Name || '', w1b2New: r.w1b2New != null ? r.w1b2New : '',
+              w2Name: r.w2Name || '', w2Total: parseInt(r.w2Total) || 0, w2New: parseInt(r.w2New) || 0, w2Pct: parseFloat(r.w2Pct) || 0, w2Assist: r.w2Assist || '', w2Reason: r.w2Reason || '',
+              w2b1Name: r.w2b1Name || '', w2b1New: r.w2b1New != null ? r.w2b1New : '',
+              w2b2Name: r.w2b2Name || '', w2b2New: r.w2b2New != null ? r.w2b2New : '',
+              w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Pct: parseFloat(r.w3Pct) || 0, w3Assist: r.w3Assist || '', w3Reason: r.w3Reason || '',
+              w3b1Name: r.w3b1Name || '', w3b1New: r.w3b1New != null ? r.w3b1New : '',
+              w3b2Name: r.w3b2Name || '', w3b2New: r.w3b2New != null ? r.w3b2New : '',
               l1Name: r.l1Name || '', l1Count: parseInt(r.l1Count) || 0,
               l2Name: r.l2Name || '', l2Count: parseInt(r.l2Count) || 0,
               l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0
@@ -1108,27 +1205,53 @@
         return parts.length ? parts.join(' · ') : '—';
       }
 
+      function getBranchDisplay(bName, bVal) {
+        if (!bName) return '';
+        // handle both old numeric (新增) and new string (筹码松动) branch values
+        if (bVal === '' || bVal == null) return bName;
+        if (isNaN(bVal)) return `${bName}(${bVal})`; // string: 筹码松动状态
+        return `${bName}+${bVal}`; // number: 旧格式
+      }
+
       function getWatchSummary(rec) {
         const parts = [];
         if (rec.w1Name) {
           let s = `${rec.w1Name}(${rec.w1Total||0},${rec.w1New||0}↑)`;
-          const b1 = rec.w1b1Name ? `${rec.w1b1Name}+${rec.w1b1New||0}` : '';
-          const b2 = rec.w1b2Name ? `${rec.w1b2Name}+${rec.w1b2New||0}` : '';
+          const b1 = getBranchDisplay(rec.w1b1Name, rec.w1b1New);
+          const b2 = getBranchDisplay(rec.w1b2Name, rec.w1b2New);
           if (b1 || b2) s += ` [${[b1,b2].filter(Boolean).join(', ')}]`;
           parts.push(s);
         }
         if (rec.w2Name) {
           let s = `${rec.w2Name}(${rec.w2Total||0},${rec.w2New||0}↑)`;
-          const b1 = rec.w2b1Name ? `${rec.w2b1Name}+${rec.w2b1New||0}` : '';
-          const b2 = rec.w2b2Name ? `${rec.w2b2Name}+${rec.w2b2New||0}` : '';
+          const b1 = getBranchDisplay(rec.w2b1Name, rec.w2b1New);
+          const b2 = getBranchDisplay(rec.w2b2Name, rec.w2b2New);
           if (b1 || b2) s += ` [${[b1,b2].filter(Boolean).join(', ')}]`;
           parts.push(s);
         }
         if (rec.w3Name) {
           let s = `${rec.w3Name}(${rec.w3Total||0},${rec.w3New||0}↑)`;
-          const b1 = rec.w3b1Name ? `${rec.w3b1Name}+${rec.w3b1New||0}` : '';
-          const b2 = rec.w3b2Name ? `${rec.w3b2Name}+${rec.w3b2New||0}` : '';
+          const b1 = getBranchDisplay(rec.w3b1Name, rec.w3b1New);
+          const b2 = getBranchDisplay(rec.w3b2Name, rec.w3b2New);
           if (b1 || b2) s += ` [${[b1,b2].filter(Boolean).join(', ')}]`;
+          parts.push(s);
+        }
+        return parts.length ? parts.join(' · ') : '—';
+      }
+
+      function getGrowthWatchSummary(rec) {
+        const parts = [];
+        for (const key of ['1','2','3']) {
+          const name = rec['w'+key+'Name'];
+          const total = rec['w'+key+'Total'];
+          const pct = rec['w'+key+'Pct'];
+          const assist = rec['w'+key+'Assist'];
+          if (!name) continue;
+          let s = name;
+          if (total) s += `(${total})`;
+          if (pct) s += ` +${pct}%`;
+          else s += ' —%';
+          if (assist) s += ` 🅰${assist}`;
           parts.push(s);
         }
         return parts.length ? parts.join(' · ') : '—';
@@ -1187,14 +1310,25 @@
         return { type: 'normal', label: '⚪ 正常' };
       }
 
-      function updateWatchSignal(reasonId, signalId) {
+      function updateWatchSignal(reasonId, signalId, pctId, assistId) {
         const reason = document.getElementById(reasonId).value;
         const signalInput = document.getElementById(signalId);
+        const pct = parseFloat(document.getElementById(pctId).value) || 0;
+        const assist = document.getElementById(assistId).value || '';
+        // Auto-compute signal based on actual values
+        if (assist && assist !== '无' && pct >= 50) { signalInput.value = '增速+助攻共振—重点关注'; return; }
+        if (pct >= 80) { signalInput.value = '环比+'+pct+'%异动—趋势启动信号'; return; }
+        if (assist && assist !== '无') { signalInput.value = '涨停助攻—板块效应确认'; return; }
+        if (pct >= 30) { signalInput.value = '环比+'+pct+'%—异动明显，持续关注'; return; }
+        if (pct > 0) { signalInput.value = '环比+'+pct+'%—温和放量，等加速'; return; }
+        // Fallback to reason-based signal
         const signalMap = {
-          '首次进前五': '加入自选，等回踩确认',
-          '新增家数翻倍': '重点跟进，可能启动',
-          '底部放量异动': '可能是下一主线',
-          '政策/事件催化': '视催化强度决定仓位',
+          '增速榜第1': '增速领先，关注持续性',
+          '增速榜第2': '增速领先，关注持续性',
+          '增速榜第3': '增速领先，关注持续性',
+          '增速≥+30%': '环比异动明显，可能启动',
+          '增速由负转正': '拐点信号，等确认',
+          '分歧后收复': '分歧转一致，低吸机会',
           '其他': '自行判断，备注说明'
         };
         signalInput.value = signalMap[reason] || '';
@@ -1228,27 +1362,33 @@
         w1Name.value = rec.w1Name || '';
         w1Total.value = rec.w1Total || '';
         w1New.value = rec.w1New || '';
+        w1Pct.value = rec.w1Pct || ''; w1Pct.dataset.mode = rec.w1Pct ? 'manual' : '';
+        w1Assist.value = rec.w1Assist || '';
         w1Reason.value = rec.w1Reason || '';
         w1b1Name.value = rec.w1b1Name || ''; w1b1New.value = rec.w1b1New || '';
         w1b2Name.value = rec.w1b2Name || ''; w1b2New.value = rec.w1b2New || '';
         w2Name.value = rec.w2Name || '';
         w2Total.value = rec.w2Total || '';
         w2New.value = rec.w2New || '';
+        w2Pct.value = rec.w2Pct || ''; w2Pct.dataset.mode = rec.w2Pct ? 'manual' : '';
+        w2Assist.value = rec.w2Assist || '';
         w2Reason.value = rec.w2Reason || '';
         w2b1Name.value = rec.w2b1Name || ''; w2b1New.value = rec.w2b1New || '';
         w2b2Name.value = rec.w2b2Name || ''; w2b2New.value = rec.w2b2New || '';
         w3Name.value = rec.w3Name || '';
         w3Total.value = rec.w3Total || '';
         w3New.value = rec.w3New || '';
+        w3Pct.value = rec.w3Pct || ''; w3Pct.dataset.mode = rec.w3Pct ? 'manual' : '';
+        w3Assist.value = rec.w3Assist || '';
         w3Reason.value = rec.w3Reason || '';
         w3b1Name.value = rec.w3b1Name || ''; w3b1New.value = rec.w3b1New || '';
         w3b2Name.value = rec.w3b2Name || ''; w3b2New.value = rec.w3b2New || '';
         l1Name.value = rec.l1Name || ''; l1Count.value = rec.l1Count || '';
         l2Name.value = rec.l2Name || ''; l2Count.value = rec.l2Count || '';
         l3Name.value = rec.l3Name || ''; l3Count.value = rec.l3Count || '';
-        updateWatchSignal('watch1Reason', 'watch1Signal');
-        updateWatchSignal('watch2Reason', 'watch2Signal');
-        updateWatchSignal('watch3Reason', 'watch3Signal');
+        updateWatchSignal('watch1Reason', 'watch1Signal', 'watch1Pct', 'watch1Assist');
+        updateWatchSignal('watch2Reason', 'watch2Signal', 'watch2Pct', 'watch2Assist');
+        updateWatchSignal('watch3Reason', 'watch3Signal', 'watch3Pct', 'watch3Assist');
       }
 
       let filteredRecords = null;
@@ -1335,6 +1475,7 @@
               <td>${rec.newHighDaily||0}</td>
               <td><strong>${sealRateStr}</strong></td>
               <td class="sector-cell">${getSectorSummary(rec)}</td>
+              <td class="sector-cell" style="color:#7c3aed;font-size:0.8rem;">${getGrowthWatchSummary(rec)}</td>
               <td class="sector-cell" style="color:#2563eb;font-size:0.8rem;">${getLimitUpSummary(rec)}</td>
               <td class="${signalCls}">${signal.label}</td>
               <td class="sector-cell" style="color:#a16207;">${getWatchSummary(rec)}</td>
@@ -1572,7 +1713,247 @@
         ]));
       }
 
-      function renderAll() { renderTable(); updateCharts(); }
+      function renderAll() { renderTable(); updateCharts(); renderMainlineSignals(); }
+
+      // ── 调试模式 ──
+      function isDebug() { return window.location.search.indexOf('debug=1') >= 0; }
+
+      // ── 全字段扫描：从一条记录中提取所有带名 + 总数的题材字段 ──
+      function getAllNameFields(r) {
+        var res = [];
+        function add(n, t) { if (n && n.trim()) res.push({ name: n.trim(), total: parseInt(t)||0 }); }
+        add(r.s1Name, r.s1Total); add(r.s2Name, r.s2Total); add(r.s3Name, r.s3Total);
+        add(r.w1Name, r.w1Total); add(r.w2Name, r.w2Total); add(r.w3Name, r.w3Total);
+        add(r.s1b1Name, r.s1b1New); add(r.s1b2Name, r.s1b2New);
+        add(r.s2b1Name, r.s2b1New); add(r.s2b2Name, r.s2b2New);
+        add(r.s3b1Name, r.s3b1New); add(r.s3b2Name, r.s3b2New);
+        add(r.w1b1Name, r.w1b1New); add(r.w1b2Name, r.w1b2New);
+        add(r.w2b1Name, r.w2b1New); add(r.w2b2Name, r.w2b2New);
+        add(r.w3b1Name, r.w3b1New); add(r.w3b2Name, r.w3b2New);
+        return res;
+      }
+
+      // ── 找昨日基数：全量字段按名匹配，取当前日期前最近一条的记录 ──
+      function findPreviousSectorTotal(sectorName, currentDate) {
+        if (!sectorName || !records.length) return null;
+        var trimmed = sectorName.trim();
+        var older = records.filter(function(r) { return r.date && r.date < currentDate; });
+        older.sort(function(a,b) { return a.date > b.date ? -1 : 1; });
+        for (var i = 0; i < older.length; i++) {
+          var fields = getAllNameFields(older[i]);
+          for (var j = 0; j < fields.length; j++) {
+            if (fields[j].name === trimmed && fields[j].total > 0)
+              return { total: fields[j].total, date: older[i].date, sourceName: fields[j].name };
+          }
+        }
+        return null;
+      }
+
+      // ── 全字段历史峰值 ──
+      function getSectorPeak(sectorName, allRecords) {
+        if (!sectorName || !allRecords.length) return 0;
+        var trimmed = sectorName.trim();
+        var vals = [];
+        for (var i = 0; i < allRecords.length; i++) {
+          var fields = getAllNameFields(allRecords[i]);
+          for (var j = 0; j < fields.length; j++) {
+            if (fields[j].name === trimmed) vals.push(fields[j].total);
+          }
+        }
+        return vals.length ? Math.max.apply(null, vals) : 0;
+      }
+
+      // ── 冷却检测（连续3天<5家） ──
+      function isSectorCooled(sectorName, allRecords, currentDate) {
+        var trimmed = sectorName.trim();
+        var recs = [];
+        for (var i = 0; i < allRecords.length; i++) {
+          var r = allRecords[i];
+          if (!r.date || r.date > currentDate) continue;
+          var fields = getAllNameFields(r);
+          for (var j = 0; j < fields.length; j++) {
+            if (fields[j].name === trimmed) { recs.push({ date: r.date, total: fields[j].total }); break; }
+          }
+        }
+        recs.sort(function(a,b) { return a.date > b.date ? -1 : 1; });
+        if (recs.length < 3) return false;
+        var count = 0;
+        for (var i = 0; i < 3; i++) { if (recs[i].total < 5) count++; }
+        return count >= 3;
+      }
+
+      // 🎯 主线信号判定
+      function getMainlineSignalForSector(sectorName, total, pct, assist, allRecords) {
+        if (!sectorName) return null;
+        var currentDate = allRecords.length ? allRecords[allRecords.length - 1].date : '';
+        var peak = getSectorPeak(sectorName, allRecords);
+        if (total > peak) peak = total;
+        var olderRecs = allRecords.filter(function(r) { return r.date && r.date < currentDate && (r.w1Name === sectorName || r.w2Name === sectorName || r.w3Name === sectorName); });
+        // 退潮: 仅当历史峰值≥15才可能触发
+        if (peak >= 15 && olderRecs.length) {
+          var oldPeak = Math.max.apply(null, olderRecs.map(function(r) {
+            if (r.w1Name === sectorName) return r.w1Total || 0;
+            if (r.w2Name === sectorName) return r.w2Total || 0;
+            if (r.w3Name === sectorName) return r.w3Total || 0;
+            return 0;
+          }));
+          if (total < 5 && oldPeak >= 5) return { stage:'retreat', label:'退潮', color:'#ef4444', desc:'破5家—必卖', peak:peak };
+          if (oldPeak >= 5 && total > 0 && oldPeak > total && (oldPeak - total) / oldPeak >= 0.3)
+            return { stage:'retreat', label:'退潮', color:'#ef4444', desc:'峰值'+oldPeak+'回落'+Math.round((oldPeak-total)/oldPeak*100)+'%—必卖', peak:peak };
+        }
+        if (total >= 20 || pct >= 80) return { stage:'confirmed', label:'确认', color:'#22c55e', desc: pct>=80 ? '环比+'+pct+'%—可买' : total+'家—可买', peak:peak };
+        if (total >= 10 && assist && assist !== '无') return { stage:'effective', label:'有效', color:'#3b82f6', desc: total+'家+涨停助攻—持有', peak:peak };
+        if (total >= 5) return { stage:'watch', label:'关注', color:'#eab308', desc: total+'家—观察', peak:peak };
+        return { stage:'none', label:'', color:'#64748b', desc:'未达阈值', peak:peak };
+      }
+
+      function renderMainlineSignals() {
+        var el = document.getElementById('mainlineSignalsContent');
+        if (!el) return;
+        if (!records.length) { el.textContent = '暂无数据'; return; }
+        var last = records[records.length - 1];
+        var sectors = [];
+        for (var i = 1; i <= 3; i++) {
+          var name = last['w'+i+'Name'];
+          if (!name) continue;
+          var total = last['w'+i+'Total'] || 0;
+          var pct = last['w'+i+'Pct'] || 0;
+          var assist = last['w'+i+'Assist'] || '';
+          var reason = last['w'+i+'Reason'] || '';
+          var signal = getMainlineSignalForSector(name, total, pct, assist, records);
+          var cooled = false;
+          // only check cooling for tracked pool sectors
+          var tracked = loadTrackedList();
+          if (tracked.indexOf(name) >= 0) cooled = isSectorCooled(name, records, last.date);
+          sectors.push({ idx:i, name:name, total:total, pct:pct, assist:assist, reason:reason, signal:signal, cooled:cooled });
+        }
+        if (!sectors.length) { el.innerHTML = '<span style="color:#64748b;">暂无观察板块数据</span>'; return; }
+        var html = '<div style="display:flex;flex-direction:column;gap:0.4rem;">';
+        var hasConfirmed = false, hasRetreat = false;
+        for (var s = 0; s < sectors.length; s++) {
+          var sec = sectors[s];
+          var sig = sec.signal;
+          var bgColor = sec.cooled ? '#1a1a1a' : '#0f172a';
+          var peak = sig ? sig.peak : getSectorPeak(sec.name, records);
+          // Compute baseline for "昨→今" display
+          var lastDate = last.date;
+          var prevData = findPreviousSectorTotal(sec.name, lastDate);
+          var baseLine = '峰值'+peak+'家';
+          if (prevData && prevData.total > 0) {
+            baseLine = '昨：' + prevData.total + '家(' + prevData.date + ') → 今：' + sec.total + '家（' + baseLine + '）';
+            if (isDebug()) baseLine += ' | 📎来源: ' + prevData.sourceName;
+          } else {
+            baseLine = '首日记录 — 今：' + sec.total + '家（' + baseLine + '）';
+          }
+          var sigHtml = sig && sig.label
+            ? '<span style="display:inline-block;padding:1px 8px;border-radius:10px;font-weight:700;font-size:0.75rem;color:#fff;background:'+sig.color+';">'+sig.label+'</span> <span style="font-size:0.7rem;color:'+sig.color+';">'+sig.desc+'</span>'
+            : '<span style="color:#64748b;font-size:0.7rem;">'+(
+                sec.cooled ? '已冷却，可移出跟踪池' : (sig ? sig.desc : '未达阈值')
+              )+'</span>';
+          if (sig && sig.stage === 'confirmed') hasConfirmed = true;
+          if (sig && sig.stage === 'retreat') hasRetreat = true;
+          html += '<div style="display:flex;flex-direction:column;gap:0.15rem;padding:0.25rem 0.5rem;background:'+bgColor+';border-radius:6px;'+(sec.cooled?'opacity:0.6;':'')+'">';
+          html += '<div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">';
+          html += '<span style="font-weight:600;font-size:0.8rem;color:#e2e8f0;min-width:55px;">'+sec.name+'</span>';
+          html += '<span style="font-size:0.7rem;color:#94a3b8;">'+sec.total+'家</span>';
+          html += '<span style="font-size:0.7rem;color:#f59e0b;">环比+'+sec.pct+'%</span>';
+          html += '<span style="font-size:0.6rem;color:#64748b;">峰值'+peak+'家</span>';
+          if (sec.assist) html += '<span style="font-size:0.7rem;color:#a78bfa;">🅰'+sec.assist+'</span>';
+          if (sec.reason) html += '<span style="font-size:0.65rem;color:#64748b;">('+sec.reason+')</span>';
+          html += sigHtml;
+          html += '</div>';
+          html += '<div style="font-size:0.6rem;color:#64748b;padding-left:0.2rem;">' + baseLine + '</div>';
+          html += '</div>';
+        }
+        // 汇总条: 仅在🟢确认或🔴退潮时高亮
+        if (hasConfirmed || hasRetreat) {
+          html += '<div style="margin-top:0.2rem;font-size:0.7rem;'+(hasRetreat?'color:#ef4444;font-weight:700;':'color:#22c55e;')+'">';
+          if (hasRetreat) html += '⚠ 退潮信号 — 减仓/回避';
+          if (hasConfirmed) html += (hasRetreat ? ' | ' : '') + '✅ 确认信号 — 可加仓';
+          html += '</div>';
+        } else {
+          html += '<div style="margin-top:0.2rem;font-size:0.7rem;color:#64748b;">📌 跟踪中，无操作信号</div>';
+        }
+        html += '</div>';
+        el.innerHTML = html;
+      }
+
+      function exportMainlineSignals() {
+        var el = document.getElementById('mainlineSignalsContent');
+        if (!el) return;
+        var text = '🎯 主线信号（增速异动区判定）\n' + el.textContent.replace(/\s+/g, ' ').trim();
+        navigator.clipboard.writeText(text).then(function() { alert('✅ 已复制到剪贴板'); }).catch(function() { alert('❌ 复制失败'); });
+      }
+
+      // ── 固定跟踪池 ──
+      const TRACKED_KEY = 'astock_tracked_sectors_v1';
+      function loadTrackedList() {
+        try {
+          var d = JSON.parse(localStorage.getItem(TRACKED_KEY));
+          return Array.isArray(d) ? d : [];
+        } catch(e) { return []; }
+      }
+      function loadTrackedSectors() {
+        var arr = loadTrackedList();
+        for (var i = 0; i < 6; i++) {
+          var el = document.getElementById('trackSector'+(i+1));
+          if (el) el.value = arr[i] || '';
+        }
+      }
+      function saveTrackedSectors() {
+        var arr = [];
+        for (var i = 0; i < 6; i++) {
+          var el = document.getElementById('trackSector'+(i+1));
+          arr.push(el ? el.value.trim() : '');
+        }
+        localStorage.setItem(TRACKED_KEY, JSON.stringify(arr));
+        autoFillWatchNames();
+        if (typeof renderMainlineSignals === 'function') renderMainlineSignals();
+        alert('✅ 跟踪池已保存');
+      }
+      function autoFillWatchNames() {
+        // Only auto-fill when names are empty (new record, not editing)
+        if (w1Name.value || w2Name.value || w3Name.value) return;
+        var arr = loadTrackedList();
+        if (arr[0]) w1Name.value = arr[0];
+        if (arr[1]) w2Name.value = arr[1];
+        if (arr[2]) w3Name.value = arr[2];
+      }
+      function autoCalcWatchPct(watchIdx) {
+        var nameEl = document.getElementById('watch'+watchIdx+'Name');
+        var totalEl = document.getElementById('watch'+watchIdx+'Total');
+        var pctEl = document.getElementById('watch'+watchIdx+'Pct');
+        var name = nameEl ? nameEl.value.trim() : '';
+        var total = parseInt(totalEl ? totalEl.value : 0) || 0;
+        var date = document.getElementById('inputDate') ? document.getElementById('inputDate').value : '';
+        if (!name || !total || !date) {
+          if (pctEl) { pctEl.value = ''; pctEl.placeholder = ''; pctEl.style.color = ''; pctEl.dataset.mode = ''; }
+          return;
+        }
+        // 手动覆盖检测：用户手动编辑过pct字段则不自动覆盖
+        if (pctEl && pctEl.dataset.mode === 'manual') return;
+        var prev = findPreviousSectorTotal(name, date);
+        var srcEl = document.getElementById('pctSource'+watchIdx);
+        var peak = getSectorPeak(name, records);
+        if (prev && prev.total > 0) {
+          var pct = Math.round(((total / prev.total) - 1) * 100);
+          pctEl.value = pct;
+          pctEl.placeholder = '自动';
+          pctEl.style.color = pct > 0 ? '#22c55e' : (pct < 0 ? '#ef4444' : '#94a3b8');
+          pctEl.dataset.mode = 'auto';
+          if (srcEl) {
+            var dbg = isDebug() ? ' | <span style="color:#eab308;">来源: ' + prev.sourceName + '</span>' : '';
+            srcEl.innerHTML = '昨：'+prev.total+'家('+prev.date+') → 今：'+total+'家（峰值'+peak+'家）' + dbg;
+          }
+        } else {
+          pctEl.value = '';
+          pctEl.placeholder = '首日';
+          pctEl.style.color = '#94a3b8';
+          pctEl.dataset.mode = 'auto';
+          if (srcEl) srcEl.innerHTML = '该题材首次记录，无昨日基数（峰值'+peak+'家）';
+        }
+        if (typeof renderMainlineSignals === 'function') renderMainlineSignals();
+      }
 
       // 联动：情感板块数据更新时，底部放量共振标签同步刷新
       function syncSurgeResonance() {
@@ -1606,15 +1987,15 @@
           s3Name: s3Name.value.trim(), s3Total: parseInt(s3Total.value) || 0, s3New: parseInt(s3New.value) || 0,
           s3b1Name: s3b1Name.value.trim(), s3b1New: parseInt(s3b1New.value) || 0,
           s3b2Name: s3b2Name.value.trim(), s3b2New: parseInt(s3b2New.value) || 0,
-          w1Name: w1Name.value.trim(), w1Total: parseInt(w1Total.value) || 0, w1New: parseInt(w1New.value) || 0, w1Reason: w1Reason.value,
-          w1b1Name: w1b1Name.value.trim(), w1b1New: parseInt(w1b1New.value) || 0,
-          w1b2Name: w1b2Name.value.trim(), w1b2New: parseInt(w1b2New.value) || 0,
-          w2Name: w2Name.value.trim(), w2Total: parseInt(w2Total.value) || 0, w2New: parseInt(w2New.value) || 0, w2Reason: w2Reason.value,
-          w2b1Name: w2b1Name.value.trim(), w2b1New: parseInt(w2b1New.value) || 0,
-          w2b2Name: w2b2Name.value.trim(), w2b2New: parseInt(w2b2New.value) || 0,
-          w3Name: w3Name.value.trim(), w3Total: parseInt(w3Total.value) || 0, w3New: parseInt(w3New.value) || 0, w3Reason: w3Reason.value,
-          w3b1Name: w3b1Name.value.trim(), w3b1New: parseInt(w3b1New.value) || 0,
-          w3b2Name: w3b2Name.value.trim(), w3b2New: parseInt(w3b2New.value) || 0,
+          w1Name: w1Name.value.trim(), w1Total: parseInt(w1Total.value) || 0, w1New: parseInt(w1New.value) || 0, w1Pct: parseFloat(w1Pct.value) || 0, w1Assist: w1Assist.value, w1Reason: w1Reason.value,
+          w1b1Name: w1b1Name.value.trim(), w1b1New: w1b1New.value,
+          w1b2Name: w1b2Name.value.trim(), w1b2New: w1b2New.value,
+          w2Name: w2Name.value.trim(), w2Total: parseInt(w2Total.value) || 0, w2New: parseInt(w2New.value) || 0, w2Pct: parseFloat(w2Pct.value) || 0, w2Assist: w2Assist.value, w2Reason: w2Reason.value,
+          w2b1Name: w2b1Name.value.trim(), w2b1New: w2b1New.value,
+          w2b2Name: w2b2Name.value.trim(), w2b2New: w2b2New.value,
+          w3Name: w3Name.value.trim(), w3Total: parseInt(w3Total.value) || 0, w3New: parseInt(w3New.value) || 0, w3Pct: parseFloat(w3Pct.value) || 0, w3Assist: w3Assist.value, w3Reason: w3Reason.value,
+          w3b1Name: w3b1Name.value.trim(), w3b1New: w3b1New.value,
+          w3b2Name: w3b2Name.value.trim(), w3b2New: w3b2New.value,
           l1Name: l1Name.value.trim(), l1Count: parseInt(l1Count.value) || 0,
           l2Name: l2Name.value.trim(), l2Count: parseInt(l2Count.value) || 0,
           l3Name: l3Name.value.trim(), l3Count: parseInt(l3Count.value) || 0
@@ -1645,15 +2026,17 @@
         s2b1Name.value = ''; s2b1New.value = ''; s2b2Name.value = ''; s2b2New.value = '';
         s3Name.value = ''; s3Total.value = ''; s3New.value = '';
         s3b1Name.value = ''; s3b1New.value = ''; s3b2Name.value = ''; s3b2New.value = '';
-        w1Name.value = ''; w1Total.value = ''; w1New.value = ''; w1Reason.value = ''; w1Signal.value = '';
+        w1Name.value = ''; w1Total.value = ''; w1New.value = ''; w1Pct.value = ''; w1Pct.dataset.mode = ''; w1Assist.value = ''; w1Reason.value = ''; w1Signal.value = '';
         w1b1Name.value = ''; w1b1New.value = ''; w1b2Name.value = ''; w1b2New.value = '';
-        w2Name.value = ''; w2Total.value = ''; w2New.value = ''; w2Reason.value = ''; w2Signal.value = '';
+        w2Name.value = ''; w2Total.value = ''; w2New.value = ''; w2Pct.value = ''; w2Pct.dataset.mode = ''; w2Assist.value = ''; w2Reason.value = ''; w2Signal.value = '';
         w2b1Name.value = ''; w2b1New.value = ''; w2b2Name.value = ''; w2b2New.value = '';
-        w3Name.value = ''; w3Total.value = ''; w3New.value = ''; w3Reason.value = ''; w3Signal.value = '';
+        w3Name.value = ''; w3Total.value = ''; w3New.value = ''; w3Pct.value = ''; w3Pct.dataset.mode = ''; w3Assist.value = ''; w3Reason.value = ''; w3Signal.value = '';
         w3b1Name.value = ''; w3b1New.value = ''; w3b2Name.value = ''; w3b2New.value = '';
         l1Name.value = ''; l1Count.value = ''; l2Name.value = ''; l2Count.value = '';
         l3Name.value = ''; l3Count.value = '';
+        document.getElementById('pctSource1').textContent = ''; document.getElementById('pctSource2').textContent = ''; document.getElementById('pctSource3').textContent = '';
         setDefaultDate();
+        autoFillWatchNames();
       }
 
       function clearAll() {
@@ -2334,9 +2717,33 @@
         });
         generateReportBtn.addEventListener('click', generateReport);
 
-        w1Reason.addEventListener('change', () => updateWatchSignal('watch1Reason', 'watch1Signal'));
-        w2Reason.addEventListener('change', () => updateWatchSignal('watch2Reason', 'watch2Signal'));
-        w3Reason.addEventListener('change', () => updateWatchSignal('watch3Reason', 'watch3Signal'));
+        function bindWatchSignal(i, reasonId, signalId, pctId, assistId) {
+          document.getElementById(reasonId).addEventListener('change', function(){ updateWatchSignal(reasonId, signalId, pctId, assistId); });
+          document.getElementById(pctId).addEventListener('input', function(){ updateWatchSignal(reasonId, signalId, pctId, assistId); });
+          document.getElementById(assistId).addEventListener('change', function(){ updateWatchSignal(reasonId, signalId, pctId, assistId); });
+        }
+        bindWatchSignal(1, 'watch1Reason', 'watch1Signal', 'watch1Pct', 'watch1Assist');
+        bindWatchSignal(2, 'watch2Reason', 'watch2Signal', 'watch2Pct', 'watch2Assist');
+        bindWatchSignal(3, 'watch3Reason', 'watch3Signal', 'watch3Pct', 'watch3Assist');
+        // Auto-calc pct on name/total change
+        for (var wi = 1; wi <= 3; wi++) {
+          (function(idx) {
+            document.getElementById('watch'+idx+'Name').addEventListener('input', function(){ autoCalcWatchPct(idx); });
+            document.getElementById('watch'+idx+'Total').addEventListener('input', function(){ autoCalcWatchPct(idx); });
+            // Manual edit tracking: user edits pct field → mark as manual, don't auto-overwrite
+            document.getElementById('watch'+idx+'Pct').addEventListener('input', function() {
+              var el = this;
+              if (el.dataset.mode !== 'auto') return; // already manual or untouched
+              // When user actively edits, switch to manual mode
+              el.dataset.mode = 'manual';
+              el.placeholder = '手';
+            });
+            // Recalc pct when date changes (baseline may differ)
+          })(wi);
+        }
+        document.getElementById('inputDate').addEventListener('change', function() {
+          for (var di = 1; di <= 3; di++) autoCalcWatchPct(di);
+        });
       }
 
       function autoLoadJSON() {
@@ -2376,15 +2783,15 @@
                   s3Name: r.s3Name || '', s3Total: parseInt(r.s3Total) || 0, s3New: parseInt(r.s3New) || 0,
                   s3b1Name: r.s3b1Name || '', s3b1New: parseInt(r.s3b1New) || 0,
                   s3b2Name: r.s3b2Name || '', s3b2New: parseInt(r.s3b2New) || 0,
-                  w1Name: r.w1Name || '', w1Total: parseInt(r.w1Total) || 0, w1New: parseInt(r.w1New) || 0, w1Reason: r.w1Reason || '',
-                  w1b1Name: r.w1b1Name || '', w1b1New: parseInt(r.w1b1New) || 0,
-                  w1b2Name: r.w1b2Name || '', w1b2New: parseInt(r.w1b2New) || 0,
-                  w2Name: r.w2Name || '', w2Total: parseInt(r.w2Total) || 0, w2New: parseInt(r.w2New) || 0, w2Reason: r.w2Reason || '',
-                  w2b1Name: r.w2b1Name || '', w2b1New: parseInt(r.w2b1New) || 0,
-                  w2b2Name: r.w2b2Name || '', w2b2New: parseInt(r.w2b2New) || 0,
-                  w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Reason: r.w3Reason || '',
-                  w3b1Name: r.w3b1Name || '', w3b1New: parseInt(r.w3b1New) || 0,
-                  w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0,
+              w1Name: r.w1Name || '', w1Total: parseInt(r.w1Total) || 0, w1New: parseInt(r.w1New) || 0, w1Pct: parseFloat(r.w1Pct) || 0, w1Assist: r.w1Assist || '', w1Reason: r.w1Reason || '',
+              w1b1Name: r.w1b1Name || '', w1b1New: r.w1b1New != null ? r.w1b1New : '',
+              w1b2Name: r.w1b2Name || '', w1b2New: r.w1b2New != null ? r.w1b2New : '',
+              w2Name: r.w2Name || '', w2Total: parseInt(r.w2Total) || 0, w2New: parseInt(r.w2New) || 0, w2Pct: parseFloat(r.w2Pct) || 0, w2Assist: r.w2Assist || '', w2Reason: r.w2Reason || '',
+              w2b1Name: r.w2b1Name || '', w2b1New: r.w2b1New != null ? r.w2b1New : '',
+              w2b2Name: r.w2b2Name || '', w2b2New: r.w2b2New != null ? r.w2b2New : '',
+              w3Name: r.w3Name || '', w3Total: parseInt(r.w3Total) || 0, w3New: parseInt(r.w3New) || 0, w3Pct: parseFloat(r.w3Pct) || 0, w3Assist: r.w3Assist || '', w3Reason: r.w3Reason || '',
+              w3b1Name: r.w3b1Name || '', w3b1New: r.w3b1New != null ? r.w3b1New : '',
+              w3b2Name: r.w3b2Name || '', w3b2New: r.w3b2New != null ? r.w3b2New : '',
                   l1Name: r.l1Name || '', l1Count: parseInt(r.l1Count) || 0,
                   l2Name: r.l2Name || '', l2Count: parseInt(r.l2Count) || 0,
                   l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0
@@ -3145,6 +3552,8 @@
         setDefaultDate();
         loadRecords();
         syncPlateData();
+        loadTrackedSectors();
+        autoFillWatchNames();
         renderAll();
         bindEvents();
         autoLoadJSON();
