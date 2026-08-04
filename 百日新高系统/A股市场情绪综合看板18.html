@@ -2072,7 +2072,7 @@
       async function syncToRepo() {
         if (!records.length) { alert('无数据可同步'); return; }
         try {
-          const rsp = await fetch('/api/save-data', {
+          const rsp = await fetch('http://localhost:8080/api/save-data', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(records, null, 2)
@@ -2747,7 +2747,7 @@
       }
 
       function autoLoadJSON() {
-        fetch('data.json')
+        fetch('http://localhost:8080/data.json')
           .then(r => r.json())
           .then(data => {
             if (Array.isArray(data) && data.length) {
