@@ -42,3 +42,26 @@
    - 锚点自动检测 / 游资型vs趋势型 / 初期-中期-末期标记
    - 运行: `python 交易模式4.0/板块生命周期/sector_lifecycle_v3.py`
 3. **每日简报** — 整合上述两模块输出
+
+## A股波段看板（主看板，每日更新）
+- **唯一主看板**：`C:\Users\Rofis\Desktop\a-stock-dashboard\`（index.html + data.json）
+- 在线地址：https://rofist-1.github.io/a-stock-dashboard/ （GitHub Pages，来自桌面根仓库 `rofist-1/a-stock-dashboard`）
+- **数据文件**：`a-stock-dashboard/data.json`（按日期升序的数组，150+ 条，最近交易日为最新）
+- **同步副本**（每次更新必须三处同时写）：
+  1. `a-stock-dashboard/data.json`
+  2. `百日新高系统/data.json`
+  3. 桌面 `a股波段看板_YYYY-MM-DD.json`（文件名为当日日期）
+- **每日更新流程**（收盘后）：
+  1. 用户提供收盘数据（成交量、涨停/跌停/炸板/连板、百日新高/新低、板块 s1-s3/w1-w3 明细）
+  2. 追加当日记录到 data.json 并排序；字段格式见 8/14 记录（date/volume/limitUp/limitDown/bomb/chain/newHigh/newLow/newHighDaily + s1~s3、w1~w3 及细分 b1/b2 + l1~l3 龙头）
+  3. 三副本同步写入
+  4. git add + commit（信息如"看板数据更新 0814"）+ push origin main
+- **数据字段口径**：
+  - volume=两市成交额(亿)；limitUp/limitDown=涨停/跌停家数；bomb=炸板家数；chain=连板股数
+  - newHigh/newLow=全市场百日新高/新低家数；newHighDaily=新高新增家数
+  - s1~s3=强势板块(名称/总家数/新增 + 细分b1/b2)；w1~w3=潜在观察板块(同结构 + pct/assist/reason)
+- **注意事项（避免搞错）**：
+  - 不要用"同步看板.bat"自动同步（按修改时间取最新文件，曾取到旧版122条导致数据回退到7/3）
+  - 浏览器访问请走 http://127.0.0.1:8765 本地服务器（file:// 直开会 CORS 报错）；index.html 已加 `fetch('data.json', {cache:'no-store'})` 防缓存
+  - 数据更新后必须 push，否则 GitHub Pages 停留在旧数据
+  - 判断当日是否有 8/14 这种"最新日期偏旧"问题：以 data.json 最后一条 date 为准
