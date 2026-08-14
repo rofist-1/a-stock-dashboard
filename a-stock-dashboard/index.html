@@ -1968,7 +1968,7 @@
       }
 
       function autoLoadJSON() {
-        fetch('data.json')
+        fetch('data.json', { cache: 'no-store' })
           .then(r => r.json())
           .then(data => {
             if (Array.isArray(data) && data.length) {
