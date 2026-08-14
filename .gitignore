@@ -9,6 +9,7 @@ build/
 # Data cache
 kline_cache/
 cache/
+cache_bt*/
 sector_map.pkl
 
 # Temp files
@@ -43,8 +44,9 @@ backtest_*.csv
 backtest_*.xlsx
 stats.json
 
-# API key file (DO NOT COMMIT)
+# API key files (DO NOT COMMIT)
 .wudao_api_key
+.env
 
 # Monitor auto-generated data files (keep code, not daily output)
 百日新高系统/底部放量_*.json
