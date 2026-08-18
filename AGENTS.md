@@ -43,10 +43,18 @@
    - 运行: `python 交易模式4.0/板块生命周期/sector_lifecycle_v3.py`
 3. **每日简报** — 整合上述两模块输出
 
+### 判读器 v1.5（已固化，全年回测验证）
+- 手册: `交易模式4.0/每日判读与双模式操作手册.md` | 回测: `_策略脚本/判读器回测_v3.py`
+- **五源打分**：①s1登顶≥5天 ②一级占比≥25%或细分≥20% ③龙头新高 ④高度板>3板 ⑤**涨停端同步闸门**（limit_up_filter 主类第一 == 新高池s1，同义归一）
+- **同步性闸门全年零误判**：7月医药新高池堆积但涨停端=电力/芯片/智能电网×5全否决；8/3银行(涨停端核电)否决；5月芯片/8月医药同步放行
+- **切换信号=涨停端衰减**：主升日 s1 在涨停端家数 次日衰减≥30% 或掉下第一→切轮动（8/13医药13→8/14医药9,-31%切；新高池46→44无感）
+- 涨停端数据来源：`limit_up_filter` date 参数逐日拉（主类聚合行）；JSON l1Name/l1Count 仅7/13起
+
 ## A股波段看板（主看板，每日更新）
 - **唯一主看板**：`C:\Users\Rofis\Desktop\a-stock-dashboard\`（index.html + data.json）
 - 在线地址：https://rofist-1.github.io/a-stock-dashboard/ （GitHub Pages，来自桌面根仓库 `rofist-1/a-stock-dashboard`）
-- **数据文件**：`a-stock-dashboard/data.json`（按日期升序的数组，150+ 条，最近交易日为最新）
+- **看板 UI 已升级为 v18**：`a-stock-dashboard/index.html` = `百日新高系统/A股市场情绪综合看板18.html` 部署版（含增速异动UI）；已把读取改相对路径 `fetch('data.json',{cache:'no-store'})`，localStorage 合并逻辑保留
+- **数据文件**：`a-stock-dashboard/data.json`（按日期升序的数组，UTF-8 编码，当前 153 条到 8/18，最近交易日为最新）
 - **同步副本**（每次更新必须三处同时写）：
   1. `a-stock-dashboard/data.json`
   2. `百日新高系统/data.json`
@@ -61,7 +69,9 @@
   - newHigh/newLow=全市场百日新高/新低家数；newHighDaily=新高新增家数
   - s1~s3=强势板块(名称/总家数/新增 + 细分b1/b2)；w1~w3=潜在观察板块(同结构 + pct/assist/reason)
 - **注意事项（避免搞错）**：
+  - 数据文件为 **UTF-8 编码**；PowerShell 控制台 `Get-Content` 默认 GBK 读会乱码，属显示问题不影响文件；读写请用 Python `encoding='utf-8'`
   - 不要用"同步看板.bat"自动同步（按修改时间取最新文件，曾取到旧版122条导致数据回退到7/3）
   - 浏览器访问请走 http://127.0.0.1:8765 本地服务器（file:// 直开会 CORS 报错）；index.html 已加 `fetch('data.json', {cache:'no-store'})` 防缓存
   - 数据更新后必须 push，否则 GitHub Pages 停留在旧数据
-  - 判断当日是否有 8/14 这种"最新日期偏旧"问题：以 data.json 最后一条 date 为准
+  - 判断当日是否有"最新日期偏旧"问题：以 data.json 最后一条 date 为准（8/14 曾出过此问题）
+  - l1~l3 龙头=涨停最多板块，来源 `limit_up_ladder` 主类排行（非ST涨停家数口径）；8/14、8/17、8/18 已补，7/13 起有值
