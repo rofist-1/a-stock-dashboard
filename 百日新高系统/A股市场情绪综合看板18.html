@@ -836,6 +836,7 @@
               <th>强势板块</th>
               <th>增速异动（环比）</th>
               <th>涨停最多</th>
+              <th>涨停榜首对比<span class="tooltip">涨停端第一主类 vs 昨日：🔁延续=同主线；🔄换帅=高低切预警（见判读器手册）</span></th>
               <th>信号</th>
               <th>潜在异动</th>
               <th>操作</th>
@@ -1175,6 +1176,50 @@
         return parts.length ? parts.join(' · ') : '—';
       }
 
+      // 涨停端榜首同义词归一（与判读器手册同一套口径）
+      const LEADER_MAX = {
+        '芯片':['芯片','国产芯片','半导体','碳化硅','元器件','存储','光刻胶','先进封装','汽车芯片'],
+        '通信':['通信','光通信','光模块','通信设备','CPO','PCB'],
+        '医药':['医药','医疗医药','创新药','CRO','中药','仿制药','原料药','医药商业','医美'],
+        '机器人':['机器人','机器人概念','减速器','丝杠','具身智能'],
+        '人工智能':['AI应用','AI硬件','算力','算力租赁','数据中心','液冷','AI医疗','AI智能体','端侧AI','AI应用'],
+        '电力':['电力','智能电网','绿电','核电','特高压','柔性直流'],
+        '农业':['农业','种植业','养殖业','转基因','农业转基因','多胎概念','宠物经济'],
+        '地产链':['地产','地产链','房地产','装修家居','物业服务','家电','厨卫'],
+        '银行':['银行','保险','金融'],
+        '煤炭':['煤炭','煤'],
+        '有色金属':['有色金属','黄金','黄金零售','金矿','白银'],
+        '石油石化':['石油石化','油气','油服','天然气'],
+        '基础建设':['基础建设','基建','水利','高铁轨交'],
+        '商业航天':['商业航天','卫星','太空','航天'],
+        '化工':['化工','氟化工','磷化工','分散染料','硫酸'],
+        '算力':['算力','算力租赁','数据中心','液冷','IDC'],
+        '食品饮料':['食品饮料','乳业','白酒','酿酒','饮品'],
+      };
+      function normalizeLeader(name) {
+        if (!name) return '';
+        for (const [k, arr] of Object.entries(LEADER_MAX)) {
+          if (arr.some(w => String(name).includes(w))) return k;
+        }
+        return name;
+      }
+      // 涨停端榜首 vs 昨日（高低切预警核心列）
+      function getLeaderCompare(rec, idx) {
+        if (!rec.l1Name) return '—';
+        const prev = idx > 0 ? records[idx - 1] : null;
+        const cur = normalizeLeader(rec.l1Name);
+        const pre = prev ? normalizeLeader(prev.l1Name) : '';
+        if (cur === pre && pre) {
+          return `<span style="color:#16a34a;">🔁 ${rec.l1Name}(${rec.l1Count||0})</span><span style="color:#64748b;font-size:0.7rem;"> 延续</span>`;
+        }
+        const defensive = ['银行','农业','煤炭','有色金属','石油石化','食品饮料','食品','地产链','基础建设'];
+        const isDef = defensive.includes(cur);
+        const cls = isDef ? 'color:#dc2626;' : 'color:#eab308;';
+        const label = isDef ? '🔄 换帅·进防御' : '🔄 换帅';
+        const fromStr = pre ? ` <span style="color:#64748b;font-size:0.7rem;">${prev.l1Name}>${rec.l1Name}</span>` : '';
+        return `<span style="${cls}">${label}</span>${fromStr || ''}`;
+      }
+
       function getBranchDisplay(bName, bVal) {
         if (!bName) return '';
         // handle both old numeric (新增) and new string (筹码松动) branch values
@@ -1447,6 +1492,7 @@
               <td class="sector-cell">${getSectorSummary(rec)}</td>
               <td class="sector-cell" style="color:#7c3aed;font-size:0.8rem;">${getGrowthWatchSummary(rec)}</td>
               <td class="sector-cell" style="color:#2563eb;font-size:0.8rem;">${getLimitUpSummary(rec)}</td>
+              <td class="sector-cell" style="font-size:0.8rem;">${getLeaderCompare(rec, origIdx >= 0 ? origIdx : idx)}</td>
               <td class="${signalCls}">${signal.label}</td>
               <td class="sector-cell" style="color:#a16207;">${getWatchSummary(rec)}</td>
               <td style="white-space:nowrap;">
@@ -2717,7 +2763,7 @@
       }
 
       function autoLoadJSON() {
-        fetch('http://localhost:8080/data.json')
+        fetch('data.json', { cache: 'no-store' })
           .then(r => r.json())
           .then(data => {
             if (Array.isArray(data) && data.length) {
