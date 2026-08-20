@@ -65,7 +65,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3959,
+    "fall": 1111
   },
   {
     "date": "2026-01-06",
@@ -133,7 +135,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3844,
+    "fall": 1201
   },
   {
     "date": "2026-01-07",
@@ -201,7 +205,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2078,
+    "fall": 3003
   },
   {
     "date": "2026-01-08",
@@ -269,7 +275,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3533,
+    "fall": 1514
   },
   {
     "date": "2026-01-09",
@@ -337,7 +345,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3718,
+    "fall": 1272
   },
   {
     "date": "2026-01-12",
@@ -405,7 +415,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3872,
+    "fall": 1167
   },
   {
     "date": "2026-01-13",
@@ -473,7 +485,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1520,
+    "fall": 3547
   },
   {
     "date": "2026-01-14",
@@ -541,7 +555,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2562,
+    "fall": 2494
   },
   {
     "date": "2026-01-15",
@@ -609,7 +625,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2169,
+    "fall": 2898
   },
   {
     "date": "2026-01-16",
@@ -677,7 +695,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2251,
+    "fall": 2808
   },
   {
     "date": "2026-01-19",
@@ -745,7 +765,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3409,
+    "fall": 1665
   },
   {
     "date": "2026-01-20",
@@ -813,7 +835,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2139,
+    "fall": 2918
   },
   {
     "date": "2026-01-21",
@@ -881,7 +905,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2962,
+    "fall": 2046
   },
   {
     "date": "2026-01-22",
@@ -949,7 +975,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3373,
+    "fall": 1696
   },
   {
     "date": "2026-01-23",
@@ -1017,7 +1045,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3707,
+    "fall": 1336
   },
   {
     "date": "2026-01-26",
@@ -1085,7 +1115,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1538,
+    "fall": 3547
   },
   {
     "date": "2026-01-27",
@@ -1153,7 +1185,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1856,
+    "fall": 3237
   },
   {
     "date": "2026-01-28",
@@ -1221,7 +1255,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1631,
+    "fall": 3460
   },
   {
     "date": "2026-01-29",
@@ -1289,7 +1325,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1718,
+    "fall": 3363
   },
   {
     "date": "2026-01-30",
@@ -1357,7 +1395,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2360,
+    "fall": 2703
   },
   {
     "date": "2026-02-02",
@@ -1425,7 +1465,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 738,
+    "fall": 4395
   },
   {
     "date": "2026-02-03",
@@ -1493,7 +1535,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4583,
+    "fall": 514
   },
   {
     "date": "2026-02-04",
@@ -1561,7 +1605,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3141,
+    "fall": 1960
   },
   {
     "date": "2026-02-05",
@@ -1629,7 +1675,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1588,
+    "fall": 3462
   },
   {
     "date": "2026-02-06",
@@ -1697,7 +1745,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2574,
+    "fall": 2444
   },
   {
     "date": "2026-02-09",
@@ -1765,7 +1815,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4372,
+    "fall": 717
   },
   {
     "date": "2026-02-10",
@@ -1833,7 +1885,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2151,
+    "fall": 2884
   },
   {
     "date": "2026-02-11",
@@ -1901,7 +1955,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1977,
+    "fall": 3030
   },
   {
     "date": "2026-02-12",
@@ -1969,7 +2025,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1995,
+    "fall": 3109
   },
   {
     "date": "2026-02-13",
@@ -2037,7 +2095,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1430,
+    "fall": 3653
   },
   {
     "date": "2026-02-16",
@@ -2105,7 +2165,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": null,
+    "fall": null
   },
   {
     "date": "2026-02-17",
@@ -2173,7 +2235,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": null,
+    "fall": null
   },
   {
     "date": "2026-02-18",
@@ -2241,7 +2305,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": null,
+    "fall": null
   },
   {
     "date": "2026-02-19",
@@ -2309,7 +2375,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": null,
+    "fall": null
   },
   {
     "date": "2026-02-20",
@@ -2377,7 +2445,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": null,
+    "fall": null
   },
   {
     "date": "2026-02-24",
@@ -2445,7 +2515,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3764,
+    "fall": 1344
   },
   {
     "date": "2026-02-25",
@@ -2513,7 +2585,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3540,
+    "fall": 1529
   },
   {
     "date": "2026-02-26",
@@ -2581,7 +2655,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2394,
+    "fall": 2670
   },
   {
     "date": "2026-02-27",
@@ -2649,7 +2725,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3164,
+    "fall": 1884
   },
   {
     "date": "2026-03-02",
@@ -2717,7 +2795,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1103,
+    "fall": 4026
   },
   {
     "date": "2026-03-03",
@@ -2785,7 +2865,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 549,
+    "fall": 4609
   },
   {
     "date": "2026-03-04",
@@ -2853,7 +2935,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1627,
+    "fall": 3464
   },
   {
     "date": "2026-03-05",
@@ -2921,7 +3005,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3864,
+    "fall": 1227
   },
   {
     "date": "2026-03-06",
@@ -2989,7 +3075,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4069,
+    "fall": 1051
   },
   {
     "date": "2026-03-09",
@@ -3057,7 +3145,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1375,
+    "fall": 3715
   },
   {
     "date": "2026-03-10",
@@ -3125,7 +3215,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4302,
+    "fall": 790
   },
   {
     "date": "2026-03-11",
@@ -3193,7 +3285,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1926,
+    "fall": 3126
   },
   {
     "date": "2026-03-12",
@@ -3261,7 +3355,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1458,
+    "fall": 3633
   },
   {
     "date": "2026-03-13",
@@ -3329,7 +3425,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1436,
+    "fall": 3606
   },
   {
     "date": "2026-03-17",
@@ -3397,7 +3495,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 822,
+    "fall": 4289
   },
   {
     "date": "2026-03-18",
@@ -3465,7 +3565,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3433,
+    "fall": 1658
   },
   {
     "date": "2026-03-19",
@@ -3533,7 +3635,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 492,
+    "fall": 4669
   },
   {
     "date": "2026-03-20",
@@ -3601,7 +3705,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 620,
+    "fall": 4531
   },
   {
     "date": "2026-03-23",
@@ -3669,7 +3775,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 291,
+    "fall": 4886
   },
   {
     "date": "2026-03-24",
@@ -3737,7 +3845,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4866,
+    "fall": 299
   },
   {
     "date": "2026-03-25",
@@ -3805,7 +3915,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4615,
+    "fall": 521
   },
   {
     "date": "2026-03-26",
@@ -3873,7 +3985,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 877,
+    "fall": 4235
   },
   {
     "date": "2026-03-27",
@@ -3941,7 +4055,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4156,
+    "fall": 958
   },
   {
     "date": "2026-03-30",
@@ -4009,7 +4125,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2806,
+    "fall": 2230
   },
   {
     "date": "2026-03-31",
@@ -4077,7 +4195,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 903,
+    "fall": 4192
   },
   {
     "date": "2026-04-01",
@@ -4145,7 +4265,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4228,
+    "fall": 853
   },
   {
     "date": "2026-04-02",
@@ -4213,7 +4335,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 894,
+    "fall": 4237
   },
   {
     "date": "2026-04-03",
@@ -4281,7 +4405,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 698,
+    "fall": 4461
   },
   {
     "date": "2026-04-07",
@@ -4349,7 +4475,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3804,
+    "fall": 1302
   },
   {
     "date": "2026-04-08",
@@ -4417,7 +4545,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4878,
+    "fall": 293
   },
   {
     "date": "2026-04-09",
@@ -4485,7 +4615,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1115,
+    "fall": 4020
   },
   {
     "date": "2026-04-10",
@@ -4553,7 +4685,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3709,
+    "fall": 1362
   },
   {
     "date": "2026-04-13",
@@ -4621,7 +4755,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2317,
+    "fall": 2720
   },
   {
     "date": "2026-04-14",
@@ -4689,7 +4825,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3516,
+    "fall": 1505
   },
   {
     "date": "2026-04-15",
@@ -4757,7 +4895,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1702,
+    "fall": 3387
   },
   {
     "date": "2026-04-16",
@@ -4825,7 +4965,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4065,
+    "fall": 1004
   },
   {
     "date": "2026-04-17",
@@ -4893,7 +5035,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2091,
+    "fall": 2984
   },
   {
     "date": "2026-04-20",
@@ -4961,7 +5105,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3197,
+    "fall": 1822
   },
   {
     "date": "2026-04-21",
@@ -5029,7 +5175,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1916,
+    "fall": 3157
   },
   {
     "date": "2026-04-22",
@@ -5097,7 +5245,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2658,
+    "fall": 2390
   },
   {
     "date": "2026-04-23",
@@ -5165,7 +5315,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1304,
+    "fall": 3797
   },
   {
     "date": "2026-04-24",
@@ -5233,7 +5385,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1995,
+    "fall": 3085
   },
   {
     "date": "2026-04-27",
@@ -5301,7 +5455,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3182,
+    "fall": 1900
   },
   {
     "date": "2026-04-28",
@@ -5369,7 +5525,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1661,
+    "fall": 3409
   },
   {
     "date": "2026-04-29",
@@ -5437,7 +5595,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3731,
+    "fall": 1338
   },
   {
     "date": "2026-04-30",
@@ -5505,7 +5665,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2671,
+    "fall": 2362
   },
   {
     "date": "2026-05-06",
@@ -5573,7 +5735,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3647,
+    "fall": 1424
   },
   {
     "date": "2026-05-07",
@@ -5641,7 +5805,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3246,
+    "fall": 1801
   },
   {
     "date": "2026-05-08",
@@ -5709,7 +5875,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3375,
+    "fall": 1682
   },
   {
     "date": "2026-05-11",
@@ -5777,7 +5945,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3030,
+    "fall": 2024
   },
   {
     "date": "2026-05-12",
@@ -5845,7 +6015,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1276,
+    "fall": 3846
   },
   {
     "date": "2026-05-13",
@@ -5913,7 +6085,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3036,
+    "fall": 2008
   },
   {
     "date": "2026-05-14",
@@ -5981,7 +6155,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1010,
+    "fall": 4115
   },
   {
     "date": "2026-05-15",
@@ -6049,7 +6225,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1693,
+    "fall": 3404
   },
   {
     "date": "2026-05-18",
@@ -6117,7 +6295,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2311,
+    "fall": 2759
   },
   {
     "date": "2026-05-19",
@@ -6185,7 +6365,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3356,
+    "fall": 1714
   },
   {
     "date": "2026-05-20",
@@ -6253,7 +6435,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1599,
+    "fall": 3532
   },
   {
     "date": "2026-05-21",
@@ -6321,7 +6505,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 667,
+    "fall": 4490
   },
   {
     "date": "2026-05-22",
@@ -6389,7 +6575,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3737,
+    "fall": 1340
   },
   {
     "date": "2026-05-25",
@@ -6457,7 +6645,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2121,
+    "fall": 2976
   },
   {
     "date": "2026-05-27",
@@ -6525,7 +6715,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 935,
+    "fall": 4213
   },
   {
     "date": "2026-05-28",
@@ -6593,7 +6785,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2748,
+    "fall": 2321
   },
   {
     "date": "2026-05-29",
@@ -6661,7 +6855,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1446,
+    "fall": 3672
   },
   {
     "date": "2026-06-01",
@@ -6729,7 +6925,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3513,
+    "fall": 1629
   },
   {
     "date": "2026-06-02",
@@ -6797,7 +6995,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1373,
+    "fall": 3742
   },
   {
     "date": "2026-06-03",
@@ -6865,7 +7065,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1644,
+    "fall": 3484
   },
   {
     "date": "2026-06-04",
@@ -6933,7 +7135,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1294,
+    "fall": 3855
   },
   {
     "date": "2026-06-05",
@@ -7001,7 +7205,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2982,
+    "fall": 2091
   },
   {
     "date": "2026-06-08",
@@ -7069,7 +7275,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 665,
+    "fall": 4513
   },
   {
     "date": "2026-06-09",
@@ -7137,7 +7345,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3216,
+    "fall": 1842
   },
   {
     "date": "2026-06-10",
@@ -7205,7 +7415,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1519,
+    "fall": 3602
   },
   {
     "date": "2026-06-11",
@@ -7273,7 +7485,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1348,
+    "fall": 3773
   },
   {
     "date": "2026-06-12",
@@ -7341,7 +7555,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3708,
+    "fall": 1413
   },
   {
     "date": "2026-06-15",
@@ -7409,7 +7625,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3668,
+    "fall": 1401
   },
   {
     "date": "2026-06-16",
@@ -7477,7 +7695,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2626,
+    "fall": 2468
   },
   {
     "date": "2026-06-17",
@@ -7545,7 +7765,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1596,
+    "fall": 3550
   },
   {
     "date": "2026-06-20",
@@ -7613,7 +7835,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": null,
+    "fall": null
   },
   {
     "date": "2026-06-22",
@@ -7681,7 +7905,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2691,
+    "fall": 2376
   },
   {
     "date": "2026-06-24",
@@ -7749,7 +7975,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1382,
+    "fall": 3768
   },
   {
     "date": "2026-06-25",
@@ -7817,7 +8045,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1199,
+    "fall": 3940
   },
   {
     "date": "2026-06-26",
@@ -7885,7 +8115,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 756,
+    "fall": 4394
   },
   {
     "date": "2026-06-29",
@@ -7953,7 +8185,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2393,
+    "fall": 2689
   },
   {
     "date": "2026-06-30",
@@ -8021,7 +8255,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2902,
+    "fall": 2200
   },
   {
     "date": "2026-07-01",
@@ -8089,7 +8325,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 4043,
+    "fall": 1110
   },
   {
     "date": "2026-07-02",
@@ -8157,7 +8395,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2113,
+    "fall": 2955
   },
   {
     "date": "2026-07-03",
@@ -8225,7 +8465,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3527,
+    "fall": 1584
   },
   {
     "date": "2026-07-06",
@@ -8293,7 +8535,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1817,
+    "fall": 3278
   },
   {
     "date": "2026-07-07",
@@ -8361,7 +8605,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 639,
+    "fall": 4535
   },
   {
     "date": "2026-07-08",
@@ -8429,7 +8675,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 1531,
+    "fall": 3530
   },
   {
     "date": "2026-07-09",
@@ -8497,7 +8745,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 2381,
+    "fall": 2672
   },
   {
     "date": "2026-07-10",
@@ -8565,7 +8815,9 @@
     "l2Name": "",
     "l2Count": 0,
     "l3Name": "",
-    "l3Count": 0
+    "l3Count": 0,
+    "rise": 3509,
+    "fall": 1612
   },
   {
     "date": "2026-07-13",
@@ -8633,7 +8885,9 @@
     "l2Name": "芯片",
     "l2Count": 4,
     "l3Name": "商业航天",
-    "l3Count": 3
+    "l3Count": 3,
+    "rise": 777,
+    "fall": 4377
   },
   {
     "date": "2026-07-14",
@@ -8701,7 +8955,9 @@
     "l2Name": "医药",
     "l2Count": 5,
     "l3Name": "石油石化",
-    "l3Count": 5
+    "l3Count": 5,
+    "rise": 3918,
+    "fall": 1215
   },
   {
     "date": "2026-07-15",
@@ -8769,7 +9025,9 @@
     "l2Name": "机器人",
     "l2Count": 6,
     "l3Name": "煤炭",
-    "l3Count": 2
+    "l3Count": 2,
+    "rise": 3198,
+    "fall": 1929
   },
   {
     "date": "2026-07-16",
@@ -8837,7 +9095,9 @@
     "l2Name": "医药",
     "l2Count": 5,
     "l3Name": "绿电",
-    "l3Count": 3
+    "l3Count": 3,
+    "rise": 2344,
+    "fall": 2694
   },
   {
     "date": "2026-07-17",
@@ -8905,7 +9165,9 @@
     "l2Name": "人工智能",
     "l2Count": 4,
     "l3Name": "端侧AI",
-    "l3Count": 2
+    "l3Count": 2,
+    "rise": 405,
+    "fall": 4758
   },
   {
     "date": "2026-07-20",
@@ -8973,7 +9235,9 @@
     "l2Name": "煤炭",
     "l2Count": 6,
     "l3Name": "算力",
-    "l3Count": 4
+    "l3Count": 4,
+    "rise": 1709,
+    "fall": 3415
   },
   {
     "date": "2026-07-21",
@@ -9041,7 +9305,9 @@
     "l2Name": "通信",
     "l2Count": 17,
     "l3Name": "算力",
-    "l3Count": 10
+    "l3Count": 10,
+    "rise": 2871,
+    "fall": 2219
   },
   {
     "date": "2026-07-22",
@@ -9109,7 +9375,9 @@
     "l2Name": "医药",
     "l2Count": 5,
     "l3Name": "算力",
-    "l3Count": 4
+    "l3Count": 4,
+    "rise": 1529,
+    "fall": 3875
   },
   {
     "date": "2026-07-23",
@@ -9177,7 +9445,9 @@
     "l2Name": "化工",
     "l2Count": 9,
     "l3Name": "锂电池",
-    "l3Count": 9
+    "l3Count": 9,
+    "rise": 4259,
+    "fall": 1208
   },
   {
     "date": "2026-07-24",
@@ -9245,7 +9515,9 @@
     "l2Name": "智能电网",
     "l2Count": 5,
     "l3Name": "军工",
-    "l3Count": 5
+    "l3Count": 5,
+    "rise": 555,
+    "fall": 4939
   },
   {
     "date": "2026-07-27",
@@ -9313,7 +9585,9 @@
     "l2Name": "机器人",
     "l2Count": 9,
     "l3Name": "医药",
-    "l3Count": 8
+    "l3Count": 8,
+    "rise": 5195,
+    "fall": 285
   },
   {
     "date": "2026-07-28",
@@ -9381,7 +9655,9 @@
     "l2Name": "AI应用",
     "l2Count": 10,
     "l3Name": "脑机接口",
-    "l3Count": 6
+    "l3Count": 6,
+    "rise": 2603,
+    "fall": 2768
   },
   {
     "date": "2026-07-29",
@@ -9449,7 +9725,9 @@
     "l2Name": "AI应用",
     "l2Count": 6,
     "l3Name": "机器人",
-    "l3Count": 6
+    "l3Count": 6,
+    "rise": 4253,
+    "fall": 1214
   },
   {
     "date": "2026-07-30",
@@ -9517,7 +9795,9 @@
     "l2Name": "AI应用",
     "l2Count": 5,
     "l3Name": "智能电网",
-    "l3Count": 5
+    "l3Count": 5,
+    "rise": 1768,
+    "fall": 3635
   },
   {
     "date": "2026-07-31",
@@ -9585,7 +9865,9 @@
     "l2Name": "算力",
     "l2Count": 16,
     "l3Name": "机器人",
-    "l3Count": 14
+    "l3Count": 14,
+    "rise": 4691,
+    "fall": 728
   },
   {
     "date": "2026-08-03",
@@ -9653,7 +9935,9 @@
     "l2Name": "机器人",
     "l2Count": 11,
     "l3Name": "AI应用",
-    "l3Count": 5
+    "l3Count": 5,
+    "rise": 4005,
+    "fall": 1466
   },
   {
     "date": "2026-08-04",
@@ -9721,7 +10005,9 @@
     "l2Name": "算力",
     "l2Count": 27,
     "l3Name": "芯片",
-    "l3Count": 17
+    "l3Count": 17,
+    "rise": 3642,
+    "fall": 1747
   },
   {
     "date": "2026-08-05",
@@ -9789,7 +10075,9 @@
     "l2Name": "芯片",
     "l2Count": 18,
     "l3Name": "有色金属",
-    "l3Count": 14
+    "l3Count": 14,
+    "rise": 3725,
+    "fall": 1621
   },
   {
     "date": "2026-08-06",
@@ -9857,7 +10145,9 @@
     "l2Name": "芯片",
     "l2Count": 9,
     "l3Name": "AI应用",
-    "l3Count": 7
+    "l3Count": 7,
+    "rise": 2789,
+    "fall": 2590
   },
   {
     "date": "2026-08-07",
@@ -9925,7 +10215,9 @@
     "l2Name": "医药",
     "l2Count": 20,
     "l3Name": "芯片",
-    "l3Count": 8
+    "l3Count": 8,
+    "rise": 2856,
+    "fall": 2536
   },
   {
     "date": "2026-08-10",
@@ -9993,7 +10285,9 @@
     "l2Name": "智能电网",
     "l2Count": 6,
     "l3Name": "电力",
-    "l3Count": 5
+    "l3Count": 5,
+    "rise": 4068,
+    "fall": 1391
   },
   {
     "date": "2026-08-11",
@@ -10061,7 +10355,9 @@
     "l2Name": "机器人",
     "l2Count": 8,
     "l3Name": "芯片",
-    "l3Count": 4
+    "l3Count": 4,
+    "rise": 1615,
+    "fall": 3777
   },
   {
     "date": "2026-08-12",
@@ -10129,7 +10425,9 @@
     "l2Name": "算力",
     "l2Count": 9,
     "l3Name": "医药",
-    "l3Count": 6
+    "l3Count": 6,
+    "rise": 4128,
+    "fall": 1280
   },
   {
     "date": "2026-08-13",
@@ -10197,7 +10495,9 @@
     "l2Name": "绿色电力",
     "l2Count": 4,
     "l3Name": "通信",
-    "l3Count": 4
+    "l3Count": 4,
+    "rise": 1142,
+    "fall": 4317
   },
   {
     "date": "2026-08-14",
@@ -10265,7 +10565,9 @@
     "l2Name": "医药",
     "l2Count": 9,
     "l3Name": "通信",
-    "l3Count": 8
+    "l3Count": 8,
+    "rise": 2400,
+    "fall": 2970
   },
   {
     "date": "2026-08-17",
@@ -10333,7 +10635,9 @@
     "l2Name": "芯片",
     "l2Count": 15,
     "l3Name": "农业",
-    "l3Count": 8
+    "l3Count": 8,
+    "rise": 4335,
+    "fall": 1064
   },
   {
     "date": "2026-08-18",
@@ -10401,7 +10705,9 @@
     "l2Name": "芯片",
     "l2Count": 8,
     "l3Name": "机器人概念",
-    "l3Count": 7
+    "l3Count": 7,
+    "rise": 2121,
+    "fall": 3292
   },
   {
     "date": "2026-08-19",
@@ -10469,7 +10775,9 @@
     "l2Name": "农业",
     "l2Count": 5,
     "l3Name": "煤炭",
-    "l3Count": 5
+    "l3Count": 5,
+    "rise": 449,
+    "fall": 5069
   },
   {
     "date": "2026-08-20",
