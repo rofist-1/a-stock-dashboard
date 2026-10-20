@@ -634,7 +634,7 @@
       </div>
 
       <div class="input-grid">
-        <div class="input-group"><label>🆕 今日新增新高</label><input type="number" id="inputNewHighDaily" placeholder="新增新高" min="0"></div>
+        <div class="input-group"><label>🆕 今日新增新高</label><input type="number" id="inputNewHighDaily" placeholder="新增新高" min="0"></div>         <div class="input-group"><label>📊 上涨家数</label><input type="number" id="inputRise" placeholder="上涨家数" min="0"></div>         <div class="input-group"><label>📉 下跌家数</label><input type="number" id="inputFall" placeholder="下跌家数" min="0"></div>
       </div>
 
       <div class="section-label">🏆 前三大强势板块（新高总数 & 今日新增 & 细分分支）</div>
@@ -1112,7 +1112,8 @@
               w3b2Name: r.w3b2Name || '', w3b2New: r.w3b2New != null ? r.w3b2New : '',
               l1Name: r.l1Name || '', l1Count: parseInt(r.l1Count) || 0,
               l2Name: r.l2Name || '', l2Count: parseInt(r.l2Count) || 0,
-              l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0
+              l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0,
+              rise: parseInt(r.rise) || 0, fall: parseInt(r.fall) || 0
             }));
           } catch (e) { records = []; }
         } else { records = []; }
@@ -2014,7 +2015,8 @@
           w3b2Name: w3b2Name.value.trim(), w3b2New: w3b2New.value,
           l1Name: l1Name.value.trim(), l1Count: parseInt(l1Count.value) || 0,
           l2Name: l2Name.value.trim(), l2Count: parseInt(l2Count.value) || 0,
-          l3Name: l3Name.value.trim(), l3Count: parseInt(l3Count.value) || 0
+          l3Name: l3Name.value.trim(), l3Count: parseInt(l3Count.value) || 0,
+          rise: parseInt(inputRise.value) || 0, fall: parseInt(inputFall.value) || 0
         };
 
         const existIdx = records.findIndex(r => r.date === date);
@@ -2095,7 +2097,16 @@
           });
           const result = await rsp.json();
           if (result.ok) {
-            alert('✅ data.json 已保存到仓库根目录\n\n下次 git commit/push 即可上传');
+            const g = result.git || {};
+            if (g.pushed) {
+              alert('✅ 已保存并推送成功\n\n' + (result.latest || '') + ' 共 ' + (result.records || 0) + ' 条\n提交: ' + (g.commit || ''));
+            } else if (g.ok && g.note) {
+              alert('✅ 已保存（无新增改动）\n\n' + (result.latest || '') + ' 共 ' + (result.records || 0) + ' 条');
+            } else if (g.committed) {
+              alert('✅ 数据已保存并本地提交\n\n⚠️ 但推送失败（网络/代理问题）：\n' + (g.detail || '') + '\n\n稍后重新点一次「同步到仓库」即可重推');
+            } else {
+              alert('✅ data.json 已保存\n\n共 ' + (result.records || 0) + ' 条，最新 ' + (result.latest || ''));
+            }
           } else {
             alert('❌ 同步失败: ' + (result.error || '未知错误'));
           }
@@ -2150,7 +2161,8 @@
               w3b2Name: r.w3b2Name || '', w3b2New: parseInt(r.w3b2New) || 0,
               l1Name: r.l1Name || '', l1Count: parseInt(r.l1Count) || 0,
               l2Name: r.l2Name || '', l2Count: parseInt(r.l2Count) || 0,
-              l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0
+              l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0,
+              rise: parseInt(r.rise) || 0, fall: parseInt(r.fall) || 0
             }));
             records.sort((a, b) => a.date < b.date ? -1 : 1);
             saveRecords();
@@ -2810,7 +2822,8 @@
               w3b2Name: r.w3b2Name || '', w3b2New: r.w3b2New != null ? r.w3b2New : '',
                   l1Name: r.l1Name || '', l1Count: parseInt(r.l1Count) || 0,
                   l2Name: r.l2Name || '', l2Count: parseInt(r.l2Count) || 0,
-                  l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0
+                  l3Name: r.l3Name || '', l3Count: parseInt(r.l3Count) || 0,
+                  rise: parseInt(r.rise) || 0, fall: parseInt(r.fall) || 0
                 };
               });
               saveRecords();
